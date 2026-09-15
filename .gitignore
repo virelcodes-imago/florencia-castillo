@@ -1,0 +1,11 @@
+# Video/Audio grabaciones internas
+*.mp4
+*.docx
+
+# Vercel & Node
+.vercel
+node_modules
+.DS_Store
+Thumbs.db
+
+.vercel

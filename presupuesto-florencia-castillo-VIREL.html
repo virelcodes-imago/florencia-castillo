@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIREL — Ecosistema Digital | Propuesta Florencia Castillo</title>
+    
+    <!-- Google Fonts: Outfit for clean headings & Plus Jakarta Sans for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* VIREL Dark Tech Luxury Theme: Deep Navy, Neon Fuchsia, Electric Cyan & Gold Yellow */
+            --bg: #060814;
+            --bg-card: rgba(16, 22, 51, 0.75);
+            --bg-card-hover: rgba(25, 34, 75, 0.85);
+            --bg-subtle: rgba(255, 255, 255, 0.03);
+            
+            --fuchsia: #FF007A;
+            --fuchsia-hover: #E0006B;
+            --fuchsia-glow: rgba(255, 0, 122, 0.25);
+            
+            --cyan: #00F0FF;
+            --cyan-hover: #00C8FF;
+            --cyan-glow: rgba(0, 240, 255, 0.2);
+            
+            --yellow: #FFE500;
+            --yellow-hover: #FFC700;
+            --yellow-glow: rgba(255, 229, 0, 0.25);
+            
+            --text-main: #F0F4FF;
+            --text-muted: #94A3B8;
+            --text-dark: #060814;
+            
+            --border: rgba(255, 255, 255, 0.1);
+            --border-fuchsia: rgba(255, 0, 122, 0.35);
+            --border-cyan: rgba(0, 240, 255, 0.35);
+            --border-yellow: rgba(255, 229, 0, 0.4);
+
+            --grad-primary: linear-gradient(135deg, #FF007A 0%, #7B2CBF 50%, #00F0FF 100%);
+            --grad-text: linear-gradient(135deg, #FFFFFF 0%, #F0F4FF 40%, #00F0FF 100%);
+            --grad-fuchsia-cyan: linear-gradient(135deg, #FF007A 0%, #00F0FF 100%);
+            --grad-yellow: linear-gradient(135deg, #FFE500 0%, #FF9900 100%);
+
+            --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 35px rgba(255, 0, 122, 0.2);
+
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 10% 15%, rgba(255, 0, 122, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 60%, rgba(0, 240, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 50% 90%, rgba(255, 229, 0, 0.06) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-top: 85px;
+            overflow-x: hidden;
+            max-width: 100vw;
+            width: 100%;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-main);
+            letter-spacing: -0.015em;
+        }
+
+        .mono {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .handwriting {
+            font-family: 'Caveat', cursive;
+            color: var(--cyan);
+            font-size: 1.4em;
+            line-height: 1;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* TOP NAVIGATION BAR */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(6, 8, 20, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .virel-badge {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            color: #FFFFFF;
+        }
+
+        .virel-badge span.dot-fuchsia { color: var(--fuchsia); }
+        .virel-badge span.dot-cyan { color: var(--cyan); }
+
+        .client-pill {
+            background: rgba(255, 0, 122, 0.15);
+            color: var(--cyan);
+            padding: 5px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid var(--border-fuchsia);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-nav-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 9px 18px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-nav-secondary:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+            background: rgba(0, 240, 255, 0.1);
+        }
+
+        .btn-nav-primary {
+            background: var(--grad-fuchsia-cyan);
+            color: #FFF;
+            padding: 10px 22px;
+            border-radius: var(--radius-full);
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25 ease;
+            box-shadow: 0 4px 20px var(--fuchsia-glow);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-nav-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 240, 255, 0.4);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 3.5rem 0 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-tags-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 240, 255, 0.08);
+            padding: 6px 20px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--cyan);
+            border: 1px solid var(--border-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .date-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 0, 122, 0.08);
+            padding: 6px 18px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--fuchsia);
+            border: 1px solid var(--border-fuchsia);
+            letter-spacing: 1px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero h1 {
+            font-size: 2.7rem;
+            line-height: 1.25;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            background: var(--grad-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.015em;
+        }
+
+        .hero h1 span.highlight-fuchsia {
+            background: linear-gradient(135deg, #FF007A 0%, #FF55A3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span.highlight-cyan {
+            background: linear-gradient(135deg, #00F0FF 0%, #80F7FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 760px;
+            margin: 0 auto 2.2rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Instagram Persona Card */
+        .insta-quote-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 2rem;
+            border: 1px solid var(--border-fuchsia);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            box-shadow: var(--shadow-glow);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .quote-content {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .quote-avatar {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: var(--grad-fuchsia-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFF;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px var(--fuchsia-glow);
+        }
+
+        .quote-text {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            line-height: 1.45;
+        }
+
+        .quote-text strong {
+            color: var(--cyan);
+        }
+
+        /* STRATEGY LOGIC PIPELINE BAR */
+        .logic-bar-container {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem 1.8rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .logic-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--cyan);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .logic-steps {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 6px 10px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .logic-step {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 7px 15px;
+            border-radius: var(--radius-full);
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .logic-step:hover {
+            border-color: var(--fuchsia);
+            background: var(--fuchsia-glow);
+            color: #FFF;
+            transform: translateY(-2px);
+        }
+
+        .logic-step i {
+            color: var(--fuchsia);
+            font-size: 0.82rem;
+        }
+
+        .logic-arrow {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+
+        /* SECTION HEADERS */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.8rem;
+        }
+
+        .section-header .tag {
+            color: var(--fuchsia);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .estimation-notice {
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid var(--border-cyan);
+            border-radius: var(--radius-md);
+            padding: 12px 20px;
+            font-size: 0.88rem;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: -1.5rem auto 2.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .estimation-notice i {
+            color: var(--cyan);
+            font-size: 1.1rem;
+        }
+
+        /* 6 MONTHS TIMELINE & ACCORDIONS */
+        .timeline-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 4.5rem;
+        }
+
+        .stage-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-card);
+        }
+
+        .stage-card:hover {
+            border-color: var(--border-cyan);
+        }
+
+        .stage-card.active {
+            border-color: var(--border-fuchsia);
+            box-shadow: 0 0 30px var(--fuchsia-glow);
+        }
+
+        .stage-header {
+            padding: 1.6rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            gap: 1rem;
+            background: transparent;
+        }
+
+        .stage-title-group {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .stage-number {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 0, 122, 0.12);
+            color: var(--fuchsia);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid var(--border-fuchsia);
+        }
+
+        .stage-card.active .stage-number {
+            background: var(--fuchsia);
+            color: #FFF;
+            box-shadow: 0 0 15px var(--fuchsia-glow);
+        }
+
+        .stage-meta h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .month-badge {
+            font-size: 0.75rem;
+            background: rgba(0, 240, 255, 0.12);
+            color: var(--cyan);
+            padding: 3px 12px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            border: 1px solid var(--border-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'Space Grotesk', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .stage-meta p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .stage-toggle-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background 0.2s ease;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+        }
+
+        .stage-card.active .stage-toggle-btn {
+            transform: rotate(180deg);
+            background: rgba(0, 240, 255, 0.15);
+            color: var(--cyan);
+            border-color: var(--border-cyan);
+        }
+
+        .stage-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            background: rgba(0, 0, 0, 0.25);
+            border-top: 1px solid transparent;
+        }
+
+        .stage-card.active .stage-body {
+            max-height: 1200px;
+            border-top-color: var(--border);
+        }
+
+        .stage-body-inner {
+            padding: 2rem;
+        }
+
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .deliverable-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .deliverable-item i {
+            color: var(--cyan);
+            font-size: 0.95rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .why-box {
+            background: rgba(255, 0, 122, 0.04);
+            border-left: 4px solid var(--fuchsia);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            box-shadow: var(--shadow-card);
+            border-top: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .why-box h4 {
+            font-size: 0.95rem;
+            color: var(--fuchsia);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .why-box p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* FUNNEL / EXPERIENCE SECTION (HIGHLIGHTED IN VIBRANT YELLOW) */
+        .funnel-section {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2rem;
+            border: 1px solid var(--border-yellow);
+            box-shadow: 0 0 35px var(--yellow-glow);
+            margin-bottom: 4.5rem;
+            position: relative;
+        }
+
+        .funnel-tag {
+            color: var(--yellow) !important;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .funnel-title-highlight {
+            color: var(--yellow) !important;
+            text-shadow: 0 0 15px var(--yellow-glow);
+        }
+
+        .funnel-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin-top: 2.2rem;
+        }
+
+        @media (max-width: 900px) {
+            .funnel-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .funnel-step {
+            background: rgba(255, 229, 0, 0.04);
+            border: 1px solid var(--border-yellow);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .funnel-step:hover {
+            transform: translateY(-4px);
+            border-color: var(--yellow);
+            background: rgba(255, 229, 0, 0.1);
+            box-shadow: 0 0 25px var(--yellow-glow);
+        }
+
+        .funnel-step-num {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--yellow);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .funnel-step h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        .funnel-step ul {
+            list-style: none;
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        /* PRICING SECTION */
+        .pricing-container {
+            margin-bottom: 4.5rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-cyan);
+            box-shadow: var(--shadow-card);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pricing-banner-promo {
+            background: var(--grad-fuchsia-cyan);
+            color: #FFFFFF;
+            padding: 14px 24px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .pricing-body {
+            padding: 3rem 2.5rem;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 850px) {
+            .pricing-body {
+                grid-template-columns: 1fr;
+                padding: 2rem 1.5rem;
+                gap: 2rem;
+            }
+        }
+
+        .price-details h3 {
+            font-size: 1.9rem;
+            margin-bottom: 0.5rem;
+            color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        .price-details p.price-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-tag-group {
+            background: rgba(0, 240, 255, 0.04);
+            border: 1px solid var(--border-cyan);
+            padding: 1.6rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #64748B;
+            font-size: 1.15rem;
+            font-weight: 600;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .current-price {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 6px 8px;
+            margin: 6px 0;
+        }
+
+        .current-price .amount {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--cyan);
+            font-family: 'Outfit', sans-serif;
+            line-height: 1;
+            text-shadow: 0 0 20px var(--cyan-glow);
+            white-space: nowrap;
+        }
+
+        .current-price .period {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .discount-badge {
+            background: var(--fuchsia);
+            color: #FFF;
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+            display: inline-block;
+            margin-left: 8px;
+            box-shadow: 0 0 15px var(--fuchsia-glow);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .usd-reference {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        .payment-terms {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .payment-terms li {
+            font-size: 0.92rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-main);
+        }
+
+        .payment-terms li i {
+            color: var(--cyan);
+            background: rgba(0, 240, 255, 0.15);
+            padding: 4px;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            margin-top: 2px;
+        }
+
+        .cta-box {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            text-align: center;
+        }
+
+        .btn-cta-main {
+            background: var(--grad-fuchsia-cyan);
+            color: #FFFFFF;
+            padding: 18px 30px;
+            border-radius: var(--radius-full);
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 10px 30px var(--fuchsia-glow);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-cta-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 240, 255, 0.4);
+        }
+
+        .timer-notice {
+            font-size: 0.85rem;
+            color: var(--cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        /* SCOPE INCLUDED / EXCLUDED */
+        .scope-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 4.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .scope-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .scope-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-card);
+        }
+
+        .scope-card.included {
+            border-top: 4px solid var(--cyan);
+        }
+
+        .scope-card.excluded {
+            border-top: 4px solid var(--fuchsia);
+        }
+
+        .scope-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+        }
+
+        .scope-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .scope-list li {
+            font-size: 0.92rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .scope-card.included .scope-list li i {
+            color: var(--cyan);
+            margin-top: 3px;
+        }
+
+        .scope-card.excluded .scope-list li i {
+            color: var(--fuchsia);
+            margin-top: 3px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(4, 6, 14, 0.95);
+            border-top: 1px solid var(--border);
+            padding: 3.5rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: 4px;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo span.dot-fuchsia { color: var(--fuchsia); }
+        .footer-logo span.dot-cyan { color: var(--cyan); }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .footer-phone {
+            font-size: 1.05rem;
+            color: var(--cyan);
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            background: rgba(0, 240, 255, 0.08);
+            padding: 8px 20px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--border-cyan);
+            transition: all 0.25s ease;
+        }
+
+        .footer-phone:hover {
+            background: rgba(0, 240, 255, 0.18);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--cyan-glow);
+        }
+
+        /* =============================================
+           MOBILE-FIRST RESPONSIVE STYLES
+        ============================================= */
+
+        /* Prevent ALL horizontal overflow at the root */
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+            width: 100%;
+        }
+
+        /* --- Base Mobile (≤ 600px) — targets phones like the screenshot --- */
+        @media (max-width: 600px) {
+
+            body {
+                padding-top: 68px;
+            }
+
+            /* ---- NAVBAR ---- */
+            .navbar {
+                height: 62px;
+            }
+            .nav-container {
+                padding: 0 1rem;
+                gap: 8px;
+            }
+            .virel-badge {
+                font-size: 1.15rem;
+                letter-spacing: 2px;
+            }
+            /* Hide pill on very small screens so navbar doesn't overflow */
+            .client-pill {
+                display: none;
+            }
+            .btn-nav-secondary {
+                display: none;
+            }
+            .btn-nav-primary {
+                font-size: 0.75rem;
+                padding: 8px 12px;
+                gap: 6px;
+                white-space: nowrap;
+            }
+
+            /* ---- HERO ---- */
+            .hero {
+                padding: 1.8rem 0 1.2rem;
+            }
+            .hero-tags-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            .hero-tag, .date-tag {
+                font-size: 0.7rem;
+                padding: 5px 12px;
+            }
+            .hero h1 {
+                font-size: 1.65rem;
+                line-height: 1.2;
+            }
+            .hero p.subtitle {
+                font-size: 0.95rem;
+            }
+
+            /* ---- QUOTE CARD ---- */
+            .insta-quote-card {
+                flex-direction: column;
+                padding: 1.1rem 1rem;
+                gap: 1rem;
+            }
+            .quote-content {
+                flex-direction: column;
+                gap: 0.6rem;
+                text-align: center;
+            }
+            .quote-text {
+                font-size: 0.85rem;
+            }
+
+            /* ---- LOGIC BAR ---- */
+            .logic-bar-container {
+                padding: 1rem 0.8rem;
+            }
+            .logic-steps {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .logic-arrow {
+                display: none;
+            }
+            .logic-step {
+                font-size: 0.76rem;
+                padding: 5px 10px;
+            }
+
+            /* ---- SECTION HEADERS ---- */
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+
+            /* ---- ESTIMATION NOTICE ---- */
+            .estimation-notice {
+                font-size: 0.8rem;
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+                padding: 10px 12px;
+            }
+
+            /* ---- STAGE CARDS ---- */
+            .stage-header {
+                padding: 1rem 0.9rem;
+                gap: 0.5rem;
+            }
+            .stage-number {
+                width: 36px;
+                height: 36px;
+                font-size: 0.95rem;
+                flex-shrink: 0;
+            }
+            .stage-title-group {
+                gap: 0.65rem;
+                min-width: 0;
+            }
+            .stage-meta {
+                min-width: 0;
+            }
+            .stage-meta h3 {
+                font-size: 0.9rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+                word-break: break-word;
+            }
+            .month-badge {
+                font-size: 0.66rem;
+            }
+            .stage-meta p {
+                font-size: 0.8rem;
+                word-break: break-word;
+            }
+            .stage-body-inner {
+                padding: 1.1rem 0.9rem;
+            }
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .deliverable-item {
+                font-size: 0.84rem;
+            }
+
+            /* ---- FUNNEL ---- */
+            .funnel-section {
+                padding: 1.8rem 1rem;
+            }
+            .funnel-grid {
+                grid-template-columns: 1fr;
+                gap: 0.65rem;
+            }
+
+            /* ---- PRICING CARD (key fix) ---- */
+            .pricing-body {
+                grid-template-columns: 1fr !important;
+                padding: 1.4rem 1rem !important;
+                gap: 1.4rem !important;
+            }
+            .pricing-banner-promo {
+                font-size: 0.72rem;
+                padding: 10px 12px;
+                letter-spacing: 0;
+                word-break: break-word;
+            }
+            .price-details h3 {
+                font-size: 1.25rem;
+                word-break: break-word;
+            }
+            .price-details p.price-desc {
+                font-size: 0.85rem;
+                word-break: break-word;
+            }
+            .price-tag-group {
+                padding: 1rem;
+            }
+            .old-price {
+                font-size: 0.95rem;
+            }
+            /* The main price line: amount fits on one row, badge wraps below */
+            .current-price {
+                flex-wrap: wrap;
+                gap: 4px 6px;
+                align-items: baseline;
+            }
+            .current-price .amount {
+                font-size: 2.2rem;
+                white-space: nowrap;
+            }
+            .current-price .period {
+                font-size: 0.95rem;
+                white-space: nowrap;
+            }
+            .discount-badge {
+                font-size: 0.72rem;
+                margin-left: 0;
+                padding: 3px 10px;
+            }
+            .usd-reference {
+                font-size: 0.75rem;
+                word-break: break-word;
+            }
+            .payment-terms li {
+                font-size: 0.83rem;
+                word-break: break-word;
+            }
+            .btn-cta-main {
+                font-size: 0.9rem;
+                padding: 14px 16px;
+            }
+            .timer-notice {
+                font-size: 0.75rem;
+            }
+
+            /* ---- SCOPE CARDS ---- */
+            .scope-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .scope-card {
+                padding: 1.3rem 1rem;
+            }
+            .scope-card h3 {
+                font-size: 1rem;
+            }
+            .scope-list li {
+                font-size: 0.82rem;
+                word-break: break-word;
+            }
+
+            /* ---- FOOTER ---- */
+            footer {
+                padding: 2rem 0;
+            }
+            .footer-logo {
+                font-size: 1.25rem;
+            }
+            .footer-phone {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* --- Small tablets (601px – 850px) --- */
+        @media (min-width: 601px) and (max-width: 850px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .insta-quote-card {
+                flex-direction: column;
+                padding: 1.4rem;
+            }
+            .pricing-body {
+                grid-template-columns: 1fr !important;
+                padding: 2rem 1.6rem !important;
+                gap: 2rem !important;
+            }
+            .current-price .amount {
+                font-size: 2.8rem;
+            }
+            .stage-meta h3 {
+                font-size: 1.05rem;
+            }
+            .funnel-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .scope-container {
+                grid-template-columns: 1fr;
+            }
+            .btn-nav-secondary {
+                display: none;
+            }
+        }
+
+
+        /* --- PRINT STYLES --- */
+        @media print {
+            .navbar, .btn-nav-primary, .btn-cta-main, .stage-toggle-btn {
+                display: none !important;
+            }
+            body {
+                padding-top: 0;
+                background: #FFF !important;
+                color: #000 !important;
+            }
+            .stage-body {
+                max-height: none !important;
+                display: block !important;
+            }
+            .stage-card, .scope-card, .pricing-card {
+                break-inside: avoid;
+                background: #FFF !important;
+                border: 1px solid #CCC !important;
+                color: #000 !important;
+            }
+            h1, h2, h3, h4, .amount {
+                color: #000 !important;
+                -webkit-text-fill-color: initial !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand-logo">
+                <span class="virel-badge">VIREL<span class="dot-fuchsia">.</span><span class="dot-cyan">.</span></span>
+                <span class="client-pill"><i class="fa-solid fa-sparkles"></i> Flor Castillo</span>
+            </a>
+            
+            <div class="nav-actions">
+                <button onclick="window.print()" class="btn-nav-secondary">
+                    <i class="fa-solid fa-print"></i> PDF
+                </button>
+                <a href="#inversion" class="btn-nav-primary">
+                    <i class="fa-brands fa-whatsapp"></i> Aceptar Propuesta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-tags-group">
+                <div class="hero-tag">
+                    <i class="fa-solid fa-bolt"></i> Propuesta de Desarrollo Digital — 6 Meses
+                </div>
+                <div class="date-tag">
+                    <i class="fa-regular fa-calendar-days"></i> 21 de Agosto, 2026
+                </div>
+            </div>
+            
+            <h1>
+                Construimos la <span class="highlight-fuchsia">Casa Digital</span> de tu Contenido y <span class="highlight-cyan">Comunidad</span>
+            </h1>
+            <p class="subtitle">
+                Un ecosistema escalable diseñado para centralizar tus guías, tu ebook, tus programas y tu área privada de miembros en un solo lugar.
+            </p>
+
+            <!-- Instagram Persona Quote Box -->
+            <div class="insta-quote-card">
+                <div class="quote-content">
+                    <div class="quote-avatar">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="quote-text">
+                        <strong>"¿Quieres empezar de cero? Reprograma tu mente. +950 mujeres ya eligieron ser. Encuentra tu lugar."</strong><br>
+                        <span class="handwriting">Lo mejor está por venir. Vamos juntas ♡</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STRATEGY LOGIC PIPELINE BAR -->
+        <div class="logic-bar-container">
+            <div class="logic-title">La Lógica Estratégica del Ecosistema</div>
+            <div class="logic-steps">
+                <div class="logic-step"><i class="fa-solid fa-magnet"></i> Atraer</div>
+                <div class="logic-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="logic-step"><i class="fa-solid fa-comments"></i> Conectar</div>
+                <div class="logic-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="logic-step"><i class="fa-solid fa-people-group"></i> Crear Comunidad</div>
+                <div class="logic-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="logic-step"><i class="fa-solid fa-bag-shopping"></i> Vender</div>
+                <div class="logic-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="logic-step"><i class="fa-solid fa-heart-pulse"></i> Acompañar</div>
+                <div class="logic-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                <div class="logic-step"><i class="fa-solid fa-crown"></i> Fidelizar</div>
+            </div>
+        </div>
+
+        <!-- 6 MONTH STAGES TIMELINE -->
+        <section>
+            <div class="section-header">
+                <span class="tag">Hoja de Ruta Progresiva</span>
+                <h2>Las 6 Etapas del Proyecto</h2>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">Haz clic en cada etapa para desplegar detalles y entregables.</p>
+            </div>
+
+            <!-- ESTIMATION NOTICE -->
+            <div class="estimation-notice">
+                <i class="fa-solid fa-clock"></i>
+                <span>Los tiempos de cada etapa son estimativos. La primera etapa (Diseño e Identidad Digital + Home) puede requerir más de 1 mes (entre 6 y 8 semanas) por ser la base del ecosistema.</span>
+            </div>
+
+            <div class="timeline-wrapper">
+
+                <!-- ETAPA 1 -->
+                <div class="stage-card active" id="stage-1">
+                    <div class="stage-header" onclick="toggleStage('stage-1')">
+                        <div class="stage-title-group">
+                            <div class="stage-number">01</div>
+                            <div class="stage-meta">
+                                <h3>Diseño de Marca Digital + Sitio Principal (Home) <span class="month-badge">Mes 1 (6 a 8 sem. est.)</span></h3>
+                                <p>Arquitectura visual, identidad digital, presentación de Florencia y estructura web base.</p>
+                            </div>
+                        </div>
+                        <div class="stage-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="stage-body">
+                        <div class="stage-body-inner">
+                            <div class="deliverables-grid">
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Definición de Identidad Visual Digital y Sistema de Diseño.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Desarrollo del sitio principal (Home + Universo de contenidos).</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Sección sobre Florencia, propuesta de valor y visión.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Accesos directos a YouTube, Spotify y redes sociales.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Formulario de contacto y diseño adaptable 100% móvil.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Hosting incluido por 1 año + configuración de tu dominio.</div>
+                            </div>
+                            <div class="why-box">
+                                <h4><i class="fa-solid fa-lightbulb"></i> Base de Confianza</h4>
+                                <p>Es el cimiento del proyecto. Al ser la estructura principal, esta primera etapa puede extenderse entre 6 y 8 semanas para garantizar que todo quede impecable a nuestro ritmo de trabajo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 2 -->
+                <div class="stage-card" id="stage-2">
+                    <div class="stage-header" onclick="toggleStage('stage-2')">
+                        <div class="stage-title-group">
+                            <div class="stage-number">02</div>
+                            <div class="stage-meta">
+                                <h3>Guías Gratuitas + Estructura de Comunidad <span class="month-badge">Mes 2</span></h3>
+                                <p>Maquetación de 2 Guías Gratuitas y sistema de accesos a WhatsApp.</p>
+                            </div>
+                        </div>
+                        <div class="stage-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="stage-body">
+                        <div class="stage-body-inner">
+                            <div class="deliverables-grid">
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Diseño y maquetación visual de Guía "Mujeres Emprendedoras".</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Diseño y maquetación visual de Guía "Amor Propio".</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Sección de captación de leads y recursos gratuitos.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Integración con Canal de Difusión WhatsApp.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Estructura de accesos para Grupos Exclusivos de WhatsApp.</div>
+                            </div>
+                            <div class="why-box">
+                                <h4><i class="fa-solid fa-lightbulb"></i> Atracción e Imán de Clientes</h4>
+                                <p>Ofrecemos valor inmediato con tus guías maquetadas profesionalmente para captar contactos e impulsarlos a unirse a tus canales de difusión.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 3 -->
+                <div class="stage-card" id="stage-3">
+                    <div class="stage-header" onclick="toggleStage('stage-3')">
+                        <div class="stage-title-group">
+                            <div class="stage-number">03</div>
+                            <div class="stage-meta">
+                                <h3>Lanzamiento Ebook Digital <span class="month-badge">Mes 3</span></h3>
+                                <p>Tu primer producto digital listo para la venta con entrega automatizada.</p>
+                            </div>
+                        </div>
+                        <div class="stage-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="stage-body">
+                        <div class="stage-body-inner">
+                            <div class="deliverables-grid">
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Maquetación, edición y diseño de portada del Ebook.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Landing Page de ventas dedicada al Ebook.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Pasarela de pagos directos (Mercado Pago / Tarjeta).</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Sistema automatizado de envío del Ebook tras compra.</div>
+                            </div>
+                            <div class="why-box">
+                                <h4><i class="fa-solid fa-lightbulb"></i> Primer Escalón Monetizable</h4>
+                                <p>Permite a tu comunidad dar el salto de contenido gratuito a cliente de bajo ticket de forma natural y sin fricción.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 4 -->
+                <div class="stage-card" id="stage-4">
+                    <div class="stage-header" onclick="toggleStage('stage-4')">
+                        <div class="stage-title-group">
+                            <div class="stage-number">04</div>
+                            <div class="stage-meta">
+                                <h3>Programas de Alto Valor: Plan A + Plan B <span class="month-badge">Mes 4</span></h3>
+                                <p>Lanzamiento de tus servicios de mayor valor con 2 Meets incluidos.</p>
+                            </div>
+                        </div>
+                        <div class="stage-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="stage-body">
+                        <div class="stage-body-inner">
+                            <div class="deliverables-grid">
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Landing de presentación Plan A (Programa + 2 Meets).</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Landing de presentación Plan B (Programa + 2 Meets).</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Modalidad, fechas de encuentros, inscripciones y beneficios.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Pasarelas de pago directo e integración de convocatorias.</div>
+                            </div>
+                            <div class="why-box">
+                                <h4><i class="fa-solid fa-lightbulb"></i> El Motor High Ticket</h4>
+                                <p>Consolidamos los programas de acompañamiento en vivo y mayor transformación para quienes buscan ir más profundo con Florencia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 5 -->
+                <div class="stage-card" id="stage-5">
+                    <div class="stage-header" onclick="toggleStage('stage-5')">
+                        <div class="stage-title-group">
+                            <div class="stage-number">05</div>
+                            <div class="stage-meta">
+                                <h3>Área Privada de Usuarios / Miembros <span class="month-badge">Mes 5</span></h3>
+                                <p>Plataforma privada con Login (Email y Contraseña) para alumnas y miembros.</p>
+                            </div>
+                        </div>
+                        <div class="stage-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="stage-body">
+                        <div class="stage-body-inner">
+                            <div class="deliverables-grid">
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Sistema de Registro e Inicio de Sesión seguro.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Perfil personal de la usuaria/alumna.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Acceso centralizado a Ebooks comprados.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Grabaciones e información de acceso a los Meets (Plan A y B).</div>
+                            </div>
+                            <div class="why-box">
+                                <h4><i class="fa-solid fa-lightbulb"></i> Centralización Total</h4>
+                                <p>Cada persona encuentra en un único lugar todo lo que ha adquirido con Florencia, eliminando la dispersión de links.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ETAPA 6 -->
+                <div class="stage-card" id="stage-6">
+                    <div class="stage-header" onclick="toggleStage('stage-6')">
+                        <div class="stage-title-group">
+                            <div class="stage-number">06</div>
+                            <div class="stage-meta">
+                                <h3>Integración + Automatización + Panel Interno <span class="month-badge">Mes 6</span></h3>
+                                <p>Ajuste de automatizaciones de correo, prueba integral y panel administrativo.</p>
+                            </div>
+                        </div>
+                        <div class="stage-toggle-btn">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="stage-body">
+                        <div class="stage-body-inner">
+                            <div class="deliverables-grid">
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Automatización: Pago exitoso ➔ Alta en Área Privada + Email.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Panel de gestión interno para administrar usuarios y accesos.</div>
+                                <div class="deliverable-item"><i class="fa-solid fa-circle-check"></i> Prueba integral del ecosistema.</div>
+                            </div>
+                            <div class="why-box">
+                                <h4><i class="fa-solid fa-lightbulb"></i> Operación Automática</h4>
+                                <p>Dejamos la casa digital funcionando de forma fluida, minimizando tareas manuales de soporte o gestión para Florencia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FUNNEL / EXPERIENCE VISUAL (HIGHLIGHTED WITH YELLOW ACCENTS) -->
+        <section class="funnel-section">
+            <div class="section-header" style="margin-bottom: 1rem;">
+                <span class="funnel-tag"><i class="fa-solid fa-star"></i> Experiencia de Usuario</span>
+                <h2>El Viaje de tu <span class="funnel-title-highlight">Comunidad</span></h2>
+            </div>
+            
+            <div class="funnel-grid">
+                <div class="funnel-step">
+                    <div class="funnel-step-num">Paso 1</div>
+                    <h4>Descubrir</h4>
+                    <ul>
+                        <li>• Guías Gratuitas</li>
+                        <li>• YouTube / Spotify</li>
+                        <li>• Redes Sociales</li>
+                    </ul>
+                </div>
+                <div class="funnel-step">
+                    <div class="funnel-step-num">Paso 2</div>
+                    <h4>Conectar</h4>
+                    <ul>
+                        <li>• Canal Difusión WA</li>
+                        <li>• Grupos Abiertos</li>
+                        <li>• Interacción Diaria</li>
+                    </ul>
+                </div>
+                <div class="funnel-step">
+                    <div class="funnel-step-num">Paso 3</div>
+                    <h4>Profundizar</h4>
+                    <ul>
+                        <li>• Ebook Digital</li>
+                        <li>• Contenido de Pago</li>
+                        <li>• Primer Valor Pago</li>
+                    </ul>
+                </div>
+                <div class="funnel-step">
+                    <div class="funnel-step-num">Paso 4</div>
+                    <h4>Transformar</h4>
+                    <ul>
+                        <li>• Plan A / Plan B</li>
+                        <li>• 2 Meets en Vivo</li>
+                        <li>• Acompañamiento</li>
+                    </ul>
+                </div>
+                <div class="funnel-step">
+                    <div class="funnel-step-num">Paso 5</div>
+                    <h4>Pertenecer</h4>
+                    <ul>
+                        <li>• Área Privada Login</li>
+                        <li>• Comunidad VIP</li>
+                        <li>• Contenido Exclusivo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section class="pricing-container" id="inversion">
+            <div class="pricing-card">
+                <div class="pricing-banner-promo">
+                    <i class="fa-solid fa-fire"></i> PRECIO ESPECIAL DE LANZAMIENTO — VÁLIDO POR PRÓXIMOS 20 DÍAS
+                </div>
+                
+                <div class="pricing-body">
+                    <div class="price-details">
+                        <h3>Inversión Mensual del Proyecto</h3>
+                        <p class="price-desc">Desarrollo y acompañamiento paso a paso durante los 6 meses de proyecto.</p>
+                        
+                        <div class="price-tag-group">
+                            <div class="old-price">$550.000 ARS / mes</div>
+                            <div class="current-price">
+                                <span class="amount">$440.000</span>
+                                <span class="period">ARS / mes</span>
+                                <span class="discount-badge">20% OFF</span>
+                            </div>
+                            <div class="usd-reference">
+                                Referencia aproximada: ~USD 290 / mes (Precio regular: USD 360/mes)
+                            </div>
+                        </div>
+
+                        <ul class="payment-terms">
+                            <li><i class="fa-solid fa-check"></i> Pago mensual del 1 al 10.</li>
+                            <li><i class="fa-solid fa-check"></i> Cada etapa finaliza con entregables concretos y funcionando.</li>
+                        </ul>
+                    </div>
+
+                    <div class="cta-box">
+                        <a href="https://wa.me/5492245500281?text=Hola%20equipo%20de%20VIREL!%20Le%C3%AD%20la%20propuesta%20para%20mi%20Ecosistema%20Digital%20y%20quiero%20aprovechar%20el%20precio%20de%20lanzamiento%20de%20$440.000/mes.%20%C2%A1Vamos%20a%20empezar!" target="_blank" class="btn-cta-main">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> Reservar con 20% OFF
+                        </a>
+                        <div class="timer-notice">
+                            <i class="fa-regular fa-clock"></i> Descuento disponible al contratar en 20 días
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCOPE INCLUDED / EXCLUDED -->
+        <section class="scope-container">
+            <div class="scope-card included">
+                <h3><i class="fa-solid fa-circle-check" style="color: var(--cyan);"></i> La Propuesta Contempla</h3>
+                <ul class="scope-list">
+                    <li><i class="fa-solid fa-check"></i> Diseño y desarrollo completo del ecosistema digital.</li>
+                    <li><i class="fa-solid fa-check"></i> Diseño gráfico visual de las 2 guías gratuitas.</li>
+                    <li><i class="fa-solid fa-check"></i> Maquetación y armado visual del Ebook.</li>
+                    <li><i class="fa-solid fa-check"></i> Integración de WhatsApp, YouTube y Spotify.</li>
+                    <li><i class="fa-solid fa-check"></i> Pasarelas de pago y Área Privada con Login/Password.</li>
+                    <li><i class="fa-solid fa-check"></i> Hosting incluido por el primer año + Configuración de dominio.</li>
+                    <li><i class="fa-solid fa-check"></i> Nos reuniremos dos horas a la semana para trabajar en el proyecto.</li>
+                </ul>
+            </div>
+
+            <div class="scope-card excluded">
+                <h3><i class="fa-solid fa-circle-xmark" style="color: var(--fuchsia);"></i> A Tener en Cuenta</h3>
+                <ul class="scope-list">
+                    <li><i class="fa-solid fa-xmark"></i> Redacción integral de contenidos/textos de base (provee Florencia).</li>
+                    <li><i class="fa-solid fa-xmark"></i> Renovación de hosting a partir del segundo año.</li>
+                    <li><i class="fa-solid fa-xmark"></i> Comisiones cobradas por plataformas (Mercado Pago, PayPal, etc).</li>
+                    <li><i class="fa-solid fa-xmark"></i> Producción audiovisual (fotografías o videos).</li>
+                    <li><i class="fa-solid fa-xmark"></i> Nuevas funcionalidades fuera de las 6 etapas definidas.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">VIREL<span class="dot-fuchsia">.</span><span class="dot-cyan">.</span></div>
+            <p class="footer-text">Construimos la estructura digital que sostiene tu crecimiento.</p>
+            <a href="https://wa.me/5492245500281" target="_blank" class="footer-phone">
+                <i class="fa-brands fa-whatsapp"></i> +54 9 2245 500281
+            </a>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Propuesta preparada exclusivamente para <strong>Florencia Castillo</strong></p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT -->
+    <script>
+        function toggleStage(stageId) {
+            const card = document.getElementById(stageId);
+            const isActive = card.classList.contains('active');
+            
+            if (isActive) {
+                card.classList.remove('active');
+            } else {
+                card.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
