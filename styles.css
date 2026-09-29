@@ -1452,6 +1452,16 @@ a {
     color: rgba(250, 240, 228, 0.6);
 }
 
+.virel-credit a {
+    color: var(--naranja);
+    text-decoration: underline;
+    transition: var(--transition-smooth);
+}
+
+.virel-credit a:hover {
+    color: var(--coral);
+}
+
 .virel-credit strong {
     color: var(--naranja);
 }
