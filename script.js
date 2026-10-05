@@ -57,17 +57,24 @@ function handleLeadSubmit(event) {
         return;
     }
 
-    const form = document.getElementById('leadForm');
-    const successBox = document.getElementById('formSuccess');
+    // Send lead data to Flor's email
+    fetch('https://formsubmit.co/ajax/florenciacastillo.oficial@gmail.com', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            _subject: `Nuevo Lead Lead Magnet Home - ${name}`,
+            nombre: name,
+            email: email,
+            whatsapp: phone || 'No informado',
+            origen: 'Formulario Home Lead Magnet'
+        })
+    }).catch(err => console.log('Error enviando lead:', err));
 
-    // Simulate sending lead data
     form.style.display = 'none';
     successBox.style.display = 'block';
-
-    // Optional: If phone provided, prepare WhatsApp greeting link
-    if (phone) {
-        console.log(`Lead captado: ${name} (${email}) - WhatsApp: ${phone}`);
-    }
 }
 
 // ScrollSpy to highlight active link
