@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Gratuita Mujeres Alfa — ¿Estás viviendo la vida que elegiste?</title>
+    
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --fuchsia: #D4006A;
+            --fuchsia-light: #F7D0E2;
+            --marfil: #FAF0E4;
+            --marfil-surface: #FFF9F2;
+            --coral: #FF5C45;
+            --naranja: #FF9A3C;
+            --carbon: #2B2435;
+            --carbon-light: #524761;
+            --carbon-muted: #847895;
+            --border-soft: rgba(43, 36, 53, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--marfil);
+            color: var(--carbon);
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* Top Action Bar (hidden on print) */
+        .print-bar {
+            background: var(--carbon);
+            color: var(--marfil);
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .print-bar-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-print {
+            background: var(--fuchsia);
+            color: var(--marfil-surface);
+            border: none;
+            padding: 8px 22px;
+            border-radius: 9999px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-print:hover {
+            background: #BA005C;
+            transform: translateY(-1px);
+        }
+
+        .btn-back {
+            background: transparent;
+            color: var(--marfil);
+            border: 1px solid rgba(250, 240, 228, 0.3);
+            padding: 7px 16px;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-back:hover {
+            border-color: var(--naranja);
+            color: var(--naranja);
+        }
+
+        /* A4 Page Container */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: var(--marfil-surface);
+            padding: 22mm 20mm;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(43, 36, 53, 0.08);
+            page-break-after: always;
+            border: 1px solid var(--border-soft);
+        }
+
+        /* Header & Footer on each page */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+            border-bottom: 1.5px solid var(--fuchsia);
+        }
+
+        .page-header-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            color: var(--fuchsia);
+        }
+
+        .page-header-step {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--carbon-muted);
+        }
+
+        .page-footer {
+            position: absolute;
+            bottom: 12mm;
+            left: 20mm;
+            right: 20mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.72rem;
+            color: var(--carbon-muted);
+            border-top: 1px solid var(--border-soft);
+            padding-top: 8px;
+        }
+
+        .page-footer-tag {
+            color: var(--fuchsia);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--carbon);
+            line-height: 1.15;
+            font-weight: 700;
+        }
+
+        .step-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--fuchsia);
+            margin-bottom: 6px;
+        }
+
+        .step-title {
+            font-size: 1.9rem;
+            margin-bottom: 6px;
+        }
+
+        .step-subtitle {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--coral);
+            margin-bottom: 14px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+        }
+
+        .step-intro {
+            font-size: 0.9rem;
+            color: var(--carbon-light);
+            margin-bottom: 16px;
+        }
+
+        /* Question list */
+        .question-list {
+            list-style: none;
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .question-list li {
+            font-size: 0.9rem;
+            color: var(--carbon);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .question-list li i {
+            color: var(--fuchsia);
+            font-size: 0.75rem;
+            margin-top: 6px;
+        }
+
+        /* Workbook Answer Fields */
+        .answer-box {
+            background: var(--marfil);
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+        }
+
+        .answer-label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--carbon);
+            margin-bottom: 6px;
+        }
+
+        .answer-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-top: 6px;
+        }
+
+        .line {
+            height: 1px;
+            background: rgba(43, 36, 53, 0.18);
+            width: 100%;
+        }
+
+        .answer-input-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            color: var(--fuchsia);
+            font-weight: 600;
+            min-height: 22px;
+            line-height: 1.4;
+        }
+
+        /* Checkbox grid */
+        .habits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 14px;
+            margin-bottom: 16px;
+            background: var(--marfil);
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border-soft);
+        }
+
+        .habit-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: var(--carbon);
+        }
+
+        .habit-checkbox {
+            width: 16px;
+            height: 16px;
+            border: 1.5px solid var(--fuchsia);
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: var(--fuchsia);
+            flex-shrink: 0;
+            background: var(--marfil-surface);
+        }
+
+        /* Quote box */
+        .quote-box {
+            background: rgba(212, 0, 106, 0.05);
+            border-left: 3px solid var(--fuchsia);
+            padding: 12px 16px;
+            margin: 16px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .quote-box p {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--carbon);
+            line-height: 1.35;
+        }
+
+        /* COVER PAGE */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            background: linear-gradient(180deg, var(--marfil-surface) 0%, var(--marfil) 100%);
+        }
+
+        .cover-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding-top: 15mm;
+        }
+
+        .cover-logo {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .cover-badge {
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--fuchsia);
+        }
+
+        .cover-center {
+            padding: 20px 0;
+        }
+
+        .cover-title {
+            font-size: 3.2rem;
+            line-height: 1.08;
+            margin-bottom: 16px;
+            color: var(--carbon);
+        }
+
+        .cover-title span {
+            color: var(--fuchsia);
+            font-style: italic;
+        }
+
+        .cover-sub {
+            font-size: 1.15rem;
+            color: var(--carbon-light);
+            max-width: 460px;
+            margin: 0 auto 24px;
+            line-height: 1.5;
+        }
+
+        .cover-quote-card {
+            background: var(--marfil-surface);
+            border: 1.5px solid rgba(212, 0, 106, 0.25);
+            border-radius: 12px;
+            padding: 18px 24px;
+            max-width: 460px;
+            margin: 0 auto;
+            box-shadow: 0 6px 20px rgba(43, 36, 53, 0.05);
+        }
+
+        .cover-quote-highlight {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.45rem;
+            color: var(--fuchsia);
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+
+        .cover-quote-desc {
+            font-size: 0.88rem;
+            color: var(--carbon-light);
+            line-height: 1.4;
+        }
+
+        .cover-bottom {
+            border-top: 1px solid var(--border-soft);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--carbon-muted);
+        }
+
+        .cover-author {
+            color: var(--carbon);
+            font-weight: 700;
+        }
+
+        /* BACK COVER / CIERRE ALFA */
+        .back-cover {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .back-hero {
+            padding-top: 10mm;
+        }
+
+        .back-badge {
+            background: var(--fuchsia);
+            color: var(--marfil-surface);
+            padding: 6px 18px;
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .back-title {
+            font-size: 2.5rem;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .back-card {
+            background: var(--marfil);
+            border: 1.5px solid rgba(212, 0, 106, 0.25);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .back-card h3 {
+            font-size: 1.6rem;
+            color: var(--fuchsia);
+            margin-bottom: 10px;
+        }
+
+        .back-card p {
+            font-size: 0.92rem;
+            color: var(--carbon-light);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .back-pillars {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .back-pillar-item {
+            background: var(--marfil-surface);
+            border: 1px solid var(--border-soft);
+            padding: 10px 6px;
+            border-radius: 6px;
+        }
+
+        .back-pillar-item strong {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--fuchsia);
+            text-transform: uppercase;
+        }
+
+        .back-pillar-item span {
+            font-size: 0.7rem;
+            color: var(--carbon-muted);
+        }
+
+        .back-contact-box {
+            background: var(--carbon);
+            color: var(--marfil);
+            border-radius: 10px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .back-contact-box h4 {
+            color: var(--marfil);
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+        }
+
+        .back-contact-box p {
+            font-size: 0.78rem;
+            color: rgba(250, 240, 228, 0.8);
+            margin-bottom: 0;
+        }
+
+        .back-whatsapp-btn {
+            background: #25D366;
+            color: #FFF;
+            padding: 8px 18px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: none;
+            }
+
+            .print-bar {
+                display: none !important;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                min-height: 100vh;
+                padding: 18mm 16mm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR (para imprimir o volver a la web) -->
+    <div class="print-bar">
+        <div class="print-bar-title">
+            <span>✨ Guía Gratuita Oficial — Florencia Castillo · Mujeres Alfa</span>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <a href="guia-gratuita.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Versión Interactiva</a>
+            <button onclick="window.print()" class="btn-print"><i class="fa-solid fa-print"></i> Imprimir / Guardar PDF</button>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         PÁGINA 1: PORTADA & INTRODUCCIÓN
+         ========================================================================== -->
+    <div class="page cover-page">
+        <div class="cover-top">
+            <img src="diseño visual/logo_fc.png" alt="Logo FC" class="cover-logo">
+            <span class="cover-badge">MUJERES ALFA</span>
+        </div>
+
+        <div class="cover-center">
+            <h1 class="cover-title">
+                ¿Estás viviendo la vida que <span>elegiste</span>?
+            </h1>
+            <p class="cover-sub">
+                5 ejercicios para dejar el piloto automático, observar quién sos hoy y empezar a construir quién querés ser.
+            </p>
+
+            <div class="cover-quote-card">
+                <span class="cover-quote-highlight">"Siempre vas a ser la loca en una historia mal contada."</span>
+                <p class="cover-quote-desc">
+                    ¿Y si el problema no es la historia que contaron sobre vos, sino que hace demasiado tiempo dejaste de preguntarte quién querías ser en ella?
+                </p>
+            </div>
+        </div>
+
+        <div class="cover-bottom">
+            <span>Workbook de Diagnóstico & Claridad</span>
+            <span class="cover-author">Por Florencia Castillo</span>
+            <span>Edición Oficial</span>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         PÁGINA 2: INTRODUCCIÓN & PASO 1 (MIRATE)
+         ========================================================================== -->
+    <div class="page">
+        <div class="page-header">
+            <span class="page-header-brand">MUJERES ALFA</span>
+            <span class="page-header-step">INTRODUCCIÓN · PASO 1</span>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+            <span class="step-tag">INTRODUCCIÓN</span>
+            <h2 class="step-title" style="font-size: 1.5rem; margin-bottom: 8px;">¿Esto realmente es lo que quiero?</h2>
+            <p class="step-intro" style="margin-bottom: 10px;">
+                Hay momentos en los que algo empieza a incomodarte. No necesariamente porque todo esté mal. Tenés trabajo o un negocio, responsabilidades, vínculos, una rutina. Quizás incluso conseguiste cosas que alguna vez deseaste. Y, sin embargo, la pregunta aparece.
+            </p>
+            <p class="step-intro" style="margin-bottom: 10px;">
+                Muchas veces no necesitamos una nueva vida. Necesitamos <strong>observar la vida que estamos viviendo con suficiente honestidad</strong> como para descubrir qué parte elegimos y qué parte simplemente repetimos.
+            </p>
+            <div class="quote-box" style="margin: 10px 0 16px;">
+                <p>"Porque antes de cambiar una vida o un negocio, primero hay que aprender a observarlo."</p>
+            </div>
+        </div>
+
+        <div>
+            <span class="step-tag">PASO 1</span>
+            <h2 class="step-title">MIRATE</h2>
+            <p class="step-subtitle">¿Quién aparece cuando te mirás al espejo?</p>
+            <p class="step-intro">
+                No respondas inmediatamente. Mirate. Sin corregirte. Sin juzgarte. Sin pensar qué debería gustarte de vos. Observá:
+            </p>
+
+            <ul class="question-list">
+                <li><i class="fa-solid fa-diamond"></i> ¿Me gusta la mujer que estoy viendo?</li>
+                <li><i class="fa-solid fa-diamond"></i> ¿Me reconozco? ¿Estoy orgullosa de cómo estoy viviendo?</li>
+                <li><i class="fa-solid fa-diamond"></i> ¿Mi forma de vivir representa la mujer que quiero ser?</li>
+                <li><i class="fa-solid fa-diamond"></i> ¿Qué parte de mí siento que está apagada y cuál siento que está creciendo?</li>
+                <li><i class="fa-solid fa-diamond"></i> ¿Qué estoy sosteniendo simplemente porque ya me acostumbré?</li>
+            </ul>
+
+            <div class="answer-box">
+                <span class="answer-label">Hoy, cuando me miro, veo una mujer que...</span>
+                <div class="answer-input-text" id="resp-paso1-a"></div>
+                <div class="answer-lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">Y si pudiera decirle una sola cosa a esa mujer, le diría...</span>
+                <div class="answer-input-text" id="resp-paso1-b"></div>
+                <div class="answer-lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span class="page-footer-tag">MUJERES ALFA · WORKBOOK</span>
+            <span>Página 2</span>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         PÁGINA 3: PASO 2 (MIRÁ TU TRABAJO / EMPRENDIMIENTO)
+         ========================================================================== -->
+    <div class="page">
+        <div class="page-header">
+            <span class="page-header-brand">MUJERES ALFA</span>
+            <span class="page-header-step">PASO 2 · TRABAJO & NEGOCIO</span>
+        </div>
+
+        <div>
+            <span class="step-tag">PASO 2</span>
+            <h2 class="step-title">MIRÁ TU TRABAJO Y TU NEGOCIO</h2>
+            <p class="step-subtitle">¿Tu actividad actual está construyendo la vida que querés?</p>
+            <p class="step-intro">
+                No se trata solamente de cuánto ganás. Se trata de qué lugar ocupa tu trabajo dentro de tu proyecto de vida. Si tenés un emprendimiento o trabajás en relación de dependencia:
+            </p>
+
+            <div class="answer-box">
+                <span class="answer-label">1. ¿De qué trabajo actualmente? (¿Sos empleada, tenés tu negocio o estás en transición?)</span>
+                <div class="answer-input-text" id="resp-paso2-a"></div>
+                <div class="line"></div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">2. ¿Me gusta realmente lo que hago todos los días?</span>
+                <div class="answer-input-text" id="resp-paso2-b"></div>
+                <div class="line"></div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="answer-box">
+                    <span class="answer-label">3. ¿Cuánto dinero genero por mes aprox.?</span>
+                    <div class="answer-input-text" id="resp-paso2-c"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="answer-box">
+                    <span class="answer-label">4. ¿Cuánto necesito generar para la vida que quiero?</span>
+                    <div class="answer-input-text" id="resp-paso2-d"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">5. ¿Mi trabajo/negocio actual me acerca o me aleja de mis metas?</span>
+                <div class="answer-input-text" id="resp-paso2-e"></div>
+                <div class="line"></div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">6. ¿Qué me aporta además del dinero? (Paz, crecimiento, aprendizaje)</span>
+                <div class="answer-input-text" id="resp-paso2-f"></div>
+                <div class="line"></div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">7. ¿Qué me está quitando? (Tiempo, energía, salud, tranquilidad)</span>
+                <div class="answer-input-text" id="resp-paso2-g"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span class="page-footer-tag">MUJERES ALFA · WORKBOOK</span>
+            <span>Página 3</span>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         PÁGINA 4: PASO 3 (METAS) & PASO 4 (HÁBITOS)
+         ========================================================================== -->
+    <div class="page">
+        <div class="page-header">
+            <span class="page-header-brand">MUJERES ALFA</span>
+            <span class="page-header-step">PASO 3 & 4 · METAS Y HÁBITOS</span>
+        </div>
+
+        <!-- PASO 3 -->
+        <div style="margin-bottom: 24px;">
+            <span class="step-tag">PASO 3</span>
+            <h2 class="step-title">MIRÁ TUS METAS</h2>
+            <p class="step-subtitle">¿Tenés objetivos o simplemente deseos?</p>
+            <p class="step-intro">
+                Querer algo no es lo mismo que estar construyéndolo. ¿Qué querés conseguir en los próximos 90 días?
+            </p>
+
+            <div class="answer-box" style="padding: 10px 14px;">
+                <div class="answer-input-text" id="resp-paso3-metas"></div>
+                <div class="answer-lines" style="gap: 14px;">
+                    <div style="font-size: 0.8rem; color: var(--carbon-muted);">1. <span id="m1"></span><div class="line" style="margin-top: 4px;"></div></div>
+                    <div style="font-size: 0.8rem; color: var(--carbon-muted);">2. <span id="m2"></span><div class="line" style="margin-top: 4px;"></div></div>
+                    <div style="font-size: 0.8rem; color: var(--carbon-muted);">3. <span id="m3"></span><div class="line" style="margin-top: 4px;"></div></div>
+                </div>
+            </div>
+
+            <p style="font-size: 0.84rem; font-weight: 700; color: var(--fuchsia); margin-bottom: 4px;">
+                ¿Cuántas de las metas que te propusiste este año realmente cumpliste?
+            </p>
+            <p style="font-size: 0.8rem; color: var(--carbon-light); margin-bottom: 8px;">
+                Metas planteadas: _____ | Cumplidas: _____ | Abandonadas: _____ | Postergadas: _____
+            </p>
+            <p style="font-size: 0.82rem; font-style: italic; color: var(--carbon-muted);">
+                ¿Qué patrón aparece? A veces el problema no es que no sepamos qué queremos; es que no estamos haciendo lo que nuestra propia meta necesita de nosotras.
+            </p>
+        </div>
+
+        <!-- PASO 4 -->
+        <div>
+            <span class="step-tag">PASO 4</span>
+            <h2 class="step-title">MIRÁ TUS HÁBITOS</h2>
+            <p class="step-subtitle">Acá quiero que seamos brutalmente honestas.</p>
+            <p class="step-intro" style="margin-bottom: 10px;">
+                Muchas veces decimos "yo soy así", cuando en realidad queremos decir: <em>"Hace tanto tiempo que repito esto que terminé creyendo que forma parte de mí."</em>
+            </p>
+
+            <div class="habits-grid">
+                <div class="habit-item"><span class="habit-checkbox" id="chk-procrastinar"></span> Procrastinar decisiones</div>
+                <div class="habit-item"><span class="habit-checkbox" id="chk-scrollear"></span> Scrollear horas en redes</div>
+                <div class="habit-item"><span class="habit-checkbox" id="chk-tarde"></span> Acostarme / levantarme tarde</div>
+                <div class="habit-item"><span class="habit-checkbox" id="chk-ocupada"></span> Estar ocupada pero evitar lo importante</div>
+                <div class="habit-item"><span class="habit-checkbox" id="chk-empezar"></span> Decir que voy a empezar y no empezar</div>
+                <div class="habit-item"><span class="habit-checkbox" id="chk-finanzas"></span> No tener control de mis números</div>
+                <div class="habit-item"><span class="habit-checkbox" id="chk-fumar"></span> Fumar / Hábitos poco saludables</div>
+                <div class="habit-item"><span class="habit-checkbox" id="chk-miedo"></span> Miedo a mostrarme o vender</div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">¿Qué hábito cotidiano está construyendo silenciosamente la mujer en la que te estás convirtiendo?</span>
+                <div class="answer-input-text" id="resp-paso4"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span class="page-footer-tag">MUJERES ALFA · WORKBOOK</span>
+            <span>Página 4</span>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         PÁGINA 5: PASO 5 (ENTORNO) & CUERPO + EMOCIÓN + LENGUAJE
+         ========================================================================== -->
+    <div class="page">
+        <div class="page-header">
+            <span class="page-header-brand">MUJERES ALFA</span>
+            <span class="page-header-step">PASO 5 & OBSERVADOR</span>
+        </div>
+
+        <!-- PASO 5 -->
+        <div style="margin-bottom: 24px;">
+            <span class="step-tag">PASO 5</span>
+            <h2 class="step-title">MIRÁ TU ENTORNO</h2>
+            <p class="step-subtitle">¿Con quién estás construyendo tu realidad?</p>
+            <p class="step-intro">
+                Existe una diferencia enorme entre <strong>hablar de una vida y construirla</strong>. Hablar de proyectos genera dopamina momentánea. Pero, ¿tu entorno te inspira a actuar o te permite permanecer cómoda?
+            </p>
+
+            <div class="answer-box">
+                <span class="answer-label">Tres personas con las que más compartís tu tiempo diario:</span>
+                <div class="answer-input-text" id="resp-paso5-personas"></div>
+                <div class="line"></div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">¿Qué versión de mí aparece cuando estoy con ellas?</span>
+                <div class="answer-input-text" id="resp-paso5-version"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <!-- EL OBSERVADOR -->
+        <div>
+            <span class="step-tag">PERSPECTIVA ONTO LÓGICA</span>
+            <h2 class="step-title" style="font-size: 1.6rem;">CUERPO + EMOCIÓN + LENGUAJE</h2>
+            <p class="step-intro" style="margin-bottom: 12px;">
+                No observamos la realidad desde afuera; la observamos desde quiénes somos. Lo que pensamos afecta lo que sentimos. Lo que sentimos afecta cómo actuamos. Lo que hacemos modifica nuestro cuerpo, nuestras conversaciones y nuestras posibilidades.
+            </p>
+
+            <div class="quote-box" style="margin-bottom: 18px;">
+                <p>¿Quién estoy siendo yo mientras esto está pasando?</p>
+            </div>
+
+            <div style="background: var(--marfil); padding: 14px; border-radius: 8px; border: 1px solid var(--border-soft);">
+                <span style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--fuchsia); margin-bottom: 6px;">
+                    RECONOCÉ TUS TRES DIMENSIONES:
+                </span>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; font-size: 0.8rem; text-align: center;">
+                    <div style="background: var(--marfil-surface); padding: 8px; border-radius: 6px;">
+                        <strong style="color: var(--fuchsia); display: block;">LENGUAJE</strong>
+                        <span>Lo que te decís a diario</span>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 8px; border-radius: 6px;">
+                        <strong style="color: var(--coral); display: block;">EMOCIÓN</strong>
+                        <span>Desde dónde actuás</span>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 8px; border-radius: 6px;">
+                        <strong style="color: var(--naranja); display: block;">CUERPO</strong>
+                        <span>Tu postura y energía</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span class="page-footer-tag">MUJERES ALFA · WORKBOOK</span>
+            <span>Página 5</span>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         PÁGINA 6: EL EJERCICIO ALFA (SÍNTESIS)
+         ========================================================================== -->
+    <div class="page">
+        <div class="page-header">
+            <span class="page-header-brand">MUJERES ALFA</span>
+            <span class="page-header-step">EL EJERCICIO ALFA</span>
+        </div>
+
+        <div>
+            <span class="step-tag">SÍNTESIS DE CLARIDAD</span>
+            <h2 class="step-title">EL EJERCICIO ALFA</h2>
+            <p class="step-subtitle">Completá estas 5 frases sin pensarlas demasiado.</p>
+            <p class="step-intro">
+                Respondé desde las tripas. Lo primero que venga a tu mente suele ser lo más honesto:
+            </p>
+
+            <div class="answer-box">
+                <span class="answer-label">1. Hoy estoy viviendo...</span>
+                <div class="answer-input-text" id="resp-alfa-1"></div>
+                <div class="line"></div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">2. La mujer que quiero ser está viviendo...</span>
+                <div class="answer-input-text" id="resp-alfa-2"></div>
+                <div class="line"></div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">3. La principal diferencia entre esas dos mujeres es...</span>
+                <div class="answer-input-text" id="resp-alfa-3"></div>
+                <div class="line"></div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">4. Lo que necesito dejar de hacer para acercarme a ella es...</span>
+                <div class="answer-input-text" id="resp-alfa-4"></div>
+                <div class="line"></div>
+            </div>
+
+            <div class="answer-box">
+                <span class="answer-label">5. Lo primero que puedo hacer durante los próximos 7 días es...</span>
+                <div class="answer-input-text" id="resp-alfa-5"></div>
+                <div class="line"></div>
+            </div>
+
+            <div class="quote-box" style="margin-top: 14px;">
+                <p>
+                    <strong>No necesitás cambiar toda tu vida hoy.</strong><br>
+                    Necesitás empezar a dejar de vivirla en automático. Una vez que empezás a observarte con honestidad, ya no podés volver completamente al mismo lugar.
+                </p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span class="page-footer-tag">MUJERES ALFA · WORKBOOK</span>
+            <span>Página 6</span>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         PÁGINA 7: CONTRATAPA & EL PUENTE AL MÉTODO ALFA
+         ========================================================================== -->
+    <div class="page back-cover">
+        <div class="page-header">
+            <span class="page-header-brand">MUJERES ALFA</span>
+            <span class="page-header-step">TU PRÓXIMO PASO</span>
+        </div>
+
+        <div class="back-hero">
+            <span class="back-badge">EL PRIMER PASO ESTÁ DADO</span>
+            <h2 class="back-title">
+                No se trata solamente de crear una nueva vida.<br>
+                Se trata de convertirte en la mujer capaz de <em>sostenerla</em>.
+            </h2>
+            <p style="font-size: 0.95rem; color: var(--carbon-light); max-width: 520px; margin: 0 auto 16px;">
+                Esta guía te dio una radiografía real de dónde estás parada. Pero ver el mapa no es lo mismo que empezar a recorrerlo con dirección.
+            </p>
+
+            <div class="back-card">
+                <h3>EL MÉTODO ALFA</h3>
+                <p>
+                    Es el programa de acompañamiento y mentoría estratégica de <strong>6 meses</strong> diseñado por Florencia Castillo para que dejes de remar sola y transformes tu mentalidad y tu emprendimiento en una estructura sólida con resultados medibles.
+                </p>
+                <div class="back-pillars">
+                    <div class="back-pillar-item">
+                        <strong>PODER</strong>
+                        <span>Liderazgo personal</span>
+                    </div>
+                    <div class="back-pillar-item">
+                        <strong>CLARIDAD</strong>
+                        <span>Estrategia y nicho</span>
+                    </div>
+                    <div class="back-pillar-item">
+                        <strong>ESTRUCTURA</strong>
+                        <span>Hábitos y ventas</span>
+                    </div>
+                    <div class="back-pillar-item">
+                        <strong>MENTORÍA</strong>
+                        <span>Flor con vos 1 a 1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-contact-box">
+                <div>
+                    <h4>¿Querés una Devolución de tu Guía?</h4>
+                    <p>Enviá tus respuestas a Flor por WhatsApp para evaluar tu caso.</p>
+                </div>
+                <a href="https://wa.me/5522998090599?text=Hola%20Flor!%20Complet%C3%A9%20la%20Gu%C3%ADa%20Gratuita%20de%20Mujeres%20Alfa%20y%20quiero%20compartirte%20mis%20respuestas%20para%20recibir%20tu%20devoluci%C3%B3n." target="_blank" class="back-whatsapp-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Hablar con Flor
+                </a>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span class="page-footer-tag">FLORENCIA CASTILLO · MUJERES ALFA</span>
+            <span>florenciacastillo.vercel.app</span>
+        </div>
+    </div>
+
+    <!-- Script de inyección si se abre con parámetros desde la web interactiva -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            
+            // Si viene con datos desde la landing interactiva, se inyectan en los campos:
+            const fields = [
+                'resp-paso1-a', 'resp-paso1-b',
+                'resp-paso2-a', 'resp-paso2-b', 'resp-paso2-c', 'resp-paso2-d', 'resp-paso2-e', 'resp-paso2-f', 'resp-paso2-g',
+                'm1', 'm2', 'm3',
+                'resp-paso4',
+                'resp-paso5-personas', 'resp-paso5-version',
+                'resp-alfa-1', 'resp-alfa-2', 'resp-alfa-3', 'resp-alfa-4', 'resp-alfa-5'
+            ];
+
+            fields.forEach(id => {
+                const val = params.get(id);
+                const el = document.getElementById(id);
+                if (val && el) {
+                    el.textContent = val;
+                }
+            });
+
+            // Hábitos tildados
+            const habits = params.get('habits');
+            if (habits) {
+                habits.split(',').forEach(hId => {
+                    const el = document.getElementById(hId);
+                    if (el) {
+                        el.innerHTML = '<i class="fa-solid fa-check"></i>';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
