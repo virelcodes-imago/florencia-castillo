@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Legal, Términos y Privacidad | Florencia Castillo · Mujeres Alfa</title>
+    <meta name="description" content="Términos y condiciones, política de privacidad y protección de datos sensibles, y política de cookies de Florencia Castillo y Mujeres Alfa.">
+    
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .legal-hero {
+            padding: 4.5rem 0 3rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--marfil-surface) 0%, var(--marfil) 100%);
+            border-bottom: 1px solid var(--marfil-border);
+        }
+
+        .legal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--fuchsia);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .legal-title {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            color: var(--carbon);
+        }
+
+        .legal-subtitle {
+            font-size: 1.1rem;
+            color: var(--carbon-light);
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .legal-container {
+            max-width: 900px;
+            margin: 3.5rem auto 5rem;
+            padding: 0 20px;
+        }
+
+        /* Tabs de navegación legal */
+        .legal-nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid var(--marfil-border);
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .legal-tab-btn {
+            background: transparent;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--carbon-muted);
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legal-tab-btn:hover {
+            color: var(--fuchsia);
+            background: var(--fuchsia-subtle);
+        }
+
+        .legal-tab-btn.active {
+            color: #FFF;
+            background: var(--fuchsia);
+            box-shadow: 0 4px 14px var(--fuchsia-glow);
+        }
+
+        .legal-card {
+            background: var(--marfil-surface);
+            border: 1.5px solid var(--marfil-border);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2.8rem;
+            box-shadow: var(--shadow-card);
+            line-height: 1.7;
+            font-size: 0.98rem;
+            color: var(--carbon-light);
+        }
+
+        .legal-section-block {
+            display: none;
+            animation: fadeIn 0.3s ease forwards;
+        }
+
+        .legal-section-block.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .legal-card h2 {
+            font-size: 2rem;
+            color: var(--carbon);
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1.5px solid var(--fuchsia-subtle);
+        }
+
+        .legal-card h3 {
+            font-size: 1.35rem;
+            color: var(--fuchsia);
+            margin: 2rem 0 0.8rem;
+            font-family: var(--font-body);
+            font-weight: 700;
+        }
+
+        .legal-card p {
+            margin-bottom: 1.1rem;
+        }
+
+        .legal-card ul {
+            margin: 0.8rem 0 1.4rem 1.4rem;
+        }
+
+        .legal-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sensitive-data-highlight {
+            background: rgba(212, 0, 106, 0.04);
+            border-left: 4px solid var(--fuchsia);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.4rem;
+            margin: 1.5rem 0;
+        }
+
+        .sensitive-data-highlight strong {
+            color: var(--fuchsia);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .legal-meta-box {
+            background: var(--marfil);
+            border: 1px solid var(--marfil-border);
+            border-radius: var(--radius-md);
+            padding: 1.2rem 1.6rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--carbon-muted);
+        }
+
+        @media (max-width: 768px) {
+            .legal-card {
+                padding: 2rem 1.5rem;
+            }
+            .legal-title {
+                font-size: 2.2rem;
+            }
+            .legal-nav-tabs {
+                flex-direction: column;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+                <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo FC" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="brand-name">Florencia Castillo</span>
+                    <span class="brand-sub">MUJERES ALFA</span>
+                </div>
+            </a>
+
+            <div class="nav-actions">
+                <a href="guia-gratuita.html" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>Guía Gratuita</span>
+                </a>
+                <a href="index.html" class="btn btn-outline btn-sm">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Volver al Sitio</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="legal-hero">
+        <div class="container">
+            <span class="legal-badge">♦ MARCO LEGAL, PRIVACIDAD & ÉTICA ♦</span>
+            <h1 class="legal-title">Términos, Privacidad & Cookies</h1>
+            <p class="legal-subtitle">
+                Tu privacidad y la confianza que depositás al compartir tus reflexiones y datos con nosotras son nuestra prioridad absoluta. Aquí detallamos nuestros compromisos de confidencialidad y términos de uso.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="legal-container">
+
+        <!-- Tabs -->
+        <div class="legal-nav-tabs">
+            <button class="legal-tab-btn active" onclick="switchLegalTab('privacidad', this)">
+                <i class="fa-solid fa-shield-halved"></i> 1. Política de Privacidad & Datos Sensibles
+            </button>
+            <button class="legal-tab-btn" onclick="switchLegalTab('terminos', this)">
+                <i class="fa-solid fa-file-contract"></i> 2. Términos y Condiciones
+            </button>
+            <button class="legal-tab-btn" onclick="switchLegalTab('aviso', this)">
+                <i class="fa-solid fa-landmark"></i> 3. Aviso Legal
+            </button>
+            <button class="legal-tab-btn" onclick="switchLegalTab('cookies', this)">
+                <i class="fa-solid fa-cookie-bite"></i> 4. Política de Cookies
+            </button>
+        </div>
+
+        <div class="legal-card">
+
+            <!-- ========================================================
+                 SECCIÓN 1: PRIVACIDAD Y PROTECCIÓN DE DATOS SENSIBLES
+                 ======================================================== -->
+            <div id="tab-privacidad" class="legal-section-block active">
+                <h2>1. Política de Privacidad y Tratamiento de Información Sensible</h2>
+                <p>
+                    En <strong>Florencia Castillo · Mujeres Alfa</strong>, entendemos que el proceso de autodiagnóstico empresarial y ontológico requiere compartir reflexiones personales profundas y datos financieros sobre tu negocio. Tratamos esta información con el más riguroso estándar de discreción, ética y seguridad.
+                </p>
+
+                <div class="sensitive-data-highlight">
+                    <strong>🔒 Compromiso de Confidencialidad Absoluta</strong>
+                    Bajo ninguna circunstancia vendemos, alquilamos, cedemos ni compartimos tus datos personales, tus números de negocio o tus respuestas con terceros con fines publicitarios o comerciales.
+                </div>
+
+                <h3>1.1. ¿Qué datos recopilamos?</h3>
+                <p>A través de nuestra plataforma web y la Guía Gratuita de Autodiagnóstico, recopilamos:</p>
+                <ul>
+                    <li><strong>Datos de contacto básicos:</strong> Tu nombre, correo electrónico y número de WhatsApp (para enviarte tu workbook y coordinar la confirmación de contacto).</li>
+                    <li><strong>Información de diagnóstico y negocio:</strong> Tu actividad actual, facturación mensual aproximada, metas financieras deseadas y desafíos organizacionales.</li>
+                    <li><strong>Reflexiones personales y de hábitos:</strong> Tus observaciones sobre hábitos diarios, entorno y visión personal completadas en los pasos de la guía.</li>
+                </ul>
+
+                <h3>1.2. Finalidad del tratamiento</h3>
+                <p>La información recopilada se utiliza exclusivamente para:</p>
+                <ul>
+                    <li>Generar y poner a tu disposición tu workbook en formato PDF personalizado con tus respuestas integradas.</li>
+                    <li>Permitir que Florencia Castillo cuente con el contexto previo necesario para analizar tu situación antes de cualquier sesión estratégica o encuentro de claridad que solicites.</li>
+                    <li>Enviarte material de valor, herramientas de gestión y comunicaciones directas relacionadas con el programa Mujeres Alfa y el Método Alfa (siempre con posibilidad de darte de baja en un solo clic).</li>
+                </ul>
+
+                <h3>1.3. Seguridad de tus datos</h3>
+                <p>
+                    Adoptamos medidas de seguridad técnicas y organizativas para proteger tus datos contra accesos no autorizados, pérdida o alteración. Toda la comunicación en el sitio web viaja cifrada mediante protocolo seguro SSL/HTTPS.
+                </p>
+
+                <h3>1.4. Tus derechos (Acceso, Rectificación y Supresión)</h3>
+                <p>
+                    Tenés pleno derecho a conocer qué datos tuyos conservamos, solicitar su rectificación o exigir su eliminación total y definitiva en cualquier momento. Solo tenés que enviar un correo electrónico con el asunto <em>"Protección de Datos / Baja"</em> a:
+                </p>
+                <p>
+                    📧 <strong>florenciacastillo.oficial@gmail.com</strong>
+                </p>
+            </div>
+
+            <!-- ========================================================
+                 SECCIÓN 2: TÉRMINOS Y CONDICIONES
+                 ======================================================== -->
+            <div id="tab-terminos" class="legal-section-block">
+                <h2>2. Términos y Condiciones de Uso del Servicio</h2>
+                <p>
+                    El acceso y uso de este sitio web, así como la descarga y uso de nuestras guías interactivas y materiales del <strong>Método Alfa</strong>, implican la aceptación plena de los presentes Términos y Condiciones.
+                </p>
+
+                <h3>2.1. Naturaleza del servicio y descargo de responsabilidad</h3>
+                <p>
+                    Los programas, asesorías, guías y contenidos creados por Florencia Castillo corresponden al ámbito del <strong>desarrollo personal, la mentoría empresarial para mujeres y el coaching ontológico</strong>.
+                </p>
+                <div class="sensitive-data-highlight">
+                    <strong>⚠️ Alcance y Límites de la Mentoría</strong>
+                    Los contenidos, ejercicios y recomendaciones brindados tienen un fin reflexivo y formativo. <strong>No constituyen ni sustituyen asesoramiento financiero profesional formal, legal, contable ni atención médica o terapia psicológica clínica.</strong> Las decisiones empresariales, financieras o personales son responsabilidad exclusiva de quien las ejecuta.
+                </div>
+
+                <h3>2.2. Uso adecuado de las herramientas interactivas</h3>
+                <p>
+                    Te comprometés a utilizar la plataforma y la herramienta interactiva de diagnóstico de buena fe, absteniéndote de introducir información maliciosa o utilizar el sistema de forma que altere su normal funcionamiento.
+                </p>
+
+                <h3>2.3. Sesiones de Claridad y Agenda</h3>
+                <p>
+                    El beneficio de solicitar una sesión de claridad individual con Florencia Castillo está sujeto a disponibilidad de agenda. Florencia Castillo se reserva el derecho de admitir o reasignar sesiones en función de los cupos y del perfil de los proyectos presentados.
+                </p>
+            </div>
+
+            <!-- ========================================================
+                 SECCIÓN 3: AVISO LEGAL & PROPIEDAD INTELECTUAL
+                 ======================================================== -->
+            <div id="tab-aviso" class="legal-section-block">
+                <h2>3. Aviso Legal y Propiedad Intelectual</h2>
+
+                <h3>3.1. Identificación del Titular</h3>
+                <p>
+                    En cumplimiento de las normativas de transparencia en servicios de la sociedad de la información, se informa que el presente sitio web es titularidad de:
+                </p>
+                <ul>
+                    <li><strong>Titular:</strong> Florencia Castillo</li>
+                    <li><strong>Marca / Proyecto:</strong> Florencia Castillo · Mujeres Alfa</li>
+                    <li><strong>Correo Electrónico Oficial:</strong> florenciacastillo.oficial@gmail.com</li>
+                    <li><strong>Canal Oficial de Contacto:</strong> +55 22 99809-0599</li>
+                    <li><strong>Desarrollo y Gestión Técnica:</strong> VIREL. (<a href="https://virelcodes.com" target="_blank" style="color: var(--fuchsia);">virelcodes.com</a>)</li>
+                </ul>
+
+                <h3>3.2. Propiedad Intelectual e Industrial</h3>
+                <p>
+                    La totalidad de los contenidos de este sitio web (incluyendo textos, diseños, infografías, ejercicios prácticos, la estructura del <em>Método Alfa</em>, logotipos, archivos PDF y software) son propiedad intelectual de <strong>Florencia Castillo</strong> o cuentan con las licencias correspondientes.
+                </p>
+                <p>
+                    Queda expresamente prohibida la reproducción, distribución, comercialización, transformación o comunicación pública de dichos contenidos sin la previa autorización expresa y por escrito de la titular.
+                </p>
+            </div>
+
+            <!-- ========================================================
+                 SECCIÓN 4: POLÍTICA DE COOKIES
+                 ======================================================== -->
+            <div id="tab-cookies" class="legal-section-block">
+                <h2>4. Política de Cookies y Almacenamiento Local</h2>
+                <p>
+                    Este sitio web utiliza cookies técnicas y tecnologías de almacenamiento local del navegador para permitir el funcionamiento de las herramientas interactivas y recordar tus preferencias.
+                </p>
+
+                <h3>4.1. ¿Qué son las cookies?</h3>
+                <p>
+                    Una cookie es un pequeño archivo de texto que un sitio web guarda en tu navegador al visitarlo. Permite que el sitio recuerde información sobre tu visita (como tu avance en el formulario interactivo o tu aceptación del aviso de cookies).
+                </p>
+
+                <h3>4.2. Tipos de cookies que utilizamos</h3>
+                <ul>
+                    <li>
+                        <strong>Cookies Técnicas / Esenciales (Propias):</strong> Son indispensables para el correcto funcionamiento del sitio web. Permiten gestionar el estado del formulario wizard, la generación de tu documento PDF en tiempo real y recordar si ya aceptaste este aviso de cookies (almacenamiento en <code>localStorage</code>).
+                    </li>
+                    <li>
+                        <strong>Cookies de Terceros (Servicios integrados):</strong> Si interactuás con plataformas externas vinculadas como el calendario de agendamiento de sesiones o tipografías de Google Fonts, dichas plataformas pueden utilizar sus propias cookies con fines analíticos y técnicos.
+                    </li>
+                </ul>
+
+                <h3>4.3. ¿Cómo configurar o revocar tu consentimiento?</h3>
+                <p>
+                    Podés configurar, restringir o bloquear las cookies en cualquier momento a través del menú de opciones o preferencias de tu navegador web:
+                </p>
+                <ul>
+                    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" style="color: var(--fuchsia);">Google Chrome</a></li>
+                    <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" style="color: var(--fuchsia);">Apple Safari</a></li>
+                    <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer" style="color: var(--fuchsia);">Mozilla Firefox</a></li>
+                    <li><a href="https://support.microsoft.com/es-es/windows/eliminar-y-administrar-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener noreferrer" style="color: var(--fuchsia);">Microsoft Edge</a></li>
+                </ul>
+            </div>
+
+            <!-- Metadata de actualización -->
+            <div class="legal-meta-box">
+                <p>
+                    <i class="fa-regular fa-clock"></i> <strong>Última actualización:</strong> Octubre de 2026.<br>
+                    Para cualquier consulta sobre estos términos o el tratamiento de tus datos, escribinos a <a href="mailto:florenciacastillo.oficial@gmail.com" style="color: var(--fuchsia); font-weight: 700;">florenciacastillo.oficial@gmail.com</a>.
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo FC" class="footer-logo-img">
+                <h3>Florencia Castillo</h3>
+                <p class="footer-tag-alfa">MUJERES ALFA</p>
+                <p>Desarrollo personal y empresarial para mujeres emprendedoras que eligen liderar con intención y resultados reales.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#metodo-alfa">Método Alfa</a></li>
+                    <li><a href="guia-gratuita.html">Guía Gratuita Online</a></li>
+                    <li><a href="guia-pdf.html" target="_blank">Descargar Guía en PDF</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><a href="https://wa.me/5522998090599" target="_blank">+55 22 99809-0599</a></li>
+                    <li><a href="mailto:florenciacastillo.oficial@gmail.com">florenciacastillo.oficial@gmail.com</a></li>
+                    <li><a href="https://www.instagram.com/florenciacastillo.oficial/" target="_blank">@florenciacastillo.oficial</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom-full">
+                <p>© 2026 Florencia Castillo · Mujeres Alfa. Todos los derechos reservados.</p>
+                <p class="virel-credit">Desarrollado y Gestionado por <a href="https://virelcodes.com" target="_blank" rel="noopener noreferrer"><strong>VIREL.</strong> (virelcodes.com)</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de pestañas y detección de hash -->
+    <script>
+        function switchLegalTab(tabId, btnEl) {
+            document.querySelectorAll('.legal-section-block').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.legal-tab-btn').forEach(b => b.classList.remove('active'));
+            
+            const target = document.getElementById('tab-' + tabId);
+            if (target) {
+                target.classList.add('active');
+            }
+            if (btnEl) {
+                btnEl.classList.add('active');
+            }
+        }
+
+        // Si viene con ancla tipo #terminos o #cookies en la URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && ['privacidad', 'terminos', 'aviso', 'cookies'].includes(hash)) {
+                const btn = Array.from(document.querySelectorAll('.legal-tab-btn')).find(b => b.getAttribute('onclick').includes(hash));
+                switchLegalTab(hash, btn);
+            }
+        });
+    </script>
+</body>
+</html>

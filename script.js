@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initScrollSpy();
+    initCookieBanner();
 });
 
 // Mobile Navigation Toggle
@@ -104,4 +105,38 @@ function initScrollSpy() {
             }
         });
     });
+}
+
+// Cookie Consent Controller
+function initCookieBanner() {
+    if (localStorage.getItem('fc_cookies_accepted') === 'true') {
+        return;
+    }
+
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.id = 'cookieBanner';
+    banner.innerHTML = `
+        <div class="cookie-banner-content">
+            <i class="fa-solid fa-cookie-bite cookie-banner-icon"></i>
+            <p class="cookie-banner-text">
+                Utilizamos cookies técnicas para garantizar el funcionamiento del sitio y la confidencialidad de tus diagnósticos. Podés conocer más en nuestra <a href="legales.html#cookies">Política de Cookies & Privacidad</a>.
+            </p>
+        </div>
+        <div class="cookie-banner-actions">
+            <button class="btn-cookie-accept" onclick="acceptCookies()">Aceptar</button>
+        </div>
+    `;
+    document.body.appendChild(banner);
+}
+
+function acceptCookies() {
+    localStorage.setItem('fc_cookies_accepted', 'true');
+    const banner = document.getElementById('cookieBanner');
+    if (banner) {
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(20px)';
+        banner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        setTimeout(() => banner.remove(), 300);
+    }
 }
