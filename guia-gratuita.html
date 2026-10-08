@@ -154,16 +154,18 @@
         }
 
         .step-main-title {
-            font-size: 2.2rem;
-            margin-bottom: 6px;
+            display: none; /* Se ocultan los títulos rígidos tipo MIRATE para priorizar las preguntas */
         }
 
         .step-sub-prompt {
-            font-size: 1.15rem;
+            font-size: 1.85rem;
             color: var(--coral);
-            font-style: italic;
             font-family: var(--font-heading);
-            margin-bottom: 1.4rem;
+            font-style: italic;
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 1.2rem;
+            display: block;
         }
 
         .wizard-instruction {
@@ -445,31 +447,6 @@
     <main class="wizard-section">
         <div class="container wizard-container">
 
-            <!-- INVITACIÓN AL PROCESO -->
-            <div class="how-it-works-card">
-                <h3 class="how-it-works-title">
-                    <i class="fa-solid fa-sparkles"></i> Tu camino hacia la claridad empieza acá
-                </h3>
-                <div class="how-it-works-grid">
-                    <div class="how-step">
-                        <span class="step-circle step-c1">1</span>
-                        <span><strong>Completás online:</strong> Respondés los 5 ejercicios de autoobservación en menos de 10 minutos.</span>
-                    </div>
-                    <div class="how-step">
-                        <span class="step-circle step-c2">2</span>
-                        <span><strong>Tu resultado inmediato:</strong> Se genera tu Radiografía Alfa personalizada con tu plan de acción.</span>
-                    </div>
-                    <div class="how-step">
-                        <span class="step-circle step-c3">3</span>
-                        <span><strong>Te registrás con tu mail:</strong> Guardás tus respuestas de forma 100% privada y confidencial.</span>
-                    </div>
-                    <div class="how-step">
-                        <span class="step-circle step-c4">4</span>
-                        <span><strong>🎁 Ganás una Sesión 1 a 1:</strong> Al finalizar, podés agendar tu reunión privada gratuita con Flor.</span>
-                    </div>
-                </div>
-            </div>
-
             <!-- Header Wizard -->
             <div class="wizard-header">
                 <span class="step-heading-badge">♦ GUÍA PRÁCTICA DE AUTODIAGNÓSTICO ♦</span>
@@ -495,8 +472,7 @@
                      ========================================== -->
                 <div class="wizard-step active" id="step1">
                     <span class="step-heading-badge">PASO 1</span>
-                    <h2 class="step-main-title">MIRATE</h2>
-                    <p class="step-sub-prompt">"¿Quién aparece cuando te mirás al espejo?"</p>
+                    <h2 class="step-sub-prompt">¿Quién aparece cuando te mirás al espejo?</h2>
                     <p class="wizard-instruction">
                         No respondas inmediatamente. Mirate sin corregirte, sin juzgarte y sin pensar qué debería gustarte de vos. <strong>Hacelo con honestidad, que no es lo mismo ser honesta que juzgarse.</strong>
                     </p>
@@ -525,7 +501,7 @@
                      ========================================== -->
                 <div class="wizard-step" id="step2">
                     <span class="step-heading-badge">PASO 2</span>
-                    <h2 class="step-main-title">¿Tu trabajo actual está construyendo la vida que querés?</h2>
+                    <h2 class="step-sub-prompt">¿Tu trabajo actual está construyendo la vida que querés?</h2>
                     <p class="wizard-instruction">
                         No se trata solo de cuánto ganás. Se trata de qué lugar ocupa tu trabajo o emprendimiento en tu proyecto de vida:
                     </p>
@@ -577,8 +553,7 @@
                      ========================================== -->
                 <div class="wizard-step" id="step3">
                     <span class="step-heading-badge">PASO 3</span>
-                    <h2 class="step-main-title">¿Tenés objetivos reales o simplemente deseos?</h2>
-                    <p class="step-sub-prompt">"Querer algo no es lo mismo que estar construyéndolo."</p>
+                    <h2 class="step-sub-prompt">¿Tenés objetivos reales o simplemente deseos?</h2>
                     <p class="wizard-instruction">
                         Definí qué querés conseguir en los próximos 30 días que puedas sostener. Podés incluir pequeños hábitos diarios (como salir a caminar media hora al día, leer 5 páginas, levantarte media hora antes o meditar 15 minutos) o metas de tu negocio:
                     </p>
@@ -619,10 +594,9 @@
                      ========================================== -->
                 <div class="wizard-step" id="step4">
                     <span class="step-heading-badge">PASO 4</span>
-                    <h2 class="step-main-title">MIRÁ TUS HÁBITOS</h2>
-                    <p class="step-sub-prompt">"Acá quiero que seamos brutalmente honestas."</p>
+                    <h2 class="step-sub-prompt">¿Qué hábitos están definiendo tus días?</h2>
                     <p class="wizard-instruction">
-                        Seleccioná los patrones y hábitos que reconocés en tu día a día:
+                        <em>Acá quiero que seamos brutalmente honestas.</em> Seleccioná los patrones y hábitos que reconocés en tu día a día:
                     </p>
 
                     <div class="wizard-habits-grid">
@@ -699,8 +673,10 @@
                      ========================================== -->
                 <div class="wizard-step" id="step5">
                     <span class="step-heading-badge">PASO 5 & SÍNTESIS</span>
-                    <h2 class="step-main-title">EL EJERCICIO ALFA</h2>
-                    <p class="step-sub-prompt">"Completá estas 5 frases sin pensarlas demasiado."</p>
+                    <h2 class="step-sub-prompt">¿Quién estás siendo hoy y quién querés ser?</h2>
+                    <p class="wizard-instruction">
+                        Completá estas 5 frases sin pensarlas demasiado. Respondé desde las tripas, lo primero que venga:
+                    </p>
 
                     <div class="wizard-field">
                         <label class="wizard-label">1. Hoy estoy viviendo...</label>

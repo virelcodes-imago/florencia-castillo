@@ -181,17 +181,18 @@
         }
 
         .step-title {
-            font-size: 1.9rem;
-            margin-bottom: 6px;
+            display: none; /* Se ocultan los títulos rígidos para priorizar las preguntas */
         }
 
         .step-subtitle {
-            font-size: 1.15rem;
+            font-size: 1.55rem;
             font-weight: 600;
             color: var(--coral);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
+            line-height: 1.25;
+            display: block;
         }
 
         .step-intro {
@@ -666,7 +667,7 @@
 
         <div>
             <span class="step-tag">PASO 2</span>
-            <h2 class="step-title" style="font-size: 1.6rem;">¿Tu trabajo actual está construyendo la vida que querés?</h2>
+            <p class="step-subtitle">¿Tu trabajo actual está construyendo la vida que querés?</p>
             <p class="step-intro">
                 No se trata solamente de cuánto ganás. Se trata de qué lugar ocupa tu trabajo dentro de tu proyecto de vida. Si tenés un emprendimiento o trabajás en relación de dependencia:
             </p>
@@ -737,7 +738,7 @@
         <!-- PASO 3 -->
         <div style="margin-bottom: 24px;">
             <span class="step-tag">PASO 3</span>
-            <h2 class="step-title" style="font-size: 1.5rem;">¿Tenés objetivos reales o simplemente deseos?</h2>
+            <p class="step-subtitle">¿Tenés objetivos reales o simplemente deseos?</p>
             <p class="step-intro">
                 Querer algo no es lo mismo que estar construyéndolo. ¿Qué hábitos o metas concretas y sostenibles querés incorporar en los <strong>próximos 30 días</strong>? (Ej: ordenar números, horario de corte, planificar la semana).
             </p>
@@ -765,10 +766,9 @@
         <!-- PASO 4 -->
         <div>
             <span class="step-tag">PASO 4</span>
-            <h2 class="step-title">MIRÁ TUS HÁBITOS</h2>
-            <p class="step-subtitle">Acá quiero que seamos brutalmente honestas.</p>
+            <p class="step-subtitle">¿Qué hábitos están definiendo tus días?</p>
             <p class="step-intro" style="margin-bottom: 10px;">
-                Muchas veces decimos "yo soy así", cuando en realidad queremos decir: <em>"Hace tanto tiempo que repito esto que terminé creyendo que forma parte de mí."</em>
+                <em>Acá quiero que seamos brutalmente honestas.</em> Muchas veces decimos "yo soy así", cuando en realidad queremos decir: <em>"Hace tanto tiempo que repito esto que terminé creyendo que forma parte de mí."</em>
             </p>
 
             <div class="habits-grid">
@@ -878,8 +878,7 @@
 
         <div>
             <span class="step-tag">SÍNTESIS DE CLARIDAD</span>
-            <h2 class="step-title">EL EJERCICIO ALFA</h2>
-            <p class="step-subtitle">Completá estas 5 frases sin pensarlas demasiado.</p>
+            <p class="step-subtitle">¿Quién estás siendo hoy y quién querés ser?</p>
             <p class="step-intro">
                 Respondé desde las tripas. Lo primero que venga a tu mente suele ser lo más honesto:
             </p>
