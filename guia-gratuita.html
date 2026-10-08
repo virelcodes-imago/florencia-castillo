@@ -55,8 +55,8 @@
 
         .how-it-works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 24px;
             font-size: 0.88rem;
         }
 
@@ -376,6 +376,9 @@
                 flex-direction: column;
                 text-align: center;
             }
+        }
+
+        @media (max-width: 640px) {
             .how-it-works-grid {
                 grid-template-columns: 1fr;
             }
@@ -443,7 +446,7 @@
                     </div>
                     <div class="how-step">
                         <span class="step-circle step-c4">4</span>
-                        <span><strong>Agendás por Zoom:</strong> Sesión estratégica 1 a 1 de 20 min con Flor por Calendly.</span>
+                        <span><strong>Agendás una reunión (opcional):</strong> Si preferís, podés agendar una reunión con Flor para profundizar.</span>
                     </div>
                 </div>
             </div>
@@ -702,7 +705,7 @@
                             ¡Llegaste al final! Recibí tu Guía y enviá tus respuestas a Flor
                         </h3>
                         <p style="font-size: 0.88rem; color: var(--carbon-muted); margin-bottom: 16px;">
-                            Ingresá tus datos para generar tu PDF personalizado con todas tus respuestas y que Flor reciba una copia en su casilla para tu sesión por Zoom:
+                            Ingresá tus datos para generar tu PDF personalizado con todas tus respuestas y que Flor reciba una copia en su casilla:
                         </p>
 
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
@@ -716,12 +719,12 @@
                             </div>
                         </div>
                         <div class="wizard-field">
-                            <label class="wizard-label">Tu WhatsApp (para recordatorio de la sesión)</label>
+                            <label class="wizard-label">Tu WhatsApp (para coordinar el contacto)</label>
                             <input type="tel" class="wizard-input" id="userPhone" placeholder="+55 ... o +54 ...">
                         </div>
 
                         <button id="btnSubmitForm" class="btn btn-primary btn-block btn-lg" onclick="finishAndGenerate()">
-                            <span>✨ Finalizar, Guardar en PDF & Agendar Sesión Zoom</span>
+                            <span>✨ Finalizar, Guardar en PDF & Continuar</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
@@ -734,7 +737,7 @@
                 </div>
 
                 <!-- ==========================================
-                     PANTALLA FINAL: RESULTADOS & AGENDAR ZOOM
+                     PANTALLA FINAL: RESULTADOS & AGENDAR REUNIÓN
                      ========================================== -->
                 <div class="wizard-step" id="stepResults">
                     <div class="results-box">
@@ -763,18 +766,18 @@
                             </a>
                         </div>
 
-                        <!-- EL GRAN GANCHO DE CIERRE: AGENDAR SESIÓN ZOOM POR CALENDLY -->
+                        <!-- EL GRAN GANCHO DE CIERRE: AGENDAR REUNIÓN -->
                         <div class="calendly-zoom-box">
                             <span style="font-size: 0.8rem; font-weight: 800; letter-spacing: 2px; color: var(--naranja); text-transform: uppercase; display: block; margin-bottom: 6px;">
                                 TU PRÓXIMO PASO HACIA EL MÉTODO ALFA
                             </span>
-                            <h4>🎥 Agendá tu Sesión 1 a 1 por Zoom con Flor</h4>
+                            <h4>✨ Si preferís, podés agendar una reunión con Flor</h4>
                             <p>
-                                Flor Castillo revisará tus respuestas para decirte en una videollamada de 20 minutos cuál es el primer nudo que tenés que destrabar y si el <strong>Método Alfa</strong> es el camino adecuado para tu emprendimiento.
+                                Flor Castillo revisará tus respuestas para decirte en un encuentro de 20 minutos cuál es el primer nudo que tenés que destrabar y si el <strong>Método Alfa</strong> es el camino adecuado para tu emprendimiento.
                             </p>
                             <a id="btnCalendlyZoom" href="https://calendly.com/florenciacastillo-oficial" target="_blank" class="btn-calendly">
                                 <i class="fa-solid fa-calendar-check"></i>
-                                <span>Agendar mi Sesión por Zoom en Calendly</span>
+                                <span>Agendar mi Reunión con Flor</span>
                             </a>
                         </div>
                     </div>
