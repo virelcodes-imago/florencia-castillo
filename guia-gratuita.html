@@ -928,9 +928,11 @@
             // ENVÍO DE COPIA AUTOMÁTICA A LA CASILLA DE FLOR
             const payload = {
                 _subject: `Nueva Guía Respondida - ${name} (${email})`,
+                _captcha: "false",
+                _template: "table",
                 Nombre: name,
                 Email: email,
-                WhatsApp: phone,
+                WhatsApp: phone || "No informado",
                 "Paso 1 - Veo una mujer que": p1_a,
                 "Paso 1 - Le diría": p1_b,
                 "Paso 2 - Trabajo actual": p2_a,

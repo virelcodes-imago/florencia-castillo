@@ -66,6 +66,8 @@ function handleLeadSubmit(event) {
         },
         body: JSON.stringify({
             _subject: `Nuevo Lead Lead Magnet Home - ${name}`,
+            _captcha: "false",
+            _template: "table",
             nombre: name,
             email: email,
             whatsapp: phone || 'No informado',
