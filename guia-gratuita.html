@@ -177,6 +177,34 @@
             margin-bottom: 1.6rem;
         }
 
+        .wizard-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 1.6rem;
+            align-items: stretch;
+        }
+
+        .wizard-grid-2 .wizard-field {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .wizard-grid-2 .wizard-label {
+            min-height: 42px;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            line-height: 1.35;
+        }
+
+        .wizard-grid-2 .wizard-input {
+            margin-top: auto;
+        }
+
         .wizard-label {
             display: block;
             font-size: 0.9rem;
@@ -382,6 +410,13 @@
             .how-it-works-grid {
                 grid-template-columns: 1fr;
             }
+            .wizard-grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+            .wizard-grid-2 .wizard-label {
+                min-height: auto;
+            }
         }
     </style>
 </head>
@@ -522,7 +557,7 @@
                         <input type="text" class="wizard-input" id="in_paso2_b" placeholder="Sé sincera: ¿te enciende o te apaga?">
                     </div>
 
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="wizard-grid-2">
                         <div class="wizard-field">
                             <label class="wizard-label">3. ¿Cuánto dinero genero por mes aprox.?</label>
                             <input type="text" class="wizard-input" id="in_paso2_c" placeholder="Ej: $500.000 / USD 600">
@@ -708,13 +743,13 @@
                             Ingresá tus datos para generar tu PDF personalizado con todas tus respuestas y que Flor reciba una copia en su casilla:
                         </p>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-                            <div>
-                                <label class="wizard-label">Tu Nombre *</label>
+                        <div class="wizard-grid-2" style="margin-bottom: 12px; gap: 12px;">
+                            <div class="wizard-field">
+                                <label class="wizard-label" style="min-height: auto;">Tu Nombre *</label>
                                 <input type="text" class="wizard-input" id="userName" required placeholder="Tu nombre">
                             </div>
-                            <div>
-                                <label class="wizard-label">Tu Email *</label>
+                            <div class="wizard-field">
+                                <label class="wizard-label" style="min-height: auto;">Tu Email *</label>
                                 <input type="email" class="wizard-input" id="userEmail" required placeholder="tuemail@ejemplo.com">
                             </div>
                         </div>
