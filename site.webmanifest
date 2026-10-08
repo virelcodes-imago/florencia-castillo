@@ -1,0 +1,19 @@
+{
+  "name": "Florencia Castillo · Mujeres Alfa",
+  "short_name": "Flor Castillo",
+  "icons": [
+    {
+      "src": "diseño visual/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "diseño visual/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FAF0E4",
+  "background_color": "#FAF0E4",
+  "display": "standalone"
+}
