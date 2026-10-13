@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Flor Castillo · Conoce a tu Mentora | Mujeres Alfa</title>
+    <meta name="description" content="Conocé a Florencia Castillo, mentora de desarrollo personal y empresarial para mujeres emprendedoras. Descubrí su historia, visión y metodología.">
+    
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="diseño visual/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="diseño visual/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="diseño visual/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css?v=2.2">
+
+    <style>
+        .about-page-hero {
+            padding: 4.5rem 0 3.2rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--marfil-surface) 0%, var(--marfil) 100%);
+            border-bottom: 1px solid var(--marfil-border);
+        }
+
+        .about-page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--fuchsia);
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .about-page-title {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            color: var(--carbon);
+            margin-bottom: 14px;
+        }
+
+        .about-page-subtitle {
+            font-size: 1.15rem;
+            color: var(--carbon-light);
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .about-depth-section {
+            padding: 5rem 0;
+            background: var(--marfil);
+        }
+
+        .about-depth-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .depth-card {
+            background: var(--marfil-surface);
+            border: 1px solid var(--marfil-border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2.2rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .depth-card h3 {
+            font-size: 1.8rem;
+            color: var(--carbon);
+            margin-bottom: 1rem;
+        }
+
+        .depth-card p {
+            font-size: 0.98rem;
+            color: var(--carbon-light);
+            line-height: 1.65;
+            margin-bottom: 1.2rem;
+        }
+
+        .depth-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .depth-pillar-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.4rem 0 0;
+        }
+
+        .depth-pillar-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--marfil-border);
+        }
+
+        .depth-pillar-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .depth-pillar-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(212, 0, 106, 0.1);
+            color: var(--fuchsia);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .depth-pillar-text strong {
+            display: block;
+            color: var(--carbon);
+            font-size: 1.05rem;
+            margin-bottom: 3px;
+        }
+
+        .depth-pillar-text span {
+            font-size: 0.9rem;
+            color: var(--carbon-light);
+            line-height: 1.5;
+            display: block;
+        }
+
+        .about-cta-banner {
+            background: var(--carbon);
+            color: var(--marfil);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem 2.5rem;
+            text-align: center;
+            margin: 4.5rem auto 0;
+            max-width: 980px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(250, 240, 228, 0.1);
+            box-shadow: 0 20px 45px rgba(43, 36, 53, 0.25);
+        }
+
+        .about-cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 0, 106, 0.25) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .about-cta-banner h2 {
+            color: var(--marfil);
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-cta-banner p {
+            color: rgba(250, 240, 228, 0.85);
+            font-size: 1.05rem;
+            max-width: 640px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .about-cta-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .about-page-title {
+                font-size: 2.4rem;
+            }
+            .about-depth-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about-cta-banner {
+                padding: 2.5rem 1.5rem;
+            }
+            .about-cta-banner h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BANNER -->
+    <aside class="top-banner" aria-label="Aviso importante">
+        <div class="container banner-inner">
+            <span>✨ <strong>Guía Gratuita para Mujeres Emprendedoras:</strong> 5 pasos para salir del caos y ordenar tu negocio hoy</span>
+            <a href="guia-gratuita.html" class="banner-link">Comenzar y Descargar <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </aside>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+                <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo FC" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="brand-name">Florencia Castillo</span>
+                    <span class="brand-sub">MUJERES ALFA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html#inicio" class="nav-link">Inicio</a>
+                <a href="sobre-flor.html" class="nav-link active">Sobre Flor</a>
+                <a href="index.html#metodo-alfa" class="nav-link">Método Alfa</a>
+                <a href="guia-gratuita.html" class="nav-link">Guía Gratis</a>
+                <a href="index.html#programas" class="nav-link">Programas</a>
+                <a href="index.html#testimonios" class="nav-link">Testimonios</a>
+                <a href="index.html#contacto" class="nav-link">Contacto</a>
+            </nav>
+
+            <!-- Actions & Member Access -->
+            <div class="nav-actions">
+                <a href="index.html#metodo-alfa" class="btn btn-primary btn-sm">
+                    <span>Quiero Empezar</span>
+                    <i class="fa-solid fa-sparkles"></i>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- PAGE HERO -->
+        <section class="about-page-hero">
+            <div class="container">
+                <span class="about-page-badge">♦ HISTORIA, VISIÓN & LIDERAZGO ♦</span>
+                <h1 class="about-page-title">Florencia Castillo</h1>
+                <p class="about-page-subtitle">
+                    Mentora de desarrollo personal y empresarial para mujeres que eligen dejar de avanzar por inercia y construir una vida y un negocio con dirección propia.
+                </p>
+            </div>
+        </section>
+
+        <!-- CORE SECTION: CONOCE A TU MENTORA -->
+        <section class="about-section" style="border-top: none;">
+            <div class="container about-grid">
+                <div class="about-visual">
+                    <div class="about-card-frame">
+                        <img src="diseño visual/hero_mejorada.jpg" alt="Florencia Castillo · Mentora de Mujeres Alfa" class="about-img">
+                        <div class="about-experience-badge">
+                            <span class="badge-title">Mujeres Alfa</span>
+                            <span class="badge-subtitle">Poder. Claridad. Resultados.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <span class="section-tag-fuchsia">CONOCÉ A TU MENTORA</span>
+                    <h2>"Sé lo que es empezar sin mapa. Por eso creé el método para que no camines sola."</h2>
+                    
+                    <p class="about-lead">
+                        Soy <strong>Florencia Castillo</strong>, mentora de desarrollo personal y empresarial para <strong>mujeres emprendedoras</strong>. 
+                    </p>
+                    <p>
+                        Durante años vi a mujeres talentosas, creativas y trabajadoras abandonar sus proyectos por no contar con una estructura clara de negocio ni la confianza para sostenerlo.
+                    </p>
+                    <p>
+                        Mi misión con <strong>Mujeres Alfa</strong> no es darte fórmulas mágicas ni discursos motivacionales vacíos. Mi objetivo es darte <em>las herramientas prácticas, los hábitos de enfoque y el liderazgo</em> que necesitás para que tu emprendimiento sea una empresa sostenible.
+                    </p>
+
+                    <div class="manifesto-box">
+                        <div class="manifesto-quote">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <p>Ser Mujer Alfa no es ser perfecta: es elegir crecer con intención y adueñarte de tus resultados.</p>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">+150</span>
+                            <span class="stat-label">Mujeres Emprendedoras Acompañadas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Enfoque Práctico</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6 Meses</span>
+                            <span class="stat-label">Programa de Acompañamiento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEEPER VISION & PILLARS SECTION -->
+        <section class="about-depth-section">
+            <div class="container">
+                <div class="about-depth-grid">
+                    <div class="depth-card">
+                        <span class="section-tag-coral" style="font-size: 0.78rem; margin-bottom: 8px;">POR QUÉ NACIÓ MUJERES ALFA</span>
+                        <h3>El puente entre tu mundo interior y tus números</h3>
+                        <p>
+                            Muchas mujeres emprenden buscando libertad, pero terminan atrapadas en la autoexigencia, la dispersión o el miedo a vender. Tienen la visión, pero nadie les enseñó un método estructurado para sostener el crecimiento.
+                        </p>
+                        <p>
+                            En <strong>Mujeres Alfa</strong> unimos dos dimensiones inseparables: la mirada ontológica y el desarrollo personal (para trabajar en tus creencias, tu identidad y tu seguridad) con la estrategia empresarial concreta (organización diaria, fijación de precios, canales de venta y foco comercial).
+                        </p>
+                        <p style="font-weight: 600; color: var(--fuchsia);">
+                            "Tu negocio no va a crecer más de lo que crezcas vos como mujer y líder de tus decisiones."
+                        </p>
+                    </div>
+
+                    <div class="depth-card">
+                        <span class="section-tag-fuchsia" style="font-size: 0.78rem; margin-bottom: 8px;">FILOSOFÍA DE TRABAJO</span>
+                        <h3>Los 3 pilares del Enfoque Alfa</h3>
+                        <p>
+                            Cada programa, sesión y recurso que diseño se apoya en tres principios innegociables:
+                        </p>
+                        <ul class="depth-pillar-list">
+                            <li class="depth-pillar-item">
+                                <div class="depth-pillar-icon"><i class="fa-solid fa-compass"></i></div>
+                                <div class="depth-pillar-text">
+                                    <strong>1. Dirección</strong>
+                                    <span>Dejar de avanzar por inercia o por lo urgente. Saber con exactitud cuál es tu próximo paso estratégico y por qué lo das.</span>
+                                </div>
+                            </li>
+                            <li class="depth-pillar-item">
+                                <div class="depth-pillar-icon"><i class="fa-solid fa-gem"></i></div>
+                                <div class="depth-pillar-text">
+                                    <strong>2. Identidad</strong>
+                                    <span>Revisar quién estás siendo y construir una versión de vos que esté a la altura del negocio que querés sostener.</span>
+                                </div>
+                            </li>
+                            <li class="depth-pillar-item">
+                                <div class="depth-pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                <div class="depth-pillar-text">
+                                    <strong>3. Estructura & Resultados</strong>
+                                    <span>Hábitos diarios sostenibles, foco en lo que genera facturación y orden para no desgastarte sola en el camino.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CALL TO ACTION BANNER -->
+                <div class="about-cta-banner">
+                    <span style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--naranja); font-weight: 800; display: block; margin-bottom: 10px;">
+                        ¿LISTA PARA DAR EL PRÓXIMO PASO?
+                    </span>
+                    <h2>El primer paso no es hacer más.<br>Es empezar con dirección.</h2>
+                    <p>
+                        Podés iniciar hoy mismo con tu autodiagnóstico gratuito o agendar una sesión privada 1 a 1 por Google Meet para que conversemos en profundidad sobre tu momento.
+                    </p>
+                    <div class="about-cta-actions">
+                        <a href="guia-gratuita.html" class="btn btn-primary btn-lg">
+                            <i class="fa-solid fa-sparkles"></i>
+                            <span>Completar la Guía Gratuita</span>
+                        </a>
+                        <a href="https://calendly.com/florenciacastillo-oficial/30min" target="_blank" class="btn btn-secondary btn-lg" style="background: rgba(250,240,228,0.12); color: var(--marfil); border: 1.5px solid rgba(250,240,228,0.3);">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Agendar Sesión 1 a 1 con Flor</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo FC" class="footer-logo-img">
+                <h3>Florencia Castillo</h3>
+                <p class="footer-tag-alfa">MUJERES ALFA</p>
+                <p>Desarrollo personal y empresarial para mujeres emprendedoras que eligen liderar con intención y resultados reales.</p>
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/florenciacastillo.oficial/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/5522998090599" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:florenciacastillo.oficial@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="sobre-flor.html">Sobre Flor</a></li>
+                    <li><a href="index.html#metodo-alfa">Método Alfa</a></li>
+                    <li><a href="guia-gratuita.html">Guía Gratuita</a></li>
+                    <li><a href="index.html#programas">Programas & Ebooks</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Legales & Privacidad</h4>
+                <ul>
+                    <li><a href="legales.html#aviso">Aviso Legal</a></li>
+                    <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    <li><a href="legales.html#terminos">Términos y Condiciones</a></li>
+                    <li><a href="legales.html#cookies">Política de Cookies</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom-full">
+                <p>© 2026 Florencia Castillo · Mujeres Alfa · florenciacastillo.com. Todos los derechos reservados. · <a href="legales.html" style="color: rgba(250, 240, 228, 0.7); text-decoration: underline;">Aviso Legal, Privacidad & Cookies</a></p>
+                <p class="virel-credit">Desarrollado y Gestionado por <a href="https://virelcodes.com" target="_blank" rel="noopener noreferrer"><strong>VIREL.</strong> (virelcodes.com)</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/5522998090599?text=Hola%20Flor!%20Estuve%20viendo%20tu%20sitio%20web%20y%20quiero%20hacerte%20una%20consulta." target="_blank" class="floating-whatsapp" aria-label="Escribir por WhatsApp a Florencia Castillo">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="floating-tooltip">¿Tenés dudas? Escribile a Flor</span>
+    </a>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

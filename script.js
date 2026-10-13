@@ -83,7 +83,8 @@ function handleLeadSubmit(event) {
 // ScrollSpy to highlight active link
 function initScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    if (!sections.length || !navLinks.length) return;
 
     window.addEventListener('scroll', () => {
         let current = '';
@@ -98,12 +99,14 @@ function initScrollSpy() {
             }
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+        if (current) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
     });
 }
 
