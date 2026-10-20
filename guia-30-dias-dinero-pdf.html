@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escribí esto durante 30 Días | Florencia Castillo · Mujeres Alfa</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --fuchsia: #D4006A;
+            --marfil: #FAF0E4;
+            --marfil-surface: #FFF9F2;
+            --coral: #FF5C45;
+            --naranja: #FF9A3C;
+            --carbon: #2B2435;
+            --carbon-light: #524761;
+            --carbon-muted: #847895;
+            --border-soft: rgba(43, 36, 53, 0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--marfil);
+            color: var(--carbon);
+            line-height: 1.55;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        @page { size: A4 portrait; margin: 0; }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            max-height: 297mm;
+            margin: 20px auto;
+            background: var(--marfil-surface);
+            padding: 16mm 18mm 14mm 18mm;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(43, 36, 53, 0.08);
+            page-break-after: always;
+            break-after: page;
+            border: 1px solid var(--border-soft);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .page-content { flex: 1; }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            margin-bottom: 16px;
+            border-bottom: 1.5px solid var(--fuchsia);
+        }
+        .page-header-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            color: var(--fuchsia);
+        }
+        .page-header-step {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--carbon-muted);
+        }
+        .page-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: var(--carbon-muted);
+            border-top: 1px solid var(--border-soft);
+            padding-top: 8px;
+            margin-top: 10px;
+        }
+        .page-footer-tag { color: var(--fuchsia); font-weight: 700; letter-spacing: 1px; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--carbon); line-height: 1.15; font-weight: 700; }
+        .question-card {
+            background: #FFF;
+            border: 1px solid var(--border-soft);
+            border-left: 4px solid var(--fuchsia);
+            border-radius: 0 10px 10px 0;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+        }
+        .tracker-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            margin: 12px 0 16px;
+        }
+        .tracker-cell {
+            background: #FFF;
+            border: 1.5px solid var(--border-soft);
+            border-radius: 8px;
+            padding: 8px 6px;
+            text-align: center;
+        }
+        .tracker-cell-day {
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: var(--fuchsia);
+            display: block;
+            margin-bottom: 4px;
+        }
+        .tracker-cell-box {
+            width: 22px;
+            height: 22px;
+            border: 1.5px solid rgba(212, 0, 106, 0.4);
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+        .back-card {
+            background: var(--marfil);
+            border: 1.5px solid rgba(212, 0, 106, 0.25);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 14px 0 8px;
+        }
+        .back-card h3 { font-size: 1.35rem; color: var(--fuchsia); margin-bottom: 4px; }
+        @media print {
+            body { background: none; }
+            .page { margin: 0; box-shadow: none; border: none; width: 210mm; height: 297mm; max-height: 297mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PÁGINA 1: CONSIGNAS & PREGUNTAS DIARIAS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <span class="page-header-brand">MUJERES ALFA · DIARIO</span>
+                <span class="page-header-step">EL RITUAL NOCTURNO</span>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 16px;">
+                <span style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--fuchsia); font-weight: 800; display: block; margin-bottom: 4px;">
+                    ♦ DIARIO DE OBSERVACIÓN CONSCIENTE ♦
+                </span>
+                <h1 style="font-size: 2.2rem; color: var(--carbon); margin-bottom: 4px;">Escribí esto durante 30 Días</h1>
+                <p style="font-size: 0.95rem; color: var(--carbon-light); max-width: 580px; margin: 0 auto; line-height: 1.5;">
+                    5 minutos al día para observar tu relación con el dinero sin juicio y con honestidad.
+                </p>
+            </div>
+
+            <div style="background: rgba(212,0,106,0.06); border: 1px solid rgba(212,0,106,0.25); border-radius: 8px; padding: 14px 18px; margin-bottom: 18px;">
+                <h4 style="font-size: 1.15rem; color: var(--fuchsia); margin-bottom: 6px;">Cada noche, tomate 5 minutos:</h4>
+                <p style="font-size: 0.88rem; color: var(--carbon-light); line-height: 1.55;">
+                    Antes de dormir, buscá un momento de tranquilidad y respondé estas preguntas. No se trata de encontrar respuestas perfectas ni de juzgarte por lo que pensás, sentís o hacés con tu dinero. Se trata de <strong>observarte con curiosidad</strong>, tal como sos hoy.
+                </p>
+                <p style="font-size: 0.84rem; color: var(--carbon-muted); margin-top: 6px; font-style: italic;">
+                    Si un día no sabés qué escribir, empezá anotando exactamente eso: <em>"Hoy me cuesta conectar con lo que sentí"</em>. No necesitás cambiar nada de inmediato: primero, date la oportunidad de reconocerlo.
+                </p>
+            </div>
+
+            <h3 style="font-size: 1.45rem; color: var(--carbon); margin-bottom: 12px; text-align: center;">
+                Cada día, escribí sobre estas tres preguntas:
+            </h3>
+
+            <div class="question-card">
+                <span style="font-size: 0.75rem; font-weight: 800; color: var(--fuchsia); letter-spacing: 1px;">PREGUNTA 1</span>
+                <h4 style="font-size: 1.25rem; color: var(--carbon); margin-top: 2px; margin-bottom: 4px;">¿Qué relación tuve hoy con el dinero?</h4>
+                <p style="font-size: 0.85rem; color: var(--carbon-light);">¿Lo sentí presente, ausente, me causó alivio, miedo, gratitud o apuro? ¿Estuve pensando constantemente en él o me olvidé por completo?</p>
+            </div>
+
+            <div class="question-card">
+                <span style="font-size: 0.75rem; font-weight: 800; color: var(--fuchsia); letter-spacing: 1px;">PREGUNTA 2</span>
+                <h4 style="font-size: 1.25rem; color: var(--carbon); margin-top: 2px; margin-bottom: 4px;">¿Qué sentí al gastar o al recibirlo?</h4>
+                <p style="font-size: 0.85rem; color: var(--carbon-light);">¿Sentí culpa, disfrute, ansiedad al pagar, o sentí que merecía cobrar lo que pedí? Registrá la emoción física en el cuerpo al mover dinero.</p>
+            </div>
+
+            <div class="question-card">
+                <span style="font-size: 0.75rem; font-weight: 800; color: var(--fuchsia); letter-spacing: 1px;">PREGUNTA 3</span>
+                <h4 style="font-size: 1.25rem; color: var(--carbon); margin-top: 2px; margin-bottom: 4px;">¿Qué pensamiento predominó hoy sobre el dinero?</h4>
+                <p style="font-size: 0.85rem; color: var(--carbon-light);">¿Pensé desde la escasez y el límite ("no va a alcanzar") o desde la posibilidad y la construcción de valor ("puedo generar más")?</p>
+            </div>
+
+        </div>
+        <div class="page-footer">
+            <span class="page-footer-tag">FLORENCIA CASTILLO · MUJERES ALFA</span>
+            <span>Página 1 de 2</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: TRACKER DE 30 DÍAS & REFLEXIÓN FINAL -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <span class="page-header-brand">MUJERES ALFA · DIARIO</span>
+                <span class="page-header-step">TRACKER DE 30 DÍAS & INTEGRACIÓN</span>
+            </div>
+
+            <span class="step-tag">MI RECORRIDO DE 30 DÍAS</span>
+            <h2 class="step-title" style="font-size: 1.6rem;">El hábito de la presencia financiera</h2>
+            <p style="font-size: 0.88rem; color: var(--carbon-light); margin-bottom: 10px;">
+                Marcá con una tilde cada día que te tomes estos 5 minutos. No busques perfección: buscá sostener el hábito de mirarte.
+            </p>
+
+            <!-- TRACKER GRID (30 DÍAS) -->
+            <div class="tracker-grid">
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 01</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 02</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 03</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 04</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 05</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 06</span><div class="tracker-cell-box"></div></div>
+
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 07</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 08</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 09</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 10</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 11</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 12</span><div class="tracker-cell-box"></div></div>
+
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 13</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 14</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 15</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 16</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 17</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 18</span><div class="tracker-cell-box"></div></div>
+
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 19</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 20</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 21</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 22</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 23</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 24</span><div class="tracker-cell-box"></div></div>
+
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 25</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 26</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 27</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 28</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 29</span><div class="tracker-cell-box"></div></div>
+                <div class="tracker-cell"><span class="tracker-cell-day">DÍA 30</span><div class="tracker-cell-box"></div></div>
+            </div>
+
+            <div style="background: #FFF; border: 1px solid var(--border-soft); border-radius: 8px; padding: 12px 16px; margin-bottom: 12px;">
+                <h4 style="font-size: 1.1rem; color: var(--fuchsia); margin-bottom: 4px;">Después de los 30 días, volvé a leer tus respuestas:</h4>
+                <p style="font-size: 0.82rem; color: var(--carbon-light); line-height: 1.45;">
+                    ¿Qué patrones aparecen? ¿Hay emociones o pensamientos que se repiten cuando gastás, recibís o pensás en el dinero? ¿Descubriste alguna creencia oculta? No hace falta que tengas todas las respuestas de golpe: elegí una cosa que hayas descubierto sobre vos y preguntate:
+                </p>
+                <div style="margin-top: 6px; padding: 8px 12px; background: var(--marfil); border-radius: 6px; font-size: 0.86rem; font-weight: 700; color: var(--carbon);">
+                    ¿Qué pequeño paso concreto puedo dar a partir de ahora?
+                </div>
+            </div>
+
+            <!-- PROGRAMA DE ACOMPAÑAMIENTO: MUJERES ALFA — EL INICIO -->
+            <div class="back-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <span style="font-size: 0.74rem; font-weight: 800; color: var(--fuchsia); letter-spacing: 2px;">PROGRAMA DE ACOMPAÑAMIENTO</span>
+                    <span style="font-size: 0.70rem; background: rgba(212,0,106,0.1); color: var(--fuchsia); padding: 3px 10px; border-radius: 999px; font-weight: 700;">COMUNIDAD EXCLUSIVA</span>
+                </div>
+                <h3>MUJERES ALFA — EL INICIO</h3>
+                <p style="font-size: 0.90rem; font-weight: 700; color: var(--carbon); margin-bottom: 4px;">
+                    Un hábito pequeño también cuenta. El primer paso para cambiar es observarte.
+                </p>
+                <p style="font-size: 0.82rem; color: var(--carbon-light); margin-bottom: 8px; line-height: 1.45;">
+                    En Mujeres Alfa vas a encontrar un espacio de mujeres que también están trabajando en sí mismas, transformando su identidad y construyendo nuevos hábitos para que su negocio crezca con dirección.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+                    <div style="background: var(--marfil-surface); padding: 5px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.65rem; color: var(--fuchsia); display: block;">DIRECCIÓN</strong>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 5px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.65rem; color: var(--fuchsia); display: block;">IDENTIDAD</strong>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 5px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.65rem; color: var(--fuchsia); display: block;">HERRAMIENTAS</strong>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 5px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.65rem; color: var(--fuchsia); display: block;">ACOMPAÑAMIENTO</strong>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 5px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.65rem; color: var(--fuchsia); display: block;">COMUNIDAD</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 6px;">
+                <p style="font-size: 0.82rem; font-weight: 700; color: var(--fuchsia); letter-spacing: 1px;">
+                    PEQUEÑOS HÁBITOS. GRANDES DIFERENCIAS.
+                </p>
+                <span style="font-size: 0.74rem; color: var(--carbon-muted);">Florencia Castillo · florenciacastillo.com</span>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-footer-tag">FLORENCIA CASTILLO · MUJERES ALFA</span>
+            <span>Página 2 de 2</span>
+        </div>
+    </div>
+
+</body>
+</html>

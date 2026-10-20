@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guías Gratuitas Oficiales | Florencia Castillo · Mujeres Alfa</title>
+    <meta name="description" content="Accedé a las 4 guías prácticas y workbooks en PDF de Florencia Castillo: Radiografía Alfa, Hábitos Financieros, Materializar Dinero en 7 Días y Diario Nocturno de 30 Días.">
+    
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="diseño visual/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="diseño visual/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="diseño visual/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .hub-hero {
+            padding: 4rem 0 3rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(212,0,106,0.04) 0%, rgba(250,240,228,0) 100%);
+        }
+
+        .hub-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            background: var(--marfil-surface);
+            border: 1px solid var(--fuchsia);
+            color: var(--fuchsia);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+        }
+
+        .hub-title {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            color: var(--carbon);
+            margin-bottom: 1rem;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hub-lead {
+            font-size: 1.15rem;
+            color: var(--carbon-light);
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 900px) {
+            .hub-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .guide-card {
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            border: 1.5px solid rgba(43,36,53,0.08);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 36px rgba(43,36,53,0.1);
+            border-color: var(--fuchsia);
+        }
+
+        .guide-card-featured {
+            border: 2px solid var(--fuchsia);
+            background: linear-gradient(135deg, #FFF9F2 0%, #FFF3F7 100%);
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            background: rgba(212,0,106,0.1);
+            color: var(--fuchsia);
+            margin-bottom: 16px;
+        }
+
+        .guide-card-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: var(--marfil);
+            border: 1px solid rgba(212,0,106,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--fuchsia);
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .guide-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.65rem;
+            color: var(--carbon);
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+
+        .guide-card-desc {
+            font-size: 0.95rem;
+            color: var(--carbon-light);
+            line-height: 1.55;
+            margin-bottom: 20px;
+        }
+
+        .guide-card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+            font-size: 0.88rem;
+            color: var(--carbon);
+        }
+
+        .guide-card-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            line-height: 1.45;
+        }
+
+        .guide-card-features li i {
+            color: var(--fuchsia);
+            font-size: 0.85rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .guide-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 14px;
+            border-top: 1px dashed rgba(43,36,53,0.12);
+            font-size: 0.8rem;
+            color: var(--carbon-muted);
+            margin-bottom: 20px;
+        }
+
+        .guide-card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .guide-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .guide-actions-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        @media (max-width: 500px) {
+            .guide-actions-split {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Callout Box for Calendly */
+        .calendly-hub-banner {
+            background: var(--carbon);
+            color: #fff;
+            border-radius: var(--radius-lg);
+            padding: 44px;
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calendly-hub-banner::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(212,0,106,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .calendly-hub-badge {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--naranja);
+            margin-bottom: 12px;
+        }
+
+        .calendly-hub-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .calendly-hub-p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 650px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <aside class="top-banner">
+        <div class="container banner-inner">
+            <span>✦ <strong>Recursos Oficiales de Mujeres Alfa:</strong> 4 guías prácticas descargables en PDF para tu crecimiento personal y empresarial ✦</span>
+        </div>
+    </aside>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+                <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo FC" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="brand-name">Florencia Castillo</span>
+                    <span class="brand-sub">MUJERES ALFA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="sobre-flor.html" class="nav-link">Sobre Flor</a>
+                <a href="guias-gratuitas.html" class="nav-link active">Guías Gratis</a>
+                <a href="index.html#metodo-alfa" class="nav-link">Método Alfa</a>
+                <a href="index.html#programas" class="nav-link">Programas</a>
+                <a href="index.html#testimonios" class="nav-link">Testimonios</a>
+                <a href="index.html#contacto" class="nav-link">Contacto</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://calendly.com/florenciacastillo-oficial/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <span>Agendar Sesión</span>
+                    <i class="fa-solid fa-calendar-check"></i>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hub-hero">
+            <div class="container">
+                <span class="hub-badge">
+                    <span class="diamond-icon">♦</span>
+                    BIBLIOTECA DE RECURSOS GRATUITOS
+                    <span class="diamond-icon">♦</span>
+                </span>
+                <h1 class="hub-title">Herramientas prácticas para salir del caos, liderar tus números y expandir tu negocio</h1>
+                <p class="hub-lead">
+                    Accedé a las 4 guías oficiales en PDF de Mujeres Alfa. Cada recurso fue diseñado para transformar un área crítica: mentalidad, hábitos financieros, manifestación consciente y autodiagnóstico integral.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4 GUIDES GRID SECTION -->
+        <section style="padding: 1rem 0 3rem;">
+            <div class="container">
+                <div class="hub-grid">
+
+                    <!-- GUÍA 1: RADIOGRAFÍA ALFA -->
+                    <div class="guide-card guide-card-featured">
+                        <div>
+                            <span class="card-tag">Diagnóstico & Liderazgo</span>
+                            <div class="guide-card-icon">
+                                <i class="fa-solid fa-compass-drafting"></i>
+                            </div>
+                            <h2 class="guide-card-title">Radiografía Alfa: Autodiagnóstico</h2>
+                            <p class="guide-card-desc">
+                                ¿Estás viviendo la vida que elegiste o estás atrapada en el piloto automático? Descubrí en qué nivel de energía y estructura estás operando hoy.
+                            </p>
+                            <ul class="guide-card-features">
+                                <li><i class="fa-solid fa-circle-check"></i> 5 ejercicios prácticos de honestidad y autoobservación.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Medición de tu relación con el dinero, tiempo y negocio.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Plan de acción personalizado con tu puntaje Alfa.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="guide-card-meta">
+                                <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (8 págs)</span>
+                                <span><i class="fa-solid fa-bolt"></i> Test Interactivo</span>
+                                <span><i class="fa-solid fa-tag"></i> 100% Gratuito</span>
+                            </div>
+                            <div class="guide-actions-split">
+                                <a href="guia-radiografia-alfa.html" class="btn btn-primary btn-sm" style="text-align: center;">
+                                    <span>Hacer Online</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="descargas/guia-radiografia-alfa-mujeres-alfa.pdf" download="Guia-Radiografia-Alfa-Mujeres-Alfa.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Bajar PDF</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GUÍA 2: HÁBITOS FINANCIEROS -->
+                    <div class="guide-card">
+                        <div>
+                            <span class="card-tag">Finanzas & Negocio</span>
+                            <div class="guide-card-icon">
+                                <i class="fa-solid fa-coins"></i>
+                            </div>
+                            <h2 class="guide-card-title">Hábitos Financieros para Mujeres Alfa</h2>
+                            <p class="guide-card-desc">
+                                El dinero no te falta por mala suerte: te falta porque nadie te enseñó a relacionarte con él sin culpa ni desorden. Ordená tus números personales y de negocio.
+                            </p>
+                            <ul class="guide-card-features">
+                                <li><i class="fa-solid fa-circle-check"></i> Los 6 hábitos financieros innegociables de una líder.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Rastreador práctico de gastos personales de 7 días.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Los 5 chequeos de salud empresarial para tu negocio.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="guide-card-meta">
+                                <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (4 págs)</span>
+                                <span><i class="fa-solid fa-table-list"></i> Incluye Plantillas</span>
+                                <span><i class="fa-solid fa-tag"></i> 100% Gratuito</span>
+                            </div>
+                            <div class="guide-actions-split">
+                                <a href="guia-habitos-financieros.html" class="btn btn-primary btn-sm" style="text-align: center;">
+                                    <span>Ver Guía</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="descargas/habitos-financieros-mujeres-alfa.pdf" download="Guia-Habitos-Financieros-Mujeres-Alfa.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Bajar PDF</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GUÍA 3: MATERIALIZAR DINERO EN 7 DÍAS -->
+                    <div class="guide-card">
+                        <div>
+                            <span class="card-tag">Mentalidad & Manifestación</span>
+                            <div class="guide-card-icon">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h2 class="guide-card-title">Cómo Materializar Dinero en 7 Días</h2>
+                            <p class="guide-card-desc">
+                                Un ritual estructurado de 7 días para desbloquear tu energía con el dinero, romper techos invisibles de merecimiento y activar flujo tangible de ingresos.
+                            </p>
+                            <ul class="guide-card-features">
+                                <li><i class="fa-solid fa-circle-check"></i> 7 pasos diarios enfocados en desbloqueo y certeza interna.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Ejercicios de neutralización de miedos y juicio con el cobro.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Acciones concretas para recibir y capitalizar oportunidades.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="guide-card-meta">
+                                <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (2 págs)</span>
+                                <span><i class="fa-solid fa-calendar-days"></i> Ritual de 7 Días</span>
+                                <span><i class="fa-solid fa-tag"></i> 100% Gratuito</span>
+                            </div>
+                            <div class="guide-actions-split">
+                                <a href="guia-materializar-dinero.html" class="btn btn-primary btn-sm" style="text-align: center;">
+                                    <span>Ver Guía</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="descargas/materializar-dinero-7-dias-mujeres-alfa.pdf" download="Guia-Materializar-Dinero-7-Dias-Mujeres-Alfa.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Bajar PDF</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GUÍA 4: ESCRIBÍ ESTO DURANTE 30 DÍAS -->
+                    <div class="guide-card">
+                        <div>
+                            <span class="card-tag">Rutina Nocturna & Hábito</span>
+                            <div class="guide-card-icon">
+                                <i class="fa-solid fa-book-journal-whills"></i>
+                            </div>
+                            <h2 class="guide-card-title">Escribí esto durante 30 Días</h2>
+                            <p class="guide-card-desc">
+                                El diario nocturno de 5 minutos que reprograma tu relación con la abundancia, desactiva la ansiedad de la cama y enfoca tu energía antes de dormir.
+                            </p>
+                            <ul class="guide-card-features">
+                                <li><i class="fa-solid fa-circle-check"></i> 3 preguntas reveladoras para responder cada noche.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Reprogramación subconsciente del merecimiento y la calma.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Habit tracker visual de 30 noches consecutivas.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="guide-card-meta">
+                                <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (2 págs)</span>
+                                <span><i class="fa-solid fa-moon"></i> 5 min por noche</span>
+                                <span><i class="fa-solid fa-tag"></i> 100% Gratuito</span>
+                            </div>
+                            <div class="guide-actions-split">
+                                <a href="guia-30-dias-dinero.html" class="btn btn-primary btn-sm" style="text-align: center;">
+                                    <span>Ver Guía</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a href="descargas/escribi-esto-30-dias-mujeres-alfa.pdf" download="Guia-Escribi-Esto-30-Dias-Mujeres-Alfa.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>Bajar PDF</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- BANNER SESIÓN CON FLOR -->
+                <div class="calendly-hub-banner">
+                    <span class="calendly-hub-badge">Paso Siguiente · Acompañamiento Personalizado</span>
+                    <h3 class="calendly-hub-title">Ningún PDF transforma tu vida si no lo integrás con acción.</h3>
+                    <p class="calendly-hub-p">
+                        Las 4 guías te dan el mapa. En una <strong>sesión estratégica 1 a 1 de 30 minutos por Google Meet</strong> conmigo, revisamos tus respuestas, destrabamos tus cuellos de botella y trazamos el plan para tus próximos 90 días.
+                    </p>
+                    <a href="https://calendly.com/florenciacastillo-oficial/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                        <span>Agendar mi Sesión 1 a 1 Gratuita</span>
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+                    <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo" class="logo-img">
+                    <div class="logo-text-group">
+                        <span class="brand-name">Florencia Castillo</span>
+                        <span class="brand-sub">MUJERES ALFA</span>
+                    </div>
+                </a>
+                <p class="footer-bio">
+                    Espacio de transformación ontológica, liderazgo femenino y desarrollo empresarial. Acompaño a mujeres a liderar con coherencia, poder personal y resultados tangibles.
+                </p>
+                <div class="social-links">
+                    <a href="https://instagram.com/florenciacastillo.oficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@florenciacastillo.oficial" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://wa.me/5491100000000" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://youtube.com/@florenciacastillo" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Ecosistema</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-flor.html">Sobre Flor</a></li>
+                    <li><a href="guias-gratuitas.html">Guías Gratis</a></li>
+                    <li><a href="index.html#metodo-alfa">Método Alfa</a></li>
+                    <li><a href="index.html#programas">Programas & Ebooks</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Guías en PDF</h4>
+                <ul class="footer-links">
+                    <li><a href="guia-radiografia-alfa.html">Radiografía Alfa</a></li>
+                    <li><a href="guia-habitos-financieros.html">Hábitos Financieros</a></li>
+                    <li><a href="guia-materializar-dinero.html">Materializar Dinero en 7 Días</a></li>
+                    <li><a href="guia-30-dias-dinero.html">Escribí esto por 30 Días</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Legal & Contacto</h4>
+                <ul class="footer-links">
+                    <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    <li><a href="legales.html#terminos">Términos y Condiciones</a></li>
+                    <li><a href="legales.html#cookies">Política de Cookies</a></li>
+                    <li><a href="legales.html#descargo">Descargo de Responsabilidad</a></li>
+                </ul>
+                <div class="legal-badge" style="margin-top: 15px;">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Entorno 100% Seguro y Confidencial</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; 2026 Florencia Castillo · Mujeres Alfa. Todos los derechos reservados.</p>
+                <p class="made-by">Diseñado con excelencia y propósito.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/5491100000000?text=Hola%20Flor!%20Estuve%20viendo%20tus%20gu%C3%ADas%20gratuitas%20y%20me%20gustar%C3%ADa%20hacerte%20una%20consulta." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

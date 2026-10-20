@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía: Hábitos Financieros para Mujeres Alfa | Florencia Castillo</title>
+    <meta name="description" content="Descargá la Guía Oficial de Hábitos Financieros de Florencia Castillo: los 6 hábitos innegociables, rastreador de gastos de 7 días y los 5 chequeos de salud para tu negocio.">
+    
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="diseño visual/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="diseño visual/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="diseño visual/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .page-header-simple {
+            padding: 3rem 0 2rem;
+            background: linear-gradient(180deg, rgba(212,0,106,0.04) 0%, rgba(250,240,228,0) 100%);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--carbon-muted);
+            margin-bottom: 1.2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--carbon-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--fuchsia);
+        }
+
+        .guide-detail-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 950px) {
+            .guide-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .guide-content-box {
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid rgba(43,36,53,0.08);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .guide-quote-box {
+            border-left: 3px solid var(--fuchsia);
+            padding: 16px 20px;
+            background: var(--marfil);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-style: italic;
+            color: var(--carbon);
+            margin: 24px 0;
+            line-height: 1.6;
+        }
+
+        .guide-pill-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--fuchsia);
+            background: rgba(212,0,106,0.1);
+            padding: 4px 14px;
+            border-radius: 50px;
+            margin-bottom: 14px;
+        }
+
+        .lead-card-sticky {
+            position: sticky;
+            top: 100px;
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--fuchsia);
+            padding: 32px;
+            box-shadow: 0 16px 40px rgba(43,36,53,0.09);
+        }
+
+        .lead-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            color: var(--fuchsia);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--carbon);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid rgba(43,36,53,0.18);
+            border-radius: var(--radius-sm);
+            background: var(--marfil);
+            color: var(--carbon);
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--fuchsia);
+            box-shadow: 0 0 0 3px rgba(212,0,106,0.12);
+        }
+
+        .download-success-box {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .download-success-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(212,0,106,0.1);
+            color: var(--fuchsia);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 14px;
+        }
+
+        .calendly-invite-card {
+            margin-top: 24px;
+            padding: 20px;
+            background: var(--carbon);
+            color: #fff;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+
+        .calendly-invite-card h4 {
+            color: var(--naranja);
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            font-family: var(--font-heading);
+        }
+
+        .calendly-invite-card p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 14px;
+            line-height: 1.45;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <aside class="top-banner">
+        <div class="container banner-inner">
+            <span>✦ <strong>Recurso Oficial Gratuito:</strong> Guía en PDF lista para descargar y aplicar ✦</span>
+            <a href="guias-gratuitas.html" class="banner-link">Ver todas las guías <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </aside>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+                <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo FC" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="brand-name">Florencia Castillo</span>
+                    <span class="brand-sub">MUJERES ALFA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="sobre-flor.html" class="nav-link">Sobre Flor</a>
+                <a href="guias-gratuitas.html" class="nav-link active">Guías Gratis</a>
+                <a href="index.html#metodo-alfa" class="nav-link">Método Alfa</a>
+                <a href="index.html#programas" class="nav-link">Programas</a>
+                <a href="index.html#contacto" class="nav-link">Contacto</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="guias-gratuitas.html" class="btn btn-outline btn-sm">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Todas las Guías</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header-simple">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+                    <a href="guias-gratuitas.html">Guías Gratis</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+                    <span>Hábitos Financieros</span>
+                </nav>
+                <span class="guide-pill-badge">GUÍA PRÁCTICA OFICIAL · FORMATO PDF (4 PÁGINAS)</span>
+                <h1 style="font-size: clamp(2.2rem, 3.8vw, 3.2rem); margin-bottom: 12px; line-height: 1.15;">
+                    Hábitos Financieros para Mujeres Alfa
+                </h1>
+                <p style="font-size: 1.15rem; color: var(--carbon-light); max-width: 740px; line-height: 1.55;">
+                    Cómo sanar tu vínculo con el dinero, separar tus gastos personales de tu negocio y ejecutar los 5 chequeos que protegen tu rentabilidad y paz mental.
+                </p>
+            </div>
+        </section>
+
+        <section style="padding: 2rem 0 4rem;">
+            <div class="container guide-detail-grid">
+
+                <!-- CONTENIDO DESCRIPTIVO DE LA GUÍA -->
+                <div class="guide-content-box">
+                    <h2 style="font-size: 1.85rem; margin-bottom: 14px; font-family: var(--font-heading);">
+                        El dinero es un reflejo de tus decisiones diarias.
+                    </h2>
+                    <p style="color: var(--carbon-light); line-height: 1.65; margin-bottom: 16px;">
+                        Muchas mujeres sienten que el dinero se les escurre entre las manos o que, por más que trabajen 14 horas al día, sus cuentas nunca reflejan el esfuerzo. La razón casi nunca es falta de talento: <strong>es la ausencia de un sistema simple de orden y el peso de creencias heredadas</strong>.
+                    </p>
+
+                    <div class="guide-quote-box">
+                        «El dinero no es frío ni lejano. El dinero responde con precisión a la claridad con la que lo administrás y a la seguridad con la que lo cobrás.»
+                        <div style="font-size: 0.85rem; font-weight: 700; margin-top: 6px; font-style: normal; color: var(--fuchsia);">— Florencia Castillo</div>
+                    </div>
+
+                    <h3 style="font-size: 1.35rem; margin: 28px 0 14px; color: var(--carbon);">
+                        ¿Qué vas a encontrar dentro de este workbook en PDF?
+                    </h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px;">
+                        <div style="display: flex; gap: 14px;">
+                            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--fuchsia); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
+                            <div>
+                                <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Los 6 Hábitos Innegociables</h4>
+                                <p style="font-size: 0.92rem; color: var(--carbon-light); line-height: 1.5;">Separación total de cuentas, pagarte un sueldo real a vos misma antes de repartir, auditoría de microgastos y revisión semanal sin juicio.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 14px;">
+                            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--coral); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
+                            <div>
+                                <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Rastreador de Gastos de 7 Días</h4>
+                                <p style="font-size: 0.92rem; color: var(--carbon-light); line-height: 1.5;">Una planilla estructurada y lista para completar día a día que te ayuda a registrar entradas, salidas y la emoción detrás de cada compra.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 14px;">
+                            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--naranja); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
+                            <div>
+                                <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Los 5 Chequeos de Salud Empresarial</h4>
+                                <p style="font-size: 0.92rem; color: var(--carbon-light); line-height: 1.5;">Márgenes reales de ganancia, fondo de reserva operativo, concentración de ingresos y planificación de reinversión para tu negocio.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--marfil); padding: 20px; border-radius: var(--radius-md); border: 1px dashed var(--carbon-muted);">
+                        <h4 style="font-size: 1rem; color: var(--carbon); margin-bottom: 6px;">
+                            <i class="fa-solid fa-lightbulb" style="color: var(--naranja); margin-right: 6px;"></i> Consejo de aplicación:
+                        </h4>
+                        <p style="font-size: 0.88rem; color: var(--carbon-light); line-height: 1.5; margin: 0;">
+                            Descargá el PDF e imprimilo o tenelo abierto en tu tablet. No intentes cambiar los 6 hábitos en un solo día; elegí dos para empezar esta misma semana.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CARD DE CAPTURA Y DESCARGA DIRECTA -->
+                <div class="lead-card-sticky">
+                    
+                    <!-- FORMULARIO DE ACCESO -->
+                    <div id="captureFormBox">
+                        <span style="font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--naranja); display: block; margin-bottom: 6px;">
+                            DESCARGA INMEDIATA
+                        </span>
+                        <h3 class="lead-card-title">Accedé a la Guía en PDF</h3>
+                        <p style="font-size: 0.88rem; color: var(--carbon-light); margin-bottom: 20px; line-height: 1.45;">
+                            Ingresá tus datos para descargar tu copia oficial y confidencial de forma 100% gratuita:
+                        </p>
+
+                        <form id="leadForm" onsubmit="handleLeadSubmit(event)">
+                            <div class="form-group">
+                                <label for="leadName">Nombre completo *</label>
+                                <input type="text" id="leadName" class="form-control" required placeholder="Ej: Marcela">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="leadEmail">Tu mejor email *</label>
+                                <input type="email" id="leadEmail" class="form-control" required placeholder="marcela@ejemplo.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="leadPhone">WhatsApp (opcional, para avisos de talleres)</label>
+                                <input type="tel" id="leadPhone" class="form-control" placeholder="+54 9 11 ...">
+                            </div>
+
+                            <button type="submit" id="btnSubmitLead" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">
+                                <span>Descargar Guía Gratis</span>
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </button>
+                            <p style="font-size: 0.75rem; color: var(--carbon-muted); text-align: center; margin-top: 10px; margin-bottom: 0;">
+                                🔒 Cero spam. Solo contenido de alto valor y herramientas para tu negocio.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- ESTADO DESCARGA DISPONIBLE (POST-ENVÍO O LOCALSTORAGE) -->
+                    <div id="downloadReadyBox" class="download-success-box">
+                        <div class="download-success-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 style="font-size: 1.6rem; margin-bottom: 6px; color: var(--carbon); font-family: var(--font-heading);">
+                            ¡Guía desbloqueada!
+                        </h3>
+                        <p style="font-size: 0.9rem; color: var(--carbon-light); margin-bottom: 20px;">
+                            Hola <strong id="userNameGreet">Emprendedora</strong>, hacé click abajo para descargar el archivo directamente a tu dispositivo:
+                        </p>
+
+                        <a id="btnDirectDownload" href="descargas/habitos-financieros-mujeres-alfa.pdf" download="Guia-Habitos-Financieros-Mujeres-Alfa.pdf" class="btn btn-primary btn-block btn-lg">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Descargar PDF Ahora (Gratis)</span>
+                        </a>
+
+                        <div class="calendly-invite-card">
+                            <span style="font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--naranja); display: block; margin-bottom: 4px;">
+                                BENEFICIO ESPECIAL
+                            </span>
+                            <h4>Reunión 1 a 1 de 30 min con Flor</h4>
+                            <p>Hablemos de tus números y destrabemos el cuello de botella que hoy frena tu crecimiento.</p>
+                            <a id="btnCalendlyLead" href="https://calendly.com/florenciacastillo-oficial/30min" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block btn-sm">
+                                <span>Agendar mi Sesión Gratuita</span>
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+                    <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo" class="logo-img">
+                    <div class="logo-text-group">
+                        <span class="brand-name">Florencia Castillo</span>
+                        <span class="brand-sub">MUJERES ALFA</span>
+                    </div>
+                </a>
+                <p class="footer-bio">
+                    Espacio de transformación ontológica, liderazgo femenino y desarrollo empresarial con Florencia Castillo.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Guías Oficiales</h4>
+                <ul class="footer-links">
+                    <li><a href="guias-gratuitas.html">Todas las Guías</a></li>
+                    <li><a href="guia-radiografia-alfa.html">Radiografía Alfa</a></li>
+                    <li><a href="guia-habitos-financieros.html">Hábitos Financieros</a></li>
+                    <li><a href="guia-materializar-dinero.html">Materializar Dinero en 7 Días</a></li>
+                    <li><a href="guia-30-dias-dinero.html">Escribí esto por 30 Días</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-title">Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="legales.html#privacidad">Privacidad</a></li>
+                    <li><a href="legales.html#terminos">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; 2026 Florencia Castillo · Mujeres Alfa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const GUIDE_KEY = 'fc_lead_habitos_financieros';
+        const CALENDLY_BASE = 'https://calendly.com/florenciacastillo-oficial/30min';
+
+        // Comprobar si ya completó sus datos previamente
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLead = localStorage.getItem('fc_lead_user');
+            if (savedLead) {
+                try {
+                    const data = JSON.parse(savedLead);
+                    showDownloadState(data.name, data.email);
+                } catch(e) {}
+            }
+        });
+
+        function handleLeadSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('leadName').value.trim();
+            const email = document.getElementById('leadEmail').value.trim();
+            const phone = document.getElementById('leadPhone').value.trim();
+
+            if (!name || !email) {
+                alert('Por favor completá tu nombre y tu email para descargar la guía.');
+                return;
+            }
+
+            const btn = document.getElementById('btnSubmitLead');
+            btn.disabled = true;
+            btn.innerHTML = '<span>Generando descarga...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+
+            const payload = {
+                recurso: 'Guía Hábitos Financieros para Mujeres Alfa',
+                nombre: name,
+                email: email,
+                whatsapp: phone || 'No informado',
+                fecha: new Date().toLocaleString('es-AR')
+            };
+
+            // Enviar a FormSubmit
+            fetch('https://formsubmit.co/ajax/florenciacastillo.oficial@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            }).then(() => {
+                console.log('Lead registrado en casilla de Flor');
+            }).catch(err => {
+                console.warn('Registro offline:', err);
+            }).finally(() => {
+                localStorage.setItem('fc_lead_user', JSON.stringify({ name, email, phone }));
+                showDownloadState(name, email);
+            });
+        }
+
+        function showDownloadState(name, email) {
+            document.getElementById('captureFormBox').style.display = 'none';
+            document.getElementById('downloadReadyBox').style.display = 'block';
+            document.getElementById('userNameGreet').textContent = name || 'Emprendedora';
+
+            const calendlyUrl = `${CALENDLY_BASE}?name=${encodeURIComponent(name || '')}&email=${encodeURIComponent(email || '')}`;
+            document.getElementById('btnCalendlyLead').setAttribute('href', calendlyUrl);
+
+            // Trigger instant download automatically on first submit
+            const downloadBtn = document.getElementById('btnDirectDownload');
+            if (downloadBtn) {
+                downloadBtn.click();
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

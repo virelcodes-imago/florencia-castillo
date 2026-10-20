@@ -534,6 +534,11 @@
         }
 
         /* Print Media Styles */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
         @media print {
             body {
                 background: none;
@@ -547,9 +552,14 @@
                 margin: 0;
                 box-shadow: none;
                 border: none;
-                width: 100%;
-                min-height: 100vh;
-                padding: 18mm 16mm;
+                width: 210mm;
+                height: 297mm;
+                max-height: 297mm;
+                box-sizing: border-box;
+                padding: 16mm 16mm 14mm 16mm;
+                page-break-after: always;
+                break-after: page;
+                overflow: hidden;
             }
         }
     </style>

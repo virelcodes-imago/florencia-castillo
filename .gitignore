@@ -3,9 +3,12 @@
 *.docx
 
 # Vercel & Node
+.vercel/
 .vercel
-node_modules
+node_modules/
 .DS_Store
 Thumbs.db
 
-.vercel
+# Scratch & Fonts
+scratch/
+*.ttf

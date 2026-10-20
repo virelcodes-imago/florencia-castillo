@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuestas de Identidad Visual · Florencia Castillo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg">
+    <style>
+        :root {
+            --fuchsia: #D4006A;
+            --coral: #FF5C45;
+            --marfil: #FAF0E4;
+            --marfil-card: #FFF9F2;
+            --carbon: #2B2435;
+            --carbon-light: #443B52;
+            --font-serif: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'DM Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--marfil);
+            color: var(--carbon);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            padding: 3rem 1.5rem 6rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .header-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--fuchsia);
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .header h1 {
+            font-family: var(--font-serif);
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .header h1 span {
+            color: var(--fuchsia);
+            font-style: italic;
+        }
+
+        .header p {
+            font-size: 1.15rem;
+            color: var(--carbon-light);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* INSPIRATION ROW */
+        .inspiration-box {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            border: 1px solid rgba(212, 0, 106, 0.12);
+            box-shadow: 0 10px 30px rgba(43, 36, 53, 0.04);
+        }
+
+        .inspiration-title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--carbon);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .insp-item {
+            text-align: center;
+        }
+
+        .insp-img-wrap {
+            background: var(--marfil-card);
+            border: 1px solid rgba(212, 0, 106, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            height: 180px;
+        }
+
+        .insp-img-wrap img {
+            max-height: 140px;
+            max-width: 140px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .insp-label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--carbon-light);
+        }
+
+        /* PROPOSALS GRID */
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .option-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1.5px solid rgba(212, 0, 106, 0.15);
+            box-shadow: 0 16px 40px rgba(43, 36, 53, 0.06);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 50px rgba(212, 0, 106, 0.12);
+        }
+
+        .option-badge {
+            background: var(--fuchsia);
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        .badge-recommended {
+            background: linear-gradient(135deg, #D4006A, #FF5C45);
+        }
+
+        .preview-area {
+            position: relative;
+            background: var(--marfil-card);
+            padding: 3rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(212, 0, 106, 0.1);
+        }
+
+        .preview-img {
+            width: 240px;
+            height: 240px;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 24px rgba(43, 36, 53, 0.08));
+        }
+
+        .option-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .option-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .option-subtitle {
+            font-size: 0.88rem;
+            color: var(--fuchsia);
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .option-desc {
+            font-size: 0.95rem;
+            color: var(--carbon-light);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .features-list li {
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--carbon);
+        }
+
+        .features-list li i {
+            color: var(--coral);
+            font-size: 0.85rem;
+        }
+
+        .btn-view {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--marfil);
+            border: 1px solid rgba(212, 0, 106, 0.25);
+            color: var(--carbon);
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-view:hover {
+            background: var(--fuchsia);
+            color: white;
+            border-color: var(--fuchsia);
+        }
+
+        /* DARK MODE PREVIEW ROW */
+        .dark-showcase {
+            background: var(--carbon);
+            color: var(--marfil);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .dark-showcase h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .dark-showcase p {
+            color: rgba(250, 240, 228, 0.7);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            font-size: 0.95rem;
+        }
+
+        .dark-logos-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .dark-logo-item {
+            text-align: center;
+        }
+
+        .dark-logo-img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            margin-bottom: 0.8rem;
+        }
+
+        .dark-logo-item span {
+            font-size: 0.85rem;
+            color: rgba(250, 240, 228, 0.85);
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.4rem;
+            }
+            .dark-logos-grid {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <span class="header-tag">Identidad Visual & Branding</span>
+            <h1>Propuestas de Logo para <span>Florencia</span></h1>
+            <p>Diseñadas fusionando los bocetos y preferencias de Flor (la 'F' caligráfica, el contraste con la 'C' y el destello de transformación) con la estructura, paleta y geometría del Brand Kit oficial.</p>
+        </header>
+
+        <!-- INSPIRATION SECTION -->
+        <section class="inspiration-box">
+            <h2 class="inspiration-title">Bocetos enviados por Flor</h2>
+            <div class="inspiration-grid">
+                <div class="insp-item">
+                    <div class="insp-img-wrap">
+                        <img src="diseño visual/propuestas_flor/opcion_1_fusion_dual.png" style="display:none;" id="dummy">
+                        <img src="diseño visual/propuestas_flor/../florencia_brandkit_texto_para_ia.md" style="display:none;">
+                        <!-- Using base64 or direct files -->
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--fuchsia);">Firma + Destello</div>
+                    </div>
+                    <span class="insp-label">Idea 1: Monograma Caligráfico + Estrella</span>
+                </div>
+                <div class="insp-item">
+                    <div class="insp-img-wrap">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--carbon);"><span style="color:var(--fuchsia); font-style:italic;">F</span> + C Serif</div>
+                    </div>
+                    <span class="insp-label">Idea 2: F Cursiva + C Serif Contrastada</span>
+                </div>
+                <div class="insp-item">
+                    <div class="insp-img-wrap">
+                        <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--coral);">Órbita Dinámica</div>
+                    </div>
+                    <span class="insp-label">Idea 3: Marco de Doble Anillo Abierto</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE 3 PROPOSALS -->
+        <section class="options-grid">
+            <!-- OPTION 1 -->
+            <div class="option-card">
+                <div class="preview-area">
+                    <span class="option-badge badge-recommended">★ Más Recomendada</span>
+                    <img src="diseño visual/propuestas_flor/opcion_1_fusion_dual.png" alt="Opción 1 - Fusión Dual" class="preview-img">
+                </div>
+                <div class="option-body">
+                    <h3 class="option-title">Opción 1: Fusión Dual</h3>
+                    <span class="option-subtitle">Script F + Cormorant Serif C & Círculo Magnético</span>
+                    <p class="option-desc">
+                        Es la traducción perfecta de la <strong>Idea 2 de Flor</strong> combinada con la geometría oficial del Brand Kit. Combina la cercanía personal y femenina de la <strong>F caligráfica en fuchsia</strong> con la solidez empresarial de la <strong>C en Cormorant Garamond</strong> y el destello coral de transformación.
+                    </p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-sparkles"></i> Letra F caligráfica fluida con degradé fuchsia</li>
+                        <li><i class="fa-solid fa-gem"></i> Letra C en Cormorant Garamond serif en Carbón</li>
+                        <li><i class="fa-solid fa-star"></i> Destello Alfa (✦) de 4 puntas en Coral</li>
+                        <li><i class="fa-solid fa-circle-notch"></i> Círculo magnético con 4 diamantes cardinales</li>
+                    </ul>
+                    <a href="diseño visual/propuestas_flor/opcion_1_fusion_dual.png" target="_blank" class="btn-view">
+                        <i class="fa-solid fa-up-right-from-square"></i> Ver en Alta Resolución
+                    </a>
+                </div>
+            </div>
+
+            <!-- OPTION 2 -->
+            <div class="option-card">
+                <div class="preview-area">
+                    <span class="option-badge">Boutique & Fluida</span>
+                    <img src="diseño visual/propuestas_flor/opcion_2_firma_magnetica.png" alt="Opción 2 - Firma Magnética" class="preview-img">
+                </div>
+                <div class="option-body">
+                    <h3 class="option-title">Opción 2: Firma & Órbita</h3>
+                    <span class="option-subtitle">Monograma Caligráfico + Doble Anillo Dinámico</span>
+                    <p class="option-desc">
+                        Inspirada en las <strong>Ideas 1 y 3 de Flor</strong>. Enfoque 100% de marca personal estilo firma de autor / boutique de mentoría. Las dos letras FC fluyen en trazo caligráfico continuo, abrazadas por dos anillos orbitales abiertos que simbolizan expansión y movimiento continuo.
+                    </p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-signature"></i> Monograma FC caligráfico completo entrelazado</li>
+                        <li><i class="fa-solid fa-arrows-spin"></i> Marco de doble órbita asimétrica fluida</li>
+                        <li><i class="fa-solid fa-star"></i> Destello Alfa en Coral actuando como foco</li>
+                        <li><i class="fa-solid fa-diamond"></i> Micro-diamantes en los extremos orbitales</li>
+                    </ul>
+                    <a href="diseño visual/propuestas_flor/opcion_2_firma_magnetica.png" target="_blank" class="btn-view">
+                        <i class="fa-solid fa-up-right-from-square"></i> Ver en Alta Resolución
+                    </a>
+                </div>
+            </div>
+
+            <!-- OPTION 3 -->
+            <div class="option-card">
+                <div class="preview-area">
+                    <span class="option-badge">Minimal Editorial</span>
+                    <img src="diseño visual/propuestas_flor/opcion_3_sello_celestial.png" alt="Opción 3 - Sello Celestial" class="preview-img">
+                </div>
+                <div class="option-body">
+                    <h3 class="option-title">Opción 3: Anillo Orgánico</h3>
+                    <span class="option-subtitle">F Script + C Serif con Marco Abierto</span>
+                    <p class="option-desc">
+                        Inspirada en la <strong>Idea 1 de Flor</strong>. Presenta un marco circular abierto en los polos con diamantes de anclaje, otorgando una gran sensación de respiración y modernidad editorial. Muy limpio, moderno y de impacto directo.
+                    </p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-font"></i> F caligráfica estilizada con serif C pura</li>
+                        <li><i class="fa-solid fa-circle"></i> Anillo circular con aperturas zen superior e inferior</li>
+                        <li><i class="fa-solid fa-star"></i> Destello Alfa estilizado con luz interna</li>
+                        <li><i class="fa-solid fa-feather"></i> Estética ligera, fresca y sofisticada</li>
+                    </ul>
+                    <a href="diseño visual/propuestas_flor/opcion_3_sello_celestial.png" target="_blank" class="btn-view">
+                        <i class="fa-solid fa-up-right-from-square"></i> Ver en Alta Resolución
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DARK MODE CONTRAST PREVIEW -->
+        <section class="dark-showcase">
+            <h3>Visualización en Fondo Oscuro (Footer / Modo Noche)</h3>
+            <p>Así se comportan las 3 opciones cuando se aplican sobre el Carbón (#2B2435) del footer de la web o materiales oscuros:</p>
+            <div class="dark-logos-grid">
+                <div class="dark-logo-item">
+                    <img src="diseño visual/propuestas_flor/opcion_1_fusion_dual.png" alt="Opción 1 Dark" class="dark-logo-img">
+                    <span>Opción 1: Fusión Dual</span>
+                </div>
+                <div class="dark-logo-item">
+                    <img src="diseño visual/propuestas_flor/opcion_2_firma_magnetica.png" alt="Opción 2 Dark" class="dark-logo-img">
+                    <span>Opción 2: Firma & Órbita</span>
+                </div>
+                <div class="dark-logo-item">
+                    <img src="diseño visual/propuestas_flor/opcion_3_sello_celestial.png" alt="Opción 3 Dark" class="dark-logo-img">
+                    <span>Opción 3: Anillo Orgánico</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

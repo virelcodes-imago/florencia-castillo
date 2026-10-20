@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Hábitos Financieros | Florencia Castillo · Mujeres Alfa</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --fuchsia: #D4006A;
+            --fuchsia-light: #F7D0E2;
+            --marfil: #FAF0E4;
+            --marfil-surface: #FFF9F2;
+            --coral: #FF5C45;
+            --naranja: #FF9A3C;
+            --carbon: #2B2435;
+            --carbon-light: #524761;
+            --carbon-muted: #847895;
+            --border-soft: rgba(43, 36, 53, 0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--marfil);
+            color: var(--carbon);
+            line-height: 1.55;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        @page { size: A4 portrait; margin: 0; }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            max-height: 297mm;
+            margin: 20px auto;
+            background: var(--marfil-surface);
+            padding: 16mm 18mm 14mm 18mm;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(43, 36, 53, 0.08);
+            page-break-after: always;
+            break-after: page;
+            border: 1px solid var(--border-soft);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .page-content { flex: 1; }
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+            border-bottom: 1.5px solid var(--fuchsia);
+        }
+        .page-header-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: 2px;
+            color: var(--fuchsia);
+        }
+        .page-header-step {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--carbon-muted);
+        }
+        .page-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: var(--carbon-muted);
+            border-top: 1px solid var(--border-soft);
+            padding-top: 8px;
+            margin-top: 12px;
+        }
+        .page-footer-tag { color: var(--fuchsia); font-weight: 700; letter-spacing: 1px; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--carbon); line-height: 1.15; font-weight: 700; }
+        .step-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--fuchsia);
+            margin-bottom: 6px;
+        }
+        .step-title { font-size: 1.75rem; color: var(--carbon); margin-bottom: 6px; }
+        .step-subtitle { font-size: 0.92rem; color: var(--carbon-light); margin-bottom: 14px; line-height: 1.5; }
+        .info-card {
+            background: var(--marfil);
+            border-left: 3.5px solid var(--fuchsia);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 14px;
+            font-size: 0.88rem;
+            color: var(--carbon-light);
+        }
+        .table-custom {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 0.82rem;
+        }
+        .table-custom th {
+            background: var(--carbon);
+            color: var(--marfil);
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+        .table-custom td {
+            padding: 9px 10px;
+            border-bottom: 1px solid var(--border-soft);
+            background: #FFF;
+        }
+        .table-custom tr:nth-child(even) td { background: var(--marfil-surface); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .habit-pill-card {
+            background: var(--marfil);
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            padding: 10px 12px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .habit-pill-num {
+            background: var(--fuchsia);
+            color: #FFF;
+            font-weight: 800;
+            font-size: 0.72rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .back-card {
+            background: var(--marfil);
+            border: 1.5px solid rgba(212, 0, 106, 0.25);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin: 12px 0;
+        }
+        .back-card h3 { font-size: 1.35rem; color: var(--fuchsia); margin-bottom: 4px; }
+        @media print {
+            body { background: none; }
+            .page { margin: 0; box-shadow: none; border: none; width: 210mm; height: 297mm; max-height: 297mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PÁGINA 1: CONOCER MOVIMIENTOS & PEQUEÑOS GASTOS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <span class="page-header-brand">MUJERES ALFA · FINANZAS</span>
+                <span class="page-header-step">PASO 1 · TUS MOVIMIENTOS</span>
+            </div>
+
+            <span class="step-tag">♦ GUÍA PRÁCTICA OFICIAL ♦</span>
+            <h1 class="step-title">Tu relación con el dinero empieza por observar tus hábitos</h1>
+            <p class="step-subtitle">
+                Una guía práctica para reconocer los pequeños gastos que se acumulan, mejorar la administración de tu dinero personal y del negocio, y tomar decisiones financieras con más claridad.
+            </p>
+
+            <div class="info-card">
+                <strong>Antes de pensar que necesitás ganar más, revisá cómo estás usando el dinero que ya ingresa.</strong> A veces los ingresos no alcanzan; otras veces, una parte importante se va en gastos que no registramos ni tenemos presentes.
+            </div>
+
+            <div class="grid-2" style="margin-bottom: 12px;">
+                <div style="background: #FFF; border: 1px solid var(--border-soft); border-radius: 8px; padding: 12px;">
+                    <h4 style="font-size: 1.05rem; color: var(--fuchsia); margin-bottom: 6px;">1. Empezá por conocer tus movimientos</h4>
+                    <p style="font-size: 0.82rem; color: var(--carbon-light); line-height: 1.45;">
+                        ¿Te pasa que trabajás, cobrás, pagás cuentas pero al final del mes no sabés a dónde fue el dinero? El primer paso no es culparte ni privarte de todo: es reunir información real (cuánto entra, gastos fijos y variables). Con datos podés decidir sin ansiedad.
+                    </p>
+                </div>
+                <div style="background: #FFF; border: 1px solid var(--border-soft); border-radius: 8px; padding: 12px;">
+                    <h4 style="font-size: 1.05rem; color: var(--fuchsia); margin-bottom: 6px;">2. Los pequeños gastos también cuentan</h4>
+                    <p style="font-size: 0.82rem; color: var(--carbon-light); line-height: 1.45;">
+                        Un café, delivery, suscripciones olvidadas o compras por impulso parecen montos insignificantes. Pero repetidos a diario se vuelven una suma enorme al cerrar el mes. Si destinás 15 unidades al día a gastos no previstos, son 450 en 30 días.
+                    </p>
+                </div>
+            </div>
+
+            <h4 style="font-size: 1.15rem; color: var(--carbon); margin-bottom: 4px;">Actividad: Durante 7 días, registrá tus gastos sin juzgarte</h4>
+            <p style="font-size: 0.82rem; color: var(--carbon-muted); margin-bottom: 8px;">
+                No intentes cambiar nada todavía. Solo anotá todo, incluso lo más pequeño:
+            </p>
+
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th style="width: 14%;">Día</th>
+                        <th style="width: 34%;">¿En qué gasté?</th>
+                        <th style="width: 16%;">¿Cuánto?</th>
+                        <th style="width: 16%;">¿Fue previsto?</th>
+                        <th style="width: 20%;">¿Qué sentí al hacerlo?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Día 1</td><td></td><td></td><td>Sí / No</td><td></td></tr>
+                    <tr><td>Día 2</td><td></td><td></td><td>Sí / No</td><td></td></tr>
+                    <tr><td>Día 3</td><td></td><td></td><td>Sí / No</td><td></td></tr>
+                    <tr><td>Día 4</td><td></td><td></td><td>Sí / No</td><td></td></tr>
+                    <tr><td>Día 5</td><td></td><td></td><td>Sí / No</td><td></td></tr>
+                    <tr><td>Día 6</td><td></td><td></td><td>Sí / No</td><td></td></tr>
+                    <tr><td>Día 7</td><td></td><td></td><td>Sí / No</td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">
+            <span class="page-footer-tag">FLORENCIA CASTILLO · MUJERES ALFA</span>
+            <span>Página 1 de 4</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: COMPRENDER DECISIONES & 6 HÁBITOS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <span class="page-header-brand">MUJERES ALFA · FINANZAS</span>
+                <span class="page-header-step">PASO 2 · DECISIONES CONSCIENTES</span>
+            </div>
+
+            <span class="step-tag">PASO 2 · ENFOQUE ONTOLÓGICO</span>
+            <h2 class="step-title">Comprender tus decisiones</h2>
+            <p class="step-subtitle">Pasar del gasto automático a la elección consciente. A veces compramos por costumbre, por impulso o para cambiar cómo nos sentimos.</p>
+
+            <div style="background: rgba(212,0,106,0.06); border: 1px solid rgba(212,0,106,0.25); border-radius: 8px; padding: 14px 18px; margin-bottom: 16px;">
+                <h4 style="font-size: 1.15rem; color: var(--fuchsia); margin-bottom: 6px;">Antes de una compra no planificada, hacé una pausa:</h4>
+                <ul style="padding-left: 20px; font-size: 0.86rem; color: var(--carbon); line-height: 1.55;">
+                    <li><strong>1.</strong> ¿Lo necesito o simplemente tengo ganas de comprarlo en este momento?</li>
+                    <li><strong>2.</strong> ¿Puedo esperar 24 horas y decidir con más tranquilidad mañana?</li>
+                    <li><strong>3.</strong> ¿Estoy eligiendo esta compra o intento anestesiar un día difícil?</li>
+                    <li><strong>4.</strong> ¿Este gasto está alineado con mis prioridades actuales?</li>
+                </ul>
+            </div>
+
+            <h3 style="font-size: 1.35rem; color: var(--carbon); margin-bottom: 10px;">Seis hábitos financieros que podés sostener</h3>
+            
+            <div class="grid-2" style="gap: 10px; margin-bottom: 16px;">
+                <div class="habit-pill-card">
+                    <span class="habit-pill-num">01</span>
+                    <div style="font-size: 0.82rem;"><strong>Registrá tus gastos:</strong> Dedicale 5 minutos diarios a anotar lo que gastaste en tu celular o libreta.</div>
+                </div>
+                <div class="habit-pill-card">
+                    <span class="habit-pill-num">02</span>
+                    <div style="font-size: 0.82rem;"><strong>Revisá tu semana:</strong> Elegí un día fijo para mirar ingresos, gastos y qué querés ajustar.</div>
+                </div>
+                <div class="habit-pill-card">
+                    <span class="habit-pill-num">03</span>
+                    <div style="font-size: 0.82rem;"><strong>Regla de las 24 horas:</strong> Si no es urgente, esperá un día antes de comprar. La emoción baja y decidís mejor.</div>
+                </div>
+                <div class="habit-pill-card">
+                    <span class="habit-pill-num">04</span>
+                    <div style="font-size: 0.82rem;"><strong>Chequeá suscripciones:</strong> Una vez al mes revisá débitos automáticos y cancelá lo que no usás.</div>
+                </div>
+                <div class="habit-pill-card">
+                    <span class="habit-pill-num">05</span>
+                    <div style="font-size: 0.82rem;"><strong>Meta realista de ahorro:</strong> Si queda margen, separá una cantidad fija para un objetivo concreto.</div>
+                </div>
+                <div class="habit-pill-card">
+                    <span class="habit-pill-num">06</span>
+                    <div style="font-size: 0.82rem;"><strong>Propósito para tu dinero:</strong> Salir de deudas, fondo de tranquilidad o reinvertir en tu proyecto.</div>
+                </div>
+            </div>
+
+            <h4 style="font-size: 1.15rem; color: var(--carbon); margin-bottom: 6px;">Tu Desafío de 7 Días</h4>
+            <table class="table-custom" style="font-size: 0.8rem;">
+                <thead><tr><th style="width: 15%;">Día</th><th>Acción simple</th><th style="width: 18%; text-align: center;">Completado</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Día 1</strong></td><td>Anotá cuánto dinero tenés disponible y qué pagos vienen.</td><td style="text-align: center;">[  ]</td></tr>
+                    <tr><td><strong>Día 2</strong></td><td>Registrá todos los gastos del día, incluso los pequeños.</td><td style="text-align: center;">[  ]</td></tr>
+                    <tr><td><strong>Día 3</strong></td><td>Elegí 3 gastos que se repiten y calculá cuánto suman al mes.</td><td style="text-align: center;">[  ]</td></tr>
+                    <tr><td><strong>Día 4</strong></td><td>Observá una compra no prevista: ¿qué emoción te llevó a hacerla?</td><td style="text-align: center;">[  ]</td></tr>
+                    <tr><td><strong>Día 5</strong></td><td>Revisá y cancelá una suscripción o servicio que no uses.</td><td style="text-align: center;">[  ]</td></tr>
+                    <tr><td><strong>Día 6</strong></td><td>Elegí un hábito financiero pequeño que puedas sostener a diario.</td><td style="text-align: center;">[  ]</td></tr>
+                    <tr><td><strong>Día 7</strong></td><td>Revisá lo aprendido en la semana y definí tu próximo paso.</td><td style="text-align: center;">[  ]</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-footer">
+            <span class="page-footer-tag">FLORENCIA CASTILLO · MUJERES ALFA</span>
+            <span>Página 2 de 4</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 3: TU NEGOCIO & FINANZAS -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <span class="page-header-brand">MUJERES ALFA · FINANZAS</span>
+                <span class="page-header-step">PASO 3 · EMPRENDIMIENTO</span>
+            </div>
+
+            <span class="step-tag">PASO 3 · TU NEGOCIO</span>
+            <h2 class="step-title">Tu negocio también necesita hábitos financieros</h2>
+            <p class="step-subtitle">Facturar no es lo mismo que ganar. Para crecer necesitás saber con exactitud qué entra, qué sale y cuánto queda realmente.</p>
+
+            <div class="info-card">
+                <strong>¿Sabés cuánto te queda limpio después de pagar costos y compromisos?</strong>
+                En un emprendimiento es muy fácil mezclar el dinero personal con el del negocio. Entra dinero a la cuenta y parece disponible, pero una parte está comprometida para reponer stock, impuestos o herramientas.
+            </div>
+
+            <h4 style="font-size: 1.15rem; color: var(--carbon); margin-bottom: 8px;">Cinco revisiones simples para empezar:</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; font-size: 0.85rem;">
+                <div style="background: #FFF; border: 1px solid var(--border-soft); padding: 8px 12px; border-radius: 6px;">
+                    <strong>1. Separá los movimientos:</strong> Nunca cobres ni pagues todo en la misma cuenta sin categorizar.
+                </div>
+                <div style="background: #FFF; border: 1px solid var(--border-soft); padding: 8px 12px; border-radius: 6px;">
+                    <strong>2. Anotá lo que entra y sale:</strong> Ventas, comisiones, envíos y costos. No dependas solo de la memoria.
+                </div>
+                <div style="background: #FFF; border: 1px solid var(--border-soft); padding: 8px 12px; border-radius: 6px;">
+                    <strong>3. Calculá cuánto cuesta vender:</strong> Antes de retirar ganancia, descontá los costos directos de cada venta.
+                </div>
+                <div style="background: #FFF; border: 1px solid var(--border-soft); padding: 8px 12px; border-radius: 6px;">
+                    <strong>4. Revisá los gastos repetitivos:</strong> Apps, envíos, comisiones de plataformas bancarias.
+                </div>
+                <div style="background: #FFF; border: 1px solid var(--border-soft); padding: 8px 12px; border-radius: 6px;">
+                    <strong>5. Elegí un dato clave para revisar cada semana:</strong> Ventas cobradas, saldo real o cuentas por cobrar.
+                </div>
+            </div>
+
+            <h4 style="font-size: 1.15rem; color: var(--carbon); margin-bottom: 6px;">Actividad: Una mirada rápida a tus números</h4>
+            <table class="table-custom" style="margin-bottom: 14px;">
+                <thead><tr><th>Pregunta clave de tu negocio</th><th>Tu respuesta honesta</th></tr></thead>
+                <tbody>
+                    <tr><td>¿Cuánto dinero cobré realmente este mes?</td><td style="height: 28px;"></td></tr>
+                    <tr><td>¿Cuáles fueron mis tres gastos más importantes?</td><td style="height: 28px;"></td></tr>
+                    <tr><td>¿Qué gasto puedo renegociar o eliminar?</td><td style="height: 28px;"></td></tr>
+                    <tr><td>¿Qué dinero tengo pendiente de cobrar?</td><td style="height: 28px;"></td></tr>
+                    <tr><td>¿Cuál es mi próximo paso concreto para crecer?</td><td style="height: 28px;"></td></tr>
+                </tbody>
+            </table>
+
+            <div style="background: var(--marfil); border-left: 3.5px solid var(--naranja); padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 0.84rem;">
+                <strong>¿Y si los números no cierran hoy?</strong> No significa que hayas fracasado. Significa que necesitás información para decidir: ajustar precios, redefinir la oferta o mejorar tu canal comercial. Conocer el dato es el primer paso.
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-footer-tag">FLORENCIA CASTILLO · MUJERES ALFA</span>
+            <span>Página 3 de 4</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 4: CERRAR EL CÍRCULO & MUJERES ALFA EL INICIO -->
+    <div class="page">
+        <div class="page-content">
+            <div class="page-header">
+                <span class="page-header-brand">MUJERES ALFA · FINANZAS</span>
+                <span class="page-header-step">PASO 4 · INTEGRACIÓN</span>
+            </div>
+
+            <span class="step-tag">PASO 4 · CERRÁ EL CÍRCULO</span>
+            <h2 class="step-title">¿Y si una parte del dinero que necesitás se está yendo sin que lo notes?</h2>
+            <p class="step-subtitle">Mirar tus movimientos te ayuda a entender qué está pasando y recuperar el control sobre tu futuro.</p>
+
+            <div style="background: #FFF; border: 1px solid var(--border-soft); border-radius: 8px; padding: 14px 18px; margin-bottom: 14px;">
+                <h4 style="font-size: 1.1rem; color: var(--fuchsia); margin-bottom: 8px;">Tomate un momento para reflexionar:</h4>
+                <ul style="list-style: none; padding-left: 0; font-size: 0.86rem; color: var(--carbon); display: flex; flex-direction: column; gap: 7px;">
+                    <li>• <strong>¿Qué descubrí sobre mi manera de administrar el dinero?</strong> ________________________________</li>
+                    <li>• <strong>¿Qué gasto pequeño se repite y suma más de lo que pensaba?</strong> _________________________</li>
+                    <li>• <strong>¿Qué costumbre o emoción influye más en mis decisiones?</strong> _____________________________</li>
+                    <li>• <strong>¿Qué hábito puedo sostener durante los próximos 30 días?</strong> ______________________________</li>
+                    <li>• <strong>Si tengo un negocio, ¿qué dato voy a revisar cada semana?</strong> ___________________________</li>
+                    <li>• <strong>¿Qué quiero construir con una mejor organización de mi dinero?</strong> ________________________</li>
+                </ul>
+            </div>
+
+            <!-- PROGRAMA DE ACOMPAÑAMIENTO: MUJERES ALFA — EL INICIO -->
+            <div class="back-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 0.75rem; font-weight: 800; color: var(--fuchsia); letter-spacing: 2px;">PROGRAMA DE ACOMPAÑAMIENTO</span>
+                    <span style="font-size: 0.72rem; background: rgba(212,0,106,0.1); color: var(--fuchsia); padding: 3px 10px; border-radius: 999px; font-weight: 700;">COMUNIDAD EXCLUSIVA</span>
+                </div>
+                <h3>MUJERES ALFA — EL INICIO</h3>
+                <p style="font-size: 0.92rem; font-weight: 700; color: var(--carbon); margin-bottom: 4px;">
+                    Dejá de remar sola. Empezá a construir con dirección.
+                </p>
+                <p style="font-size: 0.85rem; color: var(--carbon-light); margin-bottom: 8px; line-height: 1.45;">
+                    Un espacio para reconstruir tu identidad, recuperar tu dirección y desarrollar las herramientas que necesitás para empezar a construir una vida y un proyecto más alineados con quien querés ser.
+                </p>
+                <p style="font-size: 0.82rem; font-style: italic; color: var(--carbon-muted); margin-bottom: 10px;">
+                    "Porque no siempre necesitás hacer más. A veces necesitás dejar de hacerlo sola, ordenar lo que hoy está desordenado y encontrar un espacio donde puedas crecer acompañada."
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+                    <div style="background: var(--marfil-surface); padding: 6px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.68rem; color: var(--fuchsia); display: block;">DIRECCIÓN</strong>
+                        <span style="font-size: 0.6rem; color: var(--carbon-muted);">Claridad al decidir</span>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 6px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.68rem; color: var(--fuchsia); display: block;">IDENTIDAD</strong>
+                        <span style="font-size: 0.6rem; color: var(--carbon-muted);">Tu mejor versión</span>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 6px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.68rem; color: var(--fuchsia); display: block;">HERRAMIENTAS</strong>
+                        <span style="font-size: 0.6rem; color: var(--carbon-muted);">Acciones reales</span>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 6px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.68rem; color: var(--fuchsia); display: block;">ACOMPAÑAMIENTO</strong>
+                        <span style="font-size: 0.6rem; color: var(--carbon-muted);">No resolver sola</span>
+                    </div>
+                    <div style="background: var(--marfil-surface); padding: 6px 2px; border-radius: 6px; border: 1px solid var(--border-soft);">
+                        <strong style="font-size: 0.68rem; color: var(--fuchsia); display: block;">COMUNIDAD</strong>
+                        <span style="font-size: 0.6rem; color: var(--carbon-muted);">Red de mujeres</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 10px;">
+                <p style="font-size: 0.85rem; font-weight: 700; color: var(--fuchsia); margin-bottom: 2px;">
+                    PEQUEÑOS HÁBITOS. GRANDES DIFERENCIAS.
+                </p>
+                <span style="font-size: 0.78rem; color: var(--carbon-muted);">Florencia Castillo · florenciacastillo.com</span>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-footer-tag">FLORENCIA CASTILLO · MUJERES ALFA</span>
+            <span>Página 4 de 4</span>
+        </div>
+    </div>
+
+</body>
+</html>
