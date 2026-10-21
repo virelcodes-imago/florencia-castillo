@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Clases | Florencia Castillo · Mujeres Alfa</title>
+    <meta name="description" content="Reproductor de clases y recursos del Método Alfa.">
+    
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="diseño visual/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="diseño visual/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="diseño visual/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background: #FAF0E4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Aula Bar */
+        .aula-topbar {
+            background: #fff;
+            border-bottom: 1.5px solid rgba(43,36,53,0.08);
+            padding: 12px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .aula-topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 16px;
+        }
+
+        .aula-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+            padding: 24px 20px 60px;
+            gap: 28px;
+        }
+
+        @media (max-width: 1050px) {
+            .aula-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Video Area */
+        .video-wrapper {
+            background: #1A1522;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(43,36,53,0.15);
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin-bottom: 20px;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-actions-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(43,36,53,0.1);
+        }
+
+        .lesson-header-box h1 {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            color: var(--carbon);
+            margin-bottom: 4px;
+            line-height: 1.25;
+        }
+
+        .lesson-meta {
+            font-size: 0.85rem;
+            color: var(--carbon-muted);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        /* Tabs Section */
+        .tabs-header {
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid rgba(43,36,53,0.12);
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 10px 16px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--carbon-muted);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            color: var(--fuchsia);
+            border-color: var(--fuchsia);
+        }
+
+        .tab-panel {
+            display: none;
+            background: var(--marfil-surface);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            border: 1px solid rgba(43,36,53,0.08);
+            line-height: 1.6;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        /* Curriculum Sidebar */
+        .curriculum-box {
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(43,36,53,0.08);
+            box-shadow: var(--shadow-subtle);
+            height: fit-content;
+            overflow: hidden;
+            position: sticky;
+            top: 80px;
+        }
+
+        .curriculum-header {
+            padding: 20px;
+            background: #fff;
+            border-bottom: 1px solid rgba(43,36,53,0.08);
+        }
+
+        .progress-bar-bg {
+            height: 6px;
+            background: var(--marfil);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--fuchsia);
+            width: 20%;
+            transition: width 0.3s;
+        }
+
+        .curriculum-body {
+            max-height: calc(100vh - 220px);
+            overflow-y: auto;
+            padding: 12px;
+        }
+
+        .mod-group {
+            margin-bottom: 14px;
+            border-radius: var(--radius-sm);
+            background: #fff;
+            border: 1px solid rgba(43,36,53,0.06);
+            overflow: hidden;
+        }
+
+        .mod-title-btn {
+            width: 100%;
+            padding: 12px 14px;
+            background: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--carbon);
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .mod-lessons-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-top: 1px solid rgba(43,36,53,0.06);
+        }
+
+        .lesson-btn-item {
+            width: 100%;
+            padding: 10px 14px;
+            border: none;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-family: inherit;
+            font-size: 0.84rem;
+            color: var(--carbon-light);
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.15s;
+            border-bottom: 1px dashed rgba(43,36,53,0.04);
+        }
+
+        .lesson-btn-item:hover {
+            background: var(--marfil);
+            color: var(--fuchsia);
+        }
+
+        .lesson-btn-item.active {
+            background: rgba(212,0,106,0.08);
+            color: var(--fuchsia);
+            font-weight: 700;
+            border-left: 3px solid var(--fuchsia);
+        }
+
+        .lesson-btn-item.completed {
+            color: var(--carbon-muted);
+        }
+
+        .lesson-check-icon {
+            color: var(--carbon-muted);
+            font-size: 0.85rem;
+        }
+
+        .lesson-btn-item.completed .lesson-check-icon {
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOPBAR AULA -->
+    <header class="aula-topbar">
+        <div class="aula-topbar-inner">
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <a href="portal-dashboard.html" class="btn btn-outline btn-sm">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Volver al Campus</span>
+                </a>
+                <div style="height: 20px; width: 1px; background: rgba(43,36,53,0.15);"></div>
+                <span id="courseTitleHeader" style="font-weight: 700; font-size: 0.95rem; color: var(--carbon);">
+                    Método Alfa — El Inicio
+                </span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 12px; font-size: 0.85rem;">
+                <span id="userGreetingAula" style="color: var(--carbon-light);">Alumna: <strong>Marcela</strong></span>
+                <a href="https://wa.me/5491100000000?text=Hola%20Flor!%20Tengo%20una%20consulta%20sobre%20la%20clase." target="_blank" class="btn btn-outline btn-sm" title="Consultar a Flor">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Duda</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="aula-layout">
+
+        <!-- COLUMNA PRINCIPAL: VIDEO Y CONTENIDOS -->
+        <section>
+            
+            <!-- CONTENEDOR DE VIDEO REPRODUCIBLE (VIMEO / YOUTUBE / BUNNY STREAM) -->
+            <div class="video-wrapper">
+                <iframe id="videoPlayerFrame" 
+                        src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" 
+                        title="Reproductor de Clases Mujeres Alfa" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- BARRA DE ACCIÓN Y TÍTULO DE LA CLASE -->
+            <div class="video-actions-bar">
+                <div class="lesson-header-box">
+                    <h1 id="lessonMainTitle">Alfa 01: El mapa de dirección y el fin del piloto automático</h1>
+                    <div class="lesson-meta">
+                        <span><i class="fa-regular fa-clock"></i> <span id="lessonDuration">28 minutos</span></span>
+                        <span><i class="fa-solid fa-chalkboard-user"></i> Flor Castillo</span>
+                        <span id="lessonModuleTag" style="color: var(--fuchsia); font-weight: 700;">Módulo 1 · Dirección</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <button id="btnToggleComplete" class="btn btn-outline btn-sm" onclick="toggleCurrentLessonComplete()">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span id="completeBtnText">Marcar como vista</span>
+                    </button>
+                    <button class="btn btn-primary btn-sm" onclick="goToNextLesson()">
+                        <span>Siguiente clase</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- TABS DE INFORMACIÓN DE LA CLASE -->
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="switchTab('tab-resumen')">
+                    <i class="fa-solid fa-book-open"></i> Resumen de la Clase
+                </button>
+                <button class="tab-btn" onclick="switchTab('tab-material')">
+                    <i class="fa-solid fa-file-pdf"></i> Material Descargable
+                </button>
+                <button class="tab-btn" onclick="switchTab('tab-notas')">
+                    <i class="fa-solid fa-pen-to-square"></i> Mis Notas Privadas
+                </button>
+            </div>
+
+            <!-- TAB 1: RESUMEN -->
+            <div id="tab-resumen" class="tab-panel active">
+                <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 10px; color: var(--carbon);">
+                    Ideas Fuerza de la Sesión
+                </h3>
+                <div id="lessonSummaryContent" style="color: var(--carbon-light); font-size: 0.95rem;">
+                    <p style="margin-bottom: 12px;">
+                        «No necesitás hacer más cosas. Necesitás saber exactamente hacia dónde vas y qué lugar ocupa tu negocio en tu proyecto de vida.»
+                    </p>
+                    <ul style="padding-left: 20px; margin-bottom: 14px;">
+                        <li><strong>Identificar la dispersión:</strong> El exceso de tareas es el síntoma de la falta de un objetivo prioritario innegociable.</li>
+                        <li><strong>Parar la pelota:</strong> Por qué seguir en piloto automático perpetúa el cansancio sin generar rentabilidad.</li>
+                        <li><strong>El ejercicio del espejo:</strong> Separar la culpa del aprendizaje para poder liderar con serenidad.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TAB 2: MATERIAL DESCARGABLE -->
+            <div id="tab-material" class="tab-panel">
+                <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 10px; color: var(--carbon);">
+                    Cuaderno de Trabajo & Guía en PDF
+                </h3>
+                <p style="font-size: 0.9rem; color: var(--carbon-light); margin-bottom: 16px;">
+                    Completá los ejercicios prácticos de este módulo para anclar los conceptos vistos en el video:
+                </p>
+                <div style="background: var(--marfil); border: 1.5px solid rgba(212,0,106,0.2); border-radius: var(--radius-sm); padding: 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <i class="fa-solid fa-file-pdf" style="font-size: 2rem; color: var(--fuchsia);"></i>
+                        <div>
+                            <strong id="downloadResourceTitle">Workbook Módulo 1 — Dirección & Prioridades</strong>
+                            <div style="font-size: 0.8rem; color: var(--carbon-muted);">Formato PDF Oficial de Mujeres Alfa (Listo para imprimir o completar)</div>
+                        </div>
+                    </div>
+                    <a id="btnDownloadResource" href="descargas/guia-radiografia-alfa-mujeres-alfa.pdf" download="Workbook-Modulo-1.pdf" class="btn btn-secondary btn-sm">
+                        <i class="fa-solid fa-download"></i> Descargar PDF
+                    </a>
+                </div>
+            </div>
+
+            <!-- TAB 3: MIS NOTAS -->
+            <div id="tab-notas" class="tab-panel">
+                <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 8px; color: var(--carbon);">
+                    Tus Notas Personales
+                </h3>
+                <p style="font-size: 0.85rem; color: var(--carbon-muted); margin-bottom: 12px;">
+                    Tus apuntes se guardan automáticamente en tu dispositivo para que puedas repasarlos cuando quieras.
+                </p>
+                <textarea id="userNotesArea" 
+                          style="width: 100%; height: 160px; padding: 12px; border-radius: var(--radius-sm); border: 1px solid rgba(43,36,53,0.2); font-family: inherit; font-size: 0.95rem; resize: vertical;"
+                          placeholder="Escribí acá tus reflexiones, ideas o preguntas para la próxima mentoría con Flor..."
+                          oninput="saveUserNotes()"></textarea>
+                <div style="font-size: 0.75rem; color: var(--carbon-muted); margin-top: 6px; text-align: right;">
+                    <i class="fa-solid fa-floppy-disk"></i> Guardado automático local
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SIDEBAR: CURRICULUM DE CLASES -->
+        <aside class="curriculum-box">
+            <div class="curriculum-header">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <strong style="font-size: 0.95rem; color: var(--carbon);">Contenido del Curso</strong>
+                    <span id="progressText" style="font-size: 0.8rem; font-weight: 700; color: var(--fuchsia);">20% Completado</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="progressBarFill" class="progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <div class="curriculum-body" id="curriculumList">
+                <!-- Se inyecta dinámicamente con JavaScript -->
+            </div>
+        </aside>
+
+    </main>
+
+    <script>
+        // CURRICULUM DATA SEGÚN EL DOCUMENTO BASE DE FLOR
+        const COURSE_DATA = {
+            inicio: {
+                title: "Método Alfa — El Inicio",
+                modules: [
+                    {
+                        title: "Módulo 1: Alfa 01 — Dirección",
+                        lessons: [
+                            { id: 1, title: "1.1 El fin del piloto automático", duration: "28 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/guia-radiografia-alfa-mujeres-alfa.pdf", resName: "Workbook Dirección" },
+                            { id: 2, title: "1.2 Definir tu visión y proyecto de vida", duration: "32 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/guia-radiografia-alfa-mujeres-alfa.pdf", resName: "Plantilla Visión Alfa" },
+                            { id: 3, title: "1.3 La regla de prioridades innegociables", duration: "24 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/guia-radiografia-alfa-mujeres-alfa.pdf", resName: "Checklist de Enfoque" }
+                        ]
+                    },
+                    {
+                        title: "Módulo 2: Alfa 02 — Desarrollo Personal",
+                        lessons: [
+                            { id: 4, title: "2.1 Liderazgo personal y autoconfianza", duration: "35 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/escribi-esto-30-dias-mujeres-alfa.pdf", resName: "Diario de Reprogramación" },
+                            { id: 5, title: "2.2 Límites sanos con el entorno y clientes", duration: "26 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/escribi-esto-30-dias-mujeres-alfa.pdf", resName: "Guía de Límites" },
+                            { id: 6, title: "2.3 Gestión del miedo y síndrome del impostor", duration: "30 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/escribi-esto-30-dias-mujeres-alfa.pdf", resName: "Ficha de Certeza Interna" }
+                        ]
+                    },
+                    {
+                        title: "Módulo 3: Alfa 03 — Dinero Consciente",
+                        lessons: [
+                            { id: 7, title: "3.1 Separar cuentas personales y del negocio", duration: "40 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/habitos-financieros-mujeres-alfa.pdf", resName: "Guía Hábitos Financieros" },
+                            { id: 8, title: "3.2 Cómo asignarte tu propio sueldo real", duration: "25 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/habitos-financieros-mujeres-alfa.pdf", resName: "Plantilla Sueldo Emprendedora" },
+                            { id: 9, title: "3.3 Los 5 chequeos de salud empresarial", duration: "33 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/habitos-financieros-mujeres-alfa.pdf", resName: "Planilla de Chequeos" }
+                        ]
+                    },
+                    {
+                        title: "Módulo 4: Alfa 04 — Ventas & Visibilidad",
+                        lessons: [
+                            { id: 10, title: "4.1 Comunicar sin vergüenza ni rogar", duration: "38 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/materializar-dinero-7-dias-mujeres-alfa.pdf", resName: "Guía Materializar Dinero" },
+                            { id: 11, title: "4.2 Crear una propuesta irresistible", duration: "30 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/materializar-dinero-7-dias-mujeres-alfa.pdf", resName: "Estructura de Oferta" },
+                            { id: 12, title: "4.3 Conversión de mensajes en ventas", duration: "27 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/materializar-dinero-7-dias-mujeres-alfa.pdf", resName: "Guiones de Venta" }
+                        ]
+                    },
+                    {
+                        title: "Módulo 5: Alfa 05 — Acción & Hábitos",
+                        lessons: [
+                            { id: 13, title: "5.1 La agenda de una mujer líder", duration: "29 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/escribi-esto-30-dias-mujeres-alfa.pdf", resName: "Agenda Semanal Alfa" },
+                            { id: 14, title: "5.2 Cómo sostener procesos sin quemarte", duration: "31 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/escribi-esto-30-dias-mujeres-alfa.pdf", resName: "Protocolo Anti-Burnout" },
+                            { id: 15, title: "5.3 De la intención a la transformación real", duration: "36 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/guia-radiografia-alfa-mujeres-alfa.pdf", resName: "Plan 90 Días" }
+                        ]
+                    }
+                ]
+            },
+            elite: {
+                title: "Método Alfa Elite — 6 Meses",
+                modules: [
+                    {
+                        title: "1. Coach Desarrollo Personal (Flor Castillo)",
+                        lessons: [
+                            { id: 101, title: "Mentoría Semanal 1: Bases del liderazgo Alfa", duration: "50 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/guia-radiografia-alfa-mujeres-alfa.pdf", resName: "Cuaderno Mentoría 1" },
+                            { id: 102, title: "Mentoría Semanal 2: Venciendo la postergación", duration: "48 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/guia-radiografia-alfa-mujeres-alfa.pdf", resName: "Cuaderno Mentoría 2" }
+                        ]
+                    },
+                    {
+                        title: "2. Facilitadora Educación Financiera",
+                        lessons: [
+                            { id: 103, title: "Clase 1: Flujo de caja y rentabilidad real", duration: "45 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/habitos-financieros-mujeres-alfa.pdf", resName: "Planilla de Flujo" }
+                        ]
+                    },
+                    {
+                        title: "3. Facilitadora Ventas Digitales",
+                        lessons: [
+                            { id: 104, title: "Clase 1: Embudos de venta para servicios", duration: "42 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/materializar-dinero-7-dias-mujeres-alfa.pdf", resName: "Mapa de Embudo" }
+                        ]
+                    },
+                    {
+                        title: "4. Community Manager",
+                        lessons: [
+                            { id: 105, title: "Clase 1: Estrategia de contenido con intención", duration: "40 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/escribi-esto-30-dias-mujeres-alfa.pdf", resName: "Calendario de Redes" }
+                        ]
+                    },
+                    {
+                        title: "5. Acompañamiento Psicológico",
+                        lessons: [
+                            { id: 106, title: "Sesión 1: Sostén emocional y manejo de ansiedad", duration: "45 min", video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", resource: "descargas/escribi-esto-30-dias-mujeres-alfa.pdf", resName: "Guía de Contención" }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        let currentCourseKey = 'inicio';
+        let currentLessonId = 1;
+        let completedLessons = new Set(JSON.parse(localStorage.getItem('fc_completed_lessons') || '[1]'));
+
+        function initAula() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const reqCourse = urlParams.get('curso');
+            if (reqCourse === 'elite') {
+                currentCourseKey = 'elite';
+            }
+
+            const rawUser = localStorage.getItem('fc_alumna_auth');
+            if (rawUser) {
+                try {
+                    const u = JSON.parse(rawUser);
+                    document.getElementById('userGreetingAula').innerHTML = `Alumna: <strong>${u.name}</strong>`;
+                } catch(e) {}
+            }
+
+            const course = COURSE_DATA[currentCourseKey];
+            document.getElementById('courseTitleHeader').textContent = course.title;
+
+            renderCurriculum();
+            loadLesson(course.modules[0].lessons[0].id);
+        }
+
+        function renderCurriculum() {
+            const course = COURSE_DATA[currentCourseKey];
+            const container = document.getElementById('curriculumList');
+            container.innerHTML = '';
+
+            let totalLessons = 0;
+            course.modules.forEach(m => totalLessons += m.lessons.length);
+
+            course.modules.forEach(mod => {
+                const group = document.createElement('div');
+                group.className = 'mod-group';
+
+                const titleBtn = document.createElement('button');
+                titleBtn.className = 'mod-title-btn';
+                titleBtn.innerHTML = `<span>${mod.title}</span> <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; color: var(--carbon-muted);"></i>`;
+                group.appendChild(titleBtn);
+
+                const list = document.createElement('ul');
+                list.className = 'mod-lessons-list';
+
+                mod.lessons.forEach(less => {
+                    const isDone = completedLessons.has(less.id);
+                    const isActive = less.id === currentLessonId;
+
+                    const item = document.createElement('li');
+                    item.innerHTML = `
+                        <button class="lesson-btn-item ${isActive ? 'active' : ''} ${isDone ? 'completed' : ''}" 
+                                onclick="loadLesson(${less.id})">
+                            <span style="display: flex; align-items: center; gap: 8px;">
+                                <i class="${isDone ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle'} lesson-check-icon"></i>
+                                <span>${less.title}</span>
+                            </span>
+                            <span style="font-size: 0.75rem; opacity: 0.7;">${less.duration}</span>
+                        </button>
+                    `;
+                    list.appendChild(item);
+                });
+
+                group.appendChild(list);
+                container.appendChild(group);
+            });
+
+            // Update Progress Bar
+            const completedCount = Array.from(completedLessons).filter(id => {
+                return course.modules.some(m => m.lessons.some(l => l.id === id));
+            }).length;
+
+            const pct = Math.round((completedCount / totalLessons) * 100);
+            document.getElementById('progressBarFill').style.width = pct + '%';
+            document.getElementById('progressText').textContent = `${pct}% Completado (${completedCount}/${totalLessons})`;
+        }
+
+        function findLesson(id) {
+            const course = COURSE_DATA[currentCourseKey];
+            for (const mod of course.modules) {
+                for (const less of mod.lessons) {
+                    if (less.id === id) return { lesson: less, module: mod };
+                }
+            }
+            return null;
+        }
+
+        function loadLesson(id) {
+            const result = findLesson(id);
+            if (!result) return;
+
+            currentLessonId = id;
+            const { lesson, module } = result;
+
+            document.getElementById('lessonMainTitle').textContent = lesson.title;
+            document.getElementById('lessonDuration').textContent = lesson.duration;
+            document.getElementById('lessonModuleTag').textContent = module.title;
+            document.getElementById('downloadResourceTitle').textContent = lesson.resName;
+            document.getElementById('btnDownloadResource').setAttribute('href', lesson.resource);
+            document.getElementById('btnDownloadResource').setAttribute('download', lesson.resName + '.pdf');
+
+            // Set Video Source (Universal Embed)
+            const iframe = document.getElementById('videoPlayerFrame');
+            if (iframe && lesson.video) {
+                iframe.src = lesson.video;
+            }
+
+            // Update Completed Button Status
+            updateCompleteButtonUI();
+
+            // Load saved notes for this lesson
+            const savedNotes = localStorage.getItem('fc_notes_lesson_' + id) || '';
+            document.getElementById('userNotesArea').value = savedNotes;
+
+            renderCurriculum();
+        }
+
+        function toggleCurrentLessonComplete() {
+            if (completedLessons.has(currentLessonId)) {
+                completedLessons.delete(currentLessonId);
+            } else {
+                completedLessons.add(currentLessonId);
+            }
+            localStorage.setItem('fc_completed_lessons', JSON.stringify(Array.from(completedLessons)));
+            updateCompleteButtonUI();
+            renderCurriculum();
+        }
+
+        function updateCompleteButtonUI() {
+            const btn = document.getElementById('btnToggleComplete');
+            const btnText = document.getElementById('completeBtnText');
+            if (completedLessons.has(currentLessonId)) {
+                btn.className = 'btn btn-primary btn-sm';
+                btnText.textContent = 'Completada ✓';
+            } else {
+                btn.className = 'btn btn-outline btn-sm';
+                btnText.textContent = 'Marcar como vista';
+            }
+        }
+
+        function goToNextLesson() {
+            const course = COURSE_DATA[currentCourseKey];
+            let all = [];
+            course.modules.forEach(m => m.lessons.forEach(l => all.push(l)));
+            const currentIndex = all.findIndex(l => l.id === currentLessonId);
+            if (currentIndex !== -1 && currentIndex < all.length - 1) {
+                loadLesson(all[currentIndex + 1].id);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                alert('¡Felicitaciones! Llegaste a la última clase de este programa.');
+            }
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function saveUserNotes() {
+            const notes = document.getElementById('userNotesArea').value;
+            localStorage.setItem('fc_notes_lesson_' + currentLessonId, notes);
+        }
+
+        document.addEventListener('DOMContentLoaded', initAula);
+    </script>
+</body>
+</html>

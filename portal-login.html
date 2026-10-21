@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Alumnas | Florencia Castillo · Mujeres Alfa</title>
+    <meta name="description" content="Acceso exclusivo para alumnas de Mujeres Alfa. Ingresá a tus clases grabadas, mentorías y materiales de estudio.">
+    
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="diseño visual/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="diseño visual/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="diseño visual/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .login-viewport {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #FAF0E4 0%, #FFF5ED 50%, #FAF0E4 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .login-top-bar {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(43,36,53,0.06);
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        .demo-bar {
+            background: var(--carbon);
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .demo-bar span {
+            color: var(--naranja);
+            font-weight: 700;
+        }
+
+        .btn-demo-pill {
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 4px 12px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-demo-pill:hover {
+            background: var(--fuchsia);
+            border-color: var(--fuchsia);
+            color: #fff;
+        }
+
+        .login-main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .login-card {
+            background: var(--marfil-surface);
+            border: 1.5px solid rgba(212,0,106,0.15);
+            border-radius: var(--radius-lg);
+            padding: 44px 40px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 20px 50px rgba(43,36,53,0.09);
+            position: relative;
+        }
+
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            right: 40px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--fuchsia), var(--coral), var(--naranja));
+            border-radius: 4px 4px 0 0;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .login-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--fuchsia);
+            margin-bottom: 8px;
+        }
+
+        .login-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--carbon);
+            margin-bottom: 6px;
+        }
+
+        .login-sub {
+            font-size: 0.95rem;
+            color: var(--carbon-light);
+            line-height: 1.45;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--carbon);
+            margin-bottom: 6px;
+        }
+
+        .form-input-wrap {
+            position: relative;
+        }
+
+        .form-input-wrap i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--carbon-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 13px 14px 13px 40px;
+            background: var(--marfil);
+            border: 1px solid rgba(43,36,53,0.18);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--carbon);
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: var(--fuchsia);
+            box-shadow: 0 0 0 3px rgba(212,0,106,0.12);
+            background: #fff;
+        }
+
+        .login-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 24px;
+        }
+
+        .login-remember {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--carbon-light);
+            cursor: pointer;
+        }
+
+        .forgot-link {
+            color: var(--fuchsia);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .login-footer-text {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(43,36,53,0.12);
+            font-size: 0.88rem;
+            color: var(--carbon-muted);
+        }
+
+        .login-footer-text a {
+            color: var(--fuchsia);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .login-footer-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="login-viewport">
+
+    <!-- BARRA DEMO DE PRUEBA -->
+    <div class="demo-bar">
+        <span>⚡ Modo Demo (Para probar el portal ahora):</span>
+        <button class="btn-demo-pill" onclick="demoLogin('inicio')">
+            <i class="fa-solid fa-user"></i> Entrar como Alumna Método Alfa (Inicio)
+        </button>
+        <button class="btn-demo-pill" onclick="demoLogin('elite')">
+            <i class="fa-solid fa-crown"></i> Entrar como Empresaria Alfa (Elite)
+        </button>
+    </div>
+
+    <!-- HEADER SIMPLE -->
+    <header class="login-top-bar">
+        <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+            <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo FC" class="logo-img" style="height: 38px;">
+            <div class="logo-text-group">
+                <span class="brand-name">Florencia Castillo</span>
+                <span class="brand-sub">MUJERES ALFA</span>
+            </div>
+        </a>
+        <a href="index.html" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Volver al Sitio</span>
+        </a>
+    </header>
+
+    <!-- FORMULARIO DE ACCESO -->
+    <main class="login-main">
+        <div class="login-card">
+            <div class="login-header">
+                <span class="login-badge">PORTAL EXCLUSIVO DE ALUMNAS</span>
+                <h1 class="login-title">Bienvenida a tu espacio</h1>
+                <p class="login-sub">Ingresá con tu usuario y contraseña para acceder a tus clases y mentorías grabadas.</p>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label" for="loginEmail">Correo Electrónico</label>
+                    <div class="form-input-wrap">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="loginEmail" class="form-input" required placeholder="tuemail@ejemplo.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="loginPass">Contraseña</label>
+                    <div class="form-input-wrap">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="loginPass" class="form-input" required placeholder="••••••••">
+                    </div>
+                </div>
+
+                <div class="login-options">
+                    <label class="login-remember">
+                        <input type="checkbox" id="rememberMe" checked>
+                        <span>Recordarme</span>
+                    </label>
+                    <a href="https://wa.me/5491100000000?text=Hola%20Flor!%20Olvid%C3%A9%20mi%20contrase%C3%B1a%20para%20el%20portal%20de%20alumnas." target="_blank" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit" id="btnLoginSubmit" class="btn btn-primary btn-block btn-lg">
+                    <span>Ingresar a Mis Clases</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="login-footer-text">
+                ¿Todavía no tenés acceso a Mujeres Alfa?<br>
+                <a href="index.html#metodo-alfa">Conocé los programas y comenzá hoy</a>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 18px; font-size: 0.8rem; color: var(--carbon-muted);">
+        &copy; 2026 Florencia Castillo · Mujeres Alfa. Entorno privado para alumnas.
+    </footer>
+
+    <script>
+        function demoLogin(role) {
+            const user = {
+                role: role, // 'inicio' o 'elite'
+                name: role === 'elite' ? 'Valeria Giménez' : 'Marcela Gómez',
+                email: role === 'elite' ? 'valeria@ejemplo.com' : 'marcela@ejemplo.com',
+                planName: role === 'elite' ? 'Método Alfa Elite (6 Meses)' : 'Método Alfa — El Inicio',
+                loginTime: new Date().toISOString()
+            };
+            localStorage.setItem('fc_alumna_auth', JSON.stringify(user));
+            window.location.href = 'portal-dashboard.html';
+        }
+
+        function handleLoginSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value.trim();
+            const pass = document.getElementById('loginPass').value.trim();
+
+            if (!email || !pass) {
+                alert('Por favor ingresá tu email y contraseña.');
+                return;
+            }
+
+            // Simulación de autenticación (por defecto rol Inicio)
+            const user = {
+                role: 'inicio',
+                name: email.split('@')[0],
+                email: email,
+                planName: 'Método Alfa — El Inicio',
+                loginTime: new Date().toISOString()
+            };
+            localStorage.setItem('fc_alumna_auth', JSON.stringify(user));
+            window.location.href = 'portal-dashboard.html';
+        }
+    </script>
+</body>
+</html>

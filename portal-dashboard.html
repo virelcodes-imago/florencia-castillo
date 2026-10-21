@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Virtual | Florencia Castillo · Mujeres Alfa</title>
+    <meta name="description" content="Dashboard privado de alumnas de Mujeres Alfa. Accedé a tus clases grabadas, mentorías semanales y herramientas de transformación.">
+    
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="diseño visual/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="diseño visual/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="diseño visual/apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background: #FAF0E4;
+            min-height: 100vh;
+        }
+
+        /* Top Campus Bar */
+        .campus-header {
+            background: #fff;
+            border-bottom: 1.5px solid rgba(43,36,53,0.08);
+            padding: 14px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .campus-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .user-nav-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .user-badge-role {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-role-inicio {
+            background: rgba(212,0,106,0.1);
+            color: var(--fuchsia);
+            border: 1px solid rgba(212,0,106,0.25);
+        }
+
+        .badge-role-elite {
+            background: linear-gradient(135deg, #FFF3D6 0%, #FFE6A8 100%);
+            color: #8A5B00;
+            border: 1px solid #E6B800;
+        }
+
+        .role-switcher-banner {
+            background: var(--carbon);
+            color: #fff;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-switch-sm {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+        }
+
+        .btn-switch-sm:hover {
+            background: var(--fuchsia);
+        }
+
+        /* Dashboard Container */
+        .campus-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        /* Welcome & Live Banner */
+        .campus-hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 24px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 850px) {
+            .campus-hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .welcome-card {
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid rgba(43,36,53,0.08);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .welcome-tag {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--fuchsia);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .welcome-title {
+            font-family: var(--font-heading);
+            font-size: 2.3rem;
+            line-height: 1.15;
+            color: var(--carbon);
+            margin-bottom: 10px;
+        }
+
+        .welcome-quote {
+            font-style: italic;
+            color: var(--carbon-light);
+            font-size: 1.05rem;
+            border-left: 3px solid var(--fuchsia);
+            padding-left: 14px;
+            margin: 14px 0 0;
+            line-height: 1.5;
+        }
+
+        .live-card {
+            background: linear-gradient(135deg, var(--carbon) 0%, #1A1522 100%);
+            color: #fff;
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,92,69,0.25);
+            color: #FF5C45;
+            border: 1px solid #FF5C45;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .live-dot {
+            width: 7px;
+            height: 7px;
+            background: #FF5C45;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.7; }
+        }
+
+        /* 7 Transformation Stages Tracker */
+        .stages-card {
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            padding: 24px 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(43,36,53,0.08);
+        }
+
+        .stages-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
+        .stages-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--carbon);
+        }
+
+        .stages-track {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .stages-track {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stage-pill {
+            background: var(--marfil);
+            border: 1px solid rgba(43,36,53,0.1);
+            border-radius: var(--radius-sm);
+            padding: 10px 8px;
+            text-align: center;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--carbon-muted);
+            transition: all 0.2s;
+        }
+
+        .stage-pill.active {
+            background: var(--fuchsia);
+            color: #fff;
+            border-color: var(--fuchsia);
+            box-shadow: 0 4px 12px rgba(212,0,106,0.25);
+        }
+
+        .stage-num {
+            display: block;
+            font-size: 0.68rem;
+            opacity: 0.8;
+            margin-bottom: 2px;
+        }
+
+        /* Products / Courses Section */
+        .section-header-campus {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .section-header-campus h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--carbon);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .course-card {
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            border: 1.5px solid rgba(43,36,53,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(43,36,53,0.08);
+        }
+
+        .course-banner {
+            padding: 24px 28px;
+            color: #fff;
+            position: relative;
+        }
+
+        .banner-inicio {
+            background: linear-gradient(135deg, var(--fuchsia) 0%, #BA005C 100%);
+        }
+
+        .banner-elite {
+            background: linear-gradient(135deg, #2B2435 0%, #4A3A59 100%);
+        }
+
+        .course-tag {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .course-title {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+
+        .course-body {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .modules-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .module-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            background: var(--marfil);
+            margin-bottom: 8px;
+            font-size: 0.88rem;
+            color: var(--carbon);
+        }
+
+        .module-item i {
+            color: var(--fuchsia);
+        }
+
+        /* Locked State for Elite when student is Inicio */
+        .card-locked-overlay {
+            background: rgba(255, 249, 242, 0.94);
+            backdrop-filter: blur(4px);
+            border: 2px dashed rgba(212,0,106,0.3);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .lock-icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(212,0,106,0.1);
+            color: var(--fuchsia);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+        }
+
+        /* Workbooks download section */
+        .workbooks-section {
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid rgba(43,36,53,0.08);
+            margin-bottom: 40px;
+        }
+
+        .workbooks-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .workbooks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .workbooks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .wb-card {
+            background: var(--marfil);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            border: 1px solid rgba(43,36,53,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .wb-card h4 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: var(--carbon);
+        }
+
+        .wb-card p {
+            font-size: 0.8rem;
+            color: var(--carbon-muted);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA FLOTANTE DE TESTEO DE ROLES -->
+    <div class="role-switcher-banner">
+        <span>🧪 Probar experiencia según compra:</span>
+        <button class="btn-switch-sm" onclick="setDemoRole('inicio')">Ver como Alumna "Inicio"</button>
+        <button class="btn-switch-sm" onclick="setDemoRole('elite')">Ver como Alumna "Elite (6 Meses)"</button>
+        <span style="opacity: 0.5;">|</span>
+        <a href="portal-login.html" style="color: #fff; text-decoration: underline; font-size: 0.75rem;">Cerrar sesión</a>
+    </div>
+
+    <!-- HEADER DEL CAMPUS -->
+    <header class="campus-header">
+        <div class="campus-header-inner">
+            <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+                <img src="diseño visual/logo_fc.png" alt="Logo Florencia Castillo FC" class="logo-img" style="height: 38px;">
+                <div class="logo-text-group">
+                    <span class="brand-name">Florencia Castillo</span>
+                    <span class="brand-sub">CAMPUS ALUMNAS</span>
+                </div>
+            </a>
+
+            <div class="user-nav-box">
+                <div id="roleBadge" class="user-badge-role badge-role-inicio">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span id="roleBadgeText">Alumna Alfa Inicio</span>
+                </div>
+                <div style="font-size: 0.9rem; font-weight: 600; color: var(--carbon);">
+                    <span id="headerUserName">Marcela</span>
+                </div>
+                <a href="portal-login.html" class="btn btn-outline btn-sm" onclick="logout()" title="Cerrar sesión">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="campus-container">
+
+        <!-- BIENVENIDA & PRÓXIMO ENCUENTRO EN VIVO -->
+        <section class="campus-hero-grid">
+            <div class="welcome-card">
+                <span class="welcome-tag">PORTAL EXCLUSIVO · MUJERES ALFA</span>
+                <h1 class="welcome-title">Hola, <span id="welcomeUserName">Marcela</span> ✨</h1>
+                <p style="color: var(--carbon-light); line-height: 1.55; margin-bottom: 14px;">
+                    Bienvenida a tu espacio de formación y transformación. Cada clase y herramienta fue pensada para acompañarte a pasar de la confusión a la dirección real.
+                </p>
+                <div class="welcome-quote">
+                    «No necesitás hacer más. Necesitás saber hacia dónde ir.»
+                </div>
+            </div>
+
+            <!-- CARD DE MENTORÍA EN VIVO -->
+            <div class="live-card">
+                <div>
+                    <div class="live-badge">
+                        <span class="live-dot"></span>
+                        <span>PRÓXIMA MENTORÍA EN VIVO</span>
+                    </div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 6px;">
+                        Encuentro Semanal con Flor
+                    </h3>
+                    <p style="font-size: 0.9rem; opacity: 0.85; margin-bottom: 14px; line-height: 1.45;">
+                        <i class="fa-regular fa-calendar"></i> Jueves 19:00 hs (Arg) · Google Meet / Zoom<br>
+                        <i class="fa-solid fa-bullseye"></i> Tema: Dirección, límites y reprogramación de prioridades.
+                    </p>
+                </div>
+                <a href="https://meet.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+                    <span>Unirme a la Sala en Vivo</span>
+                    <i class="fa-solid fa-video"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- MAPA DE LAS 7 ETAPAS DE TRANSFORMACIÓN (DEL DOCUMENTO DE FLOR) -->
+        <section class="stages-card">
+            <div class="stages-header">
+                <div>
+                    <h3 class="stages-title">Tu Camino de Transformación: Las 7 Etapas Alfa</h3>
+                    <p style="font-size: 0.85rem; color: var(--carbon-muted); margin: 0;">De mujer con ganas de emprender a Empresaria Alfa.</p>
+                </div>
+                <span style="font-size: 0.82rem; font-weight: 700; color: var(--fuchsia);">Etapa actual: 3. Me Ordeno</span>
+            </div>
+            <div class="stages-track">
+                <div class="stage-pill">
+                    <span class="stage-num">01</span>
+                    <span>Me Reconozco</span>
+                </div>
+                <div class="stage-pill">
+                    <span class="stage-num">02</span>
+                    <span>Me Doy Dirección</span>
+                </div>
+                <div class="stage-pill active">
+                    <span class="stage-num">03</span>
+                    <span>Me Ordeno</span>
+                </div>
+                <div class="stage-pill">
+                    <span class="stage-num">04</span>
+                    <span>Me Desarrollo</span>
+                </div>
+                <div class="stage-pill">
+                    <span class="stage-num">05</span>
+                    <span>Incorporo Herramientas</span>
+                </div>
+                <div class="stage-pill">
+                    <span class="stage-num">06</span>
+                    <span>Acciono</span>
+                </div>
+                <div class="stage-pill">
+                    <span class="stage-num">07</span>
+                    <span>Me Convierto</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- MIS PROGRAMAS Y CLASES -->
+        <section>
+            <div class="section-header-campus">
+                <h2>Mis Programas & Contenidos</h2>
+                <span style="font-size: 0.88rem; color: var(--carbon-muted);">Actualizado a tu nivel de membresía</span>
+            </div>
+
+            <div class="courses-grid">
+
+                <!-- CURSO 1: MÉTODO ALFA - EL INICIO (ACCESO BASE) -->
+                <div class="course-card">
+                    <div>
+                        <div class="course-banner banner-inicio">
+                            <span class="course-tag">PROGRAMA BASE · DISPONIBLE</span>
+                            <h3 class="course-title">Método Alfa — El Inicio</h3>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin: 0;">La puerta de entrada para construir estructura y dirección sólida.</p>
+                        </div>
+                        <div class="course-body">
+                            <p style="font-size: 0.92rem; color: var(--carbon-light); margin-bottom: 16px;">
+                                Los 5 pilares fundamentales para salir del modo apagar incendios y liderar tu proyecto:
+                            </p>
+                            <ul class="modules-list">
+                                <li class="module-item">
+                                    <span><strong>Módulo 1:</strong> Alfa 01 — Dirección (Visión y Objetivos)</span>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </li>
+                                <li class="module-item">
+                                    <span><strong>Módulo 2:</strong> Alfa 02 — Desarrollo Personal (Límites y Hábitos)</span>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </li>
+                                <li class="module-item">
+                                    <span><strong>Módulo 3:</strong> Alfa 03 — Dinero Consciente (Finanzas Claras)</span>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </li>
+                                <li class="module-item">
+                                    <span><strong>Módulo 4:</strong> Alfa 04 — Ventas & Visibilidad (Tu Oferta)</span>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </li>
+                                <li class="module-item">
+                                    <span><strong>Módulo 5:</strong> Alfa 05 — Acción & Hábitos Sostenibles</span>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="padding: 0 28px 28px;">
+                        <a href="portal-aula.html?curso=inicio" class="btn btn-primary btn-block btn-lg">
+                            <span>Ingresar al Aula de Clases</span>
+                            <i class="fa-solid fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CURSO 2: MÉTODO ALFA ELITE (6 MESES - PREMIUM) -->
+                <div class="course-card" id="cardElite">
+                    <div>
+                        <div class="course-banner banner-elite">
+                            <span class="course-tag" id="tagEliteStatus">PROGRAMA PREMIUM · 6 MESES</span>
+                            <h3 class="course-title">Método Alfa Elite</h3>
+                            <p style="font-size: 0.9rem; opacity: 0.9; margin: 0;">El proceso integral con 5 especialistas para convertirte en Empresaria Alfa.</p>
+                        </div>
+
+                        <!-- ESTADO DESBLOQUEADO (SI ES ELITE) -->
+                        <div class="course-body" id="eliteUnlockedContent" style="display: none;">
+                            <p style="font-size: 0.92rem; color: var(--carbon-light); margin-bottom: 16px;">
+                                Tu aula de 6 meses con mentorías y especialistas en vivo y grabadas:
+                            </p>
+                            <ul class="modules-list">
+                                <li class="module-item">
+                                    <span><strong>1. Coach Desarrollo Personal:</strong> Flor Castillo (Semanal)</span>
+                                    <i class="fa-solid fa-crown" style="color: #E6B800;"></i>
+                                </li>
+                                <li class="module-item">
+                                    <span><strong>2. Facilitadora Educación Financiera:</strong> Mentoría Mensual</span>
+                                    <i class="fa-solid fa-coins" style="color: #E6B800;"></i>
+                                </li>
+                                <li class="module-item">
+                                    <span><strong>3. Facilitadora Ventas Digitales:</strong> Capacitación Mensual</span>
+                                    <i class="fa-solid fa-chart-line" style="color: #E6B800;"></i>
+                                </li>
+                                <li class="module-item">
+                                    <span><strong>4. Community Manager:</strong> Estrategia Redes Mensual</span>
+                                    <i class="fa-solid fa-hashtag" style="color: #E6B800;"></i>
+                                </li>
+                                <li class="module-item">
+                                    <span><strong>5. Psicóloga:</strong> Acompañamiento Emocional Mensual</span>
+                                    <i class="fa-solid fa-heart-pulse" style="color: #E6B800;"></i>
+                                </li>
+                            </ul>
+                            <div style="margin-top: 10px;">
+                                <a href="portal-aula.html?curso=elite" class="btn btn-primary btn-block btn-lg">
+                                    <span>Ingresar a las Clases Elite</span>
+                                    <i class="fa-solid fa-crown"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- ESTADO BLOQUEADO (SI ES INICIO - UPSELL CONTEXTUAL) -->
+                        <div class="card-locked-overlay" id="eliteLockedContent">
+                            <div class="lock-icon-circle">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            <h4 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--carbon); margin: 0;">
+                                Exclusivo para Alumnas Alfa Elite
+                            </h4>
+                            <p style="font-size: 0.88rem; color: var(--carbon-light); max-width: 420px; line-height: 1.5; margin: 0;">
+                                El programa integral de 6 meses incluye acompañamiento semanal con Flor y 4 especialistas dedicadas: <strong>Educación Financiera, Ventas Digitales, Community Manager y Psicóloga</strong>.
+                            </p>
+                            <a href="https://wa.me/5491100000000?text=Hola%20Flor!%20Soy%20alumna%20de%20M%C3%A9todo%20Alfa%20y%20quiero%20hacer%20el%20upgrade%20al%20programa%20Elite." target="_blank" class="btn btn-secondary btn-block">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span>Solicitar Upgrade a Alfa Elite</span>
+                            </a>
+                            <span style="font-size: 0.75rem; color: var(--carbon-muted);">Acceso inmediato a los 6 meses de mentorías y materiales exclusivos.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BIBLIOTECA DE WORKBOOKS EN PDF (DESCARGA DIRECTA) -->
+        <section class="workbooks-section">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                <div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--carbon); margin-bottom: 4px;">
+                        Materiales y Workbooks de Estudio en PDF
+                    </h3>
+                    <p style="font-size: 0.88rem; color: var(--carbon-muted); margin: 0;">
+                        Descargá los cuadernos de trabajo oficiales listos para imprimir o completar:
+                    </p>
+                </div>
+                <a href="guias-gratuitas.html" class="btn btn-outline btn-sm">Ver todas las guías</a>
+            </div>
+
+            <div class="workbooks-grid">
+                <div class="wb-card">
+                    <h4>Radiografía Alfa</h4>
+                    <p>Workbook de autodiagnóstico en 5 pasos para ordenar prioridades.</p>
+                    <a href="descargas/guia-radiografia-alfa-mujeres-alfa.pdf" download="Guia-Radiografia-Alfa.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
+                        <i class="fa-solid fa-download"></i> Bajar PDF
+                    </a>
+                </div>
+
+                <div class="wb-card">
+                    <h4>Hábitos Financieros</h4>
+                    <p>Plantillas de rastreador de 7 días y los 5 chequeos empresariales.</p>
+                    <a href="descargas/habitos-financieros-mujeres-alfa.pdf" download="Guia-Habitos-Financieros.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
+                        <i class="fa-solid fa-download"></i> Bajar PDF
+                    </a>
+                </div>
+
+                <div class="wb-card">
+                    <h4>Materializar en 7 Días</h4>
+                    <p>Ritual guiado diario de reprogramación y certeza interna.</p>
+                    <a href="descargas/materializar-dinero-7-dias-mujeres-alfa.pdf" download="Guia-Materializar-Dinero-7-Dias.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
+                        <i class="fa-solid fa-download"></i> Bajar PDF
+                    </a>
+                </div>
+
+                <div class="wb-card">
+                    <h4>Diario de 30 Días</h4>
+                    <p>Las 3 preguntas de cierre nocturno y habit tracker de 30 noches.</p>
+                    <a href="descargas/escribi-esto-30-dias-mujeres-alfa.pdf" download="Guia-Escribi-Esto-30-Dias.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
+                        <i class="fa-solid fa-download"></i> Bajar PDF
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMUNIDAD PRIVADA & SOPORTE -->
+        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="background: var(--marfil-surface); border-radius: var(--radius-lg); padding: 24px; border: 1px solid rgba(43,36,53,0.08); display: flex; align-items: center; gap: 18px;">
+                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(37, 211, 102, 0.15); color: #25D366; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0;">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 4px; color: var(--carbon);">Comunidad WhatsApp Alumnas</h4>
+                    <p style="font-size: 0.85rem; color: var(--carbon-muted); margin-bottom: 8px;">Conectá con otras mujeres que están transitando el mismo camino de transformación.</p>
+                    <a href="https://wa.me/5491100000000?text=Hola%20Flor!%20Quiero%20sumarme%20al%20grupo%20privado%20de%20alumnas." target="_blank" class="btn btn-outline btn-sm">Unirme a la Comunidad</a>
+                </div>
+            </div>
+
+            <div style="background: var(--marfil-surface); border-radius: var(--radius-lg); padding: 24px; border: 1px solid rgba(43,36,53,0.08); display: flex; align-items: center; gap: 18px;">
+                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(212,0,106,0.1); color: var(--fuchsia); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0;">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 4px; color: var(--carbon);">Soporte & Dudas</h4>
+                    <p style="font-size: 0.85rem; color: var(--carbon-muted); margin-bottom: 8px;">¿Tenés alguna consulta técnica o sobre los contenidos? Escribinos directamente.</p>
+                    <a href="https://wa.me/5491100000000?text=Hola%20Flor!%20Tengo%20una%20consulta%20con%20el%20portal%20de%20alumnas." target="_blank" class="btn btn-outline btn-sm">Contactar Soporte</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function checkAuth() {
+            const rawUser = localStorage.getItem('fc_alumna_auth');
+            let user = { role: 'inicio', name: 'Marcela', email: 'marcela@ejemplo.com' };
+            if (rawUser) {
+                try { user = JSON.parse(rawUser); } catch(e) {}
+            } else {
+                localStorage.setItem('fc_alumna_auth', JSON.stringify(user));
+            }
+            applyUserRole(user);
+        }
+
+        function applyUserRole(user) {
+            document.getElementById('headerUserName').textContent = user.name || 'Alumna';
+            document.getElementById('welcomeUserName').textContent = user.name || 'Alumna';
+
+            const roleBadge = document.getElementById('roleBadge');
+            const roleBadgeText = document.getElementById('roleBadgeText');
+            const eliteUnlocked = document.getElementById('eliteUnlockedContent');
+            const eliteLocked = document.getElementById('eliteLockedContent');
+            const tagEliteStatus = document.getElementById('tagEliteStatus');
+
+            if (user.role === 'elite') {
+                roleBadge.className = 'user-badge-role badge-role-elite';
+                roleBadgeText.innerHTML = '<i class="fa-solid fa-crown"></i> Empresaria Alfa Elite';
+                eliteUnlocked.style.display = 'block';
+                eliteLocked.style.display = 'none';
+                tagEliteStatus.textContent = 'PROGRAMA PREMIUM · DESBLOQUEADO';
+                tagEliteStatus.style.background = 'rgba(230, 184, 0, 0.3)';
+            } else {
+                roleBadge.className = 'user-badge-role badge-role-inicio';
+                roleBadgeText.innerHTML = '<i class="fa-solid fa-sparkles"></i> Alumna Alfa Inicio';
+                eliteUnlocked.style.display = 'none';
+                eliteLocked.style.display = 'flex';
+                tagEliteStatus.textContent = 'PROGRAMA PREMIUM · EXCLUSIVO ELITE';
+                tagEliteStatus.style.background = 'rgba(255,255,255,0.2)';
+            }
+        }
+
+        function setDemoRole(role) {
+            const user = {
+                role: role,
+                name: role === 'elite' ? 'Valeria Giménez' : 'Marcela Gómez',
+                email: role === 'elite' ? 'valeria@ejemplo.com' : 'marcela@ejemplo.com'
+            };
+            localStorage.setItem('fc_alumna_auth', JSON.stringify(user));
+            applyUserRole(user);
+        }
+
+        function logout() {
+            localStorage.removeItem('fc_alumna_auth');
+        }
+
+        document.addEventListener('DOMContentLoaded', checkAuth);
+    </script>
+</body>
+</html>
