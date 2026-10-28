@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guías Gratuitas Oficiales | Florencia Castillo · Mujeres Alfa</title>
-    <meta name="description" content="Accedé a las 4 guías prácticas y workbooks en PDF de Florencia Castillo: Radiografía Alfa, Hábitos Financieros, Materializar Dinero en 7 Días y Diario Nocturno de 30 Días.">
+    <title>Biblioteca de Recursos Oficiales | Florencia Castillo · Mujeres Alfa</title>
+    <meta name="description" content="Accedé a la Biblioteca Oficial de Mujeres Alfa: completá la Radiografía Alfa interactiva online y desbloqueá las 3 guías de trabajo en PDF para tu crecimiento personal y empresarial.">
     
     <!-- Google Fonts: Cormorant Garamond & DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,14 +20,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="diseño visual/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="diseño visual/apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="manifest" href="site.webmanifest">
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 
     <style>
         .hub-hero {
-            padding: 4rem 0 3rem;
+            padding: 3.5rem 0 2rem;
             text-align: center;
             background: linear-gradient(180deg, rgba(212,0,106,0.04) 0%, rgba(250,240,228,0) 100%);
         }
@@ -41,8 +40,8 @@
             border: 1px solid var(--fuchsia);
             color: var(--fuchsia);
             border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
+            font-size: 0.78rem;
+            font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             margin-bottom: 1.2rem;
@@ -52,71 +51,394 @@
             font-size: clamp(2.2rem, 4vw, 3.2rem);
             line-height: 1.15;
             color: var(--carbon);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             max-width: 860px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .hub-lead {
-            font-size: 1.15rem;
+            font-size: 1.12rem;
             color: var(--carbon-light);
             max-width: 720px;
-            margin: 0 auto 2.5rem;
+            margin: 0 auto 1.5rem;
             line-height: 1.6;
         }
 
-        .hub-grid {
+        /* ========================================================
+           1. BANNER DESTACADO RADIOGRAFÍA ALFA (DEGRADE DE IMPACTO)
+           ======================================================== */
+        .radiografia-banner-wrap {
+            margin: 1.5rem 0 4rem;
+        }
+
+        .radiografia-banner {
+            background: linear-gradient(135deg, #9C004B 0%, #D4006A 35%, #FF4848 70%, #FF8A33 100%);
+            border-radius: 24px;
+            color: #fff;
+            padding: 48px;
+            box-shadow: 0 20px 50px rgba(212, 0, 106, 0.22), 0 6px 18px rgba(43, 36, 53, 0.12);
+            position: relative;
+            overflow: hidden;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-bottom: 4rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 36px;
+            align-items: center;
         }
 
         @media (max-width: 900px) {
-            .hub-grid {
+            .radiografia-banner {
                 grid-template-columns: 1fr;
+                padding: 36px 24px;
+                text-align: center;
             }
         }
 
-        .guide-card {
-            background: var(--marfil-surface);
-            border-radius: var(--radius-lg);
-            border: 1.5px solid rgba(43,36,53,0.08);
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        /* Decorative glowing circles inside gradient */
+        .radiografia-banner::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
-        .guide-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 36px rgba(43,36,53,0.1);
-            border-color: var(--fuchsia);
+        .radiografia-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 20%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,154,60,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
-        .guide-card-featured {
-            border: 2px solid var(--fuchsia);
-            background: linear-gradient(135deg, #FFF9F2 0%, #FFF3F7 100%);
-        }
-
-        .card-tag {
-            display: inline-block;
-            font-size: 0.72rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 4px 12px;
+        .rad-banner-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #fff;
+            padding: 6px 16px;
             border-radius: 50px;
-            background: rgba(212,0,106,0.1);
-            color: var(--fuchsia);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             margin-bottom: 16px;
         }
 
-        .guide-card-icon {
+        .rad-banner-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 3.4vw, 2.7rem);
+            line-height: 1.15;
+            color: #fff;
+            margin-bottom: 14px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .rad-banner-desc {
+            font-size: 1.05rem;
+            line-height: 1.55;
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 22px;
+            max-width: 580px;
+        }
+
+        .rad-banner-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 26px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .rad-banner-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.95);
+        }
+
+        @media (max-width: 900px) {
+            .rad-banner-features {
+                align-items: center;
+            }
+        }
+
+        .rad-banner-features i {
+            color: #FFE699;
+            font-size: 1.05rem;
+        }
+
+        .btn-radiografia-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            color: var(--fuchsia);
+            padding: 16px 34px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .btn-radiografia-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 16px 35px rgba(0,0,0,0.28);
+            background: #FFF9F2;
+            color: #B00055;
+        }
+
+        .rad-banner-preview-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 28px;
+            color: #fff;
+            position: relative;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .rad-preview-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .rad-preview-step i {
+            color: #FFE699;
+        }
+
+        .rad-preview-pill {
+            display: block;
+            text-align: center;
+            font-size: 0.78rem;
+            background: rgba(0,0,0,0.2);
+            padding: 8px;
+            border-radius: 8px;
+            margin-top: 14px;
+            opacity: 0.9;
+        }
+
+        /* ========================================================
+           2. SECCIÓN GUÍAS EN PDF: UNIFICACIÓN DE LEADS & STACK CAROUSEL
+           ======================================================== */
+        .pdf-section-header {
+            text-align: center;
+            margin-bottom: 2.2rem;
+        }
+
+        .pdf-section-title {
+            font-family: var(--font-heading);
+            font-size: 2.3rem;
+            color: var(--carbon);
+            margin-bottom: 8px;
+        }
+
+        .pdf-section-subtitle {
+            font-size: 1.05rem;
+            color: var(--carbon-light);
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* FORMULARIO ÚNICO UNIFICADO DE CAPTURA */
+        .unified-lead-card {
+            background: var(--marfil-surface);
+            border: 2px solid var(--fuchsia);
+            border-radius: var(--radius-lg);
+            padding: 34px 38px;
+            max-width: 820px;
+            margin: 0 auto 3rem;
+            box-shadow: 0 16px 40px rgba(43,36,53,0.08);
+            position: relative;
+        }
+
+        .unified-lead-header {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .unified-lead-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--naranja);
+            margin-bottom: 6px;
+        }
+
+        .unified-lead-title {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            color: var(--fuchsia);
+            margin-bottom: 6px;
+        }
+
+        .unified-lead-desc {
+            font-size: 0.92rem;
+            color: var(--carbon-light);
+            margin: 0;
+            line-height: 1.45;
+        }
+
+        .unified-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .unified-form-grid {
+                grid-template-columns: 1fr;
+            }
+            .unified-lead-card {
+                padding: 24px 20px;
+            }
+        }
+
+        .form-control-uni {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid rgba(43,36,53,0.18);
+            border-radius: var(--radius-sm);
+            background: var(--marfil);
+            font-family: inherit;
+            font-size: 0.92rem;
+            color: var(--carbon);
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .form-control-uni:focus {
+            border-color: var(--fuchsia);
+            box-shadow: 0 0 0 3px rgba(212,0,106,0.12);
+            background: #fff;
+        }
+
+        .unlocked-banner-state {
+            display: none;
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.12) 0%, rgba(39, 174, 96, 0.05) 100%);
+            border: 1.5px solid #27ae60;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            color: #1e8449;
+        }
+
+        .unlocked-banner-state h4 {
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+            font-family: var(--font-heading);
+        }
+
+        /* ========================================================
+           STACKED / SLIDING CARDS CAROUSEL ("que se meten una adentro de otra")
+           ======================================================== */
+        .stack-carousel-wrap {
+            position: relative;
+            max-width: 980px;
+            margin: 0 auto 4rem;
+            padding: 20px 0 30px;
+        }
+
+        .stack-viewport {
+            position: relative;
+            height: 520px;
+            perspective: 1200px;
+            overflow: visible;
+        }
+
+        @media (max-width: 768px) {
+            .stack-viewport {
+                height: 560px;
+            }
+        }
+
+        .stack-card {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            max-width: 460px;
+            background: var(--marfil-surface);
+            border-radius: 24px;
+            border: 2px solid rgba(43,36,53,0.08);
+            box-shadow: 0 16px 40px rgba(43,36,53,0.12);
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transform-origin: center center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Card States for Stacked 3D Slider */
+        .stack-card.pos-center {
+            transform: translateX(-50%) translateZ(0) scale(1);
+            z-index: 10;
+            opacity: 1;
+            filter: blur(0);
+            border-color: var(--fuchsia);
+            box-shadow: 0 24px 50px rgba(212,0,106,0.16);
+            cursor: default;
+        }
+
+        .stack-card.pos-left {
+            transform: translateX(-110%) translateZ(-80px) scale(0.88);
+            z-index: 5;
+            opacity: 0.65;
+            filter: blur(0.5px);
+        }
+
+        .stack-card.pos-right {
+            transform: translateX(10%) translateZ(-80px) scale(0.88);
+            z-index: 5;
+            opacity: 0.65;
+            filter: blur(0.5px);
+        }
+
+        @media (max-width: 650px) {
+            .stack-card {
+                max-width: 330px;
+                padding: 24px;
+            }
+            .stack-card.pos-left {
+                transform: translateX(-90%) translateZ(-60px) scale(0.86);
+                opacity: 0.45;
+            }
+            .stack-card.pos-right {
+                transform: translateX(-10%) translateZ(-60px) scale(0.86);
+                opacity: 0.45;
+            }
+        }
+
+        .stack-card-icon {
             width: 54px;
             height: 54px;
             border-radius: 14px;
@@ -130,80 +452,116 @@
             margin-bottom: 16px;
         }
 
-        .guide-card-title {
+        .stack-card-title {
             font-family: var(--font-heading);
-            font-size: 1.65rem;
+            font-size: 1.7rem;
             color: var(--carbon);
             margin-bottom: 8px;
             line-height: 1.25;
         }
 
-        .guide-card-desc {
-            font-size: 0.95rem;
+        .stack-card-desc {
+            font-size: 0.92rem;
             color: var(--carbon-light);
             line-height: 1.55;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
-        .guide-card-features {
+        .stack-card-list {
             list-style: none;
             padding: 0;
-            margin: 0 0 24px 0;
-            font-size: 0.88rem;
+            margin: 0 0 20px 0;
+            font-size: 0.86rem;
             color: var(--carbon);
         }
 
-        .guide-card-features li {
+        .stack-card-list li {
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            margin-bottom: 10px;
-            line-height: 1.45;
+            margin-bottom: 8px;
+            line-height: 1.4;
         }
 
-        .guide-card-features li i {
+        .stack-card-list li i {
             color: var(--fuchsia);
             font-size: 0.85rem;
             margin-top: 3px;
             flex-shrink: 0;
         }
 
-        .guide-card-meta {
+        .stack-card-meta {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding-top: 14px;
+            gap: 14px;
+            padding-top: 12px;
             border-top: 1px dashed rgba(43,36,53,0.12);
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--carbon-muted);
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
-        .guide-card-meta span {
+        /* Carousel Navigation Controls */
+        .stack-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1.5px solid rgba(43,36,53,0.15);
+            color: var(--carbon);
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(43,36,53,0.1);
+            transition: all 0.2s;
+            z-index: 20;
         }
 
-        .guide-actions {
+        .stack-nav-btn:hover {
+            background: var(--fuchsia);
+            color: #fff;
+            border-color: var(--fuchsia);
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .stack-prev-btn { left: 10px; }
+        .stack-next-btn { right: 10px; }
+
+        @media (max-width: 600px) {
+            .stack-prev-btn { left: -5px; }
+            .stack-next-btn { right: -5px; }
+        }
+
+        /* Dot Indicators */
+        .stack-dots {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             gap: 10px;
+            margin-top: 24px;
         }
 
-        .guide-actions-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
+        .stack-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(43,36,53,0.2);
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        @media (max-width: 500px) {
-            .guide-actions-split {
-                grid-template-columns: 1fr;
-            }
+        .stack-dot.active {
+            background: var(--fuchsia);
+            width: 28px;
+            border-radius: 20px;
         }
 
-        /* Callout Box for Calendly */
+        /* Bottom Calendly Card */
         .calendly-hub-banner {
             background: var(--carbon);
             color: #fff;
@@ -226,31 +584,6 @@
             border-radius: 50%;
             pointer-events: none;
         }
-
-        .calendly-hub-badge {
-            display: inline-block;
-            font-size: 0.78rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--naranja);
-            margin-bottom: 12px;
-        }
-
-        .calendly-hub-title {
-            font-family: var(--font-heading);
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-            color: #fff;
-        }
-
-        .calendly-hub-p {
-            font-size: 1.05rem;
-            color: rgba(255,255,255,0.85);
-            max-width: 650px;
-            margin: 0 auto 24px;
-            line-height: 1.6;
-        }
     </style>
 </head>
 <body>
@@ -258,7 +591,7 @@
     <!-- TOP ANNOUNCEMENT BAR -->
     <aside class="top-banner">
         <div class="container banner-inner">
-            <span>✦ <strong>Recursos Oficiales de Mujeres Alfa:</strong> 4 guías prácticas descargables en PDF para tu crecimiento personal y empresarial ✦</span>
+            <span>✦ <strong>Recursos Oficiales de Mujeres Alfa:</strong> Autodiagnóstico interactivo online + Biblioteca de guías prácticas descargables en PDF ✦</span>
         </div>
     </aside>
 
@@ -275,7 +608,7 @@
 
             <!-- Desktop Menu -->
             <nav class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="index.html">Inicio</a>
                 <a href="index.html#alfa-inicio" class="nav-link">Alfa al Inicio</a>
                 <a href="index.html#mujeres-alfa" class="nav-link">Mujeres Alfa</a>
                 <a href="guias-gratuitas.html" class="nav-link active">Biblioteca</a>
@@ -303,182 +636,306 @@
             <div class="container">
                 <span class="hub-badge">
                     <span class="diamond-icon">♦</span>
-                    BIBLIOTECA DE RECURSOS GRATUITOS
+                    BIBLIOTECA DE RECURSOS OFICIALES
                     <span class="diamond-icon">♦</span>
                 </span>
                 <h1 class="hub-title">Herramientas prácticas para salir del caos, liderar tus números y expandir tu negocio</h1>
                 <p class="hub-lead">
-                    Accedé a las 4 guías oficiales en PDF de Mujeres Alfa. Cada recurso fue diseñado para transformar un área crítica: mentalidad, hábitos financieros, manifestación consciente y autodiagnóstico integral.
+                    El mapa y las herramientas para transformar tu mentalidad, ordenar tus finanzas y construir dirección con el respaldo del Método Alfa.
                 </p>
             </div>
         </section>
 
-        <!-- 4 GUIDES GRID SECTION -->
-        <section style="padding: 1rem 0 3rem;">
-            <div class="container">
-                <div class="hub-grid">
+        <div class="container">
 
-                    <!-- GUÍA 1: RADIOGRAFÍA ALFA -->
-                    <div class="guide-card guide-card-featured">
-                        <div>
-                            <span class="card-tag">Diagnóstico & Liderazgo</span>
-                            <div class="guide-card-icon">
-                                <i class="fa-solid fa-compass-drafting"></i>
-                            </div>
-                            <h2 class="guide-card-title">Radiografía Alfa: Autodiagnóstico</h2>
-                            <p class="guide-card-desc">
-                                ¿Estás viviendo la vida que elegiste o estás atrapada en el piloto automático? Descubrí en qué nivel de energía y estructura estás operando hoy.
-                            </p>
-                            <ul class="guide-card-features">
-                                <li><i class="fa-solid fa-circle-check"></i> 5 ejercicios prácticos de honestidad y autoobservación.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Medición de tu relación con el dinero, tiempo y negocio.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Plan de acción personalizado con tu puntaje Alfa.</li>
-                            </ul>
+            <!-- ========================================================
+                 1. BANNER DESTACADO: RADIOGRAFÍA ALFA (AUTODIAGNÓSTICO ONLINE)
+                 ======================================================== -->
+            <section class="radiografia-banner-wrap">
+                <div class="radiografia-banner">
+                    <div>
+                        <span class="rad-banner-badge">
+                            <i class="fa-solid fa-sparkles"></i>
+                            HERRAMIENTA ESTRELLA · 100% ONLINE
+                        </span>
+                        <h2 class="rad-banner-title">
+                            Radiografía Alfa: Autodiagnóstico de Negocio & Liderazgo
+                        </h2>
+                        <p class="rad-banner-desc">
+                            ¿Estás viviendo la vida que elegiste o estás atrapada en el piloto automático? Evaluá con honestidad brutal tus 5 pilares clave y recibí tu mapa de acción inmediato.
+                        </p>
+                        <ul class="rad-banner-features">
+                            <li><i class="fa-solid fa-circle-check"></i> 5 ejercicios prácticos guiados de autoobservación.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Medición precisa de tu relación con el dinero, tiempo y negocio.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Se completa 100% online y genera tu hoja de ruta personalizada.</li>
+                        </ul>
+                        
+                        <div style="margin-top: 10px;">
+                            <a href="guia-radiografia-alfa.html" class="btn-radiografia-cta">
+                                <span>Comenzar Autodiagnóstico Online</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <div>
-                            <div class="guide-card-meta">
-                                <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (8 págs)</span>
-                                <span><i class="fa-solid fa-bolt"></i> Test Interactivo</span>
-                                <span><i class="fa-solid fa-tag"></i> 100% Gratuito</span>
-                            </div>
-                            <div class="guide-actions-split">
-                                <a href="guia-radiografia-alfa.html" class="btn btn-primary btn-sm" style="text-align: center;">
-                                    <span>Hacer Online</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                                <a href="descargas/guia-radiografia-alfa-mujeres-alfa.pdf" download="Guia-Radiografia-Alfa-Mujeres-Alfa.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
-                                    <i class="fa-solid fa-download"></i>
-                                    <span>Bajar PDF</span>
-                                </a>
-                            </div>
-                        </div>
+                        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.85); margin-top: 14px; margin-bottom: 0;">
+                            ✨ Al finalizar tus respuestas obtenés tu Radiografía completa y desbloqueás el beneficio exclusivo de agendar una reunión 1 a 1 por Google Meet con Flor.
+                        </p>
                     </div>
 
-                    <!-- GUÍA 2: HÁBITOS FINANCIEROS -->
-                    <div class="guide-card">
-                        <div>
-                            <span class="card-tag">Finanzas & Negocio</span>
-                            <div class="guide-card-icon">
-                                <i class="fa-solid fa-coins"></i>
-                            </div>
-                            <h2 class="guide-card-title">Hábitos Financieros para Mujeres Alfa</h2>
-                            <p class="guide-card-desc">
-                                El dinero no te falta por mala suerte: te falta porque nadie te enseñó a relacionarte con él sin culpa ni desorden. Ordená tus números personales y de negocio.
-                            </p>
-                            <ul class="guide-card-features">
-                                <li><i class="fa-solid fa-circle-check"></i> Los 6 hábitos financieros innegociables de una líder.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Rastreador práctico de gastos personales de 7 días.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Los 5 chequeos de salud empresarial para tu negocio.</li>
-                            </ul>
+                    <!-- Lado Visual del Banner -->
+                    <div class="rad-banner-preview-card">
+                        <div style="font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFE699; margin-bottom: 12px;">
+                            <i class="fa-solid fa-compass-drafting"></i> LOS 5 EJERCICIOS DEL TEST
                         </div>
-                        <div>
-                            <div class="guide-card-meta">
-                                <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (4 págs)</span>
-                                <span><i class="fa-solid fa-table-list"></i> Incluye Plantillas</span>
-                                <span><i class="fa-solid fa-tag"></i> 100% Gratuito</span>
-                            </div>
-                            <div class="guide-actions-split">
-                                <a href="guia-habitos-financieros.html" class="btn btn-primary btn-sm" style="text-align: center;">
-                                    <span>Ver Guía</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                                <a href="descargas/habitos-financieros-mujeres-alfa.pdf" download="Guia-Habitos-Financieros-Mujeres-Alfa.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
-                                    <i class="fa-solid fa-download"></i>
-                                    <span>Bajar PDF</span>
-                                </a>
-                            </div>
+                        <div class="rad-preview-step">
+                            <i class="fa-solid fa-circle-dot"></i>
+                            <span>1. El espejo: quién sos hoy</span>
+                        </div>
+                        <div class="rad-preview-step">
+                            <i class="fa-solid fa-circle-dot"></i>
+                            <span>2. Tu trabajo y realidad financiera</span>
+                        </div>
+                        <div class="rad-preview-step">
+                            <i class="fa-solid fa-circle-dot"></i>
+                            <span>3. Tus metas de los próximos 90 días</span>
+                        </div>
+                        <div class="rad-preview-step">
+                            <i class="fa-solid fa-circle-dot"></i>
+                            <span>4. Tus hábitos cotidianos y energía</span>
+                        </div>
+                        <div class="rad-preview-step">
+                            <i class="fa-solid fa-circle-dot"></i>
+                            <span>5. Tu compromiso como Mujer Alfa</span>
+                        </div>
+                        <div class="rad-preview-pill">
+                            🔒 100% Confidencial · Entrega inmediata en pantalla
                         </div>
                     </div>
-
-                    <!-- GUÍA 3: MATERIALIZAR DINERO EN 7 DÍAS -->
-                    <div class="guide-card">
-                        <div>
-                            <span class="card-tag">Mentalidad & Manifestación</span>
-                            <div class="guide-card-icon">
-                                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            </div>
-                            <h2 class="guide-card-title">Cómo Materializar Dinero en 7 Días</h2>
-                            <p class="guide-card-desc">
-                                Un ritual estructurado de 7 días para desbloquear tu energía con el dinero, romper techos invisibles de merecimiento y activar flujo tangible de ingresos.
-                            </p>
-                            <ul class="guide-card-features">
-                                <li><i class="fa-solid fa-circle-check"></i> 7 pasos diarios enfocados en desbloqueo y certeza interna.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Ejercicios de neutralización de miedos y juicio con el cobro.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Acciones concretas para recibir y capitalizar oportunidades.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="guide-card-meta">
-                                <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (2 págs)</span>
-                                <span><i class="fa-solid fa-calendar-days"></i> Ritual de 7 Días</span>
-                                <span><i class="fa-solid fa-tag"></i> 100% Gratuito</span>
-                            </div>
-                            <div class="guide-actions-split">
-                                <a href="guia-materializar-dinero.html" class="btn btn-primary btn-sm" style="text-align: center;">
-                                    <span>Ver Guía</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                                <a href="descargas/materializar-dinero-7-dias-mujeres-alfa.pdf" download="Guia-Materializar-Dinero-7-Dias-Mujeres-Alfa.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
-                                    <i class="fa-solid fa-download"></i>
-                                    <span>Bajar PDF</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- GUÍA 4: ESCRIBÍ ESTO DURANTE 30 DÍAS -->
-                    <div class="guide-card">
-                        <div>
-                            <span class="card-tag">Rutina Nocturna & Hábito</span>
-                            <div class="guide-card-icon">
-                                <i class="fa-solid fa-book-journal-whills"></i>
-                            </div>
-                            <h2 class="guide-card-title">Escribí esto durante 30 Días</h2>
-                            <p class="guide-card-desc">
-                                El diario nocturno de 5 minutos que reprograma tu relación con la abundancia, desactiva la ansiedad de la cama y enfoca tu energía antes de dormir.
-                            </p>
-                            <ul class="guide-card-features">
-                                <li><i class="fa-solid fa-circle-check"></i> 3 preguntas reveladoras para responder cada noche.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Reprogramación subconsciente del merecimiento y la calma.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> Habit tracker visual de 30 noches consecutivas.</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="guide-card-meta">
-                                <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (2 págs)</span>
-                                <span><i class="fa-solid fa-moon"></i> 5 min por noche</span>
-                                <span><i class="fa-solid fa-tag"></i> 100% Gratuito</span>
-                            </div>
-                            <div class="guide-actions-split">
-                                <a href="guia-30-dias-dinero.html" class="btn btn-primary btn-sm" style="text-align: center;">
-                                    <span>Ver Guía</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                                <a href="descargas/escribi-esto-30-dias-mujeres-alfa.pdf" download="Guia-Escribi-Esto-30-Dias-Mujeres-Alfa.pdf" class="btn btn-secondary btn-sm" style="text-align: center;">
-                                    <i class="fa-solid fa-download"></i>
-                                    <span>Bajar PDF</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+            </section>
 
-                <!-- BANNER SESIÓN CON FLOR -->
-                <div class="calendly-hub-banner">
-                    <span class="calendly-hub-badge">Paso Siguiente · Acompañamiento Personalizado</span>
-                    <h3 class="calendly-hub-title">Ningún PDF transforma tu vida si no lo integrás con acción.</h3>
-                    <p class="calendly-hub-p">
-                        Las 4 guías te dan el mapa. En una <strong>sesión estratégica 1 a 1 de 30 minutos por Google Meet</strong> conmigo, revisamos tus respuestas, destrabamos tus cuellos de botella y trazamos el plan para tus próximos 90 días.
+            <!-- ========================================================
+                 2. SECCIÓN: LAS 3 GUÍAS DE TRABAJO EN PDF
+                 ======================================================== -->
+            <section style="padding: 1rem 0 3rem;">
+                <div class="pdf-section-header">
+                    <span class="card-tag">DESCARGAS OFICIALES EN PDF</span>
+                    <h2 class="pdf-section-title">Workbooks & Guías Prácticas de Estudio</h2>
+                    <p class="pdf-section-subtitle">
+                        Deslizá las tarjetas para explorar cada cuaderno de trabajo. Con un único registro desbloqueás el acceso directo a los 3 PDFs para guardarlos en tu celular o computadora.
                     </p>
-                    <a href="https://calendly.com/florenciacastillo-oficial/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-                        <span>Agendar mi Sesión 1 a 1 Gratuita</span>
-                        <i class="fa-solid fa-calendar-check"></i>
-                    </a>
                 </div>
 
+                <!-- FORMULARIO ÚNICO DE REGISTRO PARA DESBLOQUEAR TODAS LAS GUÍAS -->
+                <div class="unified-lead-card" id="leadCaptureBlock">
+                    
+                    <!-- ESTADO REGISTRO PENDIENTE -->
+                    <div id="leadFormWrap">
+                        <div class="unified-lead-header">
+                            <span class="unified-lead-badge">ACCESO UNIFICADO A LA BIBLIOTECA</span>
+                            <h3 class="unified-lead-title">Desbloqueá la Biblioteca Completa de Guías en PDF</h3>
+                            <p class="unified-lead-desc">
+                                Ingresá tus datos una sola vez. Con este único registro accedés a la descarga directa e inmediata de las 3 guías de trabajo:
+                            </p>
+                        </div>
+
+                        <form id="unifiedLeadForm" onsubmit="handleUnifiedLeadSubmit(event)">
+                            <div class="unified-form-grid">
+                                <div>
+                                    <input type="text" id="uniName" class="form-control-uni" required placeholder="Tu Nombre completo *">
+                                </div>
+                                <div>
+                                    <input type="email" id="uniEmail" class="form-control-uni" required placeholder="Tu mejor Correo Electrónico *">
+                                </div>
+                                <div>
+                                    <input type="tel" id="uniPhone" class="form-control-uni" placeholder="WhatsApp (Opcional)">
+                                </div>
+                            </div>
+                            <button type="submit" id="btnUniSubmit" class="btn btn-primary btn-block btn-lg">
+                                <span>Desbloquear las 3 Guías en PDF Ahora</span>
+                                <i class="fa-solid fa-unlock"></i>
+                            </button>
+                            <p style="font-size: 0.76rem; color: var(--carbon-muted); text-align: center; margin-top: 10px; margin-bottom: 0;">
+                                🔒 Cero spam. Tu información se guarda de forma segura y confidencial.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- ESTADO REGISTRO COMPLETADO / DESBLOQUEADO -->
+                    <div id="leadSuccessWrap" class="unlocked-banner-state">
+                        <i class="fa-solid fa-circle-check" style="font-size: 2.2rem; margin-bottom: 8px;"></i>
+                        <h4>¡Biblioteca Oficial Desbloqueada, <span id="unlockedName">Emprendedora</span>!</h4>
+                        <p style="font-size: 0.92rem; margin: 0; opacity: 0.9;">
+                            Tus 3 guías oficiales en PDF ya tienen la <strong>descarga directa activa</strong> en las tarjetas de abajo.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- ========================================================
+                     STACKED CAROUSEL: LAS 3 GUÍAS QUE SE VAN METIENDO UNA DENTRO DE OTRA
+                     ======================================================== -->
+                <div class="stack-carousel-wrap">
+                    
+                    <!-- Botones de navegación prev/next -->
+                    <button class="stack-nav-btn stack-prev-btn" onclick="prevStackCard()" aria-label="Tarjeta anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="stack-nav-btn stack-next-btn" onclick="nextStackCard()" aria-label="Tarjeta siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <div class="stack-viewport" id="stackViewport">
+
+                        <!-- TARJETA 1: HÁBITOS FINANCIEROS -->
+                        <div class="stack-card pos-center" data-index="0" onclick="handleCardClick(0)">
+                            <div>
+                                <span class="card-tag">Finanzas & Negocio</span>
+                                <div class="stack-card-icon">
+                                    <i class="fa-solid fa-coins"></i>
+                                </div>
+                                <h3 class="stack-card-title">Hábitos Financieros para Mujeres Alfa</h3>
+                                <p class="stack-card-desc">
+                                    El dinero no te falta por mala suerte: te falta porque nadie te enseñó a relacionarte con él sin culpa ni desorden. Aprendé a ordenar tus números personales y los de tu negocio.
+                                </p>
+                                <ul class="stack-card-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Los 6 hábitos financieros innegociables de una líder.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Rastreador práctico de gastos personales de 7 días.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Los 5 chequeos de salud empresarial para tu emprendimiento.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="stack-card-meta">
+                                    <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (4 págs)</span>
+                                    <span><i class="fa-solid fa-table-list"></i> Con Plantillas</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a id="btnCardDownload0" 
+                                       href="descargas/habitos-financieros-mujeres-alfa.pdf" 
+                                       download="Guia-Habitos-Financieros-Mujeres-Alfa.pdf" 
+                                       class="btn btn-primary btn-block btn-download-trigger" 
+                                       onclick="checkDownloadAccess(event, 'descargas/habitos-financieros-mujeres-alfa.pdf', 'Guia-Habitos-Financieros-Mujeres-Alfa.pdf')">
+                                        <i class="fa-solid fa-download"></i>
+                                        <span class="btn-dl-text">Descargar PDF (4 págs)</span>
+                                    </a>
+                                    <a href="guia-habitos-financieros.html" class="btn btn-outline btn-block btn-sm" style="text-align: center;">
+                                        <span>Ver Detalles del Método</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TARJETA 2: MATERIALIZAR DINERO EN 7 DÍAS -->
+                        <div class="stack-card pos-right" data-index="1" onclick="handleCardClick(1)">
+                            <div>
+                                <span class="card-tag">Mentalidad & Manifestación</span>
+                                <div class="stack-card-icon">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </div>
+                                <h3 class="stack-card-title">Cómo Materializar Dinero en 7 Días</h3>
+                                <p class="stack-card-desc">
+                                    Un ritual estructurado de 7 días para desbloquear tu energía con el dinero, romper techos invisibles de merecimiento y activar flujo tangible de ingresos en el mundo real.
+                                </p>
+                                <ul class="stack-card-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> 7 pasos diarios enfocados en desbloqueo y certeza.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Ejercicios para neutralizar la culpa y el miedo a cobrar.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Acciones concretas para recibir y capitalizar oportunidades.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="stack-card-meta">
+                                    <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (2 págs)</span>
+                                    <span><i class="fa-solid fa-calendar-days"></i> Ritual de 7 Días</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a id="btnCardDownload1" 
+                                       href="descargas/materializar-dinero-7-dias-mujeres-alfa.pdf" 
+                                       download="Guia-Materializar-Dinero-7-Dias-Mujeres-Alfa.pdf" 
+                                       class="btn btn-primary btn-block btn-download-trigger" 
+                                       onclick="checkDownloadAccess(event, 'descargas/materializar-dinero-7-dias-mujeres-alfa.pdf', 'Guia-Materializar-Dinero-7-Dias-Mujeres-Alfa.pdf')">
+                                        <i class="fa-solid fa-download"></i>
+                                        <span class="btn-dl-text">Descargar PDF (2 págs)</span>
+                                    </a>
+                                    <a href="guia-materializar-dinero.html" class="btn btn-outline btn-block btn-sm" style="text-align: center;">
+                                        <span>Ver Detalles del Método</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TARJETA 3: ESCRIBÍ ESTO DURANTE 30 DÍAS -->
+                        <div class="stack-card pos-left" data-index="2" onclick="handleCardClick(2)">
+                            <div>
+                                <span class="card-tag">Rutina Nocturna & Hábito</span>
+                                <div class="stack-card-icon">
+                                    <i class="fa-solid fa-book-journal-whills"></i>
+                                </div>
+                                <h3 class="stack-card-title">Escribí esto durante 30 Días</h3>
+                                <p class="stack-card-desc">
+                                    El diario nocturno de 5 minutos que reprograma tu relación con la abundancia, desactiva la ansiedad antes de dormir y enfoca tu energía en lo que de verdad importa.
+                                </p>
+                                <ul class="stack-card-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> 3 preguntas reveladoras para responder cada noche.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Reprogramación subconsciente del merecimiento y la calma.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Habit tracker visual de 30 noches consecutivas.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="stack-card-meta">
+                                    <span><i class="fa-solid fa-file-pdf"></i> PDF Oficial (2 págs)</span>
+                                    <span><i class="fa-solid fa-moon"></i> 5 min por noche</span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 8px;">
+                                    <a id="btnCardDownload2" 
+                                       href="descargas/escribi-esto-30-dias-mujeres-alfa.pdf" 
+                                       download="Guia-Escribi-Esto-30-Dias-Mujeres-Alfa.pdf" 
+                                       class="btn btn-primary btn-block btn-download-trigger" 
+                                       onclick="checkDownloadAccess(event, 'descargas/escribi-esto-30-dias-mujeres-alfa.pdf', 'Guia-Escribi-Esto-30-Dias-Mujeres-Alfa.pdf')">
+                                        <i class="fa-solid fa-download"></i>
+                                        <span class="btn-dl-text">Descargar PDF (2 págs)</span>
+                                    </a>
+                                    <a href="guia-30-dias-dinero.html" class="btn btn-outline btn-block btn-sm" style="text-align: center;">
+                                        <span>Ver Detalles del Método</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Indicadores de puntos (dots) -->
+                    <div class="stack-dots">
+                        <span class="stack-dot active" onclick="setStackIndex(0)"></span>
+                        <span class="stack-dot" onclick="setStackIndex(1)"></span>
+                        <span class="stack-dot" onclick="setStackIndex(2)"></span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ========================================================
+                 3. BANNER CALENDLY: SESIÓN 1 A 1 CON FLOR
+                 ======================================================== -->
+            <div class="calendly-hub-banner">
+                <span style="font-size: 0.78rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--naranja); display: block; margin-bottom: 12px;">
+                    PASO SIGUIENTE · ACOMPAÑAMIENTO ESTRATÉGICO
+                </span>
+                <h3 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 12px; color: #fff;">
+                    Ningún PDF transforma tu vida si no lo integrás con acción.
+                </h3>
+                <p style="font-size: 1.05rem; color: rgba(255,255,255,0.85); max-width: 650px; margin: 0 auto 24px; line-height: 1.6;">
+                    Las guías te dan el mapa. En una <strong>sesión estratégica 1 a 1 de 30 minutos por Google Meet</strong> conmigo, revisamos tus números, tus bloqueos y trazamos el plan para tus próximos 90 días.
+                </p>
+                <a href="https://calendly.com/florenciacastillo-oficial/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                    <span>Agendar mi Sesión 1 a 1 Gratuita</span>
+                    <i class="fa-solid fa-calendar-check"></i>
+                </a>
             </div>
-        </section>
+
+        </div>
     </main>
 
     <!-- FOOTER -->
@@ -517,9 +974,9 @@
             </div>
 
             <div class="footer-col">
-                <h4 class="footer-title">Guías en PDF</h4>
+                <h4 class="footer-title">Recursos Oficiales</h4>
                 <ul class="footer-links">
-                    <li><a href="guia-radiografia-alfa.html">Radiografía Alfa</a></li>
+                    <li><a href="guia-radiografia-alfa.html">Radiografía Alfa (Online)</a></li>
                     <li><a href="guia-habitos-financieros.html">Hábitos Financieros</a></li>
                     <li><a href="guia-materializar-dinero.html">Materializar Dinero en 7 Días</a></li>
                     <li><a href="guia-30-dias-dinero.html">Escribí esto por 30 Días</a></li>
@@ -534,10 +991,6 @@
                     <li><a href="legales.html#cookies">Política de Cookies</a></li>
                     <li><a href="legales.html#descargo">Descargo de Responsabilidad</a></li>
                 </ul>
-                <div class="legal-badge" style="margin-top: 15px;">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span>Entorno 100% Seguro y Confidencial</span>
-                </div>
             </div>
         </div>
 
@@ -558,6 +1011,166 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- SCRIPT: CAROUSEL STACK 3D & UNIFIED LEAD SYSTEM -->
+    <script>
+        // ==========================================
+        // 1. GESTIÓN UNIFICADA DE LEADS
+        // ==========================================
+        let isLibraryUnlocked = false;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLead = localStorage.getItem('fc_lead_user');
+            if (savedLead) {
+                try {
+                    const data = JSON.parse(savedLead);
+                    unlockLibraryUI(data.name || 'Emprendedora');
+                } catch(e) {}
+            }
+            updateStackCardPositions();
+        });
+
+        function handleUnifiedLeadSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('uniName').value.trim();
+            const email = document.getElementById('uniEmail').value.trim();
+            const phone = document.getElementById('uniPhone').value.trim();
+
+            if (!name || !email) {
+                alert('Por favor ingresá tu nombre y correo electrónico.');
+                return;
+            }
+
+            const btn = document.getElementById('btnUniSubmit');
+            btn.disabled = true;
+            btn.innerHTML = '<span>Desbloqueando recursos...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+
+            const payload = {
+                recurso: 'Biblioteca Completa de Guías Oficiales en PDF (Acceso Unificado)',
+                nombre: name,
+                email: email,
+                whatsapp: phone || 'No informado',
+                fecha: new Date().toLocaleString('es-AR')
+            };
+
+            fetch('https://formsubmit.co/ajax/florenciacastillo.oficial@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            }).then(() => {
+                console.log('Lead registrado en casilla de Flor');
+            }).catch(err => {
+                console.warn('Registro local offline:', err);
+            }).finally(() => {
+                localStorage.setItem('fc_lead_user', JSON.stringify({ name, email, phone }));
+                localStorage.setItem('fc_library_unlocked', 'true');
+                unlockLibraryUI(name);
+            });
+        }
+
+        function unlockLibraryUI(name) {
+            isLibraryUnlocked = true;
+            document.getElementById('leadFormWrap').style.display = 'none';
+            document.getElementById('leadSuccessWrap').style.display = 'block';
+            document.getElementById('unlockedName').textContent = name;
+
+            // Actualizar textos de los botones de descarga en las tarjetas
+            document.querySelectorAll('.btn-download-trigger').forEach(btn => {
+                btn.classList.remove('btn-outline');
+                btn.classList.add('btn-primary');
+            });
+        }
+
+        function checkDownloadAccess(event, filePath, fileName) {
+            if (!isLibraryUnlocked) {
+                event.preventDefault();
+                // Smooth scroll to lead form with highlight animation
+                const formCard = document.getElementById('leadCaptureBlock');
+                formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                formCard.style.transition = 'box-shadow 0.3s ease';
+                formCard.style.boxShadow = '0 0 0 4px var(--fuchsia), 0 20px 40px rgba(212,0,106,0.25)';
+                setTimeout(() => {
+                    formCard.style.boxShadow = '0 16px 40px rgba(43,36,53,0.08)';
+                }, 2000);
+                document.getElementById('uniName').focus();
+            }
+        }
+
+        // ==========================================
+        // 2. STACKED CARDS CAROUSEL (3D Sliding / Sliding inside each other)
+        // ==========================================
+        let currentStackIndex = 0; // 0, 1, 2
+        const totalCards = 3;
+
+        function updateStackCardPositions() {
+            const cards = document.querySelectorAll('.stack-card');
+            const dots = document.querySelectorAll('.stack-dot');
+
+            cards.forEach(card => {
+                const idx = parseInt(card.getAttribute('data-index'), 10);
+                card.classList.remove('pos-center', 'pos-left', 'pos-right');
+
+                if (idx === currentStackIndex) {
+                    card.classList.add('pos-center');
+                } else if (idx === (currentStackIndex + 1) % totalCards) {
+                    card.classList.add('pos-right');
+                } else {
+                    card.classList.add('pos-left');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                if (i === currentStackIndex) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
+        }
+
+        function nextStackCard() {
+            currentStackIndex = (currentStackIndex + 1) % totalCards;
+            updateStackCardPositions();
+        }
+
+        function prevStackCard() {
+            currentStackIndex = (currentStackIndex - 1 + totalCards) % totalCards;
+            updateStackCardPositions();
+        }
+
+        function setStackIndex(idx) {
+            currentStackIndex = idx;
+            updateStackCardPositions();
+        }
+
+        function handleCardClick(idx) {
+            if (idx !== currentStackIndex) {
+                setStackIndex(idx);
+            }
+        }
+
+        // Soporte para gestos táctiles (Swipe) en móviles
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const stackViewport = document.getElementById('stackViewport');
+
+        stackViewport.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        stackViewport.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 40) {
+                nextStackCard(); // Swipe izquierda -> siguiente
+            }
+            if (touchEndX > touchStartX + 40) {
+                prevStackCard(); // Swipe derecha -> anterior
+            }
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

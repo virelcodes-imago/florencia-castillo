@@ -436,7 +436,7 @@
             if (savedLead) {
                 try {
                     const data = JSON.parse(savedLead);
-                    showDownloadState(data.name, data.email);
+                    showDownloadState(data.name, data.email, false);
                 } catch(e) {}
             }
         });
@@ -478,11 +478,11 @@
                 console.warn('Registro offline:', err);
             }).finally(() => {
                 localStorage.setItem('fc_lead_user', JSON.stringify({ name, email, phone }));
-                showDownloadState(name, email);
+                showDownloadState(name, email, true);
             });
         }
 
-        function showDownloadState(name, email) {
+        function showDownloadState(name, email, autoDownload = false) {
             document.getElementById('captureFormBox').style.display = 'none';
             document.getElementById('downloadReadyBox').style.display = 'block';
             document.getElementById('userNameGreet').textContent = name || 'Emprendedora';
@@ -490,10 +490,12 @@
             const calendlyUrl = `${CALENDLY_BASE}?name=${encodeURIComponent(name || '')}&email=${encodeURIComponent(email || '')}`;
             document.getElementById('btnCalendlyLead').setAttribute('href', calendlyUrl);
 
-            // Trigger instant download automatically on first submit
-            const downloadBtn = document.getElementById('btnDirectDownload');
-            if (downloadBtn) {
-                downloadBtn.click();
+            // Solo disparar descarga automática si viene del envío del formulario
+            if (autoDownload) {
+                const downloadBtn = document.getElementById('btnDirectDownload');
+                if (downloadBtn) {
+                    downloadBtn.click();
+                }
             }
         }
     </script>
