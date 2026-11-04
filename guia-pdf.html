@@ -533,6 +533,50 @@
             white-space: nowrap;
         }
 
+        /* Pill CTA Buttons */
+        .btn-subscribe-pill {
+            background: var(--fuchsia);
+            color: #FFFFFF !important;
+            padding: 10px 22px;
+            border-radius: 9999px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1.5px solid var(--fuchsia);
+            box-shadow: 0 4px 14px rgba(212, 0, 106, 0.35);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-meet-pill {
+            background: rgba(250, 240, 228, 0.08);
+            color: #FFFFFF !important;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1.5px solid rgba(250, 240, 228, 0.5);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .brand-gradient-line {
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, #D4006A 0%, #FF5C45 50%, #FF9A3C 100%);
+            border-radius: 999px;
+            margin: 10px auto 14px;
+        }
+
         /* Print Media Styles */
         @page {
             size: A4 portrait;
@@ -587,17 +631,20 @@
         </div>
 
         <div class="cover-center">
+            <div class="brand-gradient-line"></div>
             <h1 class="cover-title">
                 ¿Estás viviendo la vida que <span>elegiste</span>?
             </h1>
             <p class="cover-sub">
-                5 ejercicios para dejar el piloto automático, observar quién sos hoy y empezar a construir quién querés ser.
+                5 ejercicios para salir del piloto automático, observar quién sos hoy y empezar a construir quién querés ser.
             </p>
 
-            <div class="cover-quote-card">
-                <span class="cover-quote-highlight">"Siempre vas a ser la loca en una historia mal contada."</span>
-                <p class="cover-quote-desc">
-                    ¿Y si el problema no es la historia que contaron sobre vos, sino que hace demasiado tiempo dejaste de preguntarte quién querías ser en ella?
+            <div class="cover-quote-card" style="border-left: 4px solid var(--fuchsia); text-align: left; padding: 22px 26px;">
+                <span class="cover-quote-highlight" style="font-family: 'DM Sans', sans-serif; font-size: 1.15rem; font-weight: 700; font-style: normal; color: var(--fuchsia); margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-compass" style="font-size: 1.05rem;"></i> Hacé una radiografía de tu presente
+                </span>
+                <p class="cover-quote-desc" style="font-size: 0.92rem; line-height: 1.55; color: var(--carbon-light); margin: 0;">
+                    Te invito a pausar, mirarte con total honestidad y hacer una radiografía clara de tu vida y tus decisiones. Antes de transformar cualquier realidad, necesitás saber con certeza desde dónde partís.
                 </p>
             </div>
         </div>
@@ -610,7 +657,7 @@
     </div>
 
     <!-- ==========================================================================
-         PÁGINA 2: TU PUNTO DE PARTIDA & MUJERES ALFA
+         PÁGINA 2: TU PUNTO DE PARTIDA
          ========================================================================== -->
     <div class="page">
         <div class="page-header">
@@ -622,72 +669,89 @@
         </div>
 
         <!-- SECCIÓN 1: TU AUTOEVALUACIÓN EN PROFUNDIDAD -->
-        <div style="background: var(--marfil); border-left: 4px solid var(--fuchsia); padding: 22px 24px; border-radius: 0 12px 12px 0; margin-bottom: 22px;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                <span class="step-tag" style="font-size: 0.75rem; background: rgba(212, 0, 106, 0.1); color: var(--fuchsia); padding: 4px 12px; border-radius: 999px;">TU AUTOEVALUACIÓN EN PROFUNDIDAD</span>
+        <div style="background: var(--marfil); border-left: 4px solid var(--fuchsia); padding: 20px 22px; border-radius: 0 12px 12px 0; margin-bottom: 18px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                <span class="step-tag" style="font-size: 0.75rem; background: rgba(212, 0, 106, 0.1); color: var(--fuchsia); padding: 3px 10px; border-radius: 999px;">TU AUTOEVALUACIÓN EN PROFUNDIDAD</span>
             </div>
-            <h2 style="font-size: 1.7rem; color: var(--carbon); margin-top: 6px; margin-bottom: 12px; line-height: 1.25;">
+            <h2 style="font-size: 1.6rem; color: var(--carbon); margin-top: 4px; margin-bottom: 10px; line-height: 1.25;">
                 ¿Esto realmente es lo que quiero para mi vida?
             </h2>
-            <p style="font-size: 0.94rem; color: var(--carbon-light); margin-bottom: 12px; line-height: 1.6;">
-                Hay momentos en los que algo empieza a incomodarte. No necesariamente porque todo esté mal: tenés responsabilidades, trabajo, vínculos, una rutina que construiste con esfuerzo. Quizás incluso conseguiste objetivos que antes deseabas. Y, sin embargo, la pregunta aparece con fuerza: <em>¿estoy construyendo la vida que elijo o simplemente sosteniendo la que me acostumbré a vivir?</em>
+            <p style="font-size: 0.92rem; color: var(--carbon-light); margin-bottom: 10px; line-height: 1.55;">
+                Hay momentos en los que algo empieza a incomodarte. No necesariamente porque todo esté mal: tenés responsabilidades, trabajo, vínculos y una rutina que construiste con esfuerzo. Quizás incluso conseguiste objetivos que antes deseabas. Y, sin embargo, la pregunta aparece con fuerza: <em>¿estoy construyendo la vida que elijo o simplemente sosteniendo la que me acostumbré a vivir?</em>
             </p>
-            <p style="font-size: 0.94rem; color: var(--carbon-light); margin-bottom: 12px; line-height: 1.6;">
-                Muchas veces no necesitamos cambiar toda nuestra vida de un día para el otro. Necesitamos <strong>observarla con suficiente honestidad</strong> como para descubrir qué parte elegimos conscientemente y qué parte simplemente repetimos en piloto automático. Porque antes de transformar una vida o un negocio, primero hay que aprender a observarlo sin juicio y sin anestesia.
-            </p>
-            <p style="font-size: 0.92rem; color: var(--fuchsia); font-weight: 700; margin-top: 10px; margin-bottom: 0; line-height: 1.5;">
-                A continuación, en las próximas páginas te dejo las respuestas de tu autodiagnóstico para que podamos ver tu evaluación con claridad y comenzar a trazar juntas tu camino.
+            <p style="font-size: 0.92rem; color: var(--carbon-light); margin-bottom: 0; line-height: 1.55;">
+                Muchas veces no necesitamos cambiar toda nuestra vida de un día para el otro. Necesitamos <strong>observarla con suficiente honestidad</strong> como para descubrir qué parte elegimos conscientemente y qué parte simplemente repetimos en piloto automático.
             </p>
         </div>
 
-        <!-- SECCIÓN 2: EL PUENTE & PROGRAMA DE ACOMPAÑAMIENTO (INVITACIÓN A UNIRSE) -->
-        <div style="text-align: center; margin-bottom: 16px;">
-            <span class="step-tag" style="background: var(--fuchsia); color: var(--marfil-surface); padding: 5px 16px; border-radius: 999px;">EL PRIMER PASO ESTÁ DADO</span>
-            <h3 style="font-size: 1.6rem; line-height: 1.25; margin-top: 10px; margin-bottom: 6px;">
-                No se trata solamente de crear una nueva vida.<br>
-                Se trata de convertirte en la mujer capaz de <em>sostenerla</em>.
+        <!-- SECCIÓN 2: 3 CLAVES PARA APROVECHAR TU RADIOGRAFÍA -->
+        <div style="margin-bottom: 18px;">
+            <span class="step-tag" style="font-size: 0.75rem; letter-spacing: 1.5px;">ANTES DE COMENZAR</span>
+            <h3 style="font-size: 1.35rem; color: var(--carbon); margin-bottom: 12px; line-height: 1.2;">
+                3 pautas para realizar tu autodiagnóstico
             </h3>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                <div style="background: var(--marfil); border: 1px solid var(--border-soft); border-radius: 10px; padding: 14px 12px;">
+                    <span style="display: inline-block; font-weight: 800; font-size: 0.82rem; color: var(--fuchsia); margin-bottom: 4px;">01 · HONESTIDAD</span>
+                    <p style="font-size: 0.82rem; color: var(--carbon-light); line-height: 1.45; margin: 0;">
+                        Respondé desde lo que vivís y sentís hoy, sin buscar respuestas complacientes o correctas.
+                    </p>
+                </div>
+                <div style="background: var(--marfil); border: 1px solid var(--border-soft); border-radius: 10px; padding: 14px 12px;">
+                    <span style="display: inline-block; font-weight: 800; font-size: 0.82rem; color: var(--coral); margin-bottom: 4px;">02 · CERO JUICIO</span>
+                    <p style="font-size: 0.82rem; color: var(--carbon-light); line-height: 1.45; margin: 0;">
+                        No mires tus respuestas como fallas. Son datos objetivos para reconocer tu verdadero punto de partida.
+                    </p>
+                </div>
+                <div style="background: var(--marfil); border: 1px solid var(--border-soft); border-radius: 10px; padding: 14px 12px;">
+                    <span style="display: inline-block; font-weight: 800; font-size: 0.82rem; color: var(--naranja); margin-bottom: 4px;">03 · PRESENCIA</span>
+                    <p style="font-size: 0.82rem; color: var(--carbon-light); line-height: 1.45; margin: 0;">
+                        Regalate 15 minutos de calma para conectar de verdad con tus deseos, dudas y metas prioritarias.
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <!-- PROGRAMA DE ACOMPAÑAMIENTO: MUJERES ALFA — EL INICIO -->
-        <div class="back-card" style="margin: 0 0 16px; padding: 22px 24px; border-radius: 14px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-size: 0.78rem; font-weight: 800; color: var(--fuchsia); letter-spacing: 2px;">PROGRAMA DE ACOMPAÑAMIENTO</span>
-                <span style="font-size: 0.74rem; background: rgba(212,0,106,0.1); color: var(--fuchsia); padding: 4px 12px; border-radius: 999px; font-weight: 700;">COMUNIDAD EXCLUSIVA</span>
+        <!-- SECCIÓN 3: LA RUTA DE LOS 5 PASOS -->
+        <div style="background: var(--marfil-surface); border: 1.5px solid var(--border-soft); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 0.74rem; font-weight: 800; color: var(--fuchsia); letter-spacing: 1.5px;">LA RUTA DE TU RADIOGRAFÍA</span>
+                <span style="font-size: 0.72rem; color: var(--carbon-muted);">5 EJERCICIOS PRÁCTICOS</span>
             </div>
-            <h3 style="font-size: 1.45rem; color: var(--fuchsia); margin-bottom: 6px;">MUJERES ALFA — EL INICIO</h3>
-            <p style="font-size: 0.95rem; font-weight: 700; color: var(--carbon); margin-bottom: 8px;">
-                Dejá de remar sola. Empezá a construir con dirección.
-            </p>
-            <p style="font-size: 0.90rem; color: var(--carbon-light); margin-bottom: 10px; line-height: 1.55;">
-                Un espacio para reconstruir tu identidad, recuperar tu dirección y desarrollar las herramientas que necesitás para empezar a construir una vida y un proyecto más alineados con quien querés ser.
-            </p>
-            <p style="font-size: 0.86rem; font-style: italic; color: var(--carbon-muted); margin-bottom: 14px; line-height: 1.5;">
-                "Porque no siempre necesitás hacer más. A veces necesitás dejar de hacerlo sola, ordenar lo que hoy está desordenado y encontrar un espacio donde puedas crecer acompañada."
-            </p>
-            <div class="back-pillars" style="grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 8px;">
-                <div class="back-pillar-item" style="padding: 10px 4px; border-radius: 8px;">
-                    <strong style="font-size: 0.72rem;">DIRECCIÓN</strong>
-                    <span style="font-size: 0.65rem;">Claridad al decidir</span>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+                <div style="background: var(--marfil); padding: 8px 4px; border-radius: 8px; border: 1px solid var(--border-soft);">
+                    <strong style="font-size: 0.70rem; color: var(--fuchsia); display: block;">PASO 1</strong>
+                    <span style="font-size: 0.65rem; color: var(--carbon); font-weight: 600;">MIRATE</span>
                 </div>
-                <div class="back-pillar-item" style="padding: 10px 4px; border-radius: 8px;">
-                    <strong style="font-size: 0.72rem;">IDENTIDAD</strong>
-                    <span style="font-size: 0.65rem;">Tu mejor versión</span>
+                <div style="background: var(--marfil); padding: 8px 4px; border-radius: 8px; border: 1px solid var(--border-soft);">
+                    <strong style="font-size: 0.70rem; color: var(--fuchsia); display: block;">PASO 2</strong>
+                    <span style="font-size: 0.65rem; color: var(--carbon); font-weight: 600;">SOSTENÉ</span>
                 </div>
-                <div class="back-pillar-item" style="padding: 10px 4px; border-radius: 8px;">
-                    <strong style="font-size: 0.72rem;">HERRAMIENTAS</strong>
-                    <span style="font-size: 0.65rem;">Acciones reales</span>
+                <div style="background: var(--marfil); padding: 8px 4px; border-radius: 8px; border: 1px solid var(--border-soft);">
+                    <strong style="font-size: 0.70rem; color: var(--fuchsia); display: block;">PASO 3</strong>
+                    <span style="font-size: 0.65rem; color: var(--carbon); font-weight: 600;">ELEGÍ</span>
                 </div>
-                <div class="back-pillar-item" style="padding: 10px 4px; border-radius: 8px;">
-                    <strong style="font-size: 0.72rem;">ACOMPAÑAMIENTO</strong>
-                    <span style="font-size: 0.65rem;">No resolver sola</span>
+                <div style="background: var(--marfil); padding: 8px 4px; border-radius: 8px; border: 1px solid var(--border-soft);">
+                    <strong style="font-size: 0.70rem; color: var(--fuchsia); display: block;">PASO 4</strong>
+                    <span style="font-size: 0.65rem; color: var(--carbon); font-weight: 600;">PROYECTÁ</span>
                 </div>
-                <div class="back-pillar-item" style="padding: 10px 4px; border-radius: 8px;">
-                    <strong style="font-size: 0.72rem;">COMUNIDAD</strong>
-                    <span style="font-size: 0.65rem;">Red de mujeres</span>
+                <div style="background: var(--marfil); padding: 8px 4px; border-radius: 8px; border: 1px solid var(--border-soft);">
+                    <strong style="font-size: 0.70rem; color: var(--fuchsia); display: block;">PASO 5</strong>
+                    <span style="font-size: 0.65rem; color: var(--carbon); font-weight: 600;">EXPANDITE</span>
                 </div>
             </div>
         </div>
+
+        <p style="font-size: 0.86rem; color: var(--carbon-muted); text-align: center; margin: 0;">
+            Avanzá a la siguiente página para comenzar con tu primer ejercicio.
+        </p>
+
+        <div class="page-footer">
+            <span class="page-footer-tag">MUJERES ALFA · WORKBOOK</span>
+            <span>Página 2</span>
+        </div>
+    </div>
 
         <div class="page-footer">
             <span class="page-footer-tag">MUJERES ALFA · WORKBOOK</span>
@@ -1031,7 +1095,7 @@
     </div>
 
     <!-- ==========================================================================
-         PÁGINA 8: CONTRATAPA & SESIÓN ESTRATÉGICA
+         PÁGINA 8: CONTRATAPA & PRÓXIMOS PASOS
          ========================================================================== -->
     <div class="page back-cover">
         <div class="page-header">
@@ -1039,35 +1103,77 @@
                 <img src="diseño visual/logo_fc.png" alt="Logo FC" style="width: 24px; height: 24px; object-fit: contain;">
                 <span class="page-header-brand">MUJERES ALFA</span>
             </div>
-            <span class="page-header-step">TU SESIÓN ESTRATÉGICA</span>
+            <span class="page-header-step">TUS PRÓXIMOS PASOS</span>
         </div>
 
-        <div class="back-hero">
-            <span class="back-badge">TU PRÓXIMO PASO</span>
-            <h2 class="back-title">
-                ¿Querés profundizar en tus respuestas y ordenar tu camino?
+        <div class="back-hero" style="padding-top: 2mm;">
+            <span class="back-badge">EL PRIMER PASO ESTÁ DADO</span>
+            <h2 class="back-title" style="font-size: 1.75rem; line-height: 1.2; margin-bottom: 8px;">
+                No se trata solamente de crear una nueva vida.<br>
+                Se trata de convertirte en la mujer capaz de <em>sostenerla</em>.
             </h2>
-            <p style="font-size: 0.95rem; color: var(--carbon-light); max-width: 520px; margin: 0 auto 24px;">
-                Tener la radiografía es el primer paso. El segundo paso es ponerle dirección estratégica a tus decisiones junto a alguien que te guíe y te sostenga.
-            </p>
+            <div class="brand-gradient-line" style="margin: 8px auto 14px;"></div>
 
-            <div class="back-contact-box" style="flex-direction: column; align-items: stretch; gap: 16px; text-align: left; padding: 26px 24px; margin-top: 10px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-                    <div>
-                        <span style="font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--naranja); font-weight: 700;">🎁 BENEFICIO EXCLUSIVO POR COMPLETAR LA GUÍA</span>
-                        <h4 style="font-size: 1.35rem; margin-top: 4px;">Tu Sesión 1 a 1 por Google Meet con Flor</h4>
-                        <p style="font-size: 0.9rem; color: rgba(250, 240, 228, 0.88); margin-top: 4px; max-width: 440px;">
-                            Un espacio privado de 30–40 min para conocernos, poner claridad sobre lo que te está frenando y definir juntas cuál es el próximo paso para vos.
-                        </p>
+            <!-- PROGRAMA DE ACOMPAÑAMIENTO: ALFA AL INICIO (MOVIDO DE PÁG 2) -->
+            <div class="back-card" style="margin: 0 0 14px; padding: 16px 20px; border-radius: 12px; background: var(--marfil); border: 1.5px solid rgba(212,0,106,0.22); text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                    <span style="font-size: 0.74rem; font-weight: 800; color: var(--fuchsia); letter-spacing: 2px;">PROGRAMA DE ACOMPAÑAMIENTO</span>
+                    <span style="font-size: 0.72rem; background: rgba(212,0,106,0.1); color: var(--fuchsia); padding: 3px 10px; border-radius: 999px; font-weight: 700;">COMUNIDAD EXCLUSIVA</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+                    <h3 style="font-size: 1.35rem; color: var(--fuchsia); margin-bottom: 4px;">Alfa al Inicio</h3>
+                    <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--carbon); font-style: italic;">Acompañamiento Mensual</span>
+                </div>
+                <p style="font-size: 0.88rem; font-weight: 700; color: var(--carbon); margin-bottom: 4px;">
+                    Dejá de remar sola. Empezá a construir con dirección.
+                </p>
+                <p style="font-size: 0.84rem; color: var(--carbon-light); margin-bottom: 10px; line-height: 1.45;">
+                    Un espacio para reconstruir tu identidad, recuperar tu dirección y no resolver sola cada obstáculo, acompañada de una red de mujeres que eligen crecer.
+                </p>
+                <div class="back-pillars" style="grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 4px;">
+                    <div class="back-pillar-item" style="padding: 6px 4px;">
+                        <strong style="font-size: 0.70rem;">DIRECCIÓN</strong>
+                        <span style="font-size: 0.64rem;">Claridad al decidir</span>
                     </div>
-                    <a href="https://calendly.com/florenciacastillo-oficial/30min" target="_blank" class="back-whatsapp-btn" style="background: var(--fuchsia); color: #FFF; padding: 12px 26px; font-size: 0.95rem;">
-                        <i class="fa-solid fa-calendar-check"></i> Agendar mi Sesión por Meet
+                    <div class="back-pillar-item" style="padding: 6px 4px;">
+                        <strong style="font-size: 0.70rem;">IDENTIDAD</strong>
+                        <span style="font-size: 0.64rem;">Tu mejor versión</span>
+                    </div>
+                    <div class="back-pillar-item" style="padding: 6px 4px;">
+                        <strong style="font-size: 0.70rem;">HERRAMIENTAS</strong>
+                        <span style="font-size: 0.64rem;">Acciones reales</span>
+                    </div>
+                    <div class="back-pillar-item" style="padding: 6px 4px;">
+                        <strong style="font-size: 0.70rem;">COMUNIDAD</strong>
+                        <span style="font-size: 0.64rem;">Red de mujeres</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAJA DE BENEFICIO Y ACCIONES: QUERO SUSCRIBIRME + AGENDAR SESIÓN -->
+            <div class="back-contact-box" style="flex-direction: column; align-items: stretch; gap: 12px; text-align: left; padding: 18px 20px; margin-top: 0;">
+                <div>
+                    <span style="font-size: 0.74rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--naranja); font-weight: 700;">🎁 BENEFICIO EXCLUSIVO POR COMPLETAR TU RADIOGRAFÍA</span>
+                    <h4 style="font-size: 1.2rem; margin-top: 3px; color: var(--marfil);">Elegí cómo querés dar tu próximo paso con Flor</h4>
+                    <p style="font-size: 0.84rem; color: rgba(250, 240, 228, 0.88); margin-top: 4px; line-height: 1.4;">
+                        Sumate al acompañamiento mensual de <strong>Alfa al Inicio</strong> o coordiná una sesión privada 1 a 1 de 30 min por Meet para analizar tu diagnóstico en profundidad.
+                    </p>
+                </div>
+
+                <!-- BOTONES LADO A LADO -->
+                <div style="display: flex; gap: 12px; align-items: center; justify-content: flex-start; flex-wrap: wrap; padding-top: 2px;">
+                    <a href="https://wa.me/5522998090599?text=Hola%20Flor!%20Quiero%20suscribirme%20a%20Alfa%20al%20Inicio." target="_blank" class="btn-subscribe-pill">
+                        <span>Quiero suscribirme</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="https://calendly.com/florenciacastillo-oficial/30min" target="_blank" class="btn-meet-pill">
+                        <i class="fa-solid fa-calendar-check"></i> <span>Agendar sesión</span>
                     </a>
                 </div>
-                <div style="border-top: 1px solid rgba(250,240,228,0.15); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.78rem; color: rgba(250,240,228,0.75);">
-                    <span>• Conectate desde un lugar tranquilo</span>
-                    <span>• Traé un tema concreto a resolver</span>
-                    <span>• Venite con apertura y ganas de ir por más</span>
+
+                <div style="border-top: 1px solid rgba(250,240,228,0.15); padding-top: 8px; display: flex; justify-content: space-between; font-size: 0.72rem; color: rgba(250,240,228,0.75);">
+                    <span>• Cupos limitados por mes</span>
+                    <span>• Respuestas 100% confidenciales</span>
+                    <span>• Acompañamiento cercano y real</span>
                 </div>
             </div>
         </div>
