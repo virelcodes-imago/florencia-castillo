@@ -262,7 +262,7 @@
 
         .live-card {
             background: linear-gradient(135deg, var(--carbon) 0%, #1A1522 100%);
-            color: #fff;
+            color: #FAF0E4;
             border-radius: var(--radius-lg);
             padding: 30px;
             display: flex;
@@ -270,30 +270,56 @@
             justify-content: space-between;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 12px 30px rgba(43, 36, 53, 0.15);
+        }
+
+        .live-card h1,
+        .live-card h2,
+        .live-card h3,
+        .live-card h4 {
+            color: #FFFFFF !important;
+            font-family: var(--font-heading);
+            font-size: 1.65rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .live-card p {
+            color: #FAF0E4 !important;
+            font-size: 0.92rem;
+            opacity: 1 !important;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .live-card p i {
+            color: var(--naranja) !important;
+            margin-right: 4px;
         }
 
         .live-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            background: rgba(255,92,69,0.25);
-            color: #FF5C45;
-            border: 1px solid #FF5C45;
-            padding: 3px 10px;
+            gap: 7px;
+            background: rgba(255, 154, 60, 0.18);
+            color: #FFB370;
+            border: 1px solid rgba(255, 154, 60, 0.65);
+            padding: 4px 12px;
             border-radius: 50px;
-            font-size: 0.72rem;
+            font-size: 0.74rem;
             font-weight: 800;
             letter-spacing: 1px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             width: fit-content;
         }
 
         .live-dot {
-            width: 7px;
-            height: 7px;
-            background: #FF5C45;
+            width: 8px;
+            height: 8px;
+            background: #FF9A3C;
             border-radius: 50%;
+            box-shadow: 0 0 8px #FF9A3C;
             animation: pulse 1.5s infinite;
         }
 
@@ -414,6 +440,31 @@
             position: relative;
         }
 
+        .course-banner h1,
+        .course-banner h2,
+        .course-banner h3,
+        .course-banner .course-title {
+            color: #FFFFFF !important;
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            margin-bottom: 6px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .course-banner p {
+            color: rgba(255, 255, 255, 0.95) !important;
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.45;
+        }
+
+        .course-banner .course-subtitle {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-size: 0.88rem;
+            display: block;
+        }
+
         .banner-inicio {
             background: linear-gradient(135deg, var(--fuchsia) 0%, #BA005C 100%);
         }
@@ -433,13 +484,6 @@
             color: #fff;
             display: inline-block;
             margin-bottom: 10px;
-        }
-
-        .course-title {
-            font-family: var(--font-heading);
-            font-size: 1.85rem;
-            margin-bottom: 6px;
-            line-height: 1.2;
         }
 
         .course-body {
@@ -701,12 +745,12 @@
                         <span class="live-dot"></span>
                         <span>PRÓXIMA MENTORÍA EN VIVO</span>
                     </div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.6rem; margin-bottom: 6px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.7rem; margin-bottom: 8px; color: #FFFFFF !important;">
                         Encuentro Semanal con Flor
                     </h3>
-                    <p style="font-size: 0.9rem; opacity: 0.85; margin-bottom: 14px; line-height: 1.45;">
-                        <i class="fa-regular fa-calendar"></i> Jueves 19:00 hs (Arg) · Google Meet / Zoom<br>
-                        <i class="fa-solid fa-bullseye"></i> Tema: Dirección, límites y reprogramación de prioridades.
+                    <p style="font-size: 0.92rem; color: #FAF0E4 !important; opacity: 1 !important; margin-bottom: 16px; line-height: 1.5;">
+                        <i class="fa-regular fa-calendar" style="color: var(--naranja) !important;"></i> Jueves 19:00 hs (Arg) · Google Meet / Zoom<br>
+                        <i class="fa-solid fa-bullseye" style="color: var(--naranja) !important;"></i> Tema: Dirección, límites y reprogramación de prioridades.
                     </p>
                 </div>
                 <a href="https://meet.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
@@ -771,8 +815,8 @@
                     <div>
                         <div class="course-banner banner-inicio">
                             <span class="course-tag">PROGRAMA BASE · DISPONIBLE</span>
-                            <h3 class="course-title">Método Alfa — El Inicio</h3>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin: 0;">La puerta de entrada para construir estructura y dirección sólida.</p>
+                            <h3 class="course-title" style="color: #FFFFFF !important;">Método Alfa — El Inicio</h3>
+                            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.95) !important; margin: 0;">La puerta de entrada para construir estructura y dirección sólida.</p>
                         </div>
                         <div class="course-body">
                             <p style="font-size: 0.92rem; color: var(--carbon-light); margin-bottom: 16px;">
@@ -815,8 +859,8 @@
                     <div>
                         <div class="course-banner banner-elite">
                             <span class="course-tag" id="tagEliteStatus">PROGRAMA PREMIUM · 6 MESES</span>
-                            <h3 class="course-title">Método Alfa Elite</h3>
-                            <p style="font-size: 0.9rem; opacity: 0.9; margin: 0;">El proceso integral con 5 especialistas para convertirte en Empresaria Alfa.</p>
+                            <h3 class="course-title" style="color: #FFFFFF !important;">Método Alfa Elite</h3>
+                            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.95) !important; margin: 0;">El proceso integral con 5 especialistas para convertirte en Empresaria Alfa.</p>
                         </div>
 
                         <!-- ESTADO DESBLOQUEADO (SI ES ELITE) -->
