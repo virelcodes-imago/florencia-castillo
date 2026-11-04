@@ -1,0 +1,4107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oráculo de Mujeres Alfa — 32 Manifestaciones para Comenzar tu Día | Florencia Castillo</title>
+  
+  <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --fuchsia: #D4006A;
+      --fuchsia-dark: #A80054;
+      --fuchsia-soft: rgba(212, 0, 106, 0.06);
+      --fuchsia-light: #FBF0F5;
+      --fuchsia-border: rgba(212, 0, 106, 0.28);
+      --marfil: #FAF0E4;
+      --marfil-card: #FFFAF4;
+      --marfil-surface: #FFFDF9;
+      --carbon: #2B2435;
+      --carbon-light: #524761;
+      --carbon-muted: #847895;
+      --coral: #FF5C45;
+      --border-soft: rgba(43, 36, 53, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--marfil);
+      color: var(--carbon);
+      line-height: 1.55;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Print Action Bar (hidden when printing) */
+    .print-bar {
+      background: var(--carbon);
+      color: var(--marfil);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+    }
+    .print-bar-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-print {
+      background: var(--fuchsia);
+      color: #FFF;
+      border: none;
+      padding: 9px 24px;
+      border-radius: 9999px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(212, 0, 106, 0.35);
+    }
+    .btn-print:hover {
+      background: var(--fuchsia-dark);
+      transform: translateY(-1px);
+    }
+
+    @media print {
+      .print-bar { display: none !important; }
+      body { background: transparent; }
+      .page {
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    /* Standard A4 Page Container */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      max-height: 297mm;
+      margin: 20px auto;
+      background: var(--marfil-surface);
+      padding: 16mm 18mm 14mm 18mm;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(43, 36, 53, 0.08);
+      page-break-after: always;
+      break-after: page;
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Page Header & Footer */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      border-bottom: 1.5px solid var(--fuchsia);
+      flex-shrink: 0;
+    }
+    .page-header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+      color: var(--fuchsia);
+    }
+    .header-logo {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+    .page-header-step {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--carbon-muted);
+    }
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.68rem;
+      color: var(--carbon-muted);
+      border-top: 1px solid var(--border-soft);
+      padding-top: 8px;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .page-footer-tag {
+      color: var(--fuchsia);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* =========================================
+       PAGE 1: COVER PAGE
+       ========================================= */
+    .cover-page {
+      background: linear-gradient(180deg, #FFFDF9 0%, #FAF0E4 100%);
+      padding: 22mm 22mm 18mm 22mm;
+      text-align: center;
+      justify-content: space-between;
+    }
+    .cover-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .cover-logo-badge {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(212, 0, 106, 0.15));
+    }
+    .cover-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--fuchsia);
+      margin-top: 4px;
+    }
+    .cover-eyebrow::before, .cover-eyebrow::after {
+      content: "♦";
+      color: var(--coral);
+      font-size: 0.75rem;
+    }
+
+    .cover-center {
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cover-tagline-pre {
+      font-size: 1.15rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--carbon-light);
+      margin-bottom: 6px;
+    }
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.6rem;
+      line-height: 1.05;
+      font-weight: 700;
+      color: var(--carbon);
+      margin-bottom: 12px;
+    }
+    .cover-title span {
+      display: block;
+      color: var(--fuchsia);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 4.1rem;
+      line-height: 0.95;
+      margin-top: 2px;
+    }
+    .cover-subtitle {
+      font-size: 1.15rem;
+      color: var(--carbon-light);
+      max-width: 480px;
+      margin: 0 auto 20px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    /* Central Sacred Eye Talisman on Cover */
+    .cover-talisman {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      margin: 10px auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .talisman-ring-outer {
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid var(--fuchsia);
+      border-radius: 50%;
+      opacity: 0.35;
+    }
+    .talisman-ring-inner {
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed var(--fuchsia);
+      border-radius: 50%;
+      opacity: 0.55;
+    }
+    .talisman-eye-center {
+      z-index: 2;
+    }
+
+    /* Cover Quote Card */
+    .cover-quote-card {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--fuchsia-border);
+      border-radius: 12px;
+      padding: 16px 24px;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 0 4px 20px rgba(212, 0, 106, 0.05);
+    }
+    .cover-quote-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--fuchsia);
+      line-height: 1.35;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .cover-quote-card small {
+      font-size: 0.85rem;
+      color: var(--carbon-light);
+      display: block;
+      line-height: 1.4;
+    }
+
+    .cover-bottom {
+      border-top: 1px solid var(--border-soft);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--carbon-muted);
+    }
+    .cover-author {
+      font-weight: 700;
+      color: var(--carbon);
+    }
+
+    /* =========================================
+       PAGE 2: EDITORIAL GUIDE & RITUAL
+       ========================================= */
+    .intro-page {
+      background: var(--marfil-surface);
+    }
+    .intro-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4px 0;
+    }
+    .intro-head {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .intro-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--fuchsia);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .intro-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--carbon);
+      line-height: 1.15;
+    }
+    .intro-title span {
+      color: var(--fuchsia);
+      font-style: italic;
+    }
+    .intro-lead {
+      font-size: 0.92rem;
+      color: var(--carbon-light);
+      max-width: 540px;
+      margin: 8px auto 0;
+      line-height: 1.5;
+    }
+
+    .ritual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .ritual-card {
+      background: var(--marfil-card);
+      border: 1px solid var(--fuchsia-border);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+    }
+    .ritual-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--fuchsia);
+      color: #FFF;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+    }
+    .ritual-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--carbon);
+      margin-bottom: 6px;
+    }
+    .ritual-card-text {
+      font-size: 0.8rem;
+      color: var(--carbon-light);
+      line-height: 1.45;
+    }
+
+    .ways-box {
+      background: rgba(212, 0, 106, 0.04);
+      border-left: 3.5px solid var(--fuchsia);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin-bottom: 14px;
+    }
+    .ways-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--fuchsia);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ways-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.83rem;
+      color: var(--carbon);
+    }
+    .ways-list li strong {
+      color: var(--carbon);
+    }
+
+    .print-instructions-box {
+      background: #FFF;
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .print-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--marfil);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--fuchsia);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .print-instructions-text h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--carbon);
+      margin-bottom: 2px;
+    }
+    .print-instructions-text p {
+      font-size: 0.78rem;
+      color: var(--carbon-muted);
+      line-height: 1.4;
+    }
+
+    /* =========================================
+       PAGES 3 to 10: ORACLE CARDS GRID
+       ========================================= */
+    .cards-page {
+      padding: 12mm 14mm 10mm 14mm;
+    }
+    .cards-grid-container {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 80mm 80mm;
+      grid-template-rows: 120mm 120mm;
+      justify-content: center;
+      align-content: center;
+      gap: 12mm 12mm;
+      position: relative;
+    }
+
+    /* Individual Card: Exact 80mm x 120mm */
+    .oracle-card {
+      width: 80mm;
+      height: 120mm;
+      background: var(--marfil-card);
+      position: relative;
+      padding: 8mm 7mm 7mm 7mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(43, 36, 53, 0.05);
+      border-radius: 4px;
+    }
+
+    /* Clean Double Border Framing */
+    .card-border-outer {
+      position: absolute;
+      inset: 2.5mm;
+      border: 1.2px solid var(--fuchsia);
+      border-radius: 3px;
+      pointer-events: none;
+    }
+    .card-border-inner {
+      position: absolute;
+      inset: 4mm;
+      border: 0.7px solid rgba(212, 0, 106, 0.35);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+
+    /* Corner Diamonds */
+    .corner-diamond {
+      position: absolute;
+      font-size: 8px;
+      color: var(--fuchsia);
+      line-height: 1;
+      z-index: 5;
+    }
+    .corner-diamond.tl { top: 5.5mm; left: 5.5mm; }
+    .corner-diamond.tr { top: 5.5mm; right: 5.5mm; }
+    .corner-diamond.bl { bottom: 5.5mm; left: 5.5mm; }
+    .corner-diamond.br { bottom: 5.5mm; right: 5.5mm; }
+
+    /* Card Top Motif (Eye + Number) */
+    .card-top-motif {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      z-index: 2;
+    }
+    .card-eye-icon {
+      filter: drop-shadow(0 2px 4px rgba(212, 0, 106, 0.12));
+    }
+    .card-number-badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid var(--fuchsia);
+      background: var(--marfil-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--fuchsia);
+      line-height: 1;
+    }
+
+    /* Ornamental Divider */
+    .card-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 70%;
+      margin: 4px 0;
+      z-index: 2;
+    }
+    .div-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 0, 106, 0.45), transparent);
+    }
+    .div-diamond {
+      font-size: 6px;
+      color: var(--coral);
+      line-height: 1;
+    }
+
+    /* Card Title */
+    .card-title-wrap {
+      z-index: 2;
+      padding: 0 4px;
+    }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--carbon);
+      line-height: 1.15;
+      letter-spacing: 0.3px;
+    }
+
+    /* Card Affirmation Body */
+    .card-body-wrap {
+      z-index: 2;
+      padding: 0 4px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--carbon);
+      line-height: 1.45;
+      font-weight: 400;
+    }
+
+    /* Card Footer */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      z-index: 2;
+      padding-top: 4px;
+      border-top: 0.6px solid rgba(212, 0, 106, 0.2);
+      width: 82%;
+    }
+    .footer-monogram {
+      display: flex;
+      align-items: center;
+    }
+    .footer-text {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 0.62rem;
+      letter-spacing: 1.5px;
+      color: var(--fuchsia);
+      line-height: 1.1;
+    }
+    .footer-author {
+      font-size: 0.48rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      color: var(--carbon-muted);
+      line-height: 1.1;
+    }
+
+    /* =========================================
+       PAGE 11: CARD BACKS (DORSO)
+       ========================================= */
+    .card-back {
+      background: linear-gradient(135deg, #FAF0E4 0%, #F5E5D5 100%);
+      justify-content: center;
+      padding: 10mm 8mm;
+    }
+    .back-pattern-wrap {
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .back-motif-ring-outer {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 1.5px solid var(--fuchsia);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .back-motif-ring-outer::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border: 0.8px dashed rgba(212, 0, 106, 0.4);
+      border-radius: 50%;
+    }
+    .back-motif-ring-inner {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      background: var(--marfil-surface);
+      border: 1px solid rgba(212, 0, 106, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      box-shadow: 0 4px 12px rgba(212, 0, 106, 0.08);
+    }
+    .back-fc-logo {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+    }
+    .back-eye-wrap svg {
+      width: 32px;
+      height: 18px;
+    }
+    .back-brand-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      color: var(--carbon);
+      margin-top: 4px;
+    }
+    .back-brand-tagline {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: var(--fuchsia);
+    }
+    .back-bottom-mark {
+      position: absolute;
+      bottom: 7mm;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 0.55rem;
+      letter-spacing: 1.8px;
+      color: var(--carbon-muted);
+      z-index: 2;
+    }
+
+    /* =========================================
+       PAGE 12: NEXT STEP & MÉTODO ALFA
+       ========================================= */
+    .closing-page {
+      background: var(--marfil-surface);
+    }
+    .closing-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      padding: 10px 0;
+    }
+    .closing-badge {
+      display: inline-block;
+      background: var(--fuchsia);
+      color: #FFF;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+    }
+    .closing-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--carbon);
+      line-height: 1.18;
+      max-width: 520px;
+      margin: 0 auto 12px;
+    }
+    .closing-title span {
+      color: var(--fuchsia);
+      font-style: italic;
+    }
+    .closing-desc {
+      font-size: 0.95rem;
+      color: var(--carbon-light);
+      max-width: 500px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+
+    .metodo-card {
+      background: var(--marfil);
+      border: 1px solid var(--border-soft);
+      border-radius: 12px;
+      padding: 20px 24px;
+      max-width: 540px;
+      margin: 0 auto 20px;
+      text-align: left;
+    }
+    .metodo-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      color: var(--fuchsia);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .metodo-text {
+      font-size: 0.88rem;
+      color: var(--carbon);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .metodo-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .pillar-box {
+      background: var(--marfil-surface);
+      border: 1px solid var(--border-soft);
+      border-radius: 8px;
+      padding: 10px 8px;
+      text-align: center;
+    }
+    .pillar-box h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--coral);
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pillar-box p {
+      font-size: 0.72rem;
+      color: var(--carbon-muted);
+      line-height: 1.3;
+    }
+
+    .cta-banner {
+      background: var(--carbon);
+      color: var(--marfil);
+      border-radius: 12px;
+      padding: 16px 24px;
+      max-width: 540px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+    .cta-text h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--marfil);
+      margin-bottom: 2px;
+    }
+    .cta-text p {
+      font-size: 0.8rem;
+      color: rgba(250, 240, 228, 0.75);
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      color: #FFF;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Print Bar for Web Preview -->
+  <div class="print-bar">
+    <div class="print-bar-title">
+      <img src="diseño visual/logo_fc.svg" alt="FC" style="width: 26px; height: 26px; object-fit: contain;">
+      <span>Oráculo de Mujeres Alfa — 32 Manifestaciones · Florencia Castillo</span>
+    </div>
+    <button class="btn-print" onclick="window.print()">
+      <i class="fa-solid fa-print"></i> Guardar como PDF
+    </button>
+  </div>
+
+  <!-- ========================================================
+       PAGE 1: PORTADA OFICIAL
+       ======================================================== -->
+  <div class="page cover-page">
+    <div class="cover-top">
+      <img src="diseño visual/logo_fc.svg" alt="Florencia Castillo — Mujeres Alfa" class="cover-logo-badge">
+      <div class="cover-eyebrow">MUJERES ALFA · EDICIÓN OFICIAL</div>
+    </div>
+
+    <div class="cover-center">
+      <div class="cover-tagline-pre">ORÁCULO DE</div>
+      <h1 class="cover-title">
+        Mujeres Alfa
+        <span>Poder & Manifestación</span>
+      </h1>
+      <p class="cover-subtitle">
+        32 manifestaciones para comenzar tu día de una manera positiva
+      </p>
+
+      <div class="cover-talisman">
+        <div class="talisman-ring-outer"></div>
+        <div class="talisman-ring-inner"></div>
+        <div class="talisman-eye-center">
+          
+<svg viewBox="0 0 160 100" width="130" height="82" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rayos de luz radiales superiores -->
+  <line x1="80" y1="12" x2="80" y2="2" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="60" y1="16" x2="53" y2="7" stroke="#D4006A" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="100" y1="16" x2="107" y2="7" stroke="#D4006A" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="42" y1="26" x2="33" y2="18" stroke="#D4006A" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="118" y1="26" x2="127" y2="18" stroke="#D4006A" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="28" y1="41" x2="18" y2="36" stroke="#D4006A" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="132" y1="41" x2="142" y2="36" stroke="#D4006A" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Párpados externos -->
+  <path d="M 16 50 Q 80 14 144 50" stroke="#D4006A" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M 16 50 Q 80 86 144 50" stroke="#D4006A" stroke-width="2.6" stroke-linecap="round"/>
+
+  <!-- Línea de párpado suave -->
+  <path d="M 36 38 Q 80 25 124 38" stroke="#D4006A" stroke-width="1" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="80" cy="50" r="23" stroke="#D4006A" stroke-width="1.8"/>
+  <circle cx="80" cy="50" r="17" stroke="#D4006A" stroke-width="1" stroke-dasharray="3 2" stroke-opacity="0.7"/>
+
+  <!-- Pupila y destello alfa -->
+  <circle cx="80" cy="50" r="8.5" fill="#D4006A"/>
+  <circle cx="80" cy="50" r="2.8" fill="#FFFDF9"/>
+
+  <!-- Diamantes en extremos -->
+  <polygon points="16,46 20,50 16,54 12,50" fill="#FF5C45"/>
+  <polygon points="144,46 148,50 144,54 140,50" fill="#FF5C45"/>
+  <polygon points="80,72 83,75 80,78 77,75" fill="#FF5C45"/>
+</svg>
+
+        </div>
+      </div>
+
+      <div class="cover-quote-card">
+        <p>"Cada mañana es una nueva oportunidad para elegir desde qué energía vas a liderar tu día."</p>
+        <small>Tu mente no distingue entre lo que es real y lo que declarás con convicción: elegí ser la mujer que querés ser hoy.</small>
+      </div>
+    </div>
+
+    <div class="cover-bottom">
+      <span>Oráculo de Manifestación Diaria</span>
+      <span class="cover-author">Por Florencia Castillo</span>
+      <span>florenciacastillo.vercel.app</span>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 2: GUÍA DE USO Y RITUAL MATUTINO
+       ======================================================== -->
+  <div class="page intro-page">
+    <header class="page-header">
+      <div class="page-header-brand">
+        <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+        <span>MUJERES ALFA · GUÍA DEL ORÁCULO</span>
+      </div>
+      <div class="page-header-step">CÓMO USAR TUS CARTAS</div>
+    </header>
+
+    <div class="intro-content">
+      <div class="intro-head">
+        <span class="intro-badge">RITUAL MATUTINO</span>
+        <h2 class="intro-title">El Arte de Comenzar tu Día con <span>Intención</span></h2>
+        <p class="intro-lead">
+          Antes de que el ruido externo, las notificaciones y las urgencias tomen el control de tu mente, 
+          este oráculo te invita a un espacio de pausa y reconexión con tu verdadero poder.
+        </p>
+      </div>
+
+      <div class="ritual-grid">
+        <div class="ritual-card">
+          <div class="ritual-step-num">1</div>
+          <h4 class="ritual-card-title">Respirá & Pausá</h4>
+          <p class="ritual-card-text">
+            Al despertar, antes de mirar tu celular, tomá 3 respiraciones lentas y profundas sintiendo tus pies en la tierra.
+          </p>
+        </div>
+        <div class="ritual-card">
+          <div class="ritual-step-num">2</div>
+          <h4 class="ritual-card-title">Elegí tu Carta</h4>
+          <p class="ritual-card-text">
+            Mezclá tus cartas físicas o cerrá los ojos y pedí la manifestación que tu energía necesita integrar hoy.
+          </p>
+        </div>
+        <div class="ritual-card">
+          <div class="ritual-step-num">3</div>
+          <h4 class="ritual-card-title">Declarala en Voz Alta</h4>
+          <p class="ritual-card-text">
+            Leé la frase con postura firme y convicción. Dejá que el mensaje resuene en tu cuerpo durante toda la jornada.
+          </p>
+        </div>
+      </div>
+
+      <div class="ways-box">
+        <h3 class="ways-title"><i class="fa-solid fa-sparkles"></i> 3 Formas de Utilizar tu Mazo Alfa</h3>
+        <ul class="ways-list">
+          <li><strong>1. Carta del Día:</strong> Una práctica diaria de claridad y enfoque para arrancar la mañana con energía alta y positiva.</li>
+          <li><strong>2. Anclaje ante la Duda o el Estrés:</strong> Cuando sientas miedo, síndrome de impostora o saturación, buscá tu carta ancla y releela.</li>
+          <li><strong>3. Oráculo de Toma de Decisiones:</strong> Antes de una reunión, venta o conversación difícil, pedí guía para conectar con tu seguridad interior.</li>
+        </ul>
+      </div>
+
+      <div class="print-instructions-box">
+        <div class="print-icon-wrap">
+          <i class="fa-solid fa-scissors"></i>
+        </div>
+        <div class="print-instructions-text">
+          <h4>Instrucciones para Imprimir y Recortar tu Mazo</h4>
+          <p>
+            Imprimí las páginas 3 a 10 en papel cartulina u opalina de 250g a 300g (tamaño A4 al 100% de escala, sin ajustar márgenes). 
+            Podés usar la página 11 para imprimir los dorsos a doble faz. Cortá por las líneas sutiles para obtener cartas de 80 × 120 mm.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <span class="page-footer-tag">MUJERES ALFA · WORKBOOK & ORÁCULO</span>
+      <span>Florencia Castillo · Poder. Claridad. Resultados.</span>
+      <span>Página 2</span>
+    </footer>
+  </div>
+
+  <!-- ========================================================
+       PAGES 3 to 10: LAS 32 CARTAS DEL ORÁCULO (4 por página)
+       ======================================================== -->
+  
+    <!-- PAGE 3: CARTAS 1 A 4 -->
+    <div class="page cards-page">
+      <header class="page-header">
+        <div class="page-header-brand">
+          <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+          <span>MUJERES ALFA · ORÁCULO DIARIO</span>
+        </div>
+        <div class="page-header-step">CARTAS 1 – 4</div>
+      </header>
+
+      <div class="cards-grid-container">
+        
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">01</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Soy merecedora</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Soy merecedora de amor, abundancia, éxito y felicidad. No necesito demostrar mi valor para recibir todo lo bueno que la vida tiene para mí.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">02</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Recupero mi poder</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Hoy dejo de alimentar los pensamientos que me limitan. Mi pasado no define mi futuro y siempre puedo elegir una nueva manera de actuar.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">03</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Soy belleza</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Mi belleza no depende de la aprobación de nadie. Aprendo a mirarme con amor, a reconocer mis cualidades y a sentirme cómoda siendo quien soy.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">04</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Estoy abierta a recibir</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Me permito recibir oportunidades, dinero, amor y experiencias extraordinarias. No tengo que vivir en la escasez para sentir que merezco lo que tengo.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+      <footer class="page-footer">
+        <span class="page-footer-tag">ORÁCULO DE MUJERES ALFA</span>
+        <span>Líneas punteadas indican guías de corte · Imprimir a 100% de escala</span>
+        <span>Página 3</span>
+      </footer>
+    </div>
+  
+    <!-- PAGE 4: CARTAS 5 A 8 -->
+    <div class="page cards-page">
+      <header class="page-header">
+        <div class="page-header-brand">
+          <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+          <span>MUJERES ALFA · ORÁCULO DIARIO</span>
+        </div>
+        <div class="page-header-step">CARTAS 5 – 8</div>
+      </header>
+
+      <div class="cards-grid-container">
+        
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">05</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Confío en mí</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Confío en mi capacidad para aprender, crecer y superar desafíos. No necesito tener todas las respuestas para dar el siguiente paso.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">06</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Me libero</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Honro a la mujer que fui, pero ya no necesito vivir desde sus miedos. Hoy puedo elegir pensamientos, hábitos y decisiones que acompañen a la mujer que quiero ser.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">07</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Estoy preparada para crecer</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Me permito tener éxito sin culpa. Puedo crecer, destacar y alcanzar mis metas sin sentir que debo hacerme pequeña para que otros se sientan cómodos.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">08</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Me elijo</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Dejo de abandonarme para encajar, agradar o ser aceptada. Mi paz también importa y hoy elijo tratarme con el amor que tantas veces entregué a los demás.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+      <footer class="page-footer">
+        <span class="page-footer-tag">ORÁCULO DE MUJERES ALFA</span>
+        <span>Líneas punteadas indican guías de corte · Imprimir a 100% de escala</span>
+        <span>Página 4</span>
+      </footer>
+    </div>
+  
+    <!-- PAGE 5: CARTAS 9 A 12 -->
+    <div class="page cards-page">
+      <header class="page-header">
+        <div class="page-header-brand">
+          <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+          <span>MUJERES ALFA · ORÁCULO DIARIO</span>
+        </div>
+        <div class="page-header-step">CARTAS 9 – 12</div>
+      </header>
+
+      <div class="cards-grid-container">
+        
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">09</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">La vida también puede sorprenderme</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">No todo lo que viví tiene que repetirse. Estoy abierta a nuevas experiencias, personas y oportunidades. Me permito creer que también pueden sucederme cosas buenas.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">10</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Mis pensamientos no son mi identidad</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">No todo lo que pienso es verdad. Puedo observar mis pensamientos sin juzgarme, cuestionar los que me limitan y elegir cuáles quiero seguir alimentando.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">11</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Reconozco mi valor</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Mi valor no depende de cuánto produzco, cuánto gano, cómo me veo o cuánto me reconocen. Soy valiosa incluso cuando estoy aprendiendo, descansando o empezando de nuevo.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">12</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Puedo construir abundancia</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Me permito desarrollar una relación más sana con el dinero. Puedo aprender, tomar decisiones conscientes y construir una vida con mayor libertad económica.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+      <footer class="page-footer">
+        <span class="page-footer-tag">ORÁCULO DE MUJERES ALFA</span>
+        <span>Líneas punteadas indican guías de corte · Imprimir a 100% de escala</span>
+        <span>Página 5</span>
+      </footer>
+    </div>
+  
+    <!-- PAGE 6: CARTAS 13 A 16 -->
+    <div class="page cards-page">
+      <header class="page-header">
+        <div class="page-header-brand">
+          <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+          <span>MUJERES ALFA · ORÁCULO DIARIO</span>
+        </div>
+        <div class="page-header-step">CARTAS 13 – 16</div>
+      </header>
+
+      <div class="cards-grid-container">
+        
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">13</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Mi paz es una prioridad</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Puedo decir que no sin sentir que soy una mala persona. Poner límites no me hace egoísta; me permite cuidar mi energía, mi tiempo y mi bienestar.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">14</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Siempre puedo volver a empezar</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">No estoy atrasada en mi vida. Mi camino es mío y puedo comenzar de nuevo las veces que sea necesario, con más conciencia y experiencia.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">15</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Cumplo conmigo</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Cada vez que cumplo una promesa que me hago, fortalezco la confianza en mí misma. No necesito hacerlo perfecto; necesito aprender a sostener lo que me hace bien.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">16</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Merezco un amor que me cuide</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">No necesito perseguir, rogar ni dejar de ser yo para recibir amor. Merezco vínculos en los que haya respeto, reciprocidad, libertad y tranquilidad.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+      <footer class="page-footer">
+        <span class="page-footer-tag">ORÁCULO DE MUJERES ALFA</span>
+        <span>Líneas punteadas indican guías de corte · Imprimir a 100% de escala</span>
+        <span>Página 6</span>
+      </footer>
+    </div>
+  
+    <!-- PAGE 7: CARTAS 17 A 20 -->
+    <div class="page cards-page">
+      <header class="page-header">
+        <div class="page-header-brand">
+          <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+          <span>MUJERES ALFA · ORÁCULO DIARIO</span>
+        </div>
+        <div class="page-header-step">CARTAS 17 – 20</div>
+      </header>
+
+      <div class="cards-grid-container">
+        
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">17</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Mi camino es único</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">El éxito de otra mujer no disminuye el mío. Puedo admirar, aprender e inspirarme en otras mujeres sin olvidar que mi propio camino también tiene valor.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">18</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Me atrevo</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">No necesito dejar de sentir miedo para avanzar. Puedo sentir incertidumbre y, aun así, tomar decisiones que me acerquen a la vida que deseo.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">19</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Reconozco lo bueno</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Hoy elijo reconocer lo que sí tengo, lo que sí logré y lo que estoy aprendiendo. Puedo agradecer mi presente sin renunciar a todo lo que deseo construir.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">20</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Estoy convirtiéndome en mí</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">No soy mis errores, mis heridas ni mis peores días. Soy una mujer en construcción, con capacidad de aprender, cambiar y crear nuevas posibilidades.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+      <footer class="page-footer">
+        <span class="page-footer-tag">ORÁCULO DE MUJERES ALFA</span>
+        <span>Líneas punteadas indican guías de corte · Imprimir a 100% de escala</span>
+        <span>Página 7</span>
+      </footer>
+    </div>
+  
+    <!-- PAGE 8: CARTAS 21 A 24 -->
+    <div class="page cards-page">
+      <header class="page-header">
+        <div class="page-header-brand">
+          <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+          <span>MUJERES ALFA · ORÁCULO DIARIO</span>
+        </div>
+        <div class="page-header-step">CARTAS 21 – 24</div>
+      </header>
+
+      <div class="cards-grid-container">
+        
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">21</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Me permito disfrutar</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">No tengo que sufrir para merecer felicidad. Puedo disfrutar de mis logros, recibir cosas buenas y vivir momentos de paz sin sentir culpa.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">22</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Escucho mi voz interior</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Me doy permiso para escucharme, reconocer lo que siento y evaluar lo que necesito. Puedo confiar en mi criterio y también estar abierta a aprender.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">23</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Elijo cómo responder</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">No siempre puedo controlar lo que sucede, pero puedo aprender a responder de una manera más consciente. Entre lo que siento y lo que hago, puedo crear un espacio para elegir.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">24</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Me abro a nuevas posibilidades</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Dejo de asumir que todo saldrá mal antes de intentarlo. Me permito explorar nuevas posibilidades y reconocer oportunidades que antes mis miedos no me dejaban ver.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+      <footer class="page-footer">
+        <span class="page-footer-tag">ORÁCULO DE MUJERES ALFA</span>
+        <span>Líneas punteadas indican guías de corte · Imprimir a 100% de escala</span>
+        <span>Página 8</span>
+      </footer>
+    </div>
+  
+    <!-- PAGE 9: CARTAS 25 A 28 -->
+    <div class="page cards-page">
+      <header class="page-header">
+        <div class="page-header-brand">
+          <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+          <span>MUJERES ALFA · ORÁCULO DIARIO</span>
+        </div>
+        <div class="page-header-step">CARTAS 25 – 28</div>
+      </header>
+
+      <div class="cards-grid-container">
+        
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">25</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">No necesito hacerme pequeña</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Mi luz no amenaza a nadie que quiera verme crecer. Puedo ocupar mi lugar, expresar mis ideas y mostrar mis capacidades sin pedir disculpas por ser quien soy.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">26</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Puedo elegir diferente</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Reconozco los patrones que alguna vez me protegieron, pero que hoy pueden limitarme. No necesito juzgarme por haberlos aprendido; puedo comenzar a construir respuestas nuevas.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">27</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Respeto mis tiempos</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">No necesito resolver toda mi vida hoy. Cada pequeño paso cuenta y puedo avanzar a mi ritmo sin confundir la paciencia con la resignación.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">28</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Mi vida también está llena de bendiciones</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Me abro a reconocer las bendiciones que ya forman parte de mi vida y las oportunidades que todavía no conozco. Puedo caminar con gratitud, esperanza y confianza.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+      <footer class="page-footer">
+        <span class="page-footer-tag">ORÁCULO DE MUJERES ALFA</span>
+        <span>Líneas punteadas indican guías de corte · Imprimir a 100% de escala</span>
+        <span>Página 9</span>
+      </footer>
+    </div>
+  
+    <!-- PAGE 10: CARTAS 29 A 32 -->
+    <div class="page cards-page">
+      <header class="page-header">
+        <div class="page-header-brand">
+          <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+          <span>MUJERES ALFA · ORÁCULO DIARIO</span>
+        </div>
+        <div class="page-header-step">CARTAS 29 – 32</div>
+      </header>
+
+      <div class="cards-grid-container">
+        
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">29</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Convierto mis deseos en acciones</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Me permito soñar en grande y actuar en coherencia con mis deseos. Mis pensamientos pueden inspirarme, mis decisiones pueden orientarme y mis acciones pueden acercarme a la vida que quiero construir.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">30</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Hoy me elijo a mí</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Hoy dejo de esperar el momento perfecto para convertirme en la mujer que deseo ser. Empiezo con lo que tengo, desde donde estoy y con la decisión de no volver a abandonarme.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">31</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Soy una mujer afortunada</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Estoy abierta a recibir las bendiciones, el amor y las oportunidades que la vida tiene para mí. Reconozco lo bueno, confío en mis capacidades y camino con la certeza de que también merezco que me sucedan cosas extraordinarias.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="oracle-card">
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner"></div>
+        
+        <!-- Corner Diamonds -->
+        <span class="corner-diamond tl">♦</span>
+        <span class="corner-diamond tr">♦</span>
+        <span class="corner-diamond bl">♦</span>
+        <span class="corner-diamond br">♦</span>
+
+        <!-- Card Header: Eye + Number -->
+        <div class="card-top-motif">
+          
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+
+          <div class="card-number-badge">
+            <span class="badge-num">32</span>
+          </div>
+        </div>
+
+        <!-- Ornamental Divider -->
+        <div class="card-divider">
+          <span class="div-line"></span>
+          <span class="div-diamond">♦</span>
+          <span class="div-line"></span>
+        </div>
+
+        <!-- Card Title -->
+        <div class="card-title-wrap">
+          <h3 class="card-title">Mi vida comienza conmigo</h3>
+        </div>
+
+        <!-- Affirmation Body -->
+        <div class="card-body-wrap">
+          <p class="card-text">Dejo de esperar que algo externo me transforme. Hoy reconozco el poder que tengo para cambiar mis hábitos, elegir mis pensamientos y tomar decisiones diferentes. La mujer que deseo ser comienza a construirse con cada elección que hago hoy.</p>
+        </div>
+
+        <!-- Card Footer -->
+        <div class="card-footer">
+          <div class="footer-monogram">
+<svg viewBox="0 0 100 100" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="46" stroke="#D4006A" stroke-width="2.2" stroke-opacity="0.4"/>
+  <polygon points="50,6 52.5,10 50,14 47.5,10" fill="#D4006A"/>
+  <polygon points="50,86 52.5,90 50,94 47.5,90" fill="#D4006A"/>
+  <text x="50" y="58" font-family="'Cormorant Garamond', serif" font-weight="700" font-size="34" fill="#D4006A" text-anchor="middle">FC</text>
+</svg>
+</div>
+          <div class="footer-text">
+            <span class="footer-brand">MUJERES ALFA</span>
+            <span class="footer-author">FLORENCIA CASTILLO</span>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+      <footer class="page-footer">
+        <span class="page-footer-tag">ORÁCULO DE MUJERES ALFA</span>
+        <span>Líneas punteadas indican guías de corte · Imprimir a 100% de escala</span>
+        <span>Página 10</span>
+      </footer>
+    </div>
+  
+
+  <!-- ========================================================
+       PAGE 11: DORSO DE LAS CARTAS (Para impresión doble faz)
+       ======================================================== -->
+  <div class="page cards-page">
+    <header class="page-header">
+      <div class="page-header-brand">
+        <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+        <span>MUJERES ALFA · DORSO DE CARTAS</span>
+      </div>
+      <div class="page-header-step">IMPRESIÓN A DOBLE FAZ</div>
+    </header>
+
+    <div class="cards-grid-container">
+      
+    <div class="oracle-card card-back">
+      <div class="card-border-outer"></div>
+      <div class="card-border-inner"></div>
+      
+      <span class="corner-diamond tl">♦</span>
+      <span class="corner-diamond tr">♦</span>
+      <span class="corner-diamond bl">♦</span>
+      <span class="corner-diamond br">♦</span>
+
+      <div class="back-pattern-wrap">
+        <div class="back-motif-ring-outer">
+          <div class="back-motif-ring-inner">
+            <img src="diseño visual/logo_fc.svg" alt="FC" class="back-fc-logo">
+            <div class="back-eye-wrap">
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+</div>
+          </div>
+        </div>
+        <div class="back-brand-title">MUJERES ALFA</div>
+        <div class="back-brand-tagline">PODER · CLARIDAD · RESULTADOS</div>
+      </div>
+
+      <div class="back-bottom-mark">
+        <span>ORÁCULO DIARIO</span>
+        <span>♦</span>
+        <span>FLORENCIA CASTILLO</span>
+      </div>
+    </div>
+  
+    <div class="oracle-card card-back">
+      <div class="card-border-outer"></div>
+      <div class="card-border-inner"></div>
+      
+      <span class="corner-diamond tl">♦</span>
+      <span class="corner-diamond tr">♦</span>
+      <span class="corner-diamond bl">♦</span>
+      <span class="corner-diamond br">♦</span>
+
+      <div class="back-pattern-wrap">
+        <div class="back-motif-ring-outer">
+          <div class="back-motif-ring-inner">
+            <img src="diseño visual/logo_fc.svg" alt="FC" class="back-fc-logo">
+            <div class="back-eye-wrap">
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+</div>
+          </div>
+        </div>
+        <div class="back-brand-title">MUJERES ALFA</div>
+        <div class="back-brand-tagline">PODER · CLARIDAD · RESULTADOS</div>
+      </div>
+
+      <div class="back-bottom-mark">
+        <span>ORÁCULO DIARIO</span>
+        <span>♦</span>
+        <span>FLORENCIA CASTILLO</span>
+      </div>
+    </div>
+  
+    <div class="oracle-card card-back">
+      <div class="card-border-outer"></div>
+      <div class="card-border-inner"></div>
+      
+      <span class="corner-diamond tl">♦</span>
+      <span class="corner-diamond tr">♦</span>
+      <span class="corner-diamond bl">♦</span>
+      <span class="corner-diamond br">♦</span>
+
+      <div class="back-pattern-wrap">
+        <div class="back-motif-ring-outer">
+          <div class="back-motif-ring-inner">
+            <img src="diseño visual/logo_fc.svg" alt="FC" class="back-fc-logo">
+            <div class="back-eye-wrap">
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+</div>
+          </div>
+        </div>
+        <div class="back-brand-title">MUJERES ALFA</div>
+        <div class="back-brand-tagline">PODER · CLARIDAD · RESULTADOS</div>
+      </div>
+
+      <div class="back-bottom-mark">
+        <span>ORÁCULO DIARIO</span>
+        <span>♦</span>
+        <span>FLORENCIA CASTILLO</span>
+      </div>
+    </div>
+  
+    <div class="oracle-card card-back">
+      <div class="card-border-outer"></div>
+      <div class="card-border-inner"></div>
+      
+      <span class="corner-diamond tl">♦</span>
+      <span class="corner-diamond tr">♦</span>
+      <span class="corner-diamond bl">♦</span>
+      <span class="corner-diamond br">♦</span>
+
+      <div class="back-pattern-wrap">
+        <div class="back-motif-ring-outer">
+          <div class="back-motif-ring-inner">
+            <img src="diseño visual/logo_fc.svg" alt="FC" class="back-fc-logo">
+            <div class="back-eye-wrap">
+<svg class="card-eye-icon" viewBox="0 0 100 56" width="46" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pestañas sutiles superiores -->
+  <line x1="50" y1="5" x2="50" y2="1" stroke="#D4006A" stroke-width="1.3" stroke-linecap="round"/>
+  <line x1="37" y1="8" x2="33" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="63" y1="8" x2="67" y2="3.5" stroke="#D4006A" stroke-width="1.1" stroke-linecap="round"/>
+  <line x1="26" y1="14" x2="21" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+  <line x1="74" y1="14" x2="79" y2="10" stroke="#D4006A" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Párpado Superior e Inferior -->
+  <path d="M 10 28 Q 50 7 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M 10 28 Q 50 49 90 28" stroke="#D4006A" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Pliegue de párpado sutil -->
+  <path d="M 24 21 Q 50 13 76 21" stroke="#D4006A" stroke-width="0.75" stroke-opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Iris concéntrico -->
+  <circle cx="50" cy="28" r="13" stroke="#D4006A" stroke-width="1.3" fill="none"/>
+  <circle cx="50" cy="28" r="9.5" stroke="#D4006A" stroke-width="0.75" stroke-dasharray="2 1.5" stroke-opacity="0.6"/>
+
+  <!-- Pupila con destello central de luz -->
+  <circle cx="50" cy="28" r="4.8" fill="#D4006A"/>
+  <circle cx="50" cy="28" r="1.6" fill="#FFFDF9"/>
+
+  <!-- Puntos cardinales del oráculo -->
+  <circle cx="50" cy="44" r="1.1" fill="#D4006A"/>
+  <circle cx="10" cy="28" r="1.1" fill="#D4006A"/>
+  <circle cx="90" cy="28" r="1.1" fill="#D4006A"/>
+</svg>
+</div>
+          </div>
+        </div>
+        <div class="back-brand-title">MUJERES ALFA</div>
+        <div class="back-brand-tagline">PODER · CLARIDAD · RESULTADOS</div>
+      </div>
+
+      <div class="back-bottom-mark">
+        <span>ORÁCULO DIARIO</span>
+        <span>♦</span>
+        <span>FLORENCIA CASTILLO</span>
+      </div>
+    </div>
+  
+    </div>
+
+    <footer class="page-footer">
+      <span class="page-footer-tag">ORÁCULO DE MUJERES ALFA</span>
+      <span>Dorso opcional para impresión a doble faz · 80 × 120 mm</span>
+      <span>Página 11</span>
+    </footer>
+  </div>
+
+  <!-- ========================================================
+       PAGE 12: CIERRE · EL MÉTODO ALFA
+       ======================================================== -->
+  <div class="page closing-page">
+    <header class="page-header">
+      <div class="page-header-brand">
+        <img src="diseño visual/logo_fc.svg" alt="FC" class="header-logo">
+        <span>MUJERES ALFA · TU PRÓXIMO PASO</span>
+      </div>
+      <div class="page-header-step">TRANSFORMACIÓN SOSTENIDA</div>
+    </header>
+
+    <div class="closing-content">
+      <div>
+        <div class="closing-badge">EL PRIMER PASO ESTÁ DADO</div>
+        <h2 class="closing-title">
+          No se trata solamente de manifestar una nueva vida.<br>
+          Se trata de <span>convertirte en la mujer capaz de sostenerla.</span>
+        </h2>
+        <p class="closing-desc">
+          Este oráculo te brinda la vibración, la intención y el enfoque diario. 
+          Pero la verdadera transformación se consolida con estrategia, estructura y acompañamiento constante.
+        </p>
+      </div>
+
+      <div class="metodo-card">
+        <h3 class="metodo-title">El Método Alfa</h3>
+        <p class="metodo-text">
+          El programa de mentoría estratégica y liderazgo personal diseñado por Florencia Castillo 
+          para que dejes de remar sola y transformes tu mentalidad y tu negocio en una estructura con resultados medibles.
+        </p>
+
+        <div class="metodo-pillars-grid">
+          <div class="pillar-box">
+            <h5>PODER</h5>
+            <p>Liderazgo y mentalidad</p>
+          </div>
+          <div class="pillar-box">
+            <h5>CLARIDAD</h5>
+            <p>Estrategia y nicho</p>
+          </div>
+          <div class="pillar-box">
+            <h5>ESTRUCTURA</h5>
+            <p>Hábitos y sistemas</p>
+          </div>
+          <div class="pillar-box">
+            <h5>MENTORÍA</h5>
+            <p>Flor con vos 1 a 1</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-banner">
+        <div class="cta-text">
+          <h4>¿Querés una Devolución Personal de tu Caso?</h4>
+          <p>Escribile directamente a Florencia por WhatsApp para evaluar tu situación.</p>
+        </div>
+        <a href="https://wa.me/5491100000000?text=Hola%20Flor!%20Tengo%20el%20Oraculo%20de%20Mujeres%20Alfa" class="btn-whatsapp" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Hablar con Flor
+        </a>
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <span class="page-footer-tag">FLORENCIA CASTILLO · MUJERES ALFA</span>
+      <span>Poder. Claridad. Resultados.</span>
+      <span>florenciacastillo.vercel.app</span>
+    </footer>
+  </div>
+
+</body>
+</html>

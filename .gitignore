@@ -1,15 +1,27 @@
-# Video/Audio grabaciones internas
+# Archivos pesados / multimedia local
 *.mp4
 *.docx
 
-# Vercel & Node
+# Materiales y Kits de respaldo pesado
+Recuros/Documentos/
+Recuros/Materiales Adicionales/
+
+# Node & Dependencias de herramientas locales
+node_modules/
+package.json
+package-lock.json
+
+# Vercel & Cloudflare temporales
 .vercel/
 .vercel
-node_modules/
+dist_cloudflare/
+dist/
+
+# Scratch & Utilitarios de desarrollo
+scratch/
+extracted_guia_web.txt
+*.ttf
+
+# Sistema operativo
 .DS_Store
 Thumbs.db
-
-# Scratch & Fonts
-scratch/
-*.ttf
-extracted_guia_web.txt

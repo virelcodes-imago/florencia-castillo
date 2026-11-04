@@ -1,41 +1,60 @@
-# 🚀 Florencia Castillo · Mujeres Alfa — Despliegue & Accesos
+# 🚀 Florencia Castillo · Mujeres Alfa — Despliegue, Dominio & Accesos Oficiales
 
-Documento oficial de despliegue, enlaces de producción y repositorio del proyecto.
-
----
-
-## 🌐 Enlaces de Producción (Vercel)
-
-* **URL Pública Oficial:** [https://florencia-castillo.vercel.app](https://florencia-castillo.vercel.app)
-* **URL de Despliegue Directo:** [https://florencia-castillo-pvbiy6z32-malikes-projects-a8b8f457.vercel.app](https://florencia-castillo-pvbiy6z32-malikes-projects-a8b8f457.vercel.app)
-* **Panel de Control en Vercel:** [https://vercel.com/malikes-projects-a8b8f457/florencia-castillo](https://vercel.com/malikes-projects-a8b8f457/florencia-castillo)
-* **Equipo / Organización:** `virelcodes-imagos-projects` / `malikes-projects-a8b8f457`
+**Documento Maestro de Infraestructura y Producción**  
+*Desarrollado y Gestionado por VIREL. | Última actualización: Noviembre 2026*
 
 ---
 
-## 📦 Repositorio Git & GitHub
+## 🌐 1. Enlaces Oficiales de Producción
 
-El repositorio Git local ya está inicializado y con el primer commit creado:
-* **Rama principal:** `main` (o `master`)
-* **Archivos versionados:** Código HTML, CSS, JavaScript, Brand Kit e imágenes optimizadas (excluyendo archivos pesados de video/audio en `.gitignore`).
-
-### Para vincular con un nuevo repositorio en GitHub de VIREL:
-
-1. Crea un repositorio vacío en la organización/cuenta de GitHub de VIREL llamado `florencia-castillo`.
-2. En la terminal ejecuta:
-```bash
-git branch -M main
-git remote add origin https://github.com/TU_ORGANIZACION_VIREL/florencia-castillo.git
-git push -u origin main
-```
+* **Dominio Principal (Producción):** [https://florenciacastillo.com](https://florenciacastillo.com)
+* **Subdominio WWW:** [https://www.florenciacastillo.com](https://www.florenciacastillo.com)
+* **URL Directa de Cloudflare Pages:** [https://florencia-castillo.pages.dev](https://florencia-castillo.pages.dev)
+* **Seguridad:** Certificado SSL/TLS Activo (`HTTPS`), renovación automática de por vida provista por Cloudflare.
+* **Estado:** 🟢 **Activo / Producción Ininterrumpida (100% Gratuito en Cloudflare Pages).**
 
 ---
 
-## 📱 Enlace para Enviar a Flor por WhatsApp
+## ☁️ 2. Infraestructura de Hosting & DNS (Cloudflare)
 
-Podés copiarle y enviarle este mensaje listo:
+* **Proveedor de Hosting:** Cloudflare Pages (Plan Free ilimitado para sitios estáticos).
+* **Proyecto en Cloudflare:** `florencia-castillo`
+* **Cuenta Cloudflare:** `meugenaguerbi@gmail.com`
+* **DNS Nameservers delegados:**
+  * `luke.ns.cloudflare.com`
+  * `meadow.ns.cloudflare.com`
+* **Dominios personalizados conectados:**
+  * `florenciacastillo.com` ➔ Conectado y CNAME automático hacia `florencia-castillo.pages.dev` (Estado: **Active**).
+  * `www.florenciacastillo.com` ➔ Conectado y CNAME automático hacia `florencia-castillo.pages.dev` (Estado: **Active**).
 
-> *"¡Hola Flor! Ya tenemos lista la primera versión online de tu sitio web para que puedas verla y navegarla directamente desde tu celular:*  
-> 👉 **https://florencia-castillo.vercel.app**  
+---
+
+## 📦 3. Repositorio Oficial en GitHub
+
+* **Repositorio:** [https://github.com/virelcodes-imago/florencia-castillo](https://github.com/virelcodes-imago/florencia-castillo)
+* **Organización / Propietario:** `virelcodes-imago`
+* **Rama Principal de Producción:** `main`
+* **Flujo de Integración Continua (CI/CD):**
+  * Cada vez que se realiza un `git push` a la rama `main`, **Cloudflare Pages detecta el cambio automáticamente** y despliega la nueva versión en vivo en menos de 30 segundos.
+  * No se requiere intervención manual en Cloudflare para subir cambios cotidianos.
+
+---
+
+## 🛑 4. Historial de Migración: Vercel ➔ Cloudflare Pages
+
+* **Fecha de migración:** Noviembre 2026.
+* **Motivo:** Evitar los límites de ancho de banda y uso de almacenamiento de Vercel Hobby, unificar la gestión de DNS y Hosting bajo un mismo techo (Cloudflare) y obtener CDN ultrarrápido con protección DDoS y SSL sin costo.
+* **Estado de Vercel:** **Desconectado de GitHub.**
+  * El proyecto `florencia-castillo` en Vercel ya no recibe actualizaciones de la rama `main`.
+  * *Acción programada:* Eliminar el proyecto de Vercel en los próximos días para liberar espacio en el dashboard.
+
+---
+
+## 📱 5. Enlaces y Mensaje Listo para WhatsApp
+
+Mensaje oficial listo para compartir con Florencia o el equipo:
+
+> *"¡Hola Flor! Ya está activa y 100% online tu web oficial con tu dominio propio, candado de seguridad HTTPS y todas las mejoras de diseño aplicadas:*  
+> 👉 **https://florenciacastillo.com**  
 >  
-> *Incluye el logo oficial, tu foto mejorada, la estructura de la Guía Gratuita, el Método Alfa, testimonios y los accesos directos a tu WhatsApp. ¡Mirala y contanos qué te parece!"*
+> *Incluye el logo definitivo 'Sello Celestial', los botones de descarga directa en PDF, el footer unificado con tus recursos oficiales y la conexión directa a tu WhatsApp. ¡Podés abrirla y navegarla desde tu celular o computadora!"*
