@@ -616,6 +616,9 @@
                         <i class="fa-solid fa-download"></i>
                         <span>Exportar CSV</span>
                     </button>
+                    <button class="btn btn-outline btn-sm" onclick="clearAllLeadsCache()" title="Vaciar lista en pantalla" style="color: var(--carbon-muted);">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
                 </div>
             </div>
 
@@ -671,8 +674,10 @@
                     </tbody>
                 </table>
             </div>
-            <div id="noLeadsNotice" style="display:none; text-align: center; padding: 24px; color: var(--carbon-muted); font-size: 0.9rem;">
-                No se encontraron contactos que coincidan con la búsqueda.
+            <div id="noLeadsNotice" style="display:none; text-align: center; padding: 40px 20px; color: var(--carbon-muted); font-size: 0.95rem;">
+                <i class="fa-solid fa-inbox" style="font-size: 2.2rem; color: var(--fuchsia); opacity: 0.6; display: block; margin-bottom: 10px;"></i>
+                <strong>Base de datos limpia y lista para recibir contactos.</strong><br>
+                <span style="font-size: 0.85rem;">Apenas una persona complete un formulario en la web, su registro se reflejará aquí y en tu Google Sheets en tiempo real.</span>
             </div>
         </section>
 
@@ -1062,40 +1067,21 @@
                 leads = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
             } catch(e) { leads = []; }
 
-            // Si está vacío, cargar ejemplos modelo para que Flor visualice la herramienta
-            if (leads.length === 0) {
-                leads = [
-                    {
-                        fecha: new Date().toLocaleDateString('es-AR') + ' 15:42',
-                        nombre: 'Laura Benítez',
-                        email: 'laura.benitez@empresa.com',
-                        whatsapp: '+54 9 11 4589-2211',
-                        recurso: 'Radiografía Alfa (Diagnóstico)',
-                        detalles: 'Meta: $1.800.000 ARS/mes | Acción: Armar propuesta'
-                    },
-                    {
-                        fecha: new Date().toLocaleDateString('es-AR') + ' 12:15',
-                        nombre: 'Carla Santillán',
-                        email: 'carla_santillan@gmail.com',
-                        whatsapp: '+54 9 351 678-9901',
-                        recurso: 'Biblioteca Completa de Guías Oficiales en PDF',
-                        detalles: 'Interesada en Hábitos Financieros'
-                    },
-                    {
-                        fecha: new Date().toLocaleDateString('es-AR') + ' 09:30',
-                        nombre: 'Mariana Rossi',
-                        email: 'marianarossi@outlook.com',
-                        whatsapp: '+54 9 11 3456-7890',
-                        recurso: 'Ritual 7 Días Materializar Dinero',
-                        detalles: 'Descarga directa desde web'
-                    }
-                ];
-                localStorage.setItem('fc_system_leads', JSON.stringify(leads));
-            }
+            // Filtrar cualquier dato de prueba anterior
+            const testEmails = ['test@florenciacastillo.com', 'browser@test.com', 'laura.benitez@empresa.com', 'carla_santillan@gmail.com', 'marianarossi@outlook.com'];
+            leads = leads.filter(l => !testEmails.includes((l.email || '').toLowerCase()) && !(l.nombre || '').toLowerCase().includes('prueba'));
+            localStorage.setItem('fc_system_leads', JSON.stringify(leads));
 
             currentLoadedLeads = leads;
             renderLeadsTable(leads);
             updateLeadsStats(leads);
+        }
+
+        function clearAllLeadsCache() {
+            if (confirm('¿Querés limpiar la lista de contactos en pantalla?')) {
+                localStorage.removeItem('fc_system_leads');
+                loadLeadsDashboard();
+            }
         }
 
         function reloadLeadsFromStorage() {
