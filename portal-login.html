@@ -267,6 +267,12 @@
                 <p class="login-sub">Ingresá con tu usuario y contraseña para acceder a tus clases y mentorías grabadas.</p>
             </div>
 
+            <!-- MENSAJE DE ERROR / FEEDBACK -->
+            <div id="loginErrorMsg" style="display:none; background: #FFF0F5; border: 1.5px solid var(--fuchsia); color: var(--carbon); padding: 12px 14px; border-radius: var(--radius-sm); font-size: 0.86rem; margin-bottom: 18px; text-align: center; font-weight: 500;">
+                <i class="fa-solid fa-circle-exclamation" style="color: var(--fuchsia); margin-right: 6px;"></i>
+                <span id="loginErrorText"></span>
+            </div>
+
             <form id="loginForm" onsubmit="handleLoginSubmit(event)">
                 <div class="form-group">
                     <label class="form-label" for="loginEmail">Correo Electrónico</label>
@@ -310,17 +316,31 @@
     </footer>
 
     <script>
+        function showError(msg) {
+            const errBox = document.getElementById('loginErrorMsg');
+            const errText = document.getElementById('loginErrorText');
+            if (errBox && errText) {
+                errText.textContent = msg;
+                errBox.style.display = 'block';
+            } else {
+                alert(msg);
+            }
+        }
+
         function demoLogin(role) {
-            let user;
+            const errBox = document.getElementById('loginErrorMsg');
+            if (errBox) errBox.style.display = 'none';
+
             if (role === 'admin') {
-                user = {
-                    role: 'admin',
-                    name: 'Flor Castillo',
-                    email: 'florenciacastillo.oficial@gmail.com',
-                    planName: 'Directora & Fundadora · Mujeres Alfa',
-                    loginTime: new Date().toISOString()
-                };
-            } else if (role === 'elite') {
+                document.getElementById('loginEmail').value = 'florenciacastillo.oficial@gmail.com';
+                document.getElementById('loginPass').value = '';
+                document.getElementById('loginPass').focus();
+                showError('Ingresá la clave de acceso de 4 dígitos para ingresar como Administradora.');
+                return;
+            }
+
+            let user;
+            if (role === 'elite') {
                 user = {
                     role: 'elite',
                     name: 'Valeria Giménez',
@@ -343,20 +363,46 @@
 
         function handleLoginSubmit(e) {
             e.preventDefault();
-            const email = document.getElementById('loginEmail').value.trim();
-            const pass = document.getElementById('loginPass').value.trim();
+            const errBox = document.getElementById('loginErrorMsg');
+            if (errBox) errBox.style.display = 'none';
+
+            const emailInput = document.getElementById('loginEmail');
+            const passInput = document.getElementById('loginPass');
+            const email = emailInput.value.trim().toLowerCase();
+            const pass = passInput.value.trim();
 
             if (!email || !pass) {
-                alert('Por favor ingresá tu email y contraseña.');
+                showError('Por favor ingresá tu correo y contraseña.');
                 return;
             }
 
-            const isFlor = email.toLowerCase().includes('florencia') || email.toLowerCase().includes('admin');
+            // ACCESO EXCLUSIVO ADMINISTRADORA (FLOR CASTILLO)
+            if (email === 'florenciacastillo.oficial@gmail.com') {
+                if (pass !== '2193') {
+                    showError('Contraseña incorrecta para la cuenta administradora de Flor Castillo.');
+                    passInput.value = '';
+                    passInput.focus();
+                    return;
+                }
+
+                const adminUser = {
+                    role: 'admin',
+                    name: 'Flor Castillo',
+                    email: 'florenciacastillo.oficial@gmail.com',
+                    planName: 'Directora & Fundadora · Mujeres Alfa',
+                    loginTime: new Date().toISOString()
+                };
+                localStorage.setItem('fc_alumna_auth', JSON.stringify(adminUser));
+                window.location.href = 'portal-dashboard.html';
+                return;
+            }
+
+            // Acceso para alumnas regulares
             const user = {
-                role: isFlor ? 'admin' : 'inicio',
-                name: isFlor ? 'Flor Castillo' : email.split('@')[0],
+                role: 'inicio',
+                name: email.split('@')[0],
                 email: email,
-                planName: isFlor ? 'Directora & Fundadora · Mujeres Alfa' : 'Método Alfa — El Inicio',
+                planName: 'Método Alfa — El Inicio',
                 loginTime: new Date().toISOString()
             };
             localStorage.setItem('fc_alumna_auth', JSON.stringify(user));
