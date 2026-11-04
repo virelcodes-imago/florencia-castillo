@@ -151,20 +151,26 @@
 
         .form-input-wrap {
             position: relative;
+            display: flex;
+            align-items: center;
         }
 
         .form-input-wrap i {
             position: absolute;
-            left: 14px;
+            left: 16px;
             top: 50%;
             transform: translateY(-50%);
             color: var(--carbon-muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            pointer-events: none;
+            z-index: 2;
         }
 
+        .form-group .form-input-wrap input,
+        .form-input-wrap .form-input,
         .form-input {
             width: 100%;
-            padding: 13px 14px 13px 40px;
+            padding: 13px 16px 13px 46px !important;
             background: var(--marfil);
             border: 1px solid rgba(43,36,53,0.18);
             border-radius: var(--radius-sm);
@@ -175,6 +181,8 @@
             transition: all 0.2s;
         }
 
+        .form-group .form-input-wrap input:focus,
+        .form-input-wrap .form-input:focus,
         .form-input:focus {
             border-color: var(--fuchsia);
             box-shadow: 0 0 0 3px rgba(212,0,106,0.12);

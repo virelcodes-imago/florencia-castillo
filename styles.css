@@ -726,6 +726,11 @@ a {
     transition: var(--transition-smooth);
 }
 
+.form-input-wrap input,
+.form-group .form-input-wrap input {
+    padding-left: 46px !important;
+}
+
 .form-group input:focus {
     border-color: var(--fuchsia);
     box-shadow: 0 0 0 3px var(--fuchsia-subtle);
