@@ -553,16 +553,16 @@
 </head>
 <body>
 
-    <!-- BARRA FLOTANTE DE TESTEO DE ROLES -->
-    <div class="role-switcher-banner">
-        <span>🧪 Probar experiencia según compra:</span>
-        <button class="btn-switch-sm" onclick="setDemoRole('inicio')">Ver como Alumna "Inicio"</button>
-        <button class="btn-switch-sm" onclick="setDemoRole('elite')">Ver como Alumna "Elite (6 Meses)"</button>
+    <!-- BARRA FLOTANTE DE TESTEO DE ROLES (SOLO VISIBLE PARA ADMINISTRACIÓN) -->
+    <div class="role-switcher-banner" id="roleSwitcherBanner" style="display: none;">
+        <span>👑 Modo Administración Activo:</span>
+        <button class="btn-switch-sm" onclick="setDemoRole('inicio')">Vista Alumna "Inicio"</button>
+        <button class="btn-switch-sm" onclick="setDemoRole('elite')">Vista Alumna "Elite (6 Meses)"</button>
         <button class="btn-switch-sm" style="background: var(--fuchsia); font-weight: 700;" onclick="setDemoRole('admin')">
-            <i class="fa-solid fa-crown"></i> Flor Castillo (Admin & Base de Datos)
+            <i class="fa-solid fa-crown"></i> Volver a Panel Admin
         </button>
         <span style="opacity: 0.5;">|</span>
-        <a href="portal-login.html" style="color: #fff; text-decoration: underline; font-size: 0.75rem;">Cerrar sesión</a>
+        <a href="portal-login.html" onclick="logout()" style="color: #fff; text-decoration: underline; font-size: 0.75rem;">Cerrar sesión</a>
     </div>
 
     <!-- HEADER DEL CAMPUS -->
@@ -953,11 +953,23 @@
 
         function checkAuth() {
             const rawUser = localStorage.getItem('fc_alumna_auth');
-            let user = { role: 'inicio', name: 'Marcela', email: 'marcela@ejemplo.com' };
-            if (rawUser) {
-                try { user = JSON.parse(rawUser); } catch(e) {}
-            } else {
-                localStorage.setItem('fc_alumna_auth', JSON.stringify(user));
+            if (!rawUser) {
+                // Expulsar de inmediato al login si no hay sesión
+                window.location.replace('portal-login.html');
+                return;
+            }
+            let user;
+            try { 
+                user = JSON.parse(rawUser); 
+            } catch(e) {
+                localStorage.removeItem('fc_alumna_auth');
+                window.location.replace('portal-login.html');
+                return;
+            }
+            if (!user || !user.role || !user.email) {
+                localStorage.removeItem('fc_alumna_auth');
+                window.location.replace('portal-login.html');
+                return;
             }
             applyUserRole(user);
         }
@@ -972,6 +984,13 @@
             const eliteLocked = document.getElementById('eliteLockedContent');
             const tagEliteStatus = document.getElementById('tagEliteStatus');
             const adminSection = document.getElementById('adminLeadsSection');
+            const switcherBanner = document.getElementById('roleSwitcherBanner');
+
+            // Solo mostrar la barra de control de roles a Flor (Admin)
+            const isAdminSession = user.role === 'admin' || user.email === 'florenciacastillo.oficial@gmail.com';
+            if (switcherBanner) {
+                switcherBanner.style.display = isAdminSession ? 'flex' : 'none';
+            }
 
             if (user.role === 'admin') {
                 roleBadge.className = 'user-badge-role badge-role-admin';
@@ -1004,6 +1023,11 @@
         function setDemoRole(role) {
             let user;
             if (role === 'admin') {
+                const pass = prompt('Por seguridad, ingresá la clave de Administradora (4 dígitos):');
+                if (pass !== '2193') {
+                    alert('Clave incorrecta. Acceso denegado.');
+                    return;
+                }
                 user = {
                     role: 'admin',
                     name: 'Flor Castillo',

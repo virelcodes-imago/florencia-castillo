@@ -517,18 +517,41 @@
         let completedLessons = new Set(JSON.parse(localStorage.getItem('fc_completed_lessons') || '[1]'));
 
         function initAula() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const reqCourse = urlParams.get('curso');
-            if (reqCourse === 'elite') {
-                currentCourseKey = 'elite';
+            const rawUser = localStorage.getItem('fc_alumna_auth');
+            if (!rawUser) {
+                window.location.replace('portal-login.html');
+                return;
+            }
+            let u;
+            try {
+                u = JSON.parse(rawUser);
+            } catch(e) {
+                localStorage.removeItem('fc_alumna_auth');
+                window.location.replace('portal-login.html');
+                return;
+            }
+            if (!u || !u.role || !u.email) {
+                localStorage.removeItem('fc_alumna_auth');
+                window.location.replace('portal-login.html');
+                return;
             }
 
-            const rawUser = localStorage.getItem('fc_alumna_auth');
-            if (rawUser) {
-                try {
-                    const u = JSON.parse(rawUser);
-                    document.getElementById('userGreetingAula').innerHTML = `Alumna: <strong>${u.name}</strong>`;
-                } catch(e) {}
+            document.getElementById('userGreetingAula').innerHTML = `${u.role === 'admin' ? '👑 Admin' : 'Alumna'}: <strong>${u.name}</strong>`;
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const reqCourse = urlParams.get('curso');
+
+            // Control de acceso al programa Elite
+            if (reqCourse === 'elite') {
+                if (u.role === 'elite' || u.role === 'admin') {
+                    currentCourseKey = 'elite';
+                } else {
+                    alert('Este módulo pertenece exclusivamente al Programa Mujeres Alfa Elite (6 Meses). Redirigiendo a tus clases asignadas.');
+                    window.location.href = 'portal-aula.html?curso=inicio';
+                    return;
+                }
+            } else {
+                currentCourseKey = 'inicio';
             }
 
             const course = COURSE_DATA[currentCourseKey];
