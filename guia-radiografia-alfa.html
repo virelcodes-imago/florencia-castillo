@@ -998,6 +998,41 @@
                 "Paso 5 - Alfa 5 (En 7 días)": a5
             };
 
+            // 1. Guardar en Google Sheets Oficial de Flor
+            const FC_SHEETS_WEBHOOK = "https://script.google.com/macros/s/AKfycbxX5uH6rm3F2rW0ElLnIx-XoNBjnfxX0ICvssi9XVN1hTL89-n761enBKZklurY9j7HhQ/exec";
+            fetch(FC_SHEETS_WEBHOOK, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "text/plain" },
+                body: JSON.stringify({
+                    nombre: name,
+                    email: email,
+                    whatsapp: phone || "No informado",
+                    recurso: "Radiografía Alfa (Diagnóstico Completo)",
+                    detalles: {
+                        trabajo: p2_a,
+                        dineroActual: p2_c,
+                        dineroMeta: p2_d,
+                        habitoNegativo: p4,
+                        accion7Dias: a5
+                    }
+                })
+            }).catch(e => console.warn("Google Sheets error:", e));
+
+            // Guardar en caché local para panel de Flor
+            try {
+                const stored = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
+                stored.unshift({
+                    fecha: new Date().toLocaleString('es-AR'),
+                    nombre: name,
+                    email: email,
+                    whatsapp: phone || 'No informado',
+                    recurso: 'Radiografía Alfa (Diagnóstico)',
+                    detalles: `Meta: ${p2_d || 'N/A'} | Acción: ${a5 || 'N/A'}`
+                });
+                localStorage.setItem('fc_system_leads', JSON.stringify(stored.slice(0, 500)));
+            } catch(e) {}
+
             fetch(`https://formsubmit.co/ajax/${FLOR_EMAIL}`, {
                 method: "POST",
                 headers: { 

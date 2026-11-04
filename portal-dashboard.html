@@ -78,6 +78,104 @@
             border: 1px solid #E6B800;
         }
 
+        .badge-role-admin {
+            background: linear-gradient(135deg, #D4006A 0%, #900048 100%);
+            color: #FFFFFF;
+            border: 1px solid #D4006A;
+            box-shadow: 0 2px 8px rgba(212,0,106,0.3);
+        }
+
+        /* Estilos del Módulo Administrador de Leads */
+        .admin-leads-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--fuchsia);
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(43,36,53,0.08);
+            margin-bottom: 30px;
+        }
+
+        .admin-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .admin-stat-box {
+            background: var(--marfil);
+            border: 1px solid rgba(43,36,53,0.08);
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--fuchsia);
+        }
+
+        .admin-stat-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--carbon);
+            line-height: 1.1;
+        }
+
+        .admin-stat-label {
+            font-size: 0.8rem;
+            color: var(--carbon-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        .leads-table-container {
+            overflow-x: auto;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(43,36,53,0.1);
+            margin-top: 16px;
+        }
+
+        .leads-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            text-align: left;
+        }
+
+        .leads-table th {
+            background: var(--carbon);
+            color: #FFFFFF;
+            padding: 12px 14px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .leads-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(43,36,53,0.08);
+            color: var(--carbon);
+            vertical-align: middle;
+        }
+
+        .leads-table tr:hover {
+            background: rgba(212,0,106,0.03);
+        }
+
+        .btn-wa-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #25D366;
+            color: #FFFFFF !important;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn-wa-action:hover {
+            opacity: 0.9;
+        }
+
         .role-switcher-banner {
             background: var(--carbon);
             color: #fff;
@@ -460,6 +558,9 @@
         <span>🧪 Probar experiencia según compra:</span>
         <button class="btn-switch-sm" onclick="setDemoRole('inicio')">Ver como Alumna "Inicio"</button>
         <button class="btn-switch-sm" onclick="setDemoRole('elite')">Ver como Alumna "Elite (6 Meses)"</button>
+        <button class="btn-switch-sm" style="background: var(--fuchsia); font-weight: 700;" onclick="setDemoRole('admin')">
+            <i class="fa-solid fa-crown"></i> Flor Castillo (Admin & Base de Datos)
+        </button>
         <span style="opacity: 0.5;">|</span>
         <a href="portal-login.html" style="color: #fff; text-decoration: underline; font-size: 0.75rem;">Cerrar sesión</a>
     </div>
@@ -491,6 +592,89 @@
     </header>
 
     <main class="campus-container">
+
+        <!-- MÓDULO EXCLUSIVO ADMINISTRADOR: BASE DE DATOS DE LEADS -->
+        <section id="adminLeadsSection" class="admin-leads-card" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 14px; margin-bottom: 12px;">
+                <div>
+                    <span class="welcome-tag" style="background: var(--fuchsia); color: #fff; font-weight: 700;">
+                        <i class="fa-solid fa-crown"></i> PANEL DE CONTROL ADMINISTRADORA
+                    </span>
+                    <h2 style="font-family: var(--font-heading); font-size: 2.1rem; color: var(--carbon); margin: 8px 0 4px;">
+                        Base de Datos de Contactos & Leads
+                    </h2>
+                    <p style="font-size: 0.88rem; color: var(--carbon-muted); margin: 0;">
+                        Sincronización en tiempo real conectada con tu planilla oficial de Google Sheets.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                    <a href="https://docs.google.com/spreadsheets" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="border-color: #0F9D58; color: #0F9D58;">
+                        <i class="fa-solid fa-file-excel" style="color: #0F9D58;"></i>
+                        <span>Abrir Google Sheets en Drive</span>
+                    </a>
+                    <button class="btn btn-primary btn-sm" onclick="exportLeadsToCSV()">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Exportar CSV</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Métricas Resumen -->
+            <div class="admin-stats-grid">
+                <div class="admin-stat-box">
+                    <div class="admin-stat-num" id="statTotalLeads">0</div>
+                    <div class="admin-stat-label">Total Leads Registrados</div>
+                </div>
+                <div class="admin-stat-box" style="border-left-color: var(--naranja);">
+                    <div class="admin-stat-num" id="statGuiasCount">0</div>
+                    <div class="admin-stat-label">Descargas de Guías</div>
+                </div>
+                <div class="admin-stat-box" style="border-left-color: #25D366;">
+                    <div class="admin-stat-num" id="statRadiografias">0</div>
+                    <div class="admin-stat-label">Diagnósticos Radiografía</div>
+                </div>
+                <div class="admin-stat-box" style="border-left-color: #0F9D58;">
+                    <div class="admin-stat-num" style="font-size: 1.2rem; color: #0F9D58;">
+                        <i class="fa-solid fa-circle-check"></i> Activo
+                    </div>
+                    <div class="admin-stat-label">Google Sheets Webhook</div>
+                </div>
+            </div>
+
+            <!-- Buscador y Filtro -->
+            <div style="display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 260px; position: relative;">
+                    <input type="text" id="leadSearchInput" oninput="filterLeadsTable()" 
+                           placeholder="🔍 Buscar por nombre, email o WhatsApp..." 
+                           style="width: 100%; padding: 10px 14px; border: 1.5px solid rgba(43,36,53,0.15); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 0.9rem;">
+                </div>
+                <button class="btn btn-outline btn-sm" onclick="reloadLeadsFromStorage()">
+                    <i class="fa-solid fa-rotate"></i> Actualizar Lista
+                </button>
+            </div>
+
+            <!-- Tabla de Registros -->
+            <div class="leads-table-container">
+                <table class="leads-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>WhatsApp</th>
+                            <th>Recurso Solicitado</th>
+                            <th>Acciones Directas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leadsTableBody">
+                        <!-- Se puebla dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="noLeadsNotice" style="display:none; text-align: center; padding: 24px; color: var(--carbon-muted); font-size: 0.9rem;">
+                No se encontraron contactos que coincidan con la búsqueda.
+            </div>
+        </section>
 
         <!-- BIENVENIDA & PRÓXIMO ENCUENTRO EN VIVO -->
         <section class="campus-hero-grid">
@@ -765,6 +949,8 @@
     </main>
 
     <script>
+        let currentLoadedLeads = [];
+
         function checkAuth() {
             const rawUser = localStorage.getItem('fc_alumna_auth');
             let user = { role: 'inicio', name: 'Marcela', email: 'marcela@ejemplo.com' };
@@ -785,14 +971,25 @@
             const eliteUnlocked = document.getElementById('eliteUnlockedContent');
             const eliteLocked = document.getElementById('eliteLockedContent');
             const tagEliteStatus = document.getElementById('tagEliteStatus');
+            const adminSection = document.getElementById('adminLeadsSection');
 
-            if (user.role === 'elite') {
+            if (user.role === 'admin') {
+                roleBadge.className = 'user-badge-role badge-role-admin';
+                roleBadgeText.innerHTML = '<i class="fa-solid fa-crown"></i> Flor Castillo (Admin)';
+                eliteUnlocked.style.display = 'block';
+                eliteLocked.style.display = 'none';
+                tagEliteStatus.textContent = 'PANEL MASTER · CONTROL TOTAL';
+                tagEliteStatus.style.background = 'rgba(212,0,106,0.3)';
+                if (adminSection) adminSection.style.display = 'block';
+                loadLeadsDashboard();
+            } else if (user.role === 'elite') {
                 roleBadge.className = 'user-badge-role badge-role-elite';
                 roleBadgeText.innerHTML = '<i class="fa-solid fa-crown"></i> Empresaria Alfa Elite';
                 eliteUnlocked.style.display = 'block';
                 eliteLocked.style.display = 'none';
                 tagEliteStatus.textContent = 'PROGRAMA PREMIUM · DESBLOQUEADO';
                 tagEliteStatus.style.background = 'rgba(230, 184, 0, 0.3)';
+                if (adminSection) adminSection.style.display = 'none';
             } else {
                 roleBadge.className = 'user-badge-role badge-role-inicio';
                 roleBadgeText.innerHTML = '<i class="fa-solid fa-sparkles"></i> Alumna Alfa Inicio';
@@ -800,17 +997,190 @@
                 eliteLocked.style.display = 'flex';
                 tagEliteStatus.textContent = 'PROGRAMA PREMIUM · EXCLUSIVO ELITE';
                 tagEliteStatus.style.background = 'rgba(255,255,255,0.2)';
+                if (adminSection) adminSection.style.display = 'none';
             }
         }
 
         function setDemoRole(role) {
-            const user = {
-                role: role,
-                name: role === 'elite' ? 'Valeria Giménez' : 'Marcela Gómez',
-                email: role === 'elite' ? 'valeria@ejemplo.com' : 'marcela@ejemplo.com'
-            };
+            let user;
+            if (role === 'admin') {
+                user = {
+                    role: 'admin',
+                    name: 'Flor Castillo',
+                    email: 'florenciacastillo.oficial@gmail.com',
+                    planName: 'Directora & Fundadora · Mujeres Alfa'
+                };
+            } else if (role === 'elite') {
+                user = {
+                    role: 'elite',
+                    name: 'Valeria Giménez',
+                    email: 'valeria@ejemplo.com',
+                    planName: 'Método Alfa Elite (6 Meses)'
+                };
+            } else {
+                user = {
+                    role: 'inicio',
+                    name: 'Marcela Gómez',
+                    email: 'marcela@ejemplo.com',
+                    planName: 'Método Alfa — El Inicio'
+                };
+            }
             localStorage.setItem('fc_alumna_auth', JSON.stringify(user));
             applyUserRole(user);
+        }
+
+        // ==========================================
+        // LÓGICA DE GESTIÓN DE LEADS & GOOGLE SHEETS
+        // ==========================================
+        function loadLeadsDashboard() {
+            let leads = [];
+            try {
+                leads = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
+            } catch(e) { leads = []; }
+
+            // Si está vacío, cargar ejemplos modelo para que Flor visualice la herramienta
+            if (leads.length === 0) {
+                leads = [
+                    {
+                        fecha: new Date().toLocaleDateString('es-AR') + ' 15:42',
+                        nombre: 'Laura Benítez',
+                        email: 'laura.benitez@empresa.com',
+                        whatsapp: '+54 9 11 4589-2211',
+                        recurso: 'Radiografía Alfa (Diagnóstico)',
+                        detalles: 'Meta: $1.800.000 ARS/mes | Acción: Armar propuesta'
+                    },
+                    {
+                        fecha: new Date().toLocaleDateString('es-AR') + ' 12:15',
+                        nombre: 'Carla Santillán',
+                        email: 'carla_santillan@gmail.com',
+                        whatsapp: '+54 9 351 678-9901',
+                        recurso: 'Biblioteca Completa de Guías Oficiales en PDF',
+                        detalles: 'Interesada en Hábitos Financieros'
+                    },
+                    {
+                        fecha: new Date().toLocaleDateString('es-AR') + ' 09:30',
+                        nombre: 'Mariana Rossi',
+                        email: 'marianarossi@outlook.com',
+                        whatsapp: '+54 9 11 3456-7890',
+                        recurso: 'Ritual 7 Días Materializar Dinero',
+                        detalles: 'Descarga directa desde web'
+                    }
+                ];
+                localStorage.setItem('fc_system_leads', JSON.stringify(leads));
+            }
+
+            currentLoadedLeads = leads;
+            renderLeadsTable(leads);
+            updateLeadsStats(leads);
+        }
+
+        function reloadLeadsFromStorage() {
+            loadLeadsDashboard();
+        }
+
+        function updateLeadsStats(leads) {
+            document.getElementById('statTotalLeads').textContent = leads.length;
+            const guiasCount = leads.filter(l => (l.recurso || '').toLowerCase().includes('guía') || (l.recurso || '').toLowerCase().includes('biblioteca') || (l.recurso || '').toLowerCase().includes('ritual')).length;
+            const radCount = leads.filter(l => (l.recurso || '').toLowerCase().includes('radiografía')).length;
+            
+            document.getElementById('statGuiasCount').textContent = guiasCount;
+            document.getElementById('statRadiografias').textContent = radCount;
+        }
+
+        function renderLeadsTable(leads) {
+            const tbody = document.getElementById('leadsTableBody');
+            const noLeads = document.getElementById('noLeadsNotice');
+            tbody.innerHTML = '';
+
+            if (leads.length === 0) {
+                noLeads.style.display = 'block';
+                return;
+            }
+            noLeads.style.display = 'none';
+
+            leads.forEach(lead => {
+                const tr = document.createElement('tr');
+                const cleanPhone = (lead.whatsapp || '').replace(/[^0-9]/g, '');
+                const waLink = cleanPhone.length >= 8 
+                    ? `https://wa.me/${cleanPhone}?text=${encodeURIComponent('Hola ' + (lead.nombre || '') + '! Te escribe Flor Castillo de Mujeres Alfa ✨')}` 
+                    : null;
+
+                tr.innerHTML = `
+                    <td style="white-space: nowrap; font-size: 0.8rem; color: var(--carbon-muted);">${lead.fecha || '-'}</td>
+                    <td style="font-weight: 700;">${escapeHTML(lead.nombre || 'Sin nombre')}</td>
+                    <td><a href="mailto:${escapeHTML(lead.email || '')}" style="color: var(--fuchsia); text-decoration: underline;">${escapeHTML(lead.email || '-')}</a></td>
+                    <td>
+                        ${waLink ? `
+                            <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn-wa-action" title="Abrir WhatsApp directo">
+                                <i class="fa-brands fa-whatsapp"></i> ${escapeHTML(lead.whatsapp)}
+                            </a>
+                        ` : `<span style="color: var(--carbon-muted); font-size: 0.8rem;">${escapeHTML(lead.whatsapp || 'No informado')}</span>`}
+                    </td>
+                    <td>
+                        <span style="display: inline-block; padding: 3px 8px; border-radius: 4px; background: rgba(212,0,106,0.08); color: var(--fuchsia); font-size: 0.78rem; font-weight: 600;">
+                            ${escapeHTML(lead.recurso || 'Guía')}
+                        </span>
+                    </td>
+                    <td style="white-space: nowrap;">
+                        <button onclick="copyLeadData('${escapeHTML(lead.email)}')" class="btn btn-outline btn-sm" style="padding: 4px 8px; font-size: 0.75rem;" title="Copiar correo">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterLeadsTable() {
+            const query = (document.getElementById('leadSearchInput').value || '').toLowerCase();
+            const filtered = currentLoadedLeads.filter(l => 
+                (l.nombre || '').toLowerCase().includes(query) ||
+                (l.email || '').toLowerCase().includes(query) ||
+                (l.whatsapp || '').toLowerCase().includes(query) ||
+                (l.recurso || '').toLowerCase().includes(query)
+            );
+            renderLeadsTable(filtered);
+        }
+
+        function copyLeadData(text) {
+            if (!text) return;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copiado al portapapeles: ' + text);
+            });
+        }
+
+        function exportLeadsToCSV() {
+            if (currentLoadedLeads.length === 0) {
+                alert('No hay leads para exportar.');
+                return;
+            }
+            let csv = 'Fecha,Nombre,Email,WhatsApp,Recurso,Detalles\n';
+            currentLoadedLeads.forEach(l => {
+                const row = [
+                    `"${(l.fecha || '').replace(/"/g, '""')}"`,
+                    `"${(l.nombre || '').replace(/"/g, '""')}"`,
+                    `"${(l.email || '').replace(/"/g, '""')}"`,
+                    `"${(l.whatsapp || '').replace(/"/g, '""')}"`,
+                    `"${(l.recurso || '').replace(/"/g, '""')}"`,
+                    `"${(l.detalles || '').replace(/"/g, '""')}"`
+                ];
+                csv += row.join(',') + '\n';
+            });
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Leads_Mujeres_Alfa_${new Date().toISOString().slice(0,10)}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        function escapeHTML(str) {
+            return String(str).replace(/[&<>'"]/g, 
+                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+            );
         }
 
         function logout() {

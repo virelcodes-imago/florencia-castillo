@@ -233,10 +233,13 @@
     <div class="demo-bar">
         <span>⚡ Modo Demo (Para probar el portal ahora):</span>
         <button class="btn-demo-pill" onclick="demoLogin('inicio')">
-            <i class="fa-solid fa-user"></i> Entrar como Alumna Método Alfa (Inicio)
+            <i class="fa-solid fa-user"></i> Entrar como Alumna (Inicio)
         </button>
         <button class="btn-demo-pill" onclick="demoLogin('elite')">
-            <i class="fa-solid fa-crown"></i> Entrar como Empresaria Alfa (Elite)
+            <i class="fa-solid fa-crown"></i> Entrar como Alumna (Elite)
+        </button>
+        <button class="btn-demo-pill" style="background: var(--fuchsia); color: white;" onclick="demoLogin('admin')">
+            <i class="fa-solid fa-chart-line"></i> Entrar como Flor Castillo (Admin & Base de Datos)
         </button>
     </div>
 
@@ -308,13 +311,32 @@
 
     <script>
         function demoLogin(role) {
-            const user = {
-                role: role, // 'inicio' o 'elite'
-                name: role === 'elite' ? 'Valeria Giménez' : 'Marcela Gómez',
-                email: role === 'elite' ? 'valeria@ejemplo.com' : 'marcela@ejemplo.com',
-                planName: role === 'elite' ? 'Método Alfa Elite (6 Meses)' : 'Método Alfa — El Inicio',
-                loginTime: new Date().toISOString()
-            };
+            let user;
+            if (role === 'admin') {
+                user = {
+                    role: 'admin',
+                    name: 'Flor Castillo',
+                    email: 'florenciacastillo.oficial@gmail.com',
+                    planName: 'Directora & Fundadora · Mujeres Alfa',
+                    loginTime: new Date().toISOString()
+                };
+            } else if (role === 'elite') {
+                user = {
+                    role: 'elite',
+                    name: 'Valeria Giménez',
+                    email: 'valeria@ejemplo.com',
+                    planName: 'Método Alfa Elite (6 Meses)',
+                    loginTime: new Date().toISOString()
+                };
+            } else {
+                user = {
+                    role: 'inicio',
+                    name: 'Marcela Gómez',
+                    email: 'marcela@ejemplo.com',
+                    planName: 'Método Alfa — El Inicio',
+                    loginTime: new Date().toISOString()
+                };
+            }
             localStorage.setItem('fc_alumna_auth', JSON.stringify(user));
             window.location.href = 'portal-dashboard.html';
         }
@@ -329,12 +351,12 @@
                 return;
             }
 
-            // Simulación de autenticación (por defecto rol Inicio)
+            const isFlor = email.toLowerCase().includes('florencia') || email.toLowerCase().includes('admin');
             const user = {
-                role: 'inicio',
-                name: email.split('@')[0],
+                role: isFlor ? 'admin' : 'inicio',
+                name: isFlor ? 'Flor Castillo' : email.split('@')[0],
                 email: email,
-                planName: 'Método Alfa — El Inicio',
+                planName: isFlor ? 'Directora & Fundadora · Mujeres Alfa' : 'Método Alfa — El Inicio',
                 loginTime: new Date().toISOString()
             };
             localStorage.setItem('fc_alumna_auth', JSON.stringify(user));

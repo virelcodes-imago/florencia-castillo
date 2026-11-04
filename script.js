@@ -45,6 +45,38 @@ function toggleFaq(element) {
     currentItem.classList.toggle('active');
 }
 
+// Google Sheets Webhook de Base de Datos Oficial
+const FC_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxX5uH6rm3F2rW0ElLnIx-XoNBjnfxX0ICvssi9XVN1hTL89-n761enBKZklurY9j7HhQ/exec';
+
+// Función global para registrar leads en Google Sheets y en caché local
+function recordLeadInSystem(leadData) {
+    // 1. Guardar en caché local para el panel de Flor
+    try {
+        const stored = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
+        stored.unshift({
+            fecha: new Date().toLocaleString('es-AR'),
+            nombre: leadData.nombre || '',
+            email: leadData.email || '',
+            whatsapp: leadData.whatsapp || 'No informado',
+            recurso: leadData.recurso || 'General',
+            detalles: leadData.detalles || ''
+        });
+        localStorage.setItem('fc_system_leads', JSON.stringify(stored.slice(0, 500)));
+    } catch (e) {
+        console.warn('Cache local error:', e);
+    }
+
+    // 2. Enviar a Google Apps Script / Google Sheets
+    return fetch(FC_SHEETS_WEBHOOK, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'text/plain'
+        },
+        body: JSON.stringify(leadData)
+    }).catch(err => console.warn('Error en Google Sheets Webhook:', err));
+}
+
 // Lead Magnet Form Submission Handler
 function handleLeadSubmit(event) {
     event.preventDefault();
@@ -58,7 +90,18 @@ function handleLeadSubmit(event) {
         return;
     }
 
-    // Send lead data to Flor's email
+    const leadPayload = {
+        nombre: name,
+        email: email,
+        whatsapp: phone || 'No informado',
+        recurso: 'Guía Radiografía Alfa (Lead Magnet Home)',
+        origen: 'Formulario Home Lead Magnet'
+    };
+
+    // Registrar en Google Sheets oficial
+    recordLeadInSystem(leadPayload);
+
+    // Enviar copia a la casilla de Flor por FormSubmit como respaldo
     fetch('https://formsubmit.co/ajax/florenciacastillo.oficial@gmail.com', {
         method: 'POST',
         headers: {
@@ -74,10 +117,12 @@ function handleLeadSubmit(event) {
             whatsapp: phone || 'No informado',
             origen: 'Formulario Home Lead Magnet'
         })
-    }).catch(err => console.log('Error enviando lead:', err));
+    }).catch(err => console.log('Error enviando respaldo FormSubmit:', err));
 
-    form.style.display = 'none';
-    successBox.style.display = 'block';
+    const form = document.getElementById('leadForm');
+    const successBox = document.getElementById('formSuccess');
+    if (form) form.style.display = 'none';
+    if (successBox) successBox.style.display = 'block';
 }
 
 // ScrollSpy to highlight active link

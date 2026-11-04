@@ -483,6 +483,21 @@
                 fecha: new Date().toLocaleString('es-AR')
             };
 
+            // Guardar en Google Sheets Oficial
+            const FC_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxX5uH6rm3F2rW0ElLnIx-XoNBjnfxX0ICvssi9XVN1hTL89-n761enBKZklurY9j7HhQ/exec';
+            fetch(FC_SHEETS_WEBHOOK, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify(payload)
+            }).catch(e => console.warn('Google Sheets error:', e));
+
+            try {
+                const stored = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
+                stored.unshift(payload);
+                localStorage.setItem('fc_system_leads', JSON.stringify(stored.slice(0, 500)));
+            } catch(e) {}
+
             // Enviar a FormSubmit
             fetch('https://formsubmit.co/ajax/florenciacastillo.oficial@gmail.com', {
                 method: 'POST',
