@@ -1137,13 +1137,13 @@
                         <form id="unifiedLeadForm" onsubmit="handleUnifiedLeadSubmit(event)">
                             <div class="unified-form-grid">
                                 <div>
-                                    <input type="text" id="uniName" class="form-control-uni" required placeholder="Tu Nombre completo *">
+                                    <input type="text" id="uniName" class="form-control-uni" required placeholder="Ej. Sofía Ramos">
                                 </div>
                                 <div>
-                                    <input type="email" id="uniEmail" class="form-control-uni" required placeholder="Tu mejor Correo Electrónico *">
+                                    <input type="email" id="uniEmail" class="form-control-uni" required placeholder="sofia@ejemplo.com">
                                 </div>
                                 <div>
-                                    <input type="tel" id="uniPhone" class="form-control-uni" placeholder="WhatsApp (Opcional)">
+                                    <input type="tel" id="uniPhone" class="form-control-uni" placeholder="Ej. +54 9 11 1234-5678">
                                 </div>
                             </div>
                             <button type="submit" id="btnUniSubmit" class="btn btn-primary btn-block btn-lg">
@@ -1333,13 +1333,13 @@
                         <form id="masterclassForm" onsubmit="handleMasterclassSubmit(event)">
                             <div class="mc-form-grid">
                                 <div>
-                                    <input type="text" id="mcName" class="form-control-mc" required placeholder="Tu Nombre completo *">
+                                    <input type="text" id="mcName" class="form-control-mc" required placeholder="Ej. Sofía Ramos">
                                 </div>
                                 <div>
-                                    <input type="email" id="mcEmail" class="form-control-mc" required placeholder="Tu mejor Correo Electrónico *">
+                                    <input type="email" id="mcEmail" class="form-control-mc" required placeholder="sofia@ejemplo.com">
                                 </div>
                                 <div>
-                                    <input type="tel" id="mcPhone" class="form-control-mc" placeholder="WhatsApp (Opcional)">
+                                    <input type="tel" id="mcPhone" class="form-control-mc" placeholder="Ej. +54 9 11 1234-5678">
                                 </div>
                             </div>
                             <div style="display: flex; justify-content: center; margin-top: 14px;">
@@ -1478,11 +1478,6 @@
                 try {
                     const data = JSON.parse(savedLead);
                     unlockLibraryUI(data.name || 'Emprendedora');
-
-                    // Prellenar inputs de la Masterclass
-                    if (document.getElementById('mcName') && data.name) document.getElementById('mcName').value = data.name;
-                    if (document.getElementById('mcEmail') && data.email) document.getElementById('mcEmail').value = data.email;
-                    if (document.getElementById('mcPhone') && data.phone && data.phone !== 'No informado') document.getElementById('mcPhone').value = data.phone;
                 } catch(e) {}
             }
 
@@ -1551,11 +1546,6 @@
                 localStorage.setItem('fc_lead_user', JSON.stringify({ name, email, phone }));
                 localStorage.setItem('fc_library_unlocked', 'true');
                 unlockLibraryUI(name);
-
-                // Prellenar form de Masterclass si está vacío
-                if (document.getElementById('mcName') && !document.getElementById('mcName').value) document.getElementById('mcName').value = name;
-                if (document.getElementById('mcEmail') && !document.getElementById('mcEmail').value) document.getElementById('mcEmail').value = email;
-                if (document.getElementById('mcPhone') && !document.getElementById('mcPhone').value) document.getElementById('mcPhone').value = phone;
             });
         }
 
