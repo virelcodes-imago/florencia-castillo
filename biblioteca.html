@@ -1419,20 +1419,56 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- MODAL DE DESCARGA RÁPIDA (SOLO PARA QUIENES NO DEJARON SUS DATOS AÚN) -->
+    <div class="download-modal-overlay" id="downloadModal" onclick="closeDownloadModalOnOverlay(event)">
+        <div class="download-modal-box">
+            <button class="download-modal-close" onclick="closeDownloadModal()" aria-label="Cerrar modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <span class="unified-lead-badge">ACCESO A LA BIBLIOTECA</span>
+                <h3 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--fuchsia); margin: 8px 0 6px;">
+                    Desbloqueá tus Recursos Gratuitos
+                </h3>
+                <p style="font-size: 0.88rem; color: var(--carbon-light); margin: 0; line-height: 1.45;">
+                    Ingresá tus datos una sola vez para descargar este recurso y habilitar la descarga directa de toda la biblioteca:
+                </p>
+            </div>
+            <form id="modalLeadForm" onsubmit="handleModalLeadSubmit(event)">
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px;">
+                    <div>
+                        <input type="text" id="modalUniName" class="form-control-uni" required placeholder="Tu Nombre completo (ej. Sofía Ramos)">
+                    </div>
+                    <div>
+                        <input type="email" id="modalUniEmail" class="form-control-uni" required placeholder="Tu Correo electrónico (ej. sofia@ejemplo.com)">
+                    </div>
+                    <div>
+                        <input type="tel" id="modalUniPhone" class="form-control-uni" placeholder="WhatsApp (opcional, ej. +54 9 11 ...)">
+                    </div>
+                </div>
+                <button type="submit" id="btnModalUniSubmit" class="btn btn-primary btn-block btn-lg" style="width: 100%;">
+                    <span>Descargar Guía y Desbloquear Biblioteca</span>
+                    <i class="fa-solid fa-unlock"></i>
+                </button>
+                <p style="font-size: 0.74rem; color: var(--carbon-muted); text-align: center; margin-top: 10px; margin-bottom: 0;">
+                    🔒 Cero spam. Datos protegidos y confidenciales.
+                </p>
+            </form>
+        </div>
+    </div>
+
     <!-- SCRIPT: CAROUSEL STACK 3D, UNIFIED LEAD SYSTEM & MASTERCLASS -->
     <script>
         // ==========================================
-        // 1. GESTIÓN UNIFICADA DE LEADS
+        // 1. GESTIÓN UNIFICADA DE LEADS & MODAL INTELIGENTE
         // ==========================================
         let isLibraryUnlocked = false;
+        let pendingDownload = null;
 
         document.addEventListener('DOMContentLoaded', () => {
-            const savedLead = localStorage.getItem('fc_lead_user');
+            const savedLead = localStorage.getItem('fc_lead_user') || localStorage.getItem('fc_library_unlocked');
             if (savedLead) {
-                try {
-                    const data = JSON.parse(savedLead);
-                    unlockLibraryUI(data.name || 'Emprendedora');
-                } catch(e) {}
+                isLibraryUnlocked = true;
             }
 
             // Comprobar si ya se registró a la Masterclass del 12/12
@@ -1447,23 +1483,55 @@
             updateStackCardPositions();
         });
 
-        function handleUnifiedLeadSubmit(e) {
+        function checkDownloadAccess(event, filePath, fileName) {
+            if (!isLibraryUnlocked) {
+                event.preventDefault();
+                pendingDownload = { path: filePath, name: fileName };
+                openDownloadModal();
+            }
+        }
+
+        function openDownloadModal() {
+            const modal = document.getElementById('downloadModal');
+            if (modal) {
+                modal.classList.add('active');
+                setTimeout(() => {
+                    const input = document.getElementById('modalUniName');
+                    if (input) input.focus();
+                }, 150);
+            }
+        }
+
+        function closeDownloadModal() {
+            const modal = document.getElementById('downloadModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        function closeDownloadModalOnOverlay(e) {
+            if (e.target.id === 'downloadModal') {
+                closeDownloadModal();
+            }
+        }
+
+        function handleModalLeadSubmit(e) {
             e.preventDefault();
-            const name = document.getElementById('uniName').value.trim();
-            const email = document.getElementById('uniEmail').value.trim();
-            const phone = document.getElementById('uniPhone').value.trim();
+            const name = document.getElementById('modalUniName').value.trim();
+            const email = document.getElementById('modalUniEmail').value.trim();
+            const phone = document.getElementById('modalUniPhone').value.trim();
 
             if (!name || !email) {
                 alert('Por favor ingresá tu nombre y correo electrónico.');
                 return;
             }
 
-            const btn = document.getElementById('btnUniSubmit');
+            const btn = document.getElementById('btnModalUniSubmit');
             btn.disabled = true;
-            btn.innerHTML = '<span>Desbloqueando recursos...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+            btn.innerHTML = '<span>Desbloqueando y descargando...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
 
             const payload = {
-                recurso: 'Biblioteca Completa Oficial en PDF (Método PROA + Guías + Oráculo)',
+                recurso: 'Biblioteca Completa Oficial en PDF (Descarga Directa)',
                 nombre: name,
                 email: email,
                 whatsapp: phone || 'No informado',
@@ -1499,20 +1567,19 @@
             }).finally(() => {
                 localStorage.setItem('fc_lead_user', JSON.stringify({ name, email, phone }));
                 localStorage.setItem('fc_library_unlocked', 'true');
-                unlockLibraryUI(name);
-            });
-        }
+                isLibraryUnlocked = true;
+                closeDownloadModal();
 
-        function unlockLibraryUI(name) {
-            isLibraryUnlocked = true;
-            document.getElementById('leadFormWrap').style.display = 'none';
-            document.getElementById('leadSuccessWrap').style.display = 'block';
-            document.getElementById('unlockedName').textContent = name;
-
-            // Actualizar textos y clases de los botones de descarga
-            document.querySelectorAll('.btn-download-trigger').forEach(btn => {
-                btn.classList.remove('btn-outline');
-                btn.classList.add('btn-primary');
+                // Iniciar la descarga pendiente automáticamente
+                if (pendingDownload) {
+                    const tempLink = document.createElement('a');
+                    tempLink.href = pendingDownload.path;
+                    tempLink.download = pendingDownload.name;
+                    document.body.appendChild(tempLink);
+                    tempLink.click();
+                    document.body.removeChild(tempLink);
+                    pendingDownload = null;
+                }
             });
         }
 
@@ -1583,21 +1650,6 @@
             if (formWrap) formWrap.style.display = 'none';
             if (successWrap) successWrap.style.display = 'block';
             if (nameSpan) nameSpan.textContent = name || 'Mujer Alfa';
-        }
-
-        function checkDownloadAccess(event, filePath, fileName) {
-            if (!isLibraryUnlocked) {
-                event.preventDefault();
-                // Smooth scroll to lead form with highlight animation
-                const formCard = document.getElementById('leadCaptureBlock');
-                formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                formCard.style.transition = 'box-shadow 0.3s ease';
-                formCard.style.boxShadow = '0 0 0 4px var(--fuchsia), 0 20px 40px rgba(212,0,106,0.25)';
-                setTimeout(() => {
-                    formCard.style.boxShadow = '0 16px 40px rgba(43,36,53,0.08)';
-                }, 2000);
-                document.getElementById('uniName').focus();
-            }
         }
 
         // ==========================================
