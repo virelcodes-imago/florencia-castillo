@@ -1,0 +1,6 @@
+# Cloudflare Pages / Netlify Redirects
+/guias-gratuitas       /biblioteca       301
+/guias-gratuitas.html  /biblioteca       301
+/guia-gratuita         /biblioteca       301
+/guia-gratuita.html    /biblioteca       301
+/biblioteca.html       /biblioteca       301

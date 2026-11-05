@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/guias-gratuitas", "destination": "/biblioteca", "permanent": true },
+    { "source": "/guias-gratuitas.html", "destination": "/biblioteca", "permanent": true },
+    { "source": "/guia-gratuita", "destination": "/biblioteca", "permanent": true },
+    { "source": "/guia-gratuita.html", "destination": "/biblioteca", "permanent": true }
+  ]
+}
