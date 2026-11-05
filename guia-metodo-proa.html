@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Práctica: Método PROA | Florencia Castillo · Mujeres Alfa</title>
+    <meta name="description" content="Descargá gratis la Guía Práctica del Método PROA de Florencia Castillo: una herramienta de mindfulness para hacer una pausa, regular tus emociones y responder con conciencia.">
+    <link rel="canonical" href="https://florenciacastillo.com/guia-metodo-proa">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Guía Práctica: Método PROA | Florencia Castillo">
+    <meta property="og:description" content="Descargá gratis la guía práctica para hacer una pausa, regular tus emociones y elegir cómo querés responder antes de reaccionar en automático.">
+    <meta property="og:url" content="https://florenciacastillo.com/guia-metodo-proa">
+    <meta property="og:type" content="article">
+
+    <!-- Google Fonts: Cormorant Garamond & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon & Brand Icons -->
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="diseño visual/favicon-32x32.png?v=3">
+    <link rel="icon" type="image/png" sizes="16x16" href="diseño visual/favicon-16x16.png?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="diseño visual/apple-touch-icon.png?v=3">
+    <link rel="shortcut icon" href="favicon.ico?v=3">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .page-header-simple {
+            padding: 3rem 0 2rem;
+            background: linear-gradient(180deg, rgba(212,0,106,0.06) 0%, rgba(250,240,228,0) 100%);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--carbon-muted);
+            margin-bottom: 1.2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--carbon-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--fuchsia);
+        }
+
+        .guide-detail-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 950px) {
+            .guide-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .guide-content-box {
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid rgba(43,36,53,0.08);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .guide-pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--fuchsia);
+            background: rgba(212,0,106,0.1);
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 14px;
+        }
+
+        .guide-quote-box {
+            border-left: 3px solid var(--fuchsia);
+            padding: 18px 22px;
+            background: var(--marfil);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-style: italic;
+            color: var(--carbon);
+            margin: 24px 0;
+            line-height: 1.6;
+        }
+
+        .proa-steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 24px 0 30px;
+        }
+
+        .proa-step-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            background: #FFF;
+            border: 1px solid rgba(43,36,53,0.08);
+            border-radius: 14px;
+            padding: 18px 20px;
+            box-shadow: 0 4px 14px rgba(43,36,53,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .proa-step-row:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212,0,106,0.08);
+            border-color: rgba(212,0,106,0.25);
+        }
+
+        .proa-letter-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--fuchsia);
+            color: #fff;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .proa-step-content h4 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--carbon);
+            margin-bottom: 4px;
+        }
+
+        .proa-step-content p {
+            font-size: 0.92rem;
+            color: var(--carbon-light);
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        .lead-card-sticky {
+            position: sticky;
+            top: 100px;
+            background: var(--marfil-surface);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--fuchsia);
+            padding: 32px;
+            box-shadow: 0 16px 40px rgba(43,36,53,0.09);
+        }
+
+        .lead-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            color: var(--fuchsia);
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--carbon);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid rgba(43,36,53,0.18);
+            border-radius: var(--radius-sm);
+            background: var(--marfil);
+            color: var(--carbon);
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--fuchsia);
+            box-shadow: 0 0 0 3px rgba(212,0,106,0.12);
+        }
+
+        .download-success-box {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .download-success-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(39, 174, 96, 0.12);
+            color: #27ae60;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 14px;
+        }
+
+        .masterclass-invite-card {
+            margin-top: 24px;
+            padding: 20px;
+            background: var(--carbon);
+            color: #fff;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid rgba(255, 154, 60, 0.3);
+        }
+
+        .masterclass-invite-card h4 {
+            color: var(--naranja);
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            font-family: var(--font-heading);
+        }
+
+        .masterclass-invite-card p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 14px;
+            line-height: 1.45;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <aside class="top-banner">
+        <div class="container banner-inner">
+            <span>✦ <strong>Recurso Oficial Gratuito:</strong> Guía Práctica Método PROA en PDF lista para descargar y aplicar ✦</span>
+        </div>
+    </aside>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+                <img src="diseño visual/logo_fc.png?v=3" alt="Logo Florencia Castillo FC" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="brand-name">Florencia Castillo</span>
+                    <span class="brand-sub">MUJERES ALFA</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#alfa-inicio" class="nav-link">Alfa al Inicio</a>
+                <a href="index.html#mujeres-alfa" class="nav-link">Mujeres Alfa</a>
+                <a href="biblioteca.html" class="nav-link active">Biblioteca</a>
+                <a href="sobre-flor.html" class="nav-link">Sobre Flor</a>
+                <a href="index.html#contacto" class="nav-link">Contacto</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="portal-login.html" class="btn btn-primary btn-sm" title="Acceso exclusivo alumnas">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Acceso al Portal</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SIMPLE PAGE HEADER -->
+        <section class="page-header-simple">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <a href="biblioteca.html">Biblioteca</a>
+                    <span>/</span>
+                    <span style="color: var(--carbon); font-weight: 600;">Método PROA</span>
+                </div>
+                <span class="guide-pill-badge">
+                    <i class="fa-solid fa-compass"></i> ATENCIÓN PLENA & REGULACIÓN EMOCIONAL
+                </span>
+                <h1 style="font-family: var(--font-heading); font-size: clamp(2.3rem, 4vw, 3.4rem); color: var(--carbon); line-height: 1.15; margin-bottom: 12px;">
+                    Guía Práctica: Método PROA
+                </h1>
+                <p style="font-size: 1.15rem; color: var(--carbon-light); max-width: 780px; line-height: 1.6; margin: 0;">
+                    Una herramienta sencilla para hacer una pausa, regular tus emociones y elegir cómo querés responder antes de reaccionar en automático.
+                </p>
+            </div>
+        </section>
+
+        <!-- DETAIL CONTENT & CAPTURE FORM -->
+        <section class="container" style="padding: 2.5rem 0 4rem;">
+            <div class="guide-detail-grid">
+                
+                <!-- COLUMNA IZQUIERDA: CONTENIDO DEL MÉTODO -->
+                <div class="guide-content-box">
+                    
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                        <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(212,0,106,0.1); color: var(--fuchsia); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div>
+                            <span style="font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--fuchsia);">BIENVENIDA AL MÉTODO</span>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.45rem; color: var(--carbon); margin: 0;">¿Para qué puede servirte el Método PROA?</h3>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 1rem; color: var(--carbon-light); line-height: 1.7; margin-bottom: 16px;">
+                        Para esos momentos en los que estás por contestar un mensaje en caliente, reaccionar desde el enojo o tomar una decisión impulsiva de la que después te arrepentís. 
+                    </p>
+                    <p style="font-size: 1rem; color: var(--carbon-light); line-height: 1.7; margin-bottom: 20px;">
+                        El mindfulness nos invita a habitar el presente y observar lo que está pasando. Esa pausa puede ayudarnos a crear un espacio entre lo que sentimos y lo que hacemos, para elegir una respuesta más consciente. <strong>No se trata de dejar de sentir ni de estar bien todo el tiempo: se trata de reconocer tus emociones sin dejar que decidan automáticamente por vos.</strong>
+                    </p>
+
+                    <div class="guide-quote-box">
+                        <p style="font-size: 1.05rem; margin: 0 0 6px 0;">
+                            "Entre lo que sentís y lo que hacés, puede existir un espacio. En ese espacio sagrado, podés aprender a elegir."
+                        </p>
+                        <strong style="font-size: 0.85rem; color: var(--fuchsia); text-transform: uppercase; letter-spacing: 1px;">— Florencia Castillo</strong>
+                    </div>
+
+                    <h2 style="font-family: var(--font-heading); font-size: 2rem; color: var(--carbon); margin: 34px 0 10px;">
+                        Tu Brújula para Volver al Presente: Los 5 Pasos
+                    </h2>
+                    <p style="font-size: 0.95rem; color: var(--carbon-muted); margin-bottom: 20px;">
+                        Cuando notes que estás por reaccionar en automático, usá el acrónimo <strong>P-R-O-A-A</strong> como tu guía:
+                    </p>
+
+                    <div class="proa-steps-list">
+                        <!-- P -->
+                        <div class="proa-step-row">
+                            <div class="proa-letter-badge">P</div>
+                            <div class="proa-step-content">
+                                <h4>PARAR</h4>
+                                <p><strong>Interrumpí el impulso.</strong> Antes de contestar ese mensaje, enviar ese correo o tomar una decisión con las emociones a flor de piel, regalate unos segundos de silencio absoluto.</p>
+                            </div>
+                        </div>
+
+                        <!-- R -->
+                        <div class="proa-step-row">
+                            <div class="proa-letter-badge" style="background: #E84832;">R</div>
+                            <div class="proa-step-content">
+                                <h4>RESPIRAR</h4>
+                                <p><strong>Llevá la atención a tu respiración.</strong> Hacé dos o tres respiraciones tranquilas, profundas, sin forzarlas. Sentí tus pies firmes apoyados en el suelo.</p>
+                            </div>
+                        </div>
+
+                        <!-- O -->
+                        <div class="proa-step-row">
+                            <div class="proa-letter-badge" style="background: #FF7A00;">O</div>
+                            <div class="proa-step-content">
+                                <h4>OBSERVAR</h4>
+                                <p><strong>Preguntate sin juzgarte:</strong> ¿Qué estoy sintiendo? ¿Qué estoy pensando en este momento? ¿Qué sensaciones noto en mi cuerpo (mandíbula apretada, pecho cerrado)?</p>
+                            </div>
+                        </div>
+
+                        <!-- A -->
+                        <div class="proa-step-row">
+                            <div class="proa-letter-badge" style="background: #2B2435;">A</div>
+                            <div class="proa-step-content">
+                                <h4>ACCIONAR</h4>
+                                <p><strong>Elegí tu próximo paso.</strong> ¿Qué respuesta se alinea mejor con lo que de verdad necesitás y con la persona y líder que querés ser hoy?</p>
+                            </div>
+                        </div>
+
+                        <!-- A -->
+                        <div class="proa-step-row">
+                            <div class="proa-letter-badge" style="background: #524761;">A</div>
+                            <div class="proa-step-content">
+                                <h4>ACEPTAR</h4>
+                                <p><strong>Reconocé lo que está pasando, aunque no te guste.</strong> Aceptar no significa estar de acuerdo ni tolerar un maltrato: significa partir de la realidad concreta para elegir qué hacer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CASO PRÁCTICO -->
+                    <div style="background: #FFF; border-radius: 14px; border: 1px solid rgba(43,36,53,0.1); padding: 24px; margin-bottom: 26px;">
+                        <span style="font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--naranja); display: block; margin-bottom: 8px;">
+                            UN EJEMPLO COTIDIANO
+                        </span>
+                        <h4 style="font-family: var(--font-heading); font-size: 1.35rem; color: var(--carbon); margin-bottom: 12px;">
+                            Recibís un mensaje que te enoja y sentís ganas de responder con bronca
+                        </h4>
+                        <p style="font-size: 0.92rem; color: var(--carbon-light); line-height: 1.6; margin-bottom: 12px;">
+                            En vez de disparar la respuesta de inmediato, probá aplicar PROA:
+                        </p>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: var(--carbon);">
+                            <li><strong>• PARÁ:</strong> Dejá el teléfono sobre la mesa unos segundos.</li>
+                            <li><strong>• RESPIRÁ:</strong> Sentí el aire entrar y salir lentamente.</li>
+                            <li><strong>• OBSERVÁ:</strong> Reconocé: <em>«Estoy enojada y siento ganas de defenderme; mi interpretación inmediata puede no ser toda la historia»</em>.</li>
+                            <li><strong>• ACCIONÁ:</strong> Elegí si responder ahora con calma, pedir una aclaración constructiva o esperar a estar serena.</li>
+                            <li><strong>• ACEPTÁ:</strong> Reconocé que el mensaje te afectó, sin exigirte fingir que nada pasó ni justificar actitudes destructivas.</li>
+                        </ul>
+                    </div>
+
+                    <!-- PRÁCTICA SEMANAL -->
+                    <div style="background: linear-gradient(135deg, rgba(212,0,106,0.05) 0%, rgba(255,154,60,0.08) 100%); border-radius: 14px; border: 1.5px solid rgba(212,0,106,0.2); padding: 22px;">
+                        <h4 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--fuchsia); margin-bottom: 6px;">
+                            Tu Práctica de la Semana: 5 Segundos para Elegir
+                        </h4>
+                        <p style="font-size: 0.9rem; color: var(--carbon-light); line-height: 1.5; margin-bottom: 10px;">
+                            Al final de cada día, tomate dos minutos para responder en tu diario:
+                        </p>
+                        <ol style="margin-left: 20px; font-size: 0.88rem; color: var(--carbon); display: flex; flex-direction: column; gap: 4px;">
+                            <li>¿En qué momento del día reaccioné en piloto automático?</li>
+                            <li>¿Qué emoción estaba sintiendo en ese instante?</li>
+                            <li>¿Pude hacer una pausa antes de contestar?</li>
+                            <li>¿Qué podría elegir diferente la próxima vez?</li>
+                        </ol>
+                    </div>
+
+                </div>
+
+                <!-- COLUMNA DERECHA: FORMULARIO STICKY DE DESCARGA -->
+                <div>
+                    <div class="lead-card-sticky">
+                        
+                        <!-- ESTADO FORMULARIO PENDIENTE -->
+                        <div id="captureFormBox">
+                            <span style="font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--fuchsia); display: block; margin-bottom: 6px;">
+                                DESCARGA INMEDIATA EN PDF
+                            </span>
+                            <h3 class="lead-card-title">Descargar Guía Método PROA</h3>
+                            <p style="font-size: 0.9rem; color: var(--carbon-light); margin-bottom: 22px; line-height: 1.5;">
+                                Ingresá tus datos para descargar gratis el PDF completo de 5 páginas con la explicación paso a paso, ejercicios guiados y plantilla de práctica.
+                            </p>
+
+                            <form id="proaLeadForm" onsubmit="handleProaLeadSubmit(event)">
+                                <div class="form-group">
+                                    <label for="proaLeadName">Tu Nombre completo *</label>
+                                    <input type="text" id="proaLeadName" class="form-control" required placeholder="Ej. Florencia">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="proaLeadEmail">Tu Correo Electrónico *</label>
+                                    <input type="email" id="proaLeadEmail" class="form-control" required placeholder="tuemail@ejemplo.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="proaLeadPhone">Tu WhatsApp (Opcional)</label>
+                                    <input type="tel" id="proaLeadPhone" class="form-control" placeholder="+54 9 11 ...">
+                                </div>
+
+                                <button type="submit" id="btnSubmitProaLead" class="btn btn-primary btn-block btn-lg" style="width: 100%; margin-top: 8px;">
+                                    <span>Descargar Guía en PDF (5 págs)</span>
+                                    <i class="fa-solid fa-download"></i>
+                                </button>
+
+                                <p style="font-size: 0.75rem; color: var(--carbon-muted); text-align: center; margin-top: 14px; margin-bottom: 0;">
+                                    🔒 Cero spam. Tu información se almacena de forma segura.
+                                </p>
+                            </form>
+                        </div>
+
+                        <!-- ESTADO DESCARGA DISPONIBLE -->
+                        <div id="downloadReadyBox" class="download-success-box">
+                            <div class="download-success-icon">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <h3 style="font-size: 1.6rem; margin-bottom: 6px; color: var(--carbon); font-family: var(--font-heading);">
+                                ¡Guía Desbloqueada!
+                            </h3>
+                            <p style="font-size: 0.9rem; color: var(--carbon-light); margin-bottom: 20px;">
+                                Hola <strong id="userNameGreet">Emprendedora</strong>, hacé click abajo para descargar el archivo directamente a tu dispositivo:
+                            </p>
+
+                            <a id="btnDirectDownload" 
+                               href="descargas/guia-practica-metodo-proa.pdf" 
+                               download="Guia-Practica-Metodo-PROA-Florencia-Castillo.pdf" 
+                               class="btn btn-primary btn-block btn-lg" 
+                               style="width: 100%; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span>Descargar Guía en PDF (5 págs)</span>
+                            </a>
+
+                            <div class="masterclass-invite-card">
+                                <span style="font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--naranja); display: block; margin-bottom: 4px;">
+                                    EVENTO EN VIVO · 12 DE DICIEMBRE
+                                </span>
+                                <h4>Masterclass Gratuita Mujeres Alfa</h4>
+                                <p>Una sesión de alto impacto con Florencia Castillo para destrabar tus bloqueos y liderar con coherencia.</p>
+                                <a href="biblioteca.html#masterclass-section" class="btn btn-secondary btn-block btn-sm" style="text-decoration: none; display: inline-block;">
+                                    <span>Reservar mi Lugar Gratis</span>
+                                    <i class="fa-solid fa-ticket"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand-logo" aria-label="Inicio Florencia Castillo">
+                    <img src="diseño visual/logo_fc.png?v=3" alt="Logo Florencia Castillo" class="logo-img">
+                    <div class="logo-text-group">
+                        <span class="brand-name">Florencia Castillo</span>
+                        <span class="brand-sub">MUJERES ALFA</span>
+                    </div>
+                </a>
+                <p class="footer-bio">
+                    Espacio de transformación ontológica, liderazgo femenino y desarrollo empresarial. Acompaño a mujeres a liderar con coherencia, poder personal y resultados tangibles.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/florenciacastillo.oficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://tiktok.com/@florenciacastillo.oficial" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://wa.me/5522998090599" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://youtube.com/@florenciacastillo" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="mailto:florenciacastillo.oficial@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Ecosistema</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#alfa-inicio">Alfa al Inicio</a></li>
+                    <li><a href="index.html#mujeres-alfa">Mujeres Alfa</a></li>
+                    <li><a href="biblioteca.html">Biblioteca</a></li>
+                    <li><a href="sobre-flor.html">Sobre Flor</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="portal-login.html" style="color: var(--fuchsia); font-weight: 700;">Acceso al Portal 🔐</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Recursos Oficiales</h4>
+                <ul>
+                    <li><a href="guia-metodo-proa.html" style="color: var(--fuchsia); font-weight: 700;">Método PROA (Pausa Emocional) ⭐</a></li>
+                    <li><a href="oraculo-mujeres-alfa.html">Oráculo 32 Cartas (PDF)</a></li>
+                    <li><a href="guia-radiografia-alfa.html">Radiografía Alfa (Online)</a></li>
+                    <li><a href="guia-habitos-financieros.html">Hábitos Financieros</a></li>
+                    <li><a href="guia-materializar-dinero.html">Materializar Dinero en 7 Días</a></li>
+                    <li><a href="guia-30-dias-dinero.html">Escribí esto por 30 Días</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Legal & Contacto</h4>
+                <ul>
+                    <li><a href="legales.html#aviso">Aviso Legal</a></li>
+                    <li><a href="legales.html#privacidad">Política de Privacidad</a></li>
+                    <li><a href="legales.html#terminos">Términos y Condiciones</a></li>
+                    <li><a href="legales.html#cookies">Política de Cookies</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom-full">
+                <p>© 2026 Florencia Castillo · Mujeres Alfa · florenciacastillo.com. Todos los derechos reservados. · <a href="legales.html" style="color: rgba(250, 240, 228, 0.7); text-decoration: underline;">Aviso Legal, Privacidad & Cookies</a></p>
+                <p class="virel-credit">Desarrollado y Gestionado por <a href="https://virelcodes.com" target="_blank" rel="noopener noreferrer"><strong>VIREL.</strong></a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/5522998090599?text=Hola%20Flor!%20Descargu%C3%A9%20la%20Gu%C3%ADa%20del%20M%C3%A9todo%20PROA%20y%20quer%C3%ADa%20hacerte%20una%20consulta." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLead = localStorage.getItem('fc_lead_user');
+            if (savedLead) {
+                try {
+                    const data = JSON.parse(savedLead);
+                    showDownloadState(data.name, data.email, false);
+                } catch(e) {}
+            }
+        });
+
+        function handleProaLeadSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('proaLeadName').value.trim();
+            const email = document.getElementById('proaLeadEmail').value.trim();
+            const phone = document.getElementById('proaLeadPhone').value.trim();
+
+            if (!name || !email) {
+                alert('Por favor completá tu nombre y correo electrónico para descargar la guía.');
+                return;
+            }
+
+            const btn = document.getElementById('btnSubmitProaLead');
+            btn.disabled = true;
+            btn.innerHTML = '<span>Generando descarga...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+
+            const payload = {
+                recurso: 'Guía Práctica Método PROA (P-R-O-A-A) en PDF',
+                nombre: name,
+                email: email,
+                whatsapp: phone || 'No informado',
+                fecha: new Date().toLocaleString('es-AR')
+            };
+
+            // Guardar en Google Sheets Oficial
+            const FC_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxX5uH6rm3F2rW0ElLnIx-XoNBjnfxX0ICvssi9XVN1hTL89-n761enBKZklurY9j7HhQ/exec';
+            fetch(FC_SHEETS_WEBHOOK, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify(payload)
+            }).catch(e => console.warn('Google Sheets error:', e));
+
+            // Guardar localmente
+            try {
+                const stored = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
+                stored.unshift(payload);
+                localStorage.setItem('fc_system_leads', JSON.stringify(stored.slice(0, 500)));
+            } catch(e) {}
+
+            // Enviar a FormSubmit
+            fetch('https://formsubmit.co/ajax/florenciacastillo.oficial@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            }).catch(err => {
+                console.warn('Registro offline:', err);
+            }).finally(() => {
+                localStorage.setItem('fc_lead_user', JSON.stringify({ name, email, phone }));
+                localStorage.setItem('fc_library_unlocked', 'true');
+                showDownloadState(name, email, true);
+            });
+        }
+
+        function showDownloadState(name, email, autoDownload = false) {
+            document.getElementById('captureFormBox').style.display = 'none';
+            document.getElementById('downloadReadyBox').style.display = 'block';
+            document.getElementById('userNameGreet').textContent = name || 'Emprendedora';
+
+            if (autoDownload) {
+                const downloadBtn = document.getElementById('btnDirectDownload');
+                if (downloadBtn) {
+                    downloadBtn.click();
+                }
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
