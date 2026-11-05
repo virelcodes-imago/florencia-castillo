@@ -681,10 +681,10 @@
                     <div class="admin-stat-label">Diagnósticos Radiografía</div>
                 </div>
                 <div class="admin-stat-box" style="border-left-color: #0F9D58;">
-                    <div class="admin-stat-num" style="font-size: 1.2rem; color: #0F9D58;">
-                        <i class="fa-solid fa-circle-check"></i> Activo
+                    <div class="admin-stat-num" id="statSyncBox" style="font-size: 1.15rem; color: #0F9D58;">
+                        <i id="syncStatusDot" class="fa-solid fa-circle-check"></i> <span id="syncStatusText">Conectado</span>
                     </div>
-                    <div class="admin-stat-label">Google Sheets Webhook</div>
+                    <div class="admin-stat-label">Google Sheets En Vivo</div>
                 </div>
             </div>
 
@@ -695,8 +695,8 @@
                            placeholder="🔍 Buscar por nombre, email o WhatsApp..." 
                            style="width: 100%; padding: 10px 14px; border: 1.5px solid rgba(43,36,53,0.15); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 0.9rem;">
                 </div>
-                <button class="btn btn-outline btn-sm" onclick="reloadLeadsFromStorage()">
-                    <i class="fa-solid fa-rotate"></i> Actualizar Lista
+                <button class="btn btn-primary btn-sm" onclick="fetchLeadsFromGoogleSheets()">
+                    <i class="fa-solid fa-rotate"></i> Sincronizar Ahora
                 </button>
             </div>
 
@@ -1105,31 +1105,77 @@
         // ==========================================
         // LÓGICA DE GESTIÓN DE LEADS & GOOGLE SHEETS
         // ==========================================
-        function loadLeadsDashboard() {
+        const FC_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxX5uH6rm3F2rW0ElLnIx-XoNBjnfxX0ICvssi9XVN1hTL89-n761enBKZklurY9j7HhQ/exec';
+
+        async function fetchLeadsFromGoogleSheets() {
+            const tbody = document.getElementById('leadsTableBody');
+            const noLeads = document.getElementById('noLeadsNotice');
+            const syncText = document.getElementById('syncStatusText');
+            const syncDot = document.getElementById('syncStatusDot');
+
+            if (syncText) syncText.textContent = 'Consultando...';
+            if (syncDot) syncDot.className = 'fa-solid fa-spinner fa-spin';
+
+            // Si la tabla está vacía, mostrar spinner de carga
+            if (!currentLoadedLeads || currentLoadedLeads.length === 0) {
+                if (tbody) {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 30px; color: var(--carbon-muted);"><i class="fa-solid fa-spinner fa-spin" style="font-size: 1.6rem; color: var(--fuchsia); display: block; margin-bottom: 10px;"></i>Conectando con Google Sheets y trayendo registros en vivo...</td></tr>';
+                }
+            }
+
+            try {
+                const res = await fetch(FC_SHEETS_ENDPOINT + '?action=getLeads&t=' + Date.now());
+                const data = await res.json();
+
+                if (data && data.status === 'success' && Array.isArray(data.leads)) {
+                    // Filtrar cualquier email o fila de test
+                    const testMails = ['test@florenciacastillo.com', 'browser@test.com'];
+                    const realLeads = data.leads.filter(l => 
+                        !testMails.includes((l.email || '').toLowerCase()) && 
+                        !(l.nombre || '').toLowerCase().includes('prueba')
+                    );
+
+                    currentLoadedLeads = realLeads;
+                    localStorage.setItem('fc_system_leads', JSON.stringify(realLeads));
+                    renderLeadsTable(realLeads);
+                    updateLeadsStats(realLeads);
+
+                    if (syncText) syncText.textContent = 'En Vivo';
+                    if (syncDot) syncDot.className = 'fa-solid fa-circle-check';
+                    return;
+                }
+            } catch (err) {
+                console.warn('Sincronización en vivo no disponible, recurriendo a caché local:', err);
+            }
+
+            // Fallback: Si no responde doGet o no hay internet, usar la memoria local
+            loadLocalLeadsBackup();
+            if (syncText) syncText.textContent = 'Caché Local';
+            if (syncDot) syncDot.className = 'fa-solid fa-cloud';
+        }
+
+        function loadLocalLeadsBackup() {
             let leads = [];
             try {
                 leads = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
             } catch(e) { leads = []; }
-
-            // Filtrar cualquier dato de prueba anterior
-            const testEmails = ['test@florenciacastillo.com', 'browser@test.com', 'laura.benitez@empresa.com', 'carla_santillan@gmail.com', 'marianarossi@outlook.com'];
-            leads = leads.filter(l => !testEmails.includes((l.email || '').toLowerCase()) && !(l.nombre || '').toLowerCase().includes('prueba'));
-            localStorage.setItem('fc_system_leads', JSON.stringify(leads));
 
             currentLoadedLeads = leads;
             renderLeadsTable(leads);
             updateLeadsStats(leads);
         }
 
-        function clearAllLeadsCache() {
-            if (confirm('¿Querés limpiar la lista de contactos en pantalla?')) {
-                localStorage.removeItem('fc_system_leads');
-                loadLeadsDashboard();
-            }
+        function loadLeadsDashboard() {
+            fetchLeadsFromGoogleSheets();
         }
 
-        function reloadLeadsFromStorage() {
-            loadLeadsDashboard();
+        function clearAllLeadsCache() {
+            if (confirm('¿Querés limpiar la memoria local de contactos?')) {
+                localStorage.removeItem('fc_system_leads');
+                currentLoadedLeads = [];
+                renderLeadsTable([]);
+                updateLeadsStats([]);
+            }
         }
 
         function updateLeadsStats(leads) {
@@ -1174,6 +1220,7 @@
                         <span style="display: inline-block; padding: 3px 8px; border-radius: 4px; background: rgba(212,0,106,0.08); color: var(--fuchsia); font-size: 0.78rem; font-weight: 600;">
                             ${escapeHTML(lead.recurso || 'Guía')}
                         </span>
+                        ${lead.detalles ? `<div style="font-size: 0.72rem; color: var(--carbon-muted); margin-top: 3px; max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${escapeHTML(lead.detalles)}">${escapeHTML(lead.detalles)}</div>` : ''}
                     </td>
                     <td style="white-space: nowrap;">
                         <button onclick="copyLeadData('${escapeHTML(lead.email)}')" class="btn btn-outline btn-sm" style="padding: 4px 8px; font-size: 0.75rem;" title="Copiar correo">
