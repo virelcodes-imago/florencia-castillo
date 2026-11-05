@@ -1152,7 +1152,7 @@
 
                 if (data && data.status === 'success' && Array.isArray(data.leads)) {
                     // Filtrar cualquier email o fila de test
-                    const testMails = ['test@florenciacastillo.com', 'browser@test.com'];
+                    const testMails = ['test@florenciacastillo.com', 'browser@test.com', 'test-masterclass@florenciacastillo.com'];
                     const realLeads = data.leads.filter(l => 
                         !testMails.includes((l.email || '').toLowerCase()) && 
                         !(l.nombre || '').toLowerCase().includes('prueba')
