@@ -670,15 +670,19 @@
             <div class="admin-stats-grid">
                 <div class="admin-stat-box">
                     <div class="admin-stat-num" id="statTotalLeads">0</div>
-                    <div class="admin-stat-label">Total Leads Registrados</div>
+                    <div class="admin-stat-label">Total Contactos / Leads</div>
+                </div>
+                <div class="admin-stat-box" style="border-left-color: #D4006A;">
+                    <div class="admin-stat-num" id="statMasterclass" style="color: #D4006A;">0</div>
+                    <div class="admin-stat-label">🎟️ Inscriptas Masterclass (12/12)</div>
                 </div>
                 <div class="admin-stat-box" style="border-left-color: var(--naranja);">
                     <div class="admin-stat-num" id="statGuiasCount">0</div>
-                    <div class="admin-stat-label">Descargas de Guías</div>
+                    <div class="admin-stat-label">📚 Guías, PROA & Oráculo</div>
                 </div>
                 <div class="admin-stat-box" style="border-left-color: #25D366;">
                     <div class="admin-stat-num" id="statRadiografias">0</div>
-                    <div class="admin-stat-label">Diagnósticos Radiografía</div>
+                    <div class="admin-stat-label">🎯 Diagnósticos Radiografía</div>
                 </div>
                 <div class="admin-stat-box" style="border-left-color: #0F9D58;">
                     <div class="admin-stat-num" id="statSyncBox" style="font-size: 1.15rem; color: #0F9D58;">
@@ -688,8 +692,27 @@
                 </div>
             </div>
 
+            <!-- Filtros Rápidos por Categoría -->
+            <div style="display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap;" id="categoryFilterGroup">
+                <button class="btn btn-sm btn-primary filter-pill-btn" data-cat="all" onclick="setCategoryFilter('all', this)">
+                    Todas (<span id="countPillAll">0</span>)
+                </button>
+                <button class="btn btn-sm btn-outline filter-pill-btn" data-cat="masterclass" onclick="setCategoryFilter('masterclass', this)">
+                    🎟️ Masterclass 12/12 (<span id="countPillMc">0</span>)
+                </button>
+                <button class="btn btn-sm btn-outline filter-pill-btn" data-cat="proa" onclick="setCategoryFilter('proa', this)">
+                    ⛵ Método PROA (<span id="countPillProa">0</span>)
+                </button>
+                <button class="btn btn-sm btn-outline filter-pill-btn" data-cat="oraculo" onclick="setCategoryFilter('oraculo', this)">
+                    ✨ Oráculo 32 Cartas (<span id="countPillOraculo">0</span>)
+                </button>
+                <button class="btn btn-sm btn-outline filter-pill-btn" data-cat="radiografia" onclick="setCategoryFilter('radiografia', this)">
+                    🎯 Radiografía Alfa (<span id="countPillRad">0</span>)
+                </button>
+            </div>
+
             <!-- Buscador y Filtro -->
-            <div style="display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap;">
+            <div style="display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap;">
                 <div style="flex: 1; min-width: 260px; position: relative;">
                     <input type="text" id="leadSearchInput" oninput="filterLeadsTable()" 
                            placeholder="🔍 Buscar por nombre, email o WhatsApp..." 
@@ -1178,13 +1201,40 @@
             }
         }
 
+        let currentSelectedCategory = 'all';
+
         function updateLeadsStats(leads) {
             document.getElementById('statTotalLeads').textContent = leads.length;
-            const guiasCount = leads.filter(l => (l.recurso || '').toLowerCase().includes('guía') || (l.recurso || '').toLowerCase().includes('biblioteca') || (l.recurso || '').toLowerCase().includes('ritual')).length;
-            const radCount = leads.filter(l => (l.recurso || '').toLowerCase().includes('radiografía')).length;
             
-            document.getElementById('statGuiasCount').textContent = guiasCount;
-            document.getElementById('statRadiografias').textContent = radCount;
+            const mcCount = leads.filter(l => (l.recurso || '').toLowerCase().includes('masterclass')).length;
+            const proaCount = leads.filter(l => (l.recurso || '').toLowerCase().includes('proa')).length;
+            const oracleCount = leads.filter(l => (l.recurso || '').toLowerCase().includes('oráculo') || (l.recurso || '').toLowerCase().includes('oraculo') || (l.recurso || '').toLowerCase().includes('cartas')).length;
+            const radCount = leads.filter(l => (l.recurso || '').toLowerCase().includes('radiografía') || (l.recurso || '').toLowerCase().includes('radiografia')).length;
+            const guiasCount = leads.filter(l => !((l.recurso || '').toLowerCase().includes('masterclass')) && !((l.recurso || '').toLowerCase().includes('radiograf'))).length;
+
+            if (document.getElementById('statMasterclass')) document.getElementById('statMasterclass').textContent = mcCount;
+            if (document.getElementById('statGuiasCount')) document.getElementById('statGuiasCount').textContent = guiasCount;
+            if (document.getElementById('statRadiografias')) document.getElementById('statRadiografias').textContent = radCount;
+
+            // Contadores de los botones de filtro
+            if (document.getElementById('countPillAll')) document.getElementById('countPillAll').textContent = leads.length;
+            if (document.getElementById('countPillMc')) document.getElementById('countPillMc').textContent = mcCount;
+            if (document.getElementById('countPillProa')) document.getElementById('countPillProa').textContent = proaCount;
+            if (document.getElementById('countPillOraculo')) document.getElementById('countPillOraculo').textContent = oracleCount;
+            if (document.getElementById('countPillRad')) document.getElementById('countPillRad').textContent = radCount;
+        }
+
+        function setCategoryFilter(cat, btnElem) {
+            currentSelectedCategory = cat;
+            document.querySelectorAll('#categoryFilterGroup .filter-pill-btn').forEach(b => {
+                b.classList.remove('btn-primary');
+                b.classList.add('btn-outline');
+            });
+            if (btnElem) {
+                btnElem.classList.remove('btn-outline');
+                btnElem.classList.add('btn-primary');
+            }
+            filterLeadsTable();
         }
 
         function renderLeadsTable(leads) {
@@ -1234,12 +1284,30 @@
 
         function filterLeadsTable() {
             const query = (document.getElementById('leadSearchInput').value || '').toLowerCase();
-            const filtered = currentLoadedLeads.filter(l => 
-                (l.nombre || '').toLowerCase().includes(query) ||
-                (l.email || '').toLowerCase().includes(query) ||
-                (l.whatsapp || '').toLowerCase().includes(query) ||
-                (l.recurso || '').toLowerCase().includes(query)
-            );
+            
+            let filtered = currentLoadedLeads.filter(l => {
+                // Filtro de categoría
+                if (currentSelectedCategory === 'masterclass') {
+                    if (!(l.recurso || '').toLowerCase().includes('masterclass')) return false;
+                } else if (currentSelectedCategory === 'proa') {
+                    if (!(l.recurso || '').toLowerCase().includes('proa')) return false;
+                } else if (currentSelectedCategory === 'oraculo') {
+                    const r = (l.recurso || '').toLowerCase();
+                    if (!r.includes('oráculo') && !r.includes('oraculo') && !r.includes('cartas')) return false;
+                } else if (currentSelectedCategory === 'radiografia') {
+                    const r = (l.recurso || '').toLowerCase();
+                    if (!r.includes('radiografía') && !r.includes('radiografia')) return false;
+                }
+
+                // Filtro de texto
+                if (!query) return true;
+                return (l.nombre || '').toLowerCase().includes(query) ||
+                       (l.email || '').toLowerCase().includes(query) ||
+                       (l.whatsapp || '').toLowerCase().includes(query) ||
+                       (l.recurso || '').toLowerCase().includes(query) ||
+                       (l.detalles || '').toLowerCase().includes(query);
+            });
+
             renderLeadsTable(filtered);
         }
 
