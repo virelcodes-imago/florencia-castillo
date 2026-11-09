@@ -98,7 +98,7 @@
             transform: rotate(3deg); opacity: 0.35;
         }
         .photo-wrap img {
-            position: relative; width: 100%; display: block;
+            position: relative; width: 100%; height: auto; display: block;
             border-radius: 28px;
             box-shadow: 0 28px 60px rgba(43,36,53,0.22);
         }
@@ -212,15 +212,9 @@
                     <p class="sub">Completá tus datos y reservá tu lugar en el encuentro del 12/12.</p>
 
                     <form id="eventForm" onsubmit="handleEventSubmit(event)" novalidate>
-                        <div class="row">
-                            <div>
-                                <label for="evNombre">Nombre</label>
-                                <input type="text" id="evNombre" autocomplete="given-name" required placeholder="Ej. Sofía">
-                            </div>
-                            <div>
-                                <label for="evApellido">Apellido</label>
-                                <input type="text" id="evApellido" autocomplete="family-name" required placeholder="Ej. Ramos">
-                            </div>
+                        <div class="full">
+                            <label for="evNombre">Nombre y apellido</label>
+                            <input type="text" id="evNombre" autocomplete="name" required placeholder="Ej. Sofía Ramos">
                         </div>
                         <div class="full">
                             <label for="evEmail">Correo electrónico</label>
@@ -275,12 +269,11 @@
             if (document.getElementById('evHp').value) return; // anti-bot
 
             const nombre = document.getElementById('evNombre').value.trim();
-            const apellido = document.getElementById('evApellido').value.trim();
             const email = document.getElementById('evEmail').value.trim();
             const tel = document.getElementById('evTel').value.trim();
 
-            if (!nombre || !apellido || !email || !tel) {
-                alert('Por favor completá nombre, apellido, correo y teléfono.');
+            if (!nombre || !email || !tel) {
+                alert('Por favor completá nombre y apellido, correo y teléfono.');
                 return;
             }
             if (!/^\S+@\S+\.\S+$/.test(email)) {
@@ -295,9 +288,7 @@
             const params = new URLSearchParams(location.search);
             const payload = {
                 recurso: EVENT_ID,
-                nombre: nombre + ' ' + apellido,
-                nombre_pila: nombre,
-                apellido: apellido,
+                nombre: nombre,
                 email: email,
                 whatsapp: tel,
                 origen: params.get('utm_source') || params.get('src') || 'directo',
@@ -324,7 +315,7 @@
                 headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
                 body: JSON.stringify({ _subject: 'Nueva inscripción Evento 12/12 - ' + payload.nombre, _captcha: 'false', _template: 'table', ...payload })
             }).catch(err => console.warn('Email backup error:', err)).finally(() => {
-                localStorage.setItem('fc_evento_12_12_26', JSON.stringify({ nombre, apellido, email }));
+                localStorage.setItem('fc_evento_12_12_26', JSON.stringify({ nombre, email }));
                 showSuccess(nombre);
             });
         }
