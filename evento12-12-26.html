@@ -247,7 +247,7 @@
     </main>
 
     <footer>
-        © 2026 Florencia Castillo · Mujeres Alfa · <a href="legales.html" target="_blank">Aviso Legal, Privacidad &amp; Cookies</a>
+        © 2026 Florencia Castillo · Mujeres Alfa · <a href="legales.html" target="_blank">Aviso Legal, Privacidad &amp; Cookies</a><br><span style="display:inline-block;margin-top:6px;">Desarrollado y Gestionado por <a href="https://virelcodes.com" target="_blank" rel="noopener noreferrer"><strong>VIREL.</strong></a></span>
     </footer>
 
     <script>
@@ -291,7 +291,7 @@
                 nombre: nombre,
                 email: email,
                 whatsapp: tel,
-                origen: params.get('utm_source') || params.get('src') || 'directo',
+                origen: [params.get('utm_source'), params.get('utm_medium'), params.get('utm_campaign')].filter(Boolean).join(' / ') || params.get('src') || 'directo',
                 fecha: new Date().toLocaleString('es-AR')
             };
 
