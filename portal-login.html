@@ -289,7 +289,7 @@
                         <input type="checkbox" id="rememberMe" checked>
                         <span>Recordarme</span>
                     </label>
-                    <a href="https://wa.me/5491100000000?text=Hola%20Flor!%20Olvid%C3%A9%20mi%20contrase%C3%B1a%20para%20el%20portal%20de%20alumnas." target="_blank" class="forgot-link">¿Olvidaste tu contraseña?</a>
+                    <a href="mailto:info@florenciacastillo.com?subject=Recuperaci%C3%B3n%20de%20Contrase%C3%B1a" class="forgot-link">¿Olvidaste tu contraseña?</a>
                 </div>
 
                 <button type="submit" id="btnLoginSubmit" class="btn btn-primary btn-block btn-lg">
@@ -326,7 +326,7 @@
             if (errBox) errBox.style.display = 'none';
 
             if (role === 'admin') {
-                document.getElementById('loginEmail').value = 'florenciacastillo.oficial@gmail.com';
+                document.getElementById('loginEmail').value = 'info@florenciacastillo.com';
                 document.getElementById('loginPass').value = '';
                 document.getElementById('loginPass').focus();
                 showError('Ingresá la clave de acceso de 4 dígitos para ingresar como Administradora.');
@@ -371,7 +371,7 @@
             }
 
             // ACCESO EXCLUSIVO ADMINISTRADORA (FLOR CASTILLO)
-            if (email === 'florenciacastillo.oficial@gmail.com') {
+            if (email === 'info@florenciacastillo.com') {
                 if (pass !== '2193') {
                     showError('Contraseña incorrecta para la cuenta administradora de Flor Castillo.');
                     passInput.value = '';
@@ -382,7 +382,7 @@
                 const adminUser = {
                     role: 'admin',
                     name: 'Flor Castillo',
-                    email: 'florenciacastillo.oficial@gmail.com',
+                    email: 'info@florenciacastillo.com',
                     planName: 'Directora & Fundadora · Mujeres Alfa',
                     loginTime: new Date().toISOString()
                 };

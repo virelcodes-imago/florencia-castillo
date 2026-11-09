@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Diagnóstico Alfa | Florencia Castillo · Mujeres Alfa</title>
+    <meta name="description" content="Descubrí en 90 segundos cuál es tu Arquetipo de Liderazgo Femenino, cuál es el bloqueo oculto que frena tu facturación y tu plan de acción personalizado.">
+    <link rel="canonical" href="https://florenciacastillo.com/quiz-diagnostico-alfa">
+
+    <!-- Open Graph / Meta Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Florencia Castillo · Mujeres Alfa">
+    <meta property="og:title" content="Test de Diagnóstico: ¿Cuál es tu Arquetipo de Liderazgo Femenino?">
+    <meta property="og:description" content="Hacé el diagnóstico interactivo de 90 segundos y descubrí qué frena la escala de tu negocio.">
+    <meta property="og:image" content="https://florenciacastillo.com/diseño visual/hero_mejorada.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
+
+    <!-- Estilos Maestros -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        :root {
+            --quiz-fuchsia: #D4006A;
+            --quiz-marfil: #FAF0E4;
+            --quiz-coral: #FF5C45;
+            --quiz-naranja: #FF9A3C;
+            --quiz-carbon: #2B2435;
+            --quiz-carbon-muted: #6E6779;
+            --quiz-gold: #D4AF37;
+        }
+
+        body {
+            background-color: var(--quiz-marfil);
+            color: var(--quiz-carbon);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+        }
+
+        /* Contenedor Principal del Funnel */
+        .quiz-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 5rem;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Top Brand Bar */
+        .quiz-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(43,36,53,0.08);
+        }
+
+        .quiz-logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--quiz-carbon);
+        }
+
+        .quiz-logo-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--quiz-gold);
+        }
+
+        /* Progress Bar */
+        .quiz-progress-wrap {
+            background: rgba(43,36,53,0.08);
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .quiz-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--quiz-coral) 0%, var(--quiz-fuchsia) 100%);
+            width: 0%;
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+
+        /* Tarjeta Contenedora de Pasos */
+        .quiz-card {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: 0 16px 40px rgba(43,36,53,0.06);
+            border: 1px solid rgba(43,36,53,0.06);
+            position: relative;
+        }
+
+        @media (max-width: 600px) {
+            .quiz-card {
+                padding: 1.75rem 1.25rem;
+            }
+        }
+
+        /* Pantalla 1: INTRO */
+        .quiz-intro-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--quiz-fuchsia);
+            background: rgba(212,0,106,0.08);
+            padding: 6px 14px;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .quiz-intro-title {
+            font-family: var(--font-heading);
+            font-size: 2.7rem;
+            line-height: 1.15;
+            color: var(--quiz-carbon);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .quiz-intro-title {
+                font-size: 2rem;
+            }
+        }
+
+        .quiz-intro-subtitle {
+            font-size: 1.08rem;
+            color: var(--quiz-carbon-muted);
+            line-height: 1.6;
+            max-width: 660px;
+            margin: 0 auto 1.8rem;
+        }
+
+        .quiz-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 650px) {
+            .quiz-features-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+
+        .quiz-feature-item {
+            background: var(--quiz-marfil);
+            padding: 14px 16px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid rgba(43,36,53,0.05);
+        }
+
+        .quiz-feature-item i {
+            color: var(--quiz-fuchsia);
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .quiz-feature-item span {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--quiz-carbon);
+        }
+
+        /* Pantallas de Preguntas */
+        .step-count-badge {
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--quiz-coral);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .quiz-question-title {
+            font-family: var(--font-heading);
+            font-size: 1.95rem;
+            line-height: 1.25;
+            color: var(--quiz-carbon);
+            margin-bottom: 0.75rem;
+        }
+
+        @media (max-width: 600px) {
+            .quiz-question-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        .quiz-question-desc {
+            font-size: 0.95rem;
+            color: var(--quiz-carbon-muted);
+            margin-bottom: 1.8rem;
+            line-height: 1.5;
+        }
+
+        /* Opciones de 1 Clic */
+        .quiz-options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .quiz-option-btn {
+            background: #FFFFFF;
+            border: 2px solid rgba(43,36,53,0.1);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            width: 100%;
+            position: relative;
+            font-family: var(--font-body);
+        }
+
+        .quiz-option-btn:hover {
+            border-color: var(--quiz-fuchsia);
+            background: rgba(212,0,106,0.02);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(212,0,106,0.1);
+        }
+
+        .quiz-option-btn.selected {
+            border-color: var(--quiz-fuchsia);
+            background: rgba(212,0,106,0.06);
+            box-shadow: 0 0 0 2px var(--quiz-fuchsia);
+        }
+
+        .quiz-option-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--quiz-marfil);
+            color: var(--quiz-fuchsia);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .quiz-option-btn:hover .quiz-option-icon {
+            background: var(--quiz-fuchsia);
+            color: #FFFFFF;
+        }
+
+        .quiz-option-text {
+            font-size: 1rem;
+            color: var(--quiz-carbon);
+            line-height: 1.45;
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .quiz-option-arrow {
+            color: rgba(43,36,53,0.25);
+            font-size: 1rem;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .quiz-option-btn:hover .quiz-option-arrow {
+            color: var(--quiz-fuchsia);
+            transform: translateX(4px);
+        }
+
+        /* Pantalla de Análisis / Loading */
+        .quiz-processing-box {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .quiz-spinner {
+            width: 70px;
+            height: 70px;
+            border: 4px solid rgba(212,0,106,0.15);
+            border-top: 4px solid var(--quiz-fuchsia);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.75rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .quiz-processing-title {
+            font-family: var(--font-heading);
+            font-size: 2.1rem;
+            color: var(--quiz-carbon);
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-processing-sub {
+            font-size: 0.98rem;
+            color: var(--quiz-carbon-muted);
+            min-height: 48px;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Lead Gate */
+        .lead-gate-header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .lead-gate-header h3 {
+            font-family: var(--font-heading);
+            font-size: 2.3rem;
+            color: var(--quiz-carbon);
+            margin-bottom: 0.5rem;
+        }
+
+        .lead-gate-header p {
+            font-size: 0.98rem;
+            color: var(--quiz-carbon-muted);
+            line-height: 1.5;
+        }
+
+        .quiz-form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .quiz-form-label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--quiz-carbon);
+            margin-bottom: 6px;
+        }
+
+        .quiz-form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid rgba(43,36,53,0.15);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: #FFFFFF;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+
+        .quiz-form-input:focus {
+            outline: none;
+            border-color: var(--quiz-fuchsia);
+            box-shadow: 0 0 0 3px rgba(212,0,106,0.15);
+        }
+
+        /* Pantalla de Resultados */
+        .result-badge-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .archetype-title {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--quiz-carbon);
+            line-height: 1.1;
+            margin-bottom: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .archetype-title {
+                font-size: 2.1rem;
+            }
+        }
+
+        .archetype-tagline {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--quiz-fuchsia);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .archetype-desc-card {
+            background: var(--quiz-marfil);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            border: 1px solid rgba(43,36,53,0.08);
+            margin-bottom: 1.8rem;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .blind-spot-box {
+            background: #FFF5F7;
+            border-left: 4px solid var(--quiz-fuchsia);
+            padding: 18px 20px;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+        }
+
+        .blind-spot-box h4 {
+            color: var(--quiz-fuchsia);
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .blind-spot-box p {
+            font-size: 0.95rem;
+            color: var(--quiz-carbon);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ========================================================
+           CONTENEDOR DEL VIDEO DE FLOR (ESPECIALMENTE CONTEMPLADO)
+           ======================================================== */
+        .flor-video-container {
+            background: linear-gradient(135deg, #2B2435 0%, #1A1522 100%);
+            border: 2px solid var(--quiz-gold);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            color: #FFFFFF;
+            margin: 2.5rem 0;
+            box-shadow: 0 15px 35px rgba(43,36,53,0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-badge-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(212,175,55,0.25);
+            border: 1px solid var(--quiz-gold);
+            color: #FFE699;
+            font-size: 0.74rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+
+        .video-box-title {
+            font-family: var(--font-heading);
+            font-size: 1.65rem;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+
+        .video-box-sub {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 16px;
+            line-height: 1.45;
+        }
+
+        /* Marco de Video 16:9 con Placeholder interactivo */
+        .video-frame-aspect {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+
+        .video-placeholder-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('diseño visual/hero_mejorada.jpg') center center / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .video-overlay-dim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(43,36,53,0.65);
+            transition: background 0.3s ease;
+        }
+
+        .video-placeholder-cover:hover .video-overlay-dim {
+            background: rgba(43,36,53,0.45);
+        }
+
+        .video-play-btn {
+            position: relative;
+            z-index: 2;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--quiz-fuchsia);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            padding-left: 4px;
+            box-shadow: 0 0 0 10px rgba(212,0,106,0.3);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .video-placeholder-cover:hover .video-play-btn {
+            transform: scale(1.12);
+            box-shadow: 0 0 0 16px rgba(212,0,106,0.4);
+        }
+
+        .video-placeholder-label {
+            position: relative;
+            z-index: 2;
+            margin-top: 14px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            text-align: center;
+            padding: 0 16px;
+        }
+
+        /* Iframe real cuando se inserte el link */
+        .video-frame-aspect iframe,
+        .video-frame-aspect video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ========================================================
+           BANNER INVITACIÓN MASTERCLASS 12/12
+           ======================================================== */
+        .masterclass-invite-card {
+            background: linear-gradient(135deg, #FF6F00 0%, #D4006A 100%);
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            color: #FFFFFF;
+            margin: 2.5rem 0;
+            box-shadow: 0 16px 40px rgba(212,0,106,0.35);
+            text-align: center;
+            position: relative;
+        }
+
+        .mc-pill-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.22);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #FFFFFF;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+
+        .mc-invite-title {
+            font-family: var(--font-heading);
+            font-size: 2.3rem;
+            line-height: 1.15;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .mc-invite-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        .mc-invite-sub {
+            font-size: 1.02rem;
+            color: rgba(255,255,255,0.92);
+            max-width: 620px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.55;
+        }
+
+        .mc-date-box {
+            display: inline-flex;
+            gap: 16px;
+            background: rgba(0,0,0,0.18);
+            padding: 10px 22px;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.8rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-mc-claim {
+            background: #FFFFFF;
+            color: var(--quiz-fuchsia);
+            border: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-mc-claim:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+            background: #FFF9F2;
+        }
+
+        /* Hoja de ruta 3 pasos */
+        .roadmap-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 1.8rem 0;
+        }
+
+        @media (max-width: 700px) {
+            .roadmap-steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .roadmap-step-box {
+            background: var(--quiz-marfil);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            border: 1px solid rgba(43,36,53,0.06);
+            position: relative;
+        }
+
+        .step-num-bubble {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--quiz-carbon);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .roadmap-step-box h5 {
+            font-size: 0.98rem;
+            color: var(--quiz-carbon);
+            margin-bottom: 6px;
+        }
+
+        .roadmap-step-box p {
+            font-size: 0.86rem;
+            color: var(--quiz-carbon-muted);
+            margin: 0;
+            line-height: 1.45;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP HEADER -->
+    <header style="background: #FFFFFF; border-bottom: 1px solid rgba(43,36,53,0.08); padding: 14px 20px;">
+        <div style="max-width: 820px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="quiz-logo-wrap">
+                <img src="diseño visual/logo_fc.png?v=3" alt="Florencia Castillo FC" class="quiz-logo-img">
+                <div>
+                    <span style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--quiz-carbon); display: block; line-height: 1;">Florencia Castillo</span>
+                    <span style="font-size: 0.68rem; font-weight: 800; letter-spacing: 1.5px; color: var(--quiz-fuchsia); text-transform: uppercase;">Mujeres Alfa · Diagnóstico</span>
+                </div>
+            </a>
+            <a href="index.html" style="font-size: 0.85rem; color: var(--quiz-carbon-muted); text-decoration: none; font-weight: 600;">
+                <i class="fa-solid fa-arrow-left"></i> Volver a la web
+            </a>
+        </div>
+    </header>
+
+    <main class="quiz-wrapper">
+
+        <!-- BARRA DE PROGRESO -->
+        <div class="quiz-progress-wrap" id="progressWrapper" style="display: none;">
+            <div class="quiz-progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- ==========================================
+             PANTALLA 0: INTRODUCCIÓN / HERO
+             ========================================== -->
+        <section class="quiz-card" id="screenIntro">
+            <div class="quiz-intro-header">
+                <span class="quiz-pill-badge">
+                    <i class="fa-solid fa-sparkles"></i> TEST DE DIAGNÓSTICO ESTRATÉGICO
+                </span>
+                <h1 class="quiz-intro-title">
+                    ¿Cuál es tu Arquetipo de Liderazgo Femenino y qué frena la facturación de tu negocio?
+                </h1>
+                <p class="quiz-intro-subtitle">
+                    Descubrí en menos de <strong>90 segundos</strong> en qué etapa estás parada, cuál es tu punto ciego comercial invisible y la hoja de ruta ontológica para avanzar sin quemarte en el intento.
+                </p>
+            </div>
+
+            <div class="quiz-features-grid">
+                <div class="quiz-feature-item">
+                    <i class="fa-regular fa-clock"></i>
+                    <span>Toma 90 segundos</span>
+                </div>
+                <div class="quiz-feature-item">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <span>7 Preguntas de 1 Clic</span>
+                </div>
+                <div class="quiz-feature-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>100% Confidencial</span>
+                </div>
+            </div>
+
+            <button class="btn btn-primary btn-block btn-lg" onclick="startQuiz()" style="font-size: 1.12rem; padding: 18px 24px;">
+                <span>Comenzar mi Diagnóstico Ahora</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p style="text-align: center; font-size: 0.78rem; color: var(--quiz-carbon-muted); margin-top: 14px; margin-bottom: 0;">
+                ✨ Diseñado bajo la metodología ontológica del <strong>Método Alfa</strong> de Florencia Castillo.
+            </p>
+        </section>
+
+        <!-- ==========================================
+             PANTALLA 1: PREGUNTAS INTERACTIVAS
+             ========================================== -->
+        <section class="quiz-card" id="screenQuestion" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span class="step-count-badge" id="stepCounter">PREGUNTA 1 DE 7</span>
+                <button onclick="prevQuestion()" id="btnBackQuestion" style="background: none; border: none; font-size: 0.8rem; color: var(--quiz-carbon-muted); cursor: pointer; display: none;">
+                    <i class="fa-solid fa-arrow-left"></i> Anterior
+                </button>
+            </div>
+
+            <h2 class="quiz-question-title" id="questionText"></h2>
+            <p class="quiz-question-desc" id="questionDesc"></p>
+
+            <div class="quiz-options-list" id="optionsContainer">
+                <!-- Se generan dinámicamente -->
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PANTALLA 2: PROCESAMIENTO / ANÁLISIS
+             ========================================== -->
+        <section class="quiz-card" id="screenProcessing" style="display: none;">
+            <div class="quiz-processing-box">
+                <div class="quiz-spinner"></div>
+                <h3 class="quiz-processing-title">Analizando tus respuestas...</h3>
+                <p class="quiz-processing-sub" id="processingText">
+                    Cruzando tus elecciones con los 4 Pilares del Método Alfa...
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PANTALLA 3: LEAD GATE (CAPTURA DE CONTACTO)
+             ========================================== -->
+        <section class="quiz-card" id="screenGate" style="display: none;">
+            <div class="lead-gate-header">
+                <span class="quiz-pill-badge" style="background: rgba(39,174,96,0.1); color: #27ae60;">
+                    <i class="fa-solid fa-circle-check"></i> DIAGNÓSTICO CALCULADO
+                </span>
+                <h3>Tu Arquetipo y Hoja de Ruta están listos</h3>
+                <p>
+                    Ingresá tus datos para desbloquear tu resultado en pantalla y recibir tu diagnóstico completo y confidencial:
+                </p>
+            </div>
+
+            <form id="quizLeadForm" onsubmit="handleQuizLeadSubmit(event)">
+                <div class="quiz-form-group">
+                    <label class="quiz-form-label" for="leadName">Tu Nombre completo *</label>
+                    <input type="text" id="leadName" class="quiz-form-input" required placeholder="Ej: Marcela Gómez">
+                </div>
+
+                <div class="quiz-form-group">
+                    <label class="quiz-form-label" for="leadEmail">Tu mejor Correo Electrónico *</label>
+                    <input type="email" id="leadEmail" class="quiz-form-input" required placeholder="marcela@ejemplo.com">
+                </div>
+
+                <div class="quiz-form-group">
+                    <label class="quiz-form-label" for="leadPhone">Tu WhatsApp (para enviarte tu confirmación)</label>
+                    <input type="tel" id="leadPhone" class="quiz-form-input" placeholder="+54 9 11 ...">
+                </div>
+
+                <button type="submit" id="btnRevealResult" class="btn btn-primary btn-block btn-lg" style="margin-top: 18px; padding: 18px 24px; font-size: 1.1rem;">
+                    <span>✨ Revelar Mi Arquetipo y Diagnóstico</span>
+                    <i class="fa-solid fa-unlock"></i>
+                </button>
+
+                <p style="text-align: center; font-size: 0.78rem; color: var(--quiz-carbon-muted); margin-top: 12px; margin-bottom: 0;">
+                    🔒 Privacidad garantizada. No hacemos spam. Datos tratados bajo secreto profesional.
+                </p>
+            </form>
+        </section>
+
+        <!-- ==========================================
+             PANTALLA 4: RESULTADO PERSONALIZADO
+             ========================================== -->
+        <section class="quiz-card" id="screenResult" style="display: none;">
+            
+            <!-- Encabezado del Arquetipo -->
+            <div style="text-align: center; margin-bottom: 1.8rem;">
+                <div id="resultBadge" class="result-badge-top"></div>
+                <h2 id="resultArchetypeTitle" class="archetype-title"></h2>
+                <div id="resultTagline" class="archetype-tagline"></div>
+            </div>
+
+            <!-- Diagnóstico Ontológico Profundo -->
+            <div id="resultDescription" class="archetype-desc-card"></div>
+
+            <!-- Punto Ciego Oculto -->
+            <div class="blind-spot-box">
+                <h4><i class="fa-solid fa-eye-slash"></i> Tu Punto Ciego Principal</h4>
+                <p id="resultBlindSpot"></p>
+            </div>
+
+            <!-- ========================================================
+                 ESPACIO CONTEMPLADO: VIDEO DE FLOR CASTILLO
+                 ======================================================== -->
+            <div class="flor-video-container">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
+                    <div>
+                        <span class="video-badge-header">
+                            <i class="fa-solid fa-video"></i> MENSAJE EXCLUSIVO EN VIDEO
+                        </span>
+                        <h3 class="video-box-title">Un mensaje de Flor Castillo para tu Arquetipo</h3>
+                        <p class="video-box-sub">
+                            Flor te explica en 2 minutos por qué estás viviendo este bloqueo y cómo dar tu siguiente salto ontológico.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Marco de Video -->
+                <div class="video-frame-aspect" id="videoFrameHolder">
+                    <!-- Placeholder Visual Inteligente (Listo para ser reemplazado por video real de YouTube, Vimeo o MP4) -->
+                    <div class="video-placeholder-cover" onclick="handlePlayFlorVideo()">
+                        <div class="video-overlay-dim"></div>
+                        <div class="video-play-btn">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <span class="video-placeholder-label">
+                            «El problema no es tu capacidad. Es la dirección con la que liderás.»
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hoja de Ruta de 3 Pasos -->
+            <div style="margin: 2.2rem 0;">
+                <h4 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--quiz-carbon); margin-bottom: 6px; text-align: center;">
+                    Tu Hoja de Ruta Inmediata
+                </h4>
+                <p style="text-align: center; font-size: 0.92rem; color: var(--quiz-carbon-muted); margin-bottom: 18px;">
+                    Las 3 acciones exactas para desbloquear este arquetipo durante los próximos 7 días:
+                </p>
+                <div class="roadmap-steps-grid" id="resultRoadmap">
+                    <!-- Se puebla según el arquetipo -->
+                </div>
+            </div>
+
+            <!-- ========================================================
+                 INVITACIÓN PRINCIPAL: MASTERCLASS GRATUITA 12/12
+                 ======================================================== -->
+            <div class="masterclass-invite-card">
+                <span class="mc-pill-top">
+                    <i class="fa-solid fa-ticket"></i> TU PRÓXIMO PASO ESTRATÉGICO
+                </span>
+                <h3 class="mc-invite-title">
+                    Masterclass en Vivo con Flor Castillo
+                </h3>
+                <p class="mc-invite-sub">
+                    «De Emprendedora a Empresaria Alfa»: La clase práctica donde vamos a profundizar sobre tu arquetipo y las herramientas para ordenar tu negocio y facturar con dirección.
+                </p>
+
+                <div class="mc-date-box">
+                    <span><i class="fa-regular fa-calendar-check"></i> Jueves 12 de Diciembre</span>
+                    <span><i class="fa-regular fa-clock"></i> 19:00 hs (Arg)</span>
+                    <span><i class="fa-solid fa-video"></i> Transmisión en Vivo</span>
+                </div>
+
+                <div id="mcActionWrap">
+                    <button class="btn-mc-claim" id="btnClaimMasterclass" onclick="confirmMasterclassFromQuiz()">
+                        <span>Reservar Mi Lugar Gratis en la Masterclass (12/12)</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <p style="font-size: 0.78rem; opacity: 0.85; margin-top: 10px; margin-bottom: 0;">
+                        🎟️ Cupos limitados para la sala en vivo. Se asignan por orden de confirmación.
+                    </p>
+                </div>
+
+                <!-- Estado Confirmado Masterclass -->
+                <div id="mcSuccessConfirmed" style="display: none; background: rgba(0,0,0,0.22); border-radius: var(--radius-md); padding: 18px; margin-top: 14px;">
+                    <div style="font-size: 1.4rem; font-weight: 800; color: #FFE699; margin-bottom: 6px;">
+                        <i class="fa-solid fa-circle-check"></i> ¡Lugar Confirmado para el 12/12!
+                    </div>
+                    <p style="font-size: 0.92rem; color: #FFFFFF; margin-bottom: 14px;">
+                        Te enviamos la confirmación a tu correo. Podés escribirnos ante cualquier consulta sobre tus accesos:
+                    </p>
+                    <a href="mailto:info@florenciacastillo.com?subject=Confirmaci%C3%B3n%20Masterclass%2012/12" class="btn" style="background: var(--fuchsia); color: #FFFFFF; font-weight: 800; border-radius: 50px; padding: 12px 24px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-regular fa-envelope" style="font-size: 1.2rem;"></i> Contactar por Correo Electrónico
+                    </a>
+                </div>
+            </div>
+
+            <!-- Descarga de Guía en PDF -->
+            <div style="background: var(--quiz-marfil); border-radius: var(--radius-md); padding: 20px; text-align: center; border: 1px solid rgba(43,36,53,0.08);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 6px; color: var(--quiz-carbon);">
+                    ¿Querés profundizar en papel?
+                </h4>
+                <p style="font-size: 0.88rem; color: var(--quiz-carbon-muted); margin-bottom: 14px;">
+                    Descargá gratis el Workbook oficial de la Radiografía Alfa en formato PDF de alta definición:
+                </p>
+                <a href="descargas/guia-radiografia-alfa-mujeres-alfa.pdf" download="Guia-Radiografia-Alfa-Mujeres-Alfa.pdf" class="btn btn-outline btn-sm">
+                    <i class="fa-solid fa-download"></i> Descargar Radiografía Alfa en PDF
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER SIMPLE -->
+    <footer style="text-align: center; padding: 24px 16px; font-size: 0.82rem; color: var(--quiz-carbon-muted); border-top: 1px solid rgba(43,36,53,0.08); background: #FFFFFF;">
+        <p style="margin: 0;">&copy; 2026 Florencia Castillo · Mujeres Alfa. Todos los derechos reservados. <a href="legales.html" target="_blank" style="color: var(--quiz-fuchsia); text-decoration: underline;">Términos y Privacidad</a>.</p>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT & LÓGICA DEL QUIZ FUNNEL
+         ========================================== -->
+    <script>
+        // Webhook de Google Sheets oficial de Flor
+        const FC_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxX5uH6rm3F2rW0ElLnIx-XoNBjnfxX0ICvssi9XVN1hTL89-n761enBKZklurY9j7HhQ/exec';
+
+        // 7 Preguntas Estratégicas de 1 Clic
+        const QUIZ_QUESTIONS = [
+            {
+                id: 1,
+                question: "¿Cuál es la realidad de tu día a día en el negocio hoy?",
+                desc: "Sé sincera con cómo vivís tus horas de trabajo habituales:",
+                options: [
+                    { text: "Trabajo 12 a 14 horas, hago todo sola y siento que soy el cuello de botella de mi negocio.", archetype: "saturada", icon: "fa-fire-burner" },
+                    { text: "Tengo cuadernos llenos de ideas y cursos acumulados, pero me paralizo al momento de lanzar y vender.", archetype: "bloqueada", icon: "fa-book-open-reader" },
+                    { text: "Mi servicio es excelente y mis clientas me aman, pero me da pudor exponerme y cobrar caro.", archetype: "invisible", icon: "fa-eye-slash" },
+                    { text: "Facturo con constancia, pero necesito ordenar procesos, delegar y armar equipo para escalar.", archetype: "expansion", icon: "fa-chart-line-up" }
+                ]
+            },
+            {
+                id: 2,
+                question: "¿Cómo describirías tu relación con el dinero y tus precios?",
+                desc: "El dinero muestra con claridad nuestro nivel de merecimiento y orden:",
+                options: [
+                    { text: "Facturo para apagar incendios y cubrir gastos, pero no me queda margen libre de ganancia.", archetype: "saturada", icon: "fa-receipt" },
+                    { text: "Me cuesta ponerle valor a mis propuestas y suelo dudar o postergar el momento de pasar presupuestos.", archetype: "bloqueada", icon: "fa-hand-holding-dollar" },
+                    { text: "Siento culpa o miedo de que si cobro lo que realmente vale, nadie me lo va a comprar.", archetype: "invisible", icon: "fa-heart-crack" },
+                    { text: "Sé el valor que entrego, pero busco modelos de ingresos más escalables y predecibles.", archetype: "expansion", icon: "fa-sack-dollar" }
+                ]
+            },
+            {
+                id: 3,
+                question: "Cuando pensás en tus canales de venta y comunicación:",
+                desc: "¿De qué forma llegan tus clientes actualmente?",
+                options: [
+                    { text: "Llegan por recomendación o boca a boca; no tengo un sistema ordenado para predecir mis ventas.", archetype: "saturada", icon: "fa-comments" },
+                    { text: "Paso semanas armando estrategias o contenidos que después no publico por miedo a que no sean perfectos.", archetype: "bloqueada", icon: "fa-pen-ruler" },
+                    { text: "Me incomoda vender por historias o cámara; siento que invado o que me vuelvo pesada.", archetype: "invisible", icon: "fa-video-slash" },
+                    { text: "Tengo audiencia y redes activas, pero quiero automatizar para no depender siempre de mi presencia física.", archetype: "expansion", icon: "fa-bullhorn" }
+                ]
+            },
+            {
+                id: 4,
+                question: "¿Cuál es el mayor obstáculo emocional que enfrentás?",
+                desc: "La traba interna que más energía te quita:",
+                options: [
+                    { text: "Agotamiento mental. No sé cómo soltar el control sin sentir que todo se derrumba.", archetype: "saturada", icon: "fa-battery-quarter" },
+                    { text: "La duda constante y el síndrome de la impostora ('¿quién soy yo para cobrar esto?').", archetype: "bloqueada", icon: "fa-circle-question" },
+                    { text: "Miedo a la exposición, al juicio externo o a la crítica de colegas y personas cercanas.", archetype: "invisible", icon: "fa-user-shield" },
+                    { text: "Falta de foco: me disperso con proyectos nuevos en vez de consolidar y escalar lo que ya funciona.", archetype: "expansion", icon: "fa-compass-drafting" }
+                ]
+            },
+            {
+                id: 5,
+                question: "Si mirás tus últimos 6 meses de facturación:",
+                desc: "Tu curva de ingresos se parece más a:",
+                options: [
+                    { text: "Una montaña rusa: un mes bueno y al siguiente me desespero buscando clientas.", archetype: "saturada", icon: "fa-chart-area" },
+                    { text: "Ingresos estancados en el mismo nivel desde hace meses por falta de lanzamientos firmes.", archetype: "bloqueada", icon: "fa-anchor" },
+                    { text: "Ingresos medios, pero muy por debajo del tiempo, cariño y energía que le entrego.", archetype: "invisible", icon: "fa-scale-unbalanced" },
+                    { text: "Facturación sólida y en alza, pero mi tiempo personal y de descanso desapareció.", archetype: "expansion", icon: "fa-arrow-trend-up" }
+                ]
+            },
+            {
+                id: 6,
+                question: "¿Qué tipo de acompañamiento sentís que necesitás con urgencia?",
+                desc: "Lo que realmente transformaría tu realidad en 30 días:",
+                options: [
+                    { text: "Estructura, simplificación de tareas y aprender a no remar sola.", archetype: "saturada", icon: "fa-hands-holding-child" },
+                    { text: "Claridad ontológica, dirección firme y alguien que me baje a tierra para accionar.", archetype: "bloqueada", icon: "fa-bullseye-arrow" },
+                    { text: "Reprogramación de merecimiento, autoridad y seguridad para venderme sin pudor.", archetype: "invisible", icon: "fa-crown" },
+                    { text: "Mentoría estratégica de alto nivel para sistematizar, delegar y construir una empresa real.", archetype: "expansion", icon: "fa-building-circle-check" }
+                ]
+            },
+            {
+                id: 7,
+                question: "Si tuvieras el método y la guía paso a paso, ¿cuál es tu compromiso?",
+                desc: "Tu disposición real para hacer el cambio:",
+                options: [
+                    { text: "Estoy lista para soltar el control y ordenar mis hábitos para recuperar mi paz mental.", archetype: "saturada", icon: "fa-heart" },
+                    { text: "Estoy dispuesta a dejar las excusas y accionar de forma imperfecta esta misma semana.", archetype: "bloqueada", icon: "fa-bolt-lightning" },
+                    { text: "Quiero asumir mi lugar como referente y empezar a cobrar con autoridad profesional.", archetype: "invisible", icon: "fa-star" },
+                    { text: "Voy con todo para convertir mi conocimiento en un activo que escale sin límites.", archetype: "expansion", icon: "fa-gem" }
+                ]
+            }
+        ];
+
+        // Definición profunda de los 4 Arquetipos Alfa
+        const ARCHETYPES_DATA = {
+            saturada: {
+                title: "La Artesana Saturada",
+                tagline: "«Sos la mejor en lo tuyo, pero te convertiste en la empleada más exigente de tu propio negocio.»",
+                badgeBg: "rgba(255,92,69,0.12)",
+                badgeColor: "#FF5C45",
+                badgeIcon: "fa-fire-burner",
+                description: `
+                    <p><strong>Diagnóstico:</strong> Tenés talento de sobra, tus clientas te aprecian y tu trabajo es impecable, pero estás atrapada en el modelo de autoempleo. Si vos no estás presente, el negocio no factura. Vivís resolviendo urgencias, apagando incendios operativos y postergando tu descanso para sostener la estructura.</p>
+                    <p style="margin-bottom:0;">Tu agotamiento no se debe a que trabajes poco, sino a que estás remando sola sin procesos que trabajen para vos.</p>
+                `,
+                blindSpot: "Creer que si delegás o simplificás la calidad va a caer. La dificultad para soltar el control es el techo de cristal de tus ingresos.",
+                roadmap: [
+                    { num: "01", title: "Auditoría de Tiempo", desc: "Identificar las 3 tareas operativas que te quitan energía y no generan ventas directas." },
+                    { num: "02", title: "Empaquetar Ofertas", desc: "Dejar de cobrar por hora o entregables sueltos y pasar a programas empaquetados." },
+                    { num: "03", title: "Delegar lo Básico", desc: "Establecer tu primera rutina de procesos para recuperar 8 horas libres semanales." }
+                ]
+            },
+            bloqueada: {
+                title: "La Estratega Bloqueada",
+                tagline: "«Sos brillante planificando, pero el perfeccionismo te mantiene en la sala de espera de tu propio éxito.»",
+                badgeBg: "rgba(212,0,106,0.12)",
+                badgeColor: "#D4006A",
+                badgeIcon: "fa-book-open-reader",
+                description: `
+                    <p><strong>Diagnóstico:</strong> Tenés una mente privilegiada para diseñar proyectos, cuadernos llenos de ideas extraordinarias y una biblioteca entera de cursos y certificados. Sin embargo, cuando llega el momento de salir al mercado y vender, aparece la parálisis por análisis.</p>
+                    <p style="margin-bottom:0;">Esperás a que la web esté perfecta, a que el logo esté impecable o a sentirte '100% lista', cuando en realidad lo que falta no es conocimiento, sino acción imperfecta sostenida.</p>
+                `,
+                blindSpot: "Usar la preparación infinita como un escudo contra el miedo al rechazo o al fracaso. El exceso de análisis es la forma más sofisticada de procrastinar.",
+                roadmap: [
+                    { num: "01", title: "Foco en 1 Sola Oferta", desc: "Elegir una única propuesta y congelar todos los proyectos paralelos por 30 días." },
+                    { num: "02", title: "Lanzamiento Express", desc: "Salir a vender a 5 contactos calificados antes de armar la presentación perfecta." },
+                    { num: "03", title: "Dirección Ontológica", desc: "Romper la necesidad de aprobación externa y sostener tus decisiones comerciales." }
+                ]
+            },
+            invisible: {
+                title: "La Líder Invisible",
+                tagline: "«Tu calidad es de clase mundial, pero tu timidez comercial te está costando miles de dólares al año.»",
+                badgeBg: "rgba(212,175,55,0.15)",
+                badgeColor: "#B8860B",
+                badgeIcon: "fa-eye-slash",
+                description: `
+                    <p><strong>Diagnóstico:</strong> Tu transformación es real, tus clientas tienen resultados hermosos y tu ética profesional es intachable. Pero jugás en chiquito. Te incomoda la autopromoción, te da vergüenza prender la cámara y sentís una culpa interna muy arraigada al momento de pedir tarifas altas.</p>
+                    <p style="margin-bottom:0;">Separaste artificialmente el 'ayudar con el corazón' del 'cobrar con autoridad empresarial', lo que hace que personas con un décimo de tu talento facturen 5 veces más simplemente porque se animan a mostrarse.</p>
+                `,
+                blindSpot: "Confundir humildad con invisibilidad. Si tu mensaje no se ve, no estás protegiendo a nadie; estás privando a tus clientas de conocer tu solución.",
+                roadmap: [
+                    { num: "01", title: "Reprogramación de Valor", desc: "Alinear tu relación con el dinero: cobrar bien es la máxima señal de respeto por tu entrega." },
+                    { num: "02", title: "Suba de Tarifas", desc: "Actualizar tus precios a su valor real de mercado sin pedir disculpas ni dudar." },
+                    { num: "03", title: "Voz de Autoridad", desc: "Comunicar tu propuesta en redes desde la convicción de referente y no desde la súplica." }
+                ]
+            },
+            expansion: {
+                title: "La Empresaria Alfa en Expansión",
+                tagline: "«Ya validaste tu propuesta y tenés tracción; ahora es momento de construir los cimientos de tu imperio.»",
+                badgeBg: "rgba(39,174,96,0.14)",
+                badgeColor: "#27ae60",
+                badgeIcon: "fa-chart-line-up",
+                description: `
+                    <p><strong>Diagnóstico:</strong> Ya cruzaste la barrera más difícil del inicio: tenés clientela, facturación constante y tu metodología está probada. Tu problema hoy no es la falta de ventas, sino que el negocio llegó a su límite físico porque está apoyado sobre tu espalda.</p>
+                    <p style="margin-bottom:0;">Estás en el punto de quiebre donde necesitás dejar de ser la operadora técnica y asumir el rol de Directora General: sistemas comerciales predecibles, activos escalables y acompañamiento de alto nivel.</p>
+                `,
+                blindSpot: "Creer que escalar requiere trabajar el doble de horas. Escalar exige construir sistemas y dejar de ser indispensable en cada detalle.",
+                roadmap: [
+                    { num: "01", title: "Embudo Automatizado", desc: "Construir funnels perennes de captación para nutrir prospectos las 24 horas." },
+                    { num: "02", title: "Activos Escalables", desc: "Convertir tus sesiones individuales en programas grupales y membresías de alto impacto." },
+                    { num: "03", title: "Comité Estratégico", desc: "Acompañamiento 1 a 1 de escala comercial para liderar con visión empresarial." }
+                ]
+            }
+        };
+
+        // Estado del Funnel
+        let currentQuestionIndex = 0;
+        let archetypeScores = { saturada: 0, bloqueada: 0, invisible: 0, expansion: 0 };
+        let detectedArchetypeKey = 'saturada';
+        let capturedUserData = { name: '', email: '', phone: '' };
+
+        function startQuiz() {
+            document.getElementById('screenIntro').style.display = 'none';
+            document.getElementById('screenQuestion').style.display = 'block';
+            document.getElementById('progressWrapper').style.display = 'block';
+            currentQuestionIndex = 0;
+            archetypeScores = { saturada: 0, bloqueada: 0, invisible: 0, expansion: 0 };
+            renderCurrentQuestion();
+        }
+
+        function renderCurrentQuestion() {
+            const q = QUIZ_QUESTIONS[currentQuestionIndex];
+            const progressPercent = Math.round(((currentQuestionIndex + 1) / QUIZ_QUESTIONS.length) * 100);
+
+            document.getElementById('progressBar').style.width = progressPercent + '%';
+            document.getElementById('stepCounter').textContent = `PREGUNTA ${currentQuestionIndex + 1} DE ${QUIZ_QUESTIONS.length}`;
+            document.getElementById('questionText').textContent = q.question;
+            document.getElementById('questionDesc').textContent = q.desc;
+
+            const backBtn = document.getElementById('btnBackQuestion');
+            backBtn.style.display = currentQuestionIndex > 0 ? 'inline-flex' : 'none';
+
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-option-btn';
+                btn.type = 'button';
+                btn.onclick = () => selectOption(opt.archetype, btn);
+
+                btn.innerHTML = `
+                    <div class="quiz-option-icon">
+                        <i class="fa-solid ${opt.icon}"></i>
+                    </div>
+                    <div class="quiz-option-text">${opt.text}</div>
+                    <div class="quiz-option-arrow">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                `;
+                container.appendChild(btn);
+            });
+        }
+
+        function selectOption(archetypeKey, btnElem) {
+            btnElem.classList.add('selected');
+            archetypeScores[archetypeKey] = (archetypeScores[archetypeKey] || 0) + 1;
+
+            // Micro-delay para dar feedback visual antes de pasar a la siguiente pregunta
+            setTimeout(() => {
+                if (currentQuestionIndex < QUIZ_QUESTIONS.length - 1) {
+                    currentQuestionIndex++;
+                    renderCurrentQuestion();
+                } else {
+                    finishQuestionsAndProcess();
+                }
+            }, 220);
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                renderCurrentQuestion();
+            }
+        }
+
+        function finishQuestionsAndProcess() {
+            document.getElementById('screenQuestion').style.display = 'none';
+            document.getElementById('screenProcessing').style.display = 'block';
+
+            // Determinar arquetipo ganador
+            let highestScore = -1;
+            let winner = 'saturada';
+            for (const [key, score] of Object.entries(archetypeScores)) {
+                if (score > highestScore) {
+                    highestScore = score;
+                    winner = key;
+                }
+            }
+            detectedArchetypeKey = winner;
+
+            // Simulación de análisis psicológico dinámico
+            const procText = document.getElementById('processingText');
+            setTimeout(() => {
+                procText.textContent = "Cruzando tus respuestas con los 4 Pilares del Método Alfa...";
+            }, 1000);
+
+            setTimeout(() => {
+                procText.textContent = "Identificando tu arquetipo y punto ciego principal...";
+            }, 2000);
+
+            setTimeout(() => {
+                document.getElementById('screenProcessing').style.display = 'none';
+                document.getElementById('screenGate').style.display = 'block';
+            }, 3000);
+        }
+
+        function handleQuizLeadSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('leadName').value.trim();
+            const email = document.getElementById('leadEmail').value.trim();
+            const phone = document.getElementById('leadPhone').value.trim();
+
+            if (!name || !email) {
+                alert('Por favor completá tu nombre y correo electrónico.');
+                return;
+            }
+
+            capturedUserData = { name, email, phone };
+
+            const arch = ARCHETYPES_DATA[detectedArchetypeKey];
+            const payload = {
+                recurso: `Quiz Diagnóstico Alfa - Arquetipo: ${arch.title}`,
+                nombre: name,
+                email: email,
+                whatsapp: phone || 'No informado',
+                fecha: new Date().toLocaleString('es-AR'),
+                detalles: `Arquetipo: ${arch.title} | Scores: Sat:${archetypeScores.saturada} Bloq:${archetypeScores.bloqueada} Invis:${archetypeScores.invisible} Exp:${archetypeScores.expansion}`
+            };
+
+            // 1. Guardar en Google Sheets Oficial
+            fetch(FC_SHEETS_WEBHOOK, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify(payload)
+            }).catch(err => console.warn('Google Sheets error:', err));
+
+            // Guardar localmente para panel de Flor
+            try {
+                const stored = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
+                stored.unshift(payload);
+                localStorage.setItem('fc_system_leads', JSON.stringify(stored.slice(0, 500)));
+            } catch(err) {}
+
+            // 2. Respaldo por FormSubmit a Gmail
+            fetch('https://formsubmit.co/ajax/info@florenciacastillo.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(e => console.warn('FormSubmit error:', e));
+
+            // Desplegar pantalla de resultados personalizada
+            renderFinalResult(detectedArchetypeKey);
+        }
+
+        function renderFinalResult(archKey) {
+            document.getElementById('screenGate').style.display = 'none';
+            document.getElementById('screenResult').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            const arch = ARCHETYPES_DATA[archKey];
+
+            // Badge
+            const badge = document.getElementById('resultBadge');
+            badge.style.background = arch.badgeBg;
+            badge.style.color = arch.badgeColor;
+            badge.innerHTML = `<i class="fa-solid ${arch.badgeIcon}"></i> TU ARQUETIPO DIAGNOSTICADO`;
+
+            // Títulos
+            document.getElementById('resultArchetypeTitle').textContent = arch.title;
+            document.getElementById('resultTagline').textContent = arch.tagline;
+
+            // Descripciones
+            document.getElementById('resultDescription').innerHTML = arch.description;
+            document.getElementById('resultBlindSpot').textContent = arch.blindSpot;
+
+            // Hoja de ruta
+            const rmContainer = document.getElementById('resultRoadmap');
+            rmContainer.innerHTML = '';
+            arch.roadmap.forEach(step => {
+                const box = document.createElement('div');
+                box.className = 'roadmap-step-box';
+                box.innerHTML = `
+                    <div class="step-num-bubble">${step.num}</div>
+                    <h5>${step.title}</h5>
+                    <p>${step.desc}</p>
+                `;
+                rmContainer.appendChild(box);
+            });
+        }
+
+        // ==========================================
+        // CONFIRMACIÓN RÁPIDA MASTERCLASS 12/12
+        // ==========================================
+        function confirmMasterclassFromQuiz() {
+            const btn = document.getElementById('btnClaimMasterclass');
+            btn.disabled = true;
+            btn.innerHTML = '<span>Reservando tu asiento...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+
+            const mcPayload = {
+                recurso: 'Masterclass Gratuita Mujeres Alfa (12/12 - 19:00 hs)',
+                nombre: capturedUserData.name || 'Emprendedora Alfa',
+                email: capturedUserData.email || 'No informado',
+                whatsapp: capturedUserData.phone || 'No informado',
+                fecha: new Date().toLocaleString('es-AR'),
+                detalles: `Inscripta desde Quiz Arquetipos (${ARCHETYPES_DATA[detectedArchetypeKey].title})`
+            };
+
+            // Guardar en Google Sheets como inscripta oficial a la Masterclass
+            fetch(FC_SHEETS_WEBHOOK, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify(mcPayload)
+            }).catch(e => console.warn(e));
+
+            try {
+                const stored = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
+                stored.unshift(mcPayload);
+                localStorage.setItem('fc_system_leads', JSON.stringify(stored.slice(0, 500)));
+            } catch(e) {}
+
+            fetch('https://formsubmit.co/ajax/info@florenciacastillo.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(mcPayload)
+            }).catch(e => console.warn(e));
+
+            setTimeout(() => {
+                document.getElementById('mcActionWrap').style.display = 'none';
+                document.getElementById('mcSuccessConfirmed').style.display = 'block';
+            }, 600);
+        }
+
+        // ==========================================
+        // CONTROL DEL VIDEO DE FLOR
+        // ==========================================
+        function handlePlayFlorVideo() {
+            /*
+             * INSTRUCCIONES PARA AGREGAR EL VIDEO DE FLOR:
+             * Cuando Flor tenga el video listo, simplemente reemplazá la variable `FLOR_VIDEO_URL`
+             * con el enlace de YouTube embed, Vimeo o archivo .mp4 local.
+             * Ejemplos:
+             * - YouTube: "https://www.youtube.com/embed/TU_CODIGO_AQUI?autoplay=1"
+             * - Vimeo: "https://player.vimeo.com/video/TU_CODIGO_AQUI?autoplay=1"
+             * - Video MP4 propio: "descargas/video-flor-arquetipos.mp4"
+             */
+            const FLOR_VIDEO_URL = ""; // Pegar aquí la URL del video cuando esté listo
+
+            const holder = document.getElementById('videoFrameHolder');
+
+            if (FLOR_VIDEO_URL) {
+                if (FLOR_VIDEO_URL.endsWith('.mp4')) {
+                    holder.innerHTML = `<video src="${FLOR_VIDEO_URL}" controls autoplay style="width:100%;height:100%;object-fit:cover;"></video>`;
+                } else {
+                    holder.innerHTML = `<iframe src="${FLOR_VIDEO_URL}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+                }
+            } else {
+                alert("🎬 Espacio preparado para el video de Flor Castillo.\n\nApenas Flor grabe el video invitando a la Masterclass del 12/12, solo pegamos el enlace en el código y se reproducirá aquí automáticamente.");
+            }
+        }
+    </script>
+</body>
+</html>

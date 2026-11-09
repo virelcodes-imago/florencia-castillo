@@ -102,7 +102,7 @@ function handleLeadSubmit(event) {
     recordLeadInSystem(leadPayload);
 
     // Enviar copia a la casilla de Flor por FormSubmit como respaldo
-    fetch('https://formsubmit.co/ajax/florenciacastillo.oficial@gmail.com', {
+    fetch('https://formsubmit.co/ajax/info@florenciacastillo.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

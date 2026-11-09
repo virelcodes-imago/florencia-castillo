@@ -1043,10 +1043,10 @@
                                 <span>Ver Cartas & Descargar en PDF</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
-                            <a href="descargas/oraculo-mujeres-alfa-32-manifestaciones.pdf" 
+                            <a href="descargas/oraculo-mujeres-alfa-32-manifestaciones.pdf?v=2" 
                                download="Oraculo-Mujeres-Alfa-32-Manifestaciones-Florencia-Castillo.pdf" 
                                class="btn-oraculo-dl btn-download-trigger" 
-                               onclick="checkDownloadAccess(event, 'descargas/oraculo-mujeres-alfa-32-manifestaciones.pdf', 'Oraculo-Mujeres-Alfa-32-Manifestaciones-Florencia-Castillo.pdf')">
+                               onclick="checkDownloadAccess(event, 'descargas/oraculo-mujeres-alfa-32-manifestaciones.pdf?v=2', 'Oraculo-Mujeres-Alfa-32-Manifestaciones-Florencia-Castillo.pdf')">
                                 <i class="fa-solid fa-download"></i>
                                 <span>Descargar PDF (11 págs)</span>
                             </a>
@@ -1328,13 +1328,11 @@
                                 <i class="fa-solid fa-calendar-plus"></i>
                                 <span>Añadir a Google Calendar</span>
                             </a>
-                            <a href="https://wa.me/5522998090599?text=Hola%20Flor!%20Ya%20me%20registr%C3%A9%20a%20la%20Masterclass%20del%2012/12." 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
+                            <a href="mailto:info@florenciacastillo.com?subject=Registro%20a%20la%20Masterclass%2012/12" 
                                class="btn btn-primary btn-sm" 
-                               style="background: #25D366; border-color: #25D366; text-decoration: none;">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                <span>Avisar por WhatsApp</span>
+                               style="background: var(--fuchsia); border-color: var(--fuchsia); text-decoration: none;">
+                                <i class="fa-regular fa-envelope"></i>
+                                <span>Avisar por Email</span>
                             </a>
                         </div>
                     </div>
@@ -1362,9 +1360,8 @@
                 <div class="footer-socials">
                     <a href="https://www.instagram.com/florenciacastillo.oficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://tiktok.com/@florenciacastillo.oficial" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://wa.me/5522998090599" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
                     <a href="https://youtube.com/@florenciacastillo" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="mailto:florenciacastillo.oficial@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="mailto:info@florenciacastillo.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
                 </div>
             </div>
 
@@ -1410,13 +1407,12 @@
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
-    <a href="https://wa.me/5522998090599?text=Hola%20Flor!%20Estuve%20viendo%20tus%20gu%C3%ADas%20gratuitas%20y%20me%20gustar%C3%ADa%20hacerte%20una%20consulta." 
+    <!-- BOTÓN FLOTANTE EMAIL -->
+    <a href="mailto:info@florenciacastillo.com?subject=Consulta%20sobre%20las%20gu%C3%ADas%20gratuitas" 
        class="whatsapp-float" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="Contactar por WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
+       style="background: var(--fuchsia); box-shadow: 0 8px 25px rgba(212,0,106,0.35);" 
+       aria-label="Contactar por Email">
+        <i class="fa-regular fa-envelope"></i>
     </a>
 
     <!-- MODAL DE DESCARGA RÁPIDA (SOLO PARA QUIENES NO DEJARON SUS DATOS AÚN) -->
@@ -1555,7 +1551,7 @@
             } catch(e) {}
 
             // 2. Copia por FormSubmit
-            fetch('https://formsubmit.co/ajax/florenciacastillo.oficial@gmail.com', {
+            fetch('https://formsubmit.co/ajax/info@florenciacastillo.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1626,7 +1622,7 @@
             } catch(e) {}
 
             // 2. FormSubmit
-            fetch('https://formsubmit.co/ajax/florenciacastillo.oficial@gmail.com', {
+            fetch('https://formsubmit.co/ajax/info@florenciacastillo.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
