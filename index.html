@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -29,9 +29,26 @@
     <link rel="manifest" href="site.webmanifest">
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=2.2">
+    <link rel="stylesheet" href="styles.css?v=2.3">
 </head>
 <body>
+
+    <!-- BANNER EVENTO 12/12 (se oculta solo luego del 12/12/2026) -->
+    <aside class="event-banner" id="eventBanner" aria-label="Evento online gratuito 12 de diciembre">
+        <div class="container banner-inner">
+            <span>🔗✨ <strong>12/12 tenemos una cita online:</strong> encuentro gratuito para mujeres que quieren emprender y potenciar su negocio</span>
+            <a href="florenciacastillo-evento12-12-26" class="event-banner-cta">Inscribite gratis <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </aside>
+    <script>
+        (function () {
+            // Visible hasta el fin del 12/12/2026 (hora local del visitante)
+            if (new Date() > new Date(2026, 11, 12, 23, 59, 59)) {
+                var b = document.getElementById('eventBanner');
+                if (b) b.remove();
+            }
+        })();
+    </script>
 
     <!-- TOP ANNOUNCEMENT BANNER -->
     <aside class="top-banner" aria-label="Aviso importante">

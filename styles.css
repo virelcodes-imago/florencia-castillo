@@ -195,6 +195,35 @@ a {
     width: 100%;
 }
 
+/* EVENT BANNER 12/12 (temporal, se oculta solo después del evento) */
+.event-banner {
+    background: linear-gradient(90deg, var(--fuchsia) 0%, var(--coral) 60%, var(--naranja) 100%);
+    color: #fff;
+    padding: 10px 0;
+    font-size: 0.92rem;
+    text-align: center;
+}
+
+.event-banner .banner-inner {
+    gap: 14px;
+}
+
+.event-banner-cta {
+    background: #fff;
+    color: var(--fuchsia);
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.2s ease;
+}
+
+.event-banner-cta:hover {
+    transform: translateY(-1px);
+}
+
 /* TOP ANNOUNCEMENT BANNER */
 .top-banner {
     background: var(--carbon);

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12/12 · Tenemos una cita online | Florencia Castillo · Mujeres Alfa</title>
+    <meta name="description" content="Encuentro online y gratuito el 12 de diciembre para mujeres que quieren reencontrarse, potenciarse y llevar su proyecto al próximo nivel. Inscribite.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="12/12 · Tenemos una cita online 🔗✨">
+    <meta property="og:description" content="Encuentro gratuito para mujeres que quieren emprender o llevar su negocio al próximo nivel. 12 de diciembre · Online y gratuito.">
+    <meta property="og:image" content="https://florenciacastillo.com/diseño visual/flor_evento_1212.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/svg+xml" href="diseño visual/favicon.svg?v=3">
+    <link rel="icon" type="image/png" sizes="32x32" href="diseño visual/favicon-32x32.png?v=3">
+    <link rel="apple-touch-icon" sizes="180x180" href="diseño visual/apple-touch-icon.png?v=3">
+
+    <style>
+        :root {
+            --fuchsia: #D4006A;
+            --marfil: #FAF0E4;
+            --marfil-surface: #FFF9F2;
+            --carbon: #2B2435;
+            --carbon-light: #5A5266;
+            --coral: #FF5C45;
+            --naranja: #FF9A3C;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background: var(--marfil);
+            color: var(--carbon);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        .top-bar {
+            background: var(--carbon);
+            padding: 14px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .top-bar a { display: inline-flex; align-items: center; gap: 12px; color: var(--marfil); }
+        .top-bar img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+        .top-bar .t1 { font-family: var(--font-heading); font-weight: 700; font-size: 1.25rem; line-height: 1.1; display: block; }
+        .top-bar .t2 { font-size: 0.68rem; letter-spacing: 3px; color: var(--naranja); font-weight: 700; display: block; }
+
+        .hero {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 56px 24px 72px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 56px;
+            align-items: center;
+        }
+        .date-pill {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, var(--fuchsia), var(--coral));
+            color: #fff; font-weight: 700; font-size: 0.8rem;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            padding: 8px 18px; border-radius: 50px; margin-bottom: 22px;
+            box-shadow: 0 8px 22px rgba(212,0,106,0.28);
+        }
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5.2vw, 4rem);
+            line-height: 1.05;
+            color: var(--carbon);
+            margin-bottom: 20px;
+        }
+        h1 em { color: var(--fuchsia); font-style: italic; }
+        .lead { font-size: 1.15rem; color: var(--carbon-light); margin-bottom: 18px; max-width: 540px; }
+        .lead strong { color: var(--carbon); }
+        .benefits { list-style: none; margin: 22px 0 28px; display: grid; gap: 10px; }
+        .benefits li { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; }
+        .benefits i { color: var(--fuchsia); margin-top: 5px; }
+        .meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; }
+        .meta span {
+            background: var(--marfil-surface); border: 1px solid rgba(43,36,53,0.1);
+            padding: 10px 18px; border-radius: 50px; font-weight: 600; font-size: 0.92rem;
+        }
+        .meta i { color: var(--fuchsia); margin-right: 6px; }
+
+        .photo-wrap { position: relative; max-width: 380px; margin: 0 auto; width: 100%; }
+        .photo-wrap::before {
+            content: ''; position: absolute; inset: -14px;
+            border: 2px solid var(--fuchsia); border-radius: 36px;
+            transform: rotate(3deg); opacity: 0.35;
+        }
+        .photo-wrap img {
+            position: relative; width: 100%; display: block;
+            border-radius: 28px;
+            box-shadow: 0 28px 60px rgba(43,36,53,0.22);
+        }
+
+        .signup {
+            background: var(--carbon);
+            padding: 72px 24px 80px;
+        }
+        .signup-card {
+            max-width: 620px; margin: 0 auto;
+            background: var(--marfil-surface);
+            border-radius: 28px;
+            padding: 42px 38px;
+            border: 2px solid var(--fuchsia);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+        }
+        .signup-card h2 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem; color: var(--fuchsia);
+            text-align: center; margin-bottom: 6px;
+        }
+        .signup-card .sub { text-align: center; color: var(--carbon-light); margin-bottom: 26px; font-size: 0.97rem; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+        label { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--carbon-light); margin-bottom: 6px; }
+        input[type=text], input[type=email], input[type=tel] {
+            width: 100%; padding: 14px 16px; font-family: var(--font-body); font-size: 1rem;
+            border: 1.5px solid rgba(43,36,53,0.15); border-radius: 14px;
+            background: #fff; color: var(--carbon); outline: none; transition: all .2s;
+        }
+        input:focus { border-color: var(--fuchsia); box-shadow: 0 0 0 4px rgba(212,0,106,0.12); }
+        .full { margin-bottom: 14px; }
+        .btn-submit {
+            width: 100%; margin-top: 10px; padding: 18px; border: none; cursor: pointer;
+            font-family: var(--font-body); font-weight: 700; font-size: 1.08rem; color: #fff;
+            background: var(--fuchsia); border-radius: 50px;
+            display: inline-flex; justify-content: center; align-items: center; gap: 10px;
+            box-shadow: 0 14px 30px rgba(212,0,106,0.35); transition: transform .2s, box-shadow .2s;
+        }
+        .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(212,0,106,0.45); }
+        .btn-submit:disabled { opacity: .7; cursor: wait; transform: none; }
+        .privacy { text-align: center; font-size: 0.78rem; color: var(--carbon-light); margin-top: 14px; }
+        .privacy a { text-decoration: underline; }
+        .hp { position: absolute; left: -9999px; opacity: 0; height: 0; width: 0; }
+
+        .success { display: none; text-align: center; padding: 10px 0; }
+        .success .check {
+            width: 76px; height: 76px; border-radius: 50%; background: #27ae60; color: #fff;
+            display: inline-flex; align-items: center; justify-content: center; font-size: 2.2rem; margin-bottom: 16px;
+        }
+        .success h3 { font-family: var(--font-heading); font-size: 2.1rem; color: var(--carbon); margin-bottom: 8px; }
+        .success p { color: var(--carbon-light); margin-bottom: 20px; }
+        .success .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn-sec {
+            display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 50px;
+            font-weight: 700; font-size: 0.95rem; border: 1.5px solid var(--fuchsia); color: var(--fuchsia); background: transparent;
+        }
+        .btn-sec.fill { background: var(--fuchsia); color: #fff; }
+
+        footer { text-align: center; padding: 26px 20px; font-size: 0.82rem; color: var(--carbon-light); }
+        footer a { text-decoration: underline; }
+
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; gap: 38px; padding-top: 36px; }
+            .photo-wrap { order: -1; max-width: 300px; }
+        }
+        @media (max-width: 560px) {
+            .row { grid-template-columns: 1fr; }
+            .signup-card { padding: 30px 22px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="index.html" aria-label="Florencia Castillo · Mujeres Alfa">
+            <img src="diseño visual/logo_fc.png?v=3" alt="Logo Florencia Castillo">
+            <span><span class="t1">Florencia Castillo</span><span class="t2">MUJERES ALFA</span></span>
+        </a>
+    </div>
+
+    <main>
+        <section class="hero">
+            <div>
+                <span class="date-pill"><i class="fa-regular fa-calendar"></i> 12 de diciembre · Online y gratuito</span>
+                <h1>12-12 tenemos una <em>cita online</em> 🔗✨</h1>
+                <p class="lead">Un encuentro <strong>gratuito</strong> para mujeres que quieren <strong>reencontrarse, potenciarse</strong> y empezar a construir una nueva versión de sí mismas ✨</p>
+                <p class="lead">Si estás pensando en emprender o ya tenés tu propio negocio, vas a llevarte herramientas de <strong>posicionamiento de marca</strong> y <strong>estrategias empresariales</strong> para impulsar tu proyecto y llevarlo al próximo nivel 👇🏼</p>
+
+                <ul class="benefits">
+                    <li><i class="fa-solid fa-circle-check"></i> Herramientas de posicionamiento de marca</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Estrategias empresariales para tu proyecto</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Un espacio para reencontrarte y potenciarte</li>
+                </ul>
+
+                <div class="meta">
+                    <span><i class="fa-regular fa-calendar-check"></i>12 de diciembre</span>
+                    <span><i class="fa-solid fa-laptop"></i>Online</span>
+                    <span><i class="fa-solid fa-gift"></i>Gratuito</span>
+                </div>
+            </div>
+
+            <div class="photo-wrap">
+                <img src="diseño visual/flor_evento_1212.jpg" alt="Florencia Castillo · Mujeres Alfa" width="576" height="1024">
+            </div>
+        </section>
+
+        <section class="signup" id="inscripcion">
+            <div class="signup-card">
+                <div id="formWrap">
+                    <h2>Inscribite acá</h2>
+                    <p class="sub">Completá tus datos y reservá tu lugar en el encuentro del 12/12.</p>
+
+                    <form id="eventForm" onsubmit="handleEventSubmit(event)" novalidate>
+                        <div class="row">
+                            <div>
+                                <label for="evNombre">Nombre</label>
+                                <input type="text" id="evNombre" autocomplete="given-name" required placeholder="Ej. Sofía">
+                            </div>
+                            <div>
+                                <label for="evApellido">Apellido</label>
+                                <input type="text" id="evApellido" autocomplete="family-name" required placeholder="Ej. Ramos">
+                            </div>
+                        </div>
+                        <div class="full">
+                            <label for="evEmail">Correo electrónico</label>
+                            <input type="email" id="evEmail" autocomplete="email" required placeholder="sofia@ejemplo.com">
+                        </div>
+                        <div class="full">
+                            <label for="evTel">Teléfono (con código de área)</label>
+                            <input type="tel" id="evTel" autocomplete="tel" required placeholder="Ej. +54 9 11 1234-5678">
+                        </div>
+                        <input type="text" id="evHp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <button type="submit" id="btnEv" class="btn-submit">
+                            <span>Quiero mi lugar gratis</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <p class="privacy">🔒 Tus datos están protegidos. Al inscribirte aceptás nuestra <a href="legales.html#privacidad" target="_blank">Política de Privacidad</a>.</p>
+                    </form>
+                </div>
+
+                <div class="success" id="successWrap">
+                    <div class="check"><i class="fa-solid fa-check"></i></div>
+                    <h3>¡Ya estás inscripta, <span id="okName">Mujer Alfa</span>!</h3>
+                    <p>Nos vemos el <strong>12 de diciembre</strong>, online. Te vamos a escribir con el enlace de acceso y los detalles del encuentro. ✨</p>
+                    <div class="actions">
+                        <a class="btn-sec fill" target="_blank" rel="noopener noreferrer" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cita+online+Mujeres+Alfa+con+Florencia+Castillo&dates=20261212/20261213&details=Encuentro+online+y+gratuito+con+Florencia+Castillo.+Te+enviaremos+el+enlace+de+acceso."><i class="fa-regular fa-calendar-plus"></i> Agregar al calendario</a>
+                        <a class="btn-sec" href="https://www.instagram.com/florenciacastillo.oficial/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i> Seguir a Flor</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Florencia Castillo · Mujeres Alfa · <a href="legales.html" target="_blank">Aviso Legal, Privacidad &amp; Cookies</a>
+    </footer>
+
+    <script>
+        const FC_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbxX5uH6rm3F2rW0ElLnIx-XoNBjnfxX0ICvssi9XVN1hTL89-n761enBKZklurY9j7HhQ/exec';
+        // Identificador propio de este evento dentro de la base de datos compartida
+        const EVENT_ID = 'EVENTO 12/12/26 - Cita Online Mujeres Alfa';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('fc_evento_12_12_26')) {
+                try {
+                    const d = JSON.parse(localStorage.getItem('fc_evento_12_12_26'));
+                    showSuccess(d.nombre);
+                } catch (e) {}
+            }
+        });
+
+        function handleEventSubmit(e) {
+            e.preventDefault();
+            if (document.getElementById('evHp').value) return; // anti-bot
+
+            const nombre = document.getElementById('evNombre').value.trim();
+            const apellido = document.getElementById('evApellido').value.trim();
+            const email = document.getElementById('evEmail').value.trim();
+            const tel = document.getElementById('evTel').value.trim();
+
+            if (!nombre || !apellido || !email || !tel) {
+                alert('Por favor completá nombre, apellido, correo y teléfono.');
+                return;
+            }
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                alert('Revisá que el correo electrónico sea válido.');
+                return;
+            }
+
+            const btn = document.getElementById('btnEv');
+            btn.disabled = true;
+            btn.innerHTML = '<span>Reservando tu lugar...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+
+            const params = new URLSearchParams(location.search);
+            const payload = {
+                recurso: EVENT_ID,
+                nombre: nombre + ' ' + apellido,
+                nombre_pila: nombre,
+                apellido: apellido,
+                email: email,
+                whatsapp: tel,
+                origen: params.get('utm_source') || params.get('src') || 'directo',
+                fecha: new Date().toLocaleString('es-AR')
+            };
+
+            // 1. Base de datos oficial (Google Sheets) con identificación del evento
+            fetch(FC_SHEETS_WEBHOOK, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify(payload)
+            }).catch(err => console.warn('Sheets error:', err));
+
+            try {
+                const stored = JSON.parse(localStorage.getItem('fc_system_leads') || '[]');
+                stored.unshift(payload);
+                localStorage.setItem('fc_system_leads', JSON.stringify(stored.slice(0, 500)));
+            } catch (err) {}
+
+            // 2. Copia por email
+            fetch('https://formsubmit.co/ajax/info@florenciacastillo.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ _subject: 'Nueva inscripción Evento 12/12 - ' + payload.nombre, _captcha: 'false', _template: 'table', ...payload })
+            }).catch(err => console.warn('Email backup error:', err)).finally(() => {
+                localStorage.setItem('fc_evento_12_12_26', JSON.stringify({ nombre, apellido, email }));
+                showSuccess(nombre);
+            });
+        }
+
+        function showSuccess(nombre) {
+            document.getElementById('formWrap').style.display = 'none';
+            document.getElementById('successWrap').style.display = 'block';
+            document.getElementById('okName').textContent = nombre || 'Mujer Alfa';
+        }
+    </script>
+</body>
+</html>
