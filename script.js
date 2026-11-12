@@ -215,6 +215,7 @@ function initPlansCarousel() {
     }, { passive: true });
 
     plansViewport.addEventListener('touchend', (e) => {
+        if (window.innerWidth >= 992) return;
         planTouchEndX = e.changedTouches[0].screenX;
         if (planTouchEndX < planTouchStartX - 40) {
             nextPlanCard(); // Swipe izquierda -> siguiente
@@ -272,7 +273,7 @@ function setPlanIndex(idx) {
 }
 
 function handlePlanCardClick(idx) {
-    if (idx !== currentPlanIndex) {
+    if (window.innerWidth < 992 && idx !== currentPlanIndex) {
         setPlanIndex(idx);
     }
 }
