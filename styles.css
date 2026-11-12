@@ -1152,6 +1152,7 @@ a {
 .products-section {
     padding: 5.5rem 0;
     background: var(--marfil-surface);
+    overflow: hidden;
 }
 
 .products-grid {
@@ -1256,6 +1257,209 @@ a {
     font-weight: 700;
     color: var(--carbon);
     margin-bottom: 1.4rem;
+}
+
+/* ========================================================
+   STACKED CAROUSEL: PLANES & FORMACIÓN (INDEX)
+   ======================================================== */
+.plans-carousel-wrap {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px 0 30px;
+}
+
+.plans-viewport {
+    position: relative;
+    height: 540px;
+    perspective: 1200px;
+    overflow: visible;
+}
+
+@media (max-width: 768px) {
+    .plans-viewport {
+        height: 570px;
+    }
+}
+
+.plan-stack-card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 440px;
+    height: 100%;
+    background: var(--marfil-surface);
+    border-radius: 24px;
+    border: 2px solid rgba(43, 36, 53, 0.08);
+    box-shadow: 0 16px 40px rgba(43, 36, 53, 0.1);
+    padding: 34px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-origin: center center;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+/* Card States for Stacked 3D Slider */
+.plan-stack-card.pos-center {
+    transform: translateX(-50%) translateZ(0) scale(1);
+    z-index: 10;
+    opacity: 1;
+    filter: blur(0);
+    border-color: var(--fuchsia);
+    box-shadow: 0 24px 50px rgba(212, 0, 106, 0.18);
+    cursor: default;
+}
+
+.plan-stack-card.pos-left {
+    transform: translateX(-110%) translateZ(-80px) scale(0.88);
+    z-index: 5;
+    opacity: 0.65;
+    filter: blur(0.5px);
+}
+
+.plan-stack-card.pos-right {
+    transform: translateX(10%) translateZ(-80px) scale(0.88);
+    z-index: 5;
+    opacity: 0.65;
+    filter: blur(0.5px);
+}
+
+@media (max-width: 650px) {
+    .plan-stack-card {
+        max-width: 320px;
+        padding: 26px 20px;
+    }
+    .plan-stack-card.pos-left {
+        transform: translateX(-92%) translateZ(-60px) scale(0.86);
+        opacity: 0.35;
+    }
+    .plan-stack-card.pos-right {
+        transform: translateX(-8%) translateZ(-60px) scale(0.86);
+        opacity: 0.35;
+    }
+}
+
+.plan-stack-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: var(--marfil);
+    border: 1px solid rgba(212, 0, 106, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fuchsia);
+    font-size: 1.4rem;
+    margin: 12px 0 14px;
+}
+
+.plan-stack-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: var(--carbon);
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.plan-stack-subtitle {
+    font-size: 0.94rem;
+    line-height: 1.45;
+    margin-bottom: 8px;
+}
+
+.plan-stack-desc {
+    font-size: 0.9rem;
+    color: var(--carbon-light);
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.plan-stack-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    font-size: 0.86rem;
+    color: var(--carbon);
+}
+
+.plan-stack-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+    line-height: 1.35;
+}
+
+.plan-stack-list li i {
+    color: var(--fuchsia);
+    font-size: 0.8rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Nav Buttons */
+.plans-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1.5px solid rgba(43, 36, 53, 0.15);
+    color: var(--carbon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(43, 36, 53, 0.1);
+    transition: all 0.2s;
+    z-index: 20;
+}
+
+.plans-nav-btn:hover {
+    background: var(--fuchsia);
+    color: #fff;
+    border-color: var(--fuchsia);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.plans-prev-btn { left: 10px; }
+.plans-next-btn { right: 10px; }
+
+@media (max-width: 600px) {
+    .plans-prev-btn { left: -6px; width: 40px; height: 40px; font-size: 0.95rem; }
+    .plans-next-btn { right: -6px; width: 40px; height: 40px; font-size: 0.95rem; }
+}
+
+/* Dots */
+.plans-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.plans-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(43, 36, 53, 0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.plans-dot.active {
+    width: 32px;
+    border-radius: 20px;
+    background: var(--fuchsia);
 }
 
 /* TESTIMONIALS */

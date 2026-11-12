@@ -195,36 +195,84 @@
                     <p class="section-subtitle">Opciones diseñadas para cada etapa de tu evolución como mujer emprendedora.</p>
                 </div>
 
-                <div class="products-grid">
-                    <!-- Product 1: Guía Gratuita (Radiografía Alfa) -->
-                    <div class="product-card">
-                        <div class="product-tag free">100% GRATUITO</div>
-                        <h3>Radiografía Alfa</h3>
-                        <p class="product-desc">Diagnóstico de 5 pasos para dejar de vivir en automático, ordenar tus prioridades y ver la realidad de tu negocio.</p>
-                        <div class="product-price">Gratis</div>
-                        <a href="guia-radiografia-alfa.html" class="btn btn-outline btn-block">Completar la Guía</a>
+                <div class="plans-carousel-wrap">
+                    <!-- Botones de navegación prev/next -->
+                    <button class="plans-nav-btn plans-prev-btn" onclick="prevPlanCard()" aria-label="Plan anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="plans-nav-btn plans-next-btn" onclick="nextPlanCard()" aria-label="Plan siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <div class="plans-viewport" id="plansViewport">
+                        <!-- TARJETA 0: RADIOGRAFÍA ALFA -->
+                        <div class="plan-stack-card pos-center" data-index="0" onclick="handlePlanCardClick(0)">
+                            <div>
+                                <span class="product-tag free">100% GRATUITO</span>
+                                <div class="plan-stack-icon"><i class="fa-solid fa-compass"></i></div>
+                                <h3 class="plan-stack-title">Radiografía Alfa</h3>
+                                <p class="plan-stack-desc">Diagnóstico de 5 pasos para dejar de vivir en automático, ordenar tus prioridades y ver la realidad de tu negocio.</p>
+                                <ul class="plan-stack-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Autodiagnóstico interactivo guiado online.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Mapa de claridad y realidad de tu negocio.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Posibilidad de meet 1 a 1 de devolución con Flor.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="product-price">Gratis</div>
+                                <a href="guia-radiografia-alfa.html" class="btn btn-outline btn-block"><span>Completar la Guía</span> <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- TARJETA 1: ALFA AL INICIO -->
+                        <div class="plan-stack-card pos-right" data-index="1" id="alfa-inicio" onclick="handlePlanCardClick(1)">
+                            <div class="featured-badge">PROGRAMA DE ACOMPAÑAMIENTO</div>
+                            <div>
+                                <span class="product-tag ebook">ALFA AL INICIO</span>
+                                <div class="plan-stack-icon"><i class="fa-solid fa-seedling"></i></div>
+                                <h3 class="plan-stack-title">Alfa al Inicio</h3>
+                                <p class="plan-stack-subtitle" style="font-weight: 700; color: var(--fuchsia); margin-bottom: 6px;">Dejá de remar sola. Empezá a construir con dirección.</p>
+                                <p class="plan-stack-desc">Un espacio para reconstruir tu identidad, recuperar tu dirección y no resolver sola cada obstáculo, acompañada de una red de mujeres que eligen crecer.</p>
+                                <ul class="plan-stack-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> Encuentros semanales en vivo con Flor.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Comunidad privada de acompañamiento continuo.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Ejercicios prácticos de mentalidad y estructura.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="product-price">Acompañamiento Mensual</div>
+                                <a href="mailto:info@florenciacastillo.com?subject=Quiero%20ser%20parte%20de%20Alfa%20al%20Inicio" class="btn btn-primary btn-block">
+                                    <span>Quiero ser parte</span> <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- TARJETA 2: MUJERES ALFA (6 MESES) -->
+                        <div class="plan-stack-card pos-left" data-index="2" id="mujeres-alfa" onclick="handlePlanCardClick(2)">
+                            <div>
+                                <span class="product-tag alfa">PROGRAMA AVANZADO</span>
+                                <div class="plan-stack-icon"><i class="fa-solid fa-crown"></i></div>
+                                <h3 class="plan-stack-title">Mujeres Alfa (6 Meses)</h3>
+                                <p class="plan-stack-subtitle" style="font-weight: 700; color: var(--carbon); margin-bottom: 6px;">De Emprendedora a Empresaria.</p>
+                                <p class="plan-stack-desc">Mentoría personalizada 1 a 1, estructura comercial sólida y acompañamiento estratégico para escalar.</p>
+                                <ul class="plan-stack-list">
+                                    <li><i class="fa-solid fa-circle-check"></i> 6 meses de acompañamiento estratégico 1 a 1.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Especialistas en Finanzas, Ventas y CM.</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Biblioteca de recursos, contratos y plantillas.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="product-price">Postulación Previa</div>
+                                <a href="#metodo-alfa" class="btn btn-secondary btn-block"><span>Ver Programa Completo</span> <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Product 2: Membresía Alfa al Inicio -->
-                    <div class="product-card featured" id="alfa-inicio">
-                        <div class="featured-badge">PROGRAMA DE ACOMPAÑAMIENTO</div>
-                        <div class="product-tag ebook">ALFA AL INICIO</div>
-                        <h3>Alfa al Inicio</h3>
-                        <p class="product-desc" style="font-weight: 700; color: var(--fuchsia); margin-bottom: 6px;">Dejá de remar sola. Empezá a construir con dirección.</p>
-                        <p class="product-desc">Un espacio para reconstruir tu identidad, recuperar tu dirección y no resolver sola cada obstáculo, acompañada de una red de mujeres que eligen crecer.</p>
-                        <div class="product-price">Acompañamiento Mensual</div>
-                        <a href="mailto:info@florenciacastillo.com?subject=Quiero%20ser%20parte%20de%20Alfa%20al%20Inicio" class="btn btn-primary btn-block">
-                            Quiero ser parte <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-
-                    <!-- Product 3: Programa Mujeres Alfa -->
-                    <div class="product-card" id="mujeres-alfa">
-                        <div class="product-tag alfa">PROGRAMA AVANZADO</div>
-                        <h3>Mujeres Alfa (6 Meses)</h3>
-                        <p class="product-desc">De Emprendedora a Empresaria. Mentoría personalizada 1 a 1, estructura comercial sólida y acompañamiento estratégico para escalar.</p>
-                        <div class="product-price">Postulación Previa</div>
-                        <a href="#metodo-alfa" class="btn btn-secondary btn-block">Ver Programa Completo</a>
+                    <!-- Indicadores de puntos (dots) -->
+                    <div class="plans-dots">
+                        <span class="plans-dot active" onclick="setPlanIndex(0)"></span>
+                        <span class="plans-dot" onclick="setPlanIndex(1)"></span>
+                        <span class="plans-dot" onclick="setPlanIndex(2)"></span>
                     </div>
                 </div>
             </div>

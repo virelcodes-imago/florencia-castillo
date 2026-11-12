@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initScrollSpy();
     initCookieBanner();
+    initPlansCarousel();
 });
 
 // Mobile Navigation Toggle
@@ -186,5 +187,92 @@ function acceptCookies() {
         banner.style.transform = 'translateY(20px)';
         banner.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
         setTimeout(() => banner.remove(), 300);
+    }
+}
+
+// ========================================================
+// PLANS STACKED CAROUSEL (INDEX - TU RUTA DE CRECIMIENTO)
+// ========================================================
+let currentPlanIndex = 0;
+const totalPlanCards = 3;
+
+function initPlansCarousel() {
+    const plansViewport = document.getElementById('plansViewport');
+    if (!plansViewport) return;
+
+    updatePlanCardPositions();
+
+    // Check if initial hash matches one of the plan cards
+    checkPlanHash();
+    window.addEventListener('hashchange', checkPlanHash);
+
+    // Gestos táctiles (Swipe) para dispositivos móviles
+    let planTouchStartX = 0;
+    let planTouchEndX = 0;
+
+    plansViewport.addEventListener('touchstart', (e) => {
+        planTouchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    plansViewport.addEventListener('touchend', (e) => {
+        planTouchEndX = e.changedTouches[0].screenX;
+        if (planTouchEndX < planTouchStartX - 40) {
+            nextPlanCard(); // Swipe izquierda -> siguiente
+        } else if (planTouchEndX > planTouchStartX + 40) {
+            prevPlanCard(); // Swipe derecha -> anterior
+        }
+    }, { passive: true });
+}
+
+function checkPlanHash() {
+    const hash = window.location.hash;
+    if (hash === '#alfa-inicio') {
+        setPlanIndex(1);
+    } else if (hash === '#mujeres-alfa') {
+        setPlanIndex(2);
+    }
+}
+
+function updatePlanCardPositions() {
+    const cards = document.querySelectorAll('.plan-stack-card');
+    const dots = document.querySelectorAll('.plans-dot');
+    if (!cards.length) return;
+
+    cards.forEach((card) => {
+        const idx = parseInt(card.getAttribute('data-index'), 10);
+        card.classList.remove('pos-center', 'pos-left', 'pos-right');
+
+        if (idx === currentPlanIndex) {
+            card.classList.add('pos-center');
+        } else if (idx === (currentPlanIndex + 1) % totalPlanCards) {
+            card.classList.add('pos-right');
+        } else {
+            card.classList.add('pos-left');
+        }
+    });
+
+    dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentPlanIndex);
+    });
+}
+
+function nextPlanCard() {
+    currentPlanIndex = (currentPlanIndex + 1) % totalPlanCards;
+    updatePlanCardPositions();
+}
+
+function prevPlanCard() {
+    currentPlanIndex = (currentPlanIndex - 1 + totalPlanCards) % totalPlanCards;
+    updatePlanCardPositions();
+}
+
+function setPlanIndex(idx) {
+    currentPlanIndex = idx;
+    updatePlanCardPositions();
+}
+
+function handlePlanCardClick(idx) {
+    if (idx !== currentPlanIndex) {
+        setPlanIndex(idx);
     }
 }
