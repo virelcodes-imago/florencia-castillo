@@ -1043,6 +1043,14 @@
                 window.location.replace('portal-login.html');
                 return;
             }
+
+            // Auto-reparación: Si es correo oficial de Flor, garantizar rol admin
+            if (user.email === 'florenciacastillo.oficial@gmail.com' || user.email === 'info@florenciacastillo.com') {
+                user.role = 'admin';
+                user.name = 'Flor Castillo';
+                localStorage.setItem('fc_alumna_auth', JSON.stringify(user));
+            }
+
             applyUserRole(user);
         }
 
@@ -1059,7 +1067,7 @@
             const switcherBanner = document.getElementById('roleSwitcherBanner');
 
             // Solo mostrar la barra de control de roles a Flor (Admin)
-            const isAdminSession = user.role === 'admin' || user.email === 'info@florenciacastillo.com';
+            const isAdminSession = user.role === 'admin' || user.email === 'florenciacastillo.oficial@gmail.com' || user.email === 'info@florenciacastillo.com';
             if (switcherBanner) {
                 switcherBanner.style.display = isAdminSession ? 'flex' : 'none';
             }
@@ -1103,7 +1111,7 @@
                 user = {
                     role: 'admin',
                     name: 'Flor Castillo',
-                    email: 'info@florenciacastillo.com',
+                    email: 'florenciacastillo.oficial@gmail.com',
                     planName: 'Directora & Fundadora · Mujeres Alfa'
                 };
             } else if (role === 'elite') {

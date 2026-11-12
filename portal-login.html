@@ -326,7 +326,7 @@
             if (errBox) errBox.style.display = 'none';
 
             if (role === 'admin') {
-                document.getElementById('loginEmail').value = 'info@florenciacastillo.com';
+                document.getElementById('loginEmail').value = 'florenciacastillo.oficial@gmail.com';
                 document.getElementById('loginPass').value = '';
                 document.getElementById('loginPass').focus();
                 showError('Ingresá la clave de acceso de 4 dígitos para ingresar como Administradora.');
@@ -370,8 +370,9 @@
                 return;
             }
 
-            // ACCESO EXCLUSIVO ADMINISTRADORA (FLOR CASTILLO)
-            if (email === 'info@florenciacastillo.com') {
+            // ACCESO EXCLUSIVO ADMINISTRADORA (FLOR CASTILLO - Admite ambos correos)
+            const isAdminEmail = (email === 'florenciacastillo.oficial@gmail.com' || email === 'info@florenciacastillo.com');
+            if (isAdminEmail) {
                 if (pass !== '2193') {
                     showError('Contraseña incorrecta para la cuenta administradora de Flor Castillo.');
                     passInput.value = '';
@@ -382,7 +383,7 @@
                 const adminUser = {
                     role: 'admin',
                     name: 'Flor Castillo',
-                    email: 'info@florenciacastillo.com',
+                    email: email,
                     planName: 'Directora & Fundadora · Mujeres Alfa',
                     loginTime: new Date().toISOString()
                 };
