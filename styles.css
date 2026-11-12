@@ -355,6 +355,10 @@ a {
     gap: 14px;
 }
 
+.nav-portal-mobile {
+    display: none !important;
+}
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -1697,6 +1701,11 @@ a {
     .menu-toggle {
         display: flex;
     }
+
+    /* Ocultar botón de Acceso al Portal de la barra superior en celulares */
+    .nav-actions .btn {
+        display: none !important;
+    }
     
     .nav-menu {
         position: absolute;
@@ -1714,6 +1723,34 @@ a {
     
     .nav-menu.open {
         display: flex;
+    }
+
+    /* Mostrar botón de Acceso al Portal destacado dentro del menú desplegable móvil */
+    .nav-portal-mobile {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--fuchsia) !important;
+        color: #fff !important;
+        padding: 12px 20px !important;
+        border-radius: var(--radius-full) !important;
+        font-weight: 700 !important;
+        font-size: 0.95rem !important;
+        margin-top: 6px;
+        box-shadow: 0 4px 15px rgba(212, 0, 106, 0.25);
+        text-decoration: none !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-portal-mobile:hover {
+        background: #b8005c !important;
+        color: #fff !important;
+    }
+
+    .nav-portal-mobile::after {
+        display: none !important;
     }
     
     .hero-title {
