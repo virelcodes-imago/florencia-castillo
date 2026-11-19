@@ -311,3 +311,20 @@ function scrollPillarTo(index) {
         cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
 }
+
+// ========================================================
+// RADIOGRAFÍA BANNER ACCORDION (BIBLIOTECA MOBILE)
+// ========================================================
+function toggleRadAccordion() {
+    const card = document.getElementById('radBannerPreviewCard');
+    const btn = document.getElementById('radAccordionBtn');
+    if (!card) return;
+    const isOpen = card.classList.toggle('open');
+    if (btn) {
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        const badgeText = btn.querySelector('.rad-badge-text');
+        if (badgeText) {
+            badgeText.textContent = isOpen ? 'Ocultar' : 'Ver ejercicios';
+        }
+    }
+}

@@ -56,6 +56,9 @@ html {
     font-size: 16px;
     background-color: var(--marfil);
     color: var(--carbon);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 body {
@@ -64,6 +67,9 @@ body {
     background-color: var(--marfil);
     color: var(--carbon);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
     -webkit-font-smoothing: antialiased;
 }
 

@@ -29,13 +29,41 @@
     <link rel="shortcut icon" href="favicon.ico?v=3">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css?v=2.4">
+    <link rel="stylesheet" href="styles.css?v=3.2">
 
     <style>
+        /* 0. ENCASILLADO ESTRICTO ANTI-DESPLAZAMIENTO HORIZONTAL */
+        html, body {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            max-width: 100vw !important;
+            position: relative !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .container {
+            width: 100% !important;
+            max-width: 1140px !important;
+            box-sizing: border-box !important;
+        }
+
+        .radiografia-banner-wrap,
+        .oraculo-banner-wrap,
+        .proa-featured-box,
+        .masterclass-hub-banner,
+        .stack-carousel-wrap {
+            max-width: 100% !important;
+            overflow: hidden !important;
+            box-sizing: border-box !important;
+        }
+
         .hub-hero {
             padding: 3.5rem 0 2rem;
             text-align: center;
             background: linear-gradient(180deg, rgba(212,0,106,0.04) 0%, rgba(250,240,228,0) 100%);
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .hub-badge {
@@ -221,6 +249,38 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
+        .rad-preview-accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: #fff;
+            margin-bottom: 14px;
+            cursor: default;
+        }
+
+        .rad-accordion-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #FFE699;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .rad-accordion-badge {
+            display: none;
+        }
+
+        .rad-preview-accordion-body {
+            display: block;
+        }
+
         .rad-preview-step {
             display: flex;
             align-items: center;
@@ -246,6 +306,67 @@
             border-radius: 8px;
             margin-top: 14px;
             opacity: 0.9;
+        }
+
+        @media (max-width: 900px) {
+            .rad-banner-preview-card {
+                padding: 16px 20px;
+                border-radius: 16px;
+                margin-top: 16px;
+                background: rgba(255,255,255,0.18);
+                border: 1.5px solid rgba(255,255,255,0.35);
+            }
+
+            .rad-preview-accordion-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                margin-bottom: 0;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .rad-accordion-title {
+                font-size: 0.76rem;
+                letter-spacing: 0.8px;
+            }
+
+            .rad-accordion-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 0.74rem;
+                font-weight: 700;
+                background: rgba(255,255,255,0.22);
+                border: 1px solid rgba(255,255,255,0.4);
+                padding: 5px 12px;
+                border-radius: 50px;
+                color: #fff;
+            }
+
+            .rad-chevron {
+                transition: transform 0.3s ease;
+                font-size: 0.7rem;
+            }
+
+            .rad-preview-accordion-body {
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, margin-top 0.3s ease;
+                margin-top: 0;
+            }
+
+            .rad-banner-preview-card.open .rad-chevron {
+                transform: rotate(180deg);
+            }
+
+            .rad-banner-preview-card.open .rad-preview-accordion-body {
+                max-height: 480px;
+                opacity: 1;
+                margin-top: 14px;
+            }
         }
 
         /* ========================================================
@@ -376,68 +497,78 @@
         }
 
         @media (max-width: 768px) {
-            .stack-viewport {
-                height: 560px;
+            .stack-carousel-wrap {
+                max-width: 440px !important;
+                margin: 0 auto 3rem !important;
+                overflow: hidden !important;
+                padding: 10px 0 25px !important;
             }
-        }
 
-        .stack-card {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 100%;
-            max-width: 460px;
-            background: var(--marfil-surface);
-            border-radius: 24px;
-            border: 2px solid rgba(43,36,53,0.08);
-            box-shadow: 0 16px 40px rgba(43,36,53,0.12);
-            padding: 34px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            transform-origin: center center;
-            cursor: pointer;
-            user-select: none;
-        }
+            .stack-viewport {
+                position: relative !important;
+                height: 560px !important;
+                overflow: hidden !important;
+                border-radius: 24px !important;
+                perspective: none !important;
+            }
 
-        /* Card States for Stacked 3D Slider */
-        .stack-card.pos-center {
-            transform: translateX(-50%) translateZ(0) scale(1);
-            z-index: 10;
-            opacity: 1;
-            filter: blur(0);
-            border-color: var(--fuchsia);
-            box-shadow: 0 24px 50px rgba(212,0,106,0.16);
-            cursor: default;
-        }
+            .stack-card {
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 100% !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+                transform: translateX(30px) !important;
+                transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+                z-index: 1 !important;
+                filter: none !important;
+            }
 
-        .stack-card.pos-left {
-            transform: translateX(-110%) translateZ(-80px) scale(0.88);
-            z-index: 5;
-            opacity: 0.65;
-            filter: blur(0.5px);
-        }
+            .stack-card.pos-center {
+                opacity: 1 !important;
+                visibility: visible !important;
+                pointer-events: auto !important;
+                transform: translateX(0) !important;
+                z-index: 5 !important;
+                border-color: var(--fuchsia);
+                box-shadow: 0 16px 40px rgba(212,0,106,0.16);
+            }
 
-        .stack-card.pos-right {
-            transform: translateX(10%) translateZ(-80px) scale(0.88);
-            z-index: 5;
-            opacity: 0.65;
-            filter: blur(0.5px);
+            .stack-card:not(.pos-center) {
+                opacity: 0 !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+                filter: none !important;
+            }
+
+            .stack-card.pos-left {
+                transform: translateX(-30px) !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+            }
+
+            .stack-card.pos-right {
+                transform: translateX(30px) !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+            }
+
+            .stack-prev-btn { left: -10px !important; width: 40px !important; height: 40px !important; }
+            .stack-next-btn { right: -10px !important; width: 40px !important; height: 40px !important; }
         }
 
         @media (max-width: 650px) {
+            .stack-carousel-wrap {
+                max-width: calc(100% - 20px) !important;
+            }
             .stack-card {
-                max-width: 330px;
-                padding: 24px;
-            }
-            .stack-card.pos-left {
-                transform: translateX(-90%) translateZ(-60px) scale(0.86);
-                opacity: 0.45;
-            }
-            .stack-card.pos-right {
-                transform: translateX(-10%) translateZ(-60px) scale(0.86);
-                opacity: 0.45;
+                padding: 26px 20px !important;
             }
         }
 
@@ -993,33 +1124,43 @@
                         </p>
                     </div>
 
-                    <!-- Lado Visual del Banner -->
-                    <div class="rad-banner-preview-card">
-                        <div style="font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #FFE699; margin-bottom: 12px;">
-                            <i class="fa-solid fa-compass-drafting"></i> LOS 5 EJERCICIOS DEL TEST
-                        </div>
-                        <div class="rad-preview-step">
-                            <i class="fa-solid fa-circle-dot"></i>
-                            <span>1. El espejo: quién sos hoy</span>
-                        </div>
-                        <div class="rad-preview-step">
-                            <i class="fa-solid fa-circle-dot"></i>
-                            <span>2. Tu trabajo y realidad financiera</span>
-                        </div>
-                        <div class="rad-preview-step">
-                            <i class="fa-solid fa-circle-dot"></i>
-                            <span>3. Tus metas de los próximos 90 días</span>
-                        </div>
-                        <div class="rad-preview-step">
-                            <i class="fa-solid fa-circle-dot"></i>
-                            <span>4. Tus hábitos cotidianos y energía</span>
-                        </div>
-                        <div class="rad-preview-step">
-                            <i class="fa-solid fa-circle-dot"></i>
-                            <span>5. Tu compromiso como Mujer Alfa</span>
-                        </div>
-                        <div class="rad-preview-pill">
-                            🔒 100% Confidencial · Entrega inmediata en pantalla
+                    <!-- Lado Visual del Banner (Desplegable en móvil para no alargar la pantalla) -->
+                    <div class="rad-banner-preview-card" id="radBannerPreviewCard">
+                        <button type="button" class="rad-preview-accordion-header" id="radAccordionBtn" onclick="toggleRadAccordion()" aria-expanded="false" aria-controls="radAccordionBody">
+                            <div class="rad-accordion-title">
+                                <i class="fa-solid fa-compass-drafting"></i>
+                                <span>LOS 5 EJERCICIOS DEL TEST</span>
+                            </div>
+                            <div class="rad-accordion-badge">
+                                <span class="rad-badge-text">Ver qué incluye</span>
+                                <i class="fa-solid fa-chevron-down rad-chevron"></i>
+                            </div>
+                        </button>
+                        
+                        <div class="rad-preview-accordion-body" id="radAccordionBody">
+                            <div class="rad-preview-step">
+                                <i class="fa-solid fa-circle-dot"></i>
+                                <span>1. El espejo: quién sos hoy</span>
+                            </div>
+                            <div class="rad-preview-step">
+                                <i class="fa-solid fa-circle-dot"></i>
+                                <span>2. Tu trabajo y realidad financiera</span>
+                            </div>
+                            <div class="rad-preview-step">
+                                <i class="fa-solid fa-circle-dot"></i>
+                                <span>3. Tus metas de los próximos 90 días</span>
+                            </div>
+                            <div class="rad-preview-step">
+                                <i class="fa-solid fa-circle-dot"></i>
+                                <span>4. Tus hábitos cotidianos y energía</span>
+                            </div>
+                            <div class="rad-preview-step">
+                                <i class="fa-solid fa-circle-dot"></i>
+                                <span>5. Tu compromiso como Mujer Alfa</span>
+                            </div>
+                            <div class="rad-preview-pill">
+                                🔒 100% Confidencial · Entrega inmediata en pantalla
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1724,7 +1865,22 @@
                 prevStackCard(); // Swipe derecha -> anterior
             }
         }
+
+        // Desplegable de los 5 ejercicios de Radiografía Alfa
+        function toggleRadAccordion() {
+            const card = document.getElementById('radBannerPreviewCard');
+            const btn = document.getElementById('radAccordionBtn');
+            if (!card) return;
+            const isOpen = card.classList.toggle('open');
+            if (btn) {
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                const badgeText = btn.querySelector('.rad-badge-text');
+                if (badgeText) {
+                    badgeText.textContent = isOpen ? 'Ocultar' : 'Ver qué incluye';
+                }
+            }
+        }
     </script>
-    <script src="script.js"></script>
+    <script src="script.js?v=3.2"></script>
 </body>
 </html>
