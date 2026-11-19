@@ -1571,32 +1571,41 @@ a {
 /* ----------------------------------------------------
    B) VISTA CELULAR & TABLET (max-width: 991px)
    Slider limpio de 1 sola tarjeta a la vez (SIN tarjetas difusas detrás)
+   Tarjetas adaptadas y flechas exteriores sin superposición
    ---------------------------------------------------- */
 @media (max-width: 991px) {
     .plans-carousel-wrap {
         position: relative;
         max-width: 440px;
         margin: 0 auto;
-        padding: 10px 0 25px;
+        padding: 16px 44px 20px;
+        box-sizing: border-box;
     }
 
     .plans-viewport {
         position: relative;
-        height: 560px;
+        width: 100%;
+        height: 610px;
         overflow: hidden; /* IMPORTANTE: nunca muestra tarjetas fuera del área */
         border-radius: 24px;
         perspective: none;
+        box-sizing: border-box;
     }
 
     .plan-stack-card {
         position: absolute;
-        top: 0;
+        top: 10px;
         left: 0;
         right: 0;
         bottom: 0;
         width: 100%;
         max-width: 100%;
-        height: 100%;
+        height: calc(100% - 10px);
+        padding: 22px 18px 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
@@ -1605,6 +1614,7 @@ a {
         z-index: 1;
         cursor: default;
         filter: none !important;
+        border-radius: 20px;
     }
 
     /* Única tarjeta activa visible */
@@ -1643,12 +1653,69 @@ a {
         filter: none !important;
     }
 
+    /* Adaptación interna para que el botón no quede cortado y los textos respiren */
+    .plan-stack-card .featured-badge {
+        top: -12px !important;
+        font-size: 0.7rem !important;
+        padding: 4px 12px !important;
+    }
+    .plan-stack-card .product-tag {
+        font-size: 0.72rem !important;
+        padding: 3px 10px !important;
+    }
+    .plan-stack-card .plan-stack-icon {
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 10px !important;
+        font-size: 1.15rem !important;
+        margin: 8px 0 10px !important;
+    }
+    .plan-stack-card .plan-stack-title {
+        font-size: 1.45rem !important;
+        margin-bottom: 4px !important;
+        line-height: 1.2 !important;
+    }
+    .plan-stack-card .plan-stack-subtitle {
+        font-size: 0.85rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 6px !important;
+    }
+    .plan-stack-card .plan-stack-desc {
+        font-size: 0.82rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 10px !important;
+    }
+    .plan-stack-card .plan-stack-list {
+        margin: 0 0 12px 0 !important;
+        font-size: 0.82rem !important;
+    }
+    .plan-stack-card .plan-stack-list li {
+        gap: 8px !important;
+        margin-bottom: 4px !important;
+        line-height: 1.3 !important;
+    }
+    .plan-stack-card .plan-stack-list li i {
+        font-size: 0.8rem !important;
+        margin-top: 2px !important;
+    }
+    .plan-stack-card .product-price {
+        font-size: 1.22rem !important;
+        margin-bottom: 10px !important;
+        line-height: 1.2 !important;
+    }
+    .plan-stack-card .btn {
+        padding: 11px 16px !important;
+        font-size: 0.92rem !important;
+        border-radius: 999px !important;
+    }
+
+    /* Botones de navegación exteriores sin superponer la tarjeta */
     .plans-nav-btn {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
+        width: 38px;
+        height: 38px;
         border-radius: 50%;
         background: #fff;
         border: 2px solid var(--fuchsia);
@@ -1656,9 +1723,9 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.05rem;
+        font-size: 0.95rem;
         cursor: pointer;
-        box-shadow: 0 8px 24px rgba(212, 0, 106, 0.22);
+        box-shadow: 0 4px 14px rgba(212, 0, 106, 0.2);
         transition: all 0.25s ease;
         z-index: 25;
     }
@@ -1667,23 +1734,23 @@ a {
     .plans-nav-btn:active {
         background: var(--fuchsia);
         color: #fff;
-        transform: translateY(-50%) scale(1.1);
+        transform: translateY(-50%) scale(1.08);
     }
 
-    .plans-prev-btn { left: -14px; }
-    .plans-next-btn { right: -14px; }
+    .plans-prev-btn { left: 0; }
+    .plans-next-btn { right: 0; }
 
     .plans-dots {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        margin-top: 20px;
+        gap: 8px;
+        margin-top: 16px;
     }
 
     .plans-dot {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         background: rgba(43, 36, 53, 0.2);
         cursor: pointer;
@@ -1691,24 +1758,32 @@ a {
     }
 
     .plans-dot.active {
-        width: 32px;
-        border-radius: 20px;
+        width: 26px;
+        border-radius: 13px;
         background: var(--fuchsia);
     }
 }
 
 @media (max-width: 650px) {
     .plans-carousel-wrap {
-        max-width: calc(100% - 20px);
+        max-width: 100%;
+        padding: 16px 40px 18px;
     }
     .plans-viewport {
-        height: 580px;
+        height: 615px;
     }
-    .plan-stack-card {
-        padding: 28px 22px;
+    .plans-prev-btn {
+        left: 0;
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
     }
-    .plans-prev-btn { left: -10px; width: 40px; height: 40px; font-size: 1rem; }
-    .plans-next-btn { right: -10px; width: 40px; height: 40px; font-size: 1rem; }
+    .plans-next-btn {
+        right: 0;
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
 }
 
 /* TESTIMONIALS */
