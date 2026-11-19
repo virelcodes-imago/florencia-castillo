@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollSpy();
     initCookieBanner();
     initPlansCarousel();
+    initPillarsSlider();
 });
 
 // Mobile Navigation Toggle
@@ -241,14 +242,14 @@ function updatePlanCardPositions() {
 
     cards.forEach((card) => {
         const idx = parseInt(card.getAttribute('data-index'), 10);
-        card.classList.remove('pos-center', 'pos-left', 'pos-right');
+        card.classList.remove('active-card', 'prev-card', 'next-card', 'pos-center', 'pos-left', 'pos-right');
 
         if (idx === currentPlanIndex) {
-            card.classList.add('pos-center');
-        } else if (idx === (currentPlanIndex + 1) % totalPlanCards) {
-            card.classList.add('pos-right');
+            card.classList.add('active-card', 'pos-center');
+        } else if (idx === (currentPlanIndex - 1 + totalPlanCards) % totalPlanCards) {
+            card.classList.add('prev-card', 'pos-left');
         } else {
-            card.classList.add('pos-left');
+            card.classList.add('next-card', 'pos-right');
         }
     });
 
@@ -275,5 +276,38 @@ function setPlanIndex(idx) {
 function handlePlanCardClick(idx) {
     if (window.innerWidth < 992 && idx !== currentPlanIndex) {
         setPlanIndex(idx);
+    }
+}
+
+// ========================================================
+// MÉTODO ALFA: PILLARS SLIDER (MOBILE SWIPE & DOTS)
+// ========================================================
+function initPillarsSlider() {
+    const grid = document.getElementById('pillarsGrid');
+    const dots = document.querySelectorAll('.pillar-dot');
+    if (!grid || !dots.length) return;
+
+    let scrollTimeout;
+    grid.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const firstCard = grid.querySelector('.pillar-card');
+            if (!firstCard) return;
+            const cardWidth = firstCard.offsetWidth + 18; // width + gap
+            const scrollLeft = grid.scrollLeft;
+            const activeIdx = Math.min(dots.length - 1, Math.max(0, Math.round(scrollLeft / cardWidth)));
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === activeIdx);
+            });
+        }, 30);
+    }, { passive: true });
+}
+
+function scrollPillarTo(index) {
+    const grid = document.getElementById('pillarsGrid');
+    if (!grid) return;
+    const cards = grid.querySelectorAll('.pillar-card');
+    if (cards[index]) {
+        cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     }
 }

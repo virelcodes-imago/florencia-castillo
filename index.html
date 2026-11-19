@@ -29,7 +29,7 @@
     <link rel="manifest" href="site.webmanifest">
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=3.0">
+    <link rel="stylesheet" href="styles.css?v=3.1">
     <style>
         /* Responsive Dual-Mode para Planes & Formación (Anticaché crítico) */
         .plans-carousel-wrap { position: relative; max-width: 1200px; margin: 0 auto; padding: 20px 0 30px; }
@@ -37,6 +37,18 @@
         .plan-stack-list li { list-style: none !important; list-style-type: none !important; display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; line-height: 1.4; }
         .plan-stack-list li i { color: var(--fuchsia); font-size: 0.85rem; margin-top: 3px; flex-shrink: 0; }
         
+        /* 1. TAGLINE BAR MOBILE CENTERING */
+        @media (max-width: 768px) {
+            .tagline-bar { padding: 2.2rem 1.25rem !important; }
+            .tagline-inner { flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 1.8rem !important; }
+            .tagline-divider { display: none !important; }
+            .tagline-item { width: 100% !important; max-width: 320px !important; margin: 0 auto !important; text-align: center !important; }
+            .tagline-bullet { margin: 0 auto 5px !important; text-align: center !important; }
+            .tagline-item h3 { text-align: center !important; margin: 0 0 3px !important; }
+            .tagline-item p { text-align: center !important; margin: 0 auto !important; }
+        }
+
+        /* 2. PLANS CAROUSEL DESKTOP GRID */
         @media (min-width: 992px) {
             .plans-nav-btn, .plans-dots { display: none !important; }
             .plans-viewport {
@@ -84,6 +96,63 @@
                 transform: translateY(-12px) scale(1.03) !important;
                 box-shadow: 0 28px 60px rgba(212, 0, 106, 0.22) !important;
             }
+        }
+
+        /* 3. PLANS CAROUSEL MOBILE CLEAN SLIDER (SIN VISTA DIFUSA ATRÁS) */
+        @media (max-width: 991px) {
+            .plans-carousel-wrap { position: relative !important; max-width: 440px !important; margin: 0 auto !important; padding: 10px 0 25px !important; }
+            .plans-viewport { position: relative !important; height: 560px !important; overflow: hidden !important; border-radius: 24px !important; perspective: none !important; }
+            .plan-stack-card { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; width: 100% !important; height: 100% !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transform: translateX(30px) !important; transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important; z-index: 1 !important; filter: none !important; }
+            .plan-stack-card.active-card, .plan-stack-card.pos-center { opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; transform: translateX(0) !important; z-index: 5 !important; border-color: var(--fuchsia) !important; box-shadow: 0 16px 40px rgba(212, 0, 106, 0.16) !important; }
+            .plan-stack-card:not(.active-card) { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; filter: none !important; }
+            .plans-nav-btn { position: absolute !important; top: 50% !important; transform: translateY(-50%) !important; width: 44px !important; height: 44px !important; border-radius: 50% !important; background: #fff !important; border: 2px solid var(--fuchsia) !important; color: var(--fuchsia) !important; display: flex !important; align-items: center !important; justify-content: center !important; font-size: 1.05rem !important; z-index: 25 !important; box-shadow: 0 8px 24px rgba(212, 0, 106, 0.22) !important; }
+            .plans-prev-btn { left: -14px !important; }
+            .plans-next-btn { right: -14px !important; }
+        }
+        @media (max-width: 650px) {
+            .plans-carousel-wrap { max-width: calc(100% - 20px) !important; }
+            .plans-viewport { height: 580px !important; }
+            .plans-prev-btn { left: -10px !important; width: 40px !important; height: 40px !important; }
+            .plans-next-btn { right: -10px !important; width: 40px !important; height: 40px !important; }
+        }
+
+        /* 4. MÉTODO ALFA: 4 PILARES CON COLOR & SLIDER EN MOBILE */
+        .pillar-card { border-radius: 20px !important; padding: 2.4rem 1.8rem !important; transition: transform 0.35s ease, box-shadow 0.35s ease !important; }
+        .pillar-card.pillar-1 { background: linear-gradient(150deg, #FFF5F9 0%, #FFE5F0 100%) !important; border: 2px solid rgba(212, 0, 106, 0.3) !important; }
+        .pillar-card.pillar-1 .pillar-num { color: #D4006A !important; }
+        .pillar-card.pillar-1 .pillar-icon { background: #D4006A !important; color: #FFF !important; box-shadow: 0 6px 16px rgba(212, 0, 106, 0.28) !important; }
+        .pillar-card.pillar-1 h3 { color: #680034 !important; }
+
+        .pillar-card.pillar-2 { background: linear-gradient(150deg, #FFF6F4 0%, #FFE8E3 100%) !important; border: 2px solid rgba(255, 90, 90, 0.3) !important; }
+        .pillar-card.pillar-2 .pillar-num { color: #FF5A5A !important; }
+        .pillar-card.pillar-2 .pillar-icon { background: #FF5A5A !important; color: #FFF !important; box-shadow: 0 6px 16px rgba(255, 90, 90, 0.28) !important; }
+        .pillar-card.pillar-2 h3 { color: #6B1C1C !important; }
+
+        .pillar-card.pillar-3 { background: linear-gradient(150deg, #FFF9F2 0%, #FFECDA 100%) !important; border: 2px solid rgba(232, 122, 30, 0.32) !important; }
+        .pillar-card.pillar-3 .pillar-num { color: #E87A1E !important; }
+        .pillar-card.pillar-3 .pillar-icon { background: #E87A1E !important; color: #FFF !important; box-shadow: 0 6px 16px rgba(232, 122, 30, 0.28) !important; }
+        .pillar-card.pillar-3 h3 { color: #6D3405 !important; }
+
+        .pillar-card.pillar-4 { background: linear-gradient(150deg, #F9F2F7 0%, #EEDCE8 100%) !important; border: 2px solid rgba(138, 30, 95, 0.3) !important; }
+        .pillar-card.pillar-4 .pillar-num { color: #8A1E5F !important; }
+        .pillar-card.pillar-4 .pillar-icon { background: #8A1E5F !important; color: #FFF !important; box-shadow: 0 6px 16px rgba(138, 30, 95, 0.28) !important; }
+        .pillar-card.pillar-4 h3 { color: #4A0E33 !important; }
+
+        .pillar-num { font-family: var(--font-heading) !important; font-size: 2.2rem !important; font-weight: 800 !important; line-height: 1 !important; margin-bottom: 0.6rem !important; }
+        .pillar-icon { width: 48px !important; height: 48px !important; border-radius: 12px !important; display: flex !important; align-items: center !important; justify-content: center !important; font-size: 1.3rem !important; margin-bottom: 1.2rem !important; }
+
+        @media (max-width: 991px) {
+            .pillars-grid { display: flex !important; grid-template-columns: none !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important; gap: 1.1rem !important; padding: 10px 1.25rem 20px !important; margin: 0 -1.25rem 1rem !important; scrollbar-width: none !important; }
+            .pillars-grid::-webkit-scrollbar { display: none !important; }
+            .pillar-card { flex: 0 0 82% !important; max-width: 310px !important; scroll-snap-align: center !important; box-sizing: border-box !important; }
+            .pillars-mobile-nav { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 10px !important; margin-bottom: 2.8rem !important; }
+            .pillars-dots { display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; }
+            .pillar-dot { width: 10px !important; height: 10px !important; border-radius: 50% !important; background: rgba(43, 36, 53, 0.2) !important; cursor: pointer !important; transition: all 0.3s ease !important; }
+            .pillar-dot.active { width: 28px !important; border-radius: 14px !important; background: var(--fuchsia) !important; }
+            .pillars-swipe-hint { font-size: 0.82rem !important; color: var(--carbon-muted) !important; display: flex !important; align-items: center !important; gap: 6px !important; font-weight: 500 !important; }
+        }
+        @media (min-width: 992px) {
+            .pillars-mobile-nav { display: none !important; }
         }
     </style>
 </head>
@@ -262,7 +331,7 @@
 
                     <div class="plans-viewport" id="plansViewport">
                         <!-- TARJETA 0: RADIOGRAFÍA ALFA -->
-                        <div class="plan-stack-card pos-center" data-index="0" onclick="handlePlanCardClick(0)">
+                        <div class="plan-stack-card active-card pos-center" data-index="0" onclick="handlePlanCardClick(0)">
                             <div>
                                 <span class="product-tag free">100% GRATUITO</span>
                                 <div class="plan-stack-icon"><i class="fa-solid fa-compass"></i></div>
@@ -281,7 +350,7 @@
                         </div>
 
                         <!-- TARJETA 1: ALFA AL INICIO -->
-                        <div class="plan-stack-card pos-right featured-plan" data-index="1" id="alfa-inicio" onclick="handlePlanCardClick(1)">
+                        <div class="plan-stack-card next-card pos-right featured-plan" data-index="1" id="alfa-inicio" onclick="handlePlanCardClick(1)">
                             <div class="featured-badge">PROGRAMA DE ACOMPAÑAMIENTO</div>
                             <div>
                                 <span class="product-tag ebook">ALFA AL INICIO</span>
@@ -304,7 +373,7 @@
                         </div>
 
                         <!-- TARJETA 2: MUJERES ALFA (6 MESES) -->
-                        <div class="plan-stack-card pos-left" data-index="2" id="mujeres-alfa" onclick="handlePlanCardClick(2)">
+                        <div class="plan-stack-card prev-card pos-left" data-index="2" id="mujeres-alfa" onclick="handlePlanCardClick(2)">
                             <div>
                                 <span class="product-tag alfa">PROGRAMA AVANZADO</span>
                                 <div class="plan-stack-icon"><i class="fa-solid fa-crown"></i></div>
@@ -346,34 +415,45 @@
                 </div>
 
                 <!-- Método Pillars Grid -->
-                <div class="pillars-grid">
-                    <div class="pillar-card">
+                <div class="pillars-grid" id="pillarsGrid">
+                    <div class="pillar-card pillar-1">
                         <div class="pillar-num">01</div>
                         <div class="pillar-icon"><i class="fa-solid fa-brain"></i></div>
                         <h3>Poder & Mentalidad</h3>
                         <p>Desbloqueamos las dudas, el síndrome del impostor y la relación con el dinero para que hables y vendas con autoridad.</p>
                     </div>
 
-                    <div class="pillar-card">
+                    <div class="pillar-card pillar-2">
                         <div class="pillar-num">02</div>
                         <div class="pillar-icon"><i class="fa-solid fa-compass"></i></div>
                         <h3>Claridad & Estrategia</h3>
                         <p>Definimos con precisión tu propuesta de valor, tu cliente ideal y la oferta que te posiciona como referente en tu nicho.</p>
                     </div>
 
-                    <div class="pillar-card">
+                    <div class="pillar-card pillar-3">
                         <div class="pillar-num">03</div>
                         <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
                         <h3>Estructura & Ventas</h3>
                         <p>Ordenamos tus procesos diarios, planificamos tus canales comerciales y establecemos rutinas orientadas a facturar de manera predecible.</p>
                     </div>
 
-                    <div class="pillar-card">
+                    <div class="pillar-card pillar-4">
                         <div class="pillar-num">04</div>
                         <div class="pillar-icon"><i class="fa-solid fa-handshake-angle"></i></div>
                         <h3>Acompañamiento Directo</h3>
                         <p>Sesiones de mentoría y coaching directo con Flor Castillo para responder tus trabas y no dejarte sola en la ejecución.</p>
                     </div>
+                </div>
+
+                <!-- Indicador de swipe y puntos en mobile -->
+                <div class="pillars-mobile-nav">
+                    <div class="pillars-dots" id="pillarsDots">
+                        <span class="pillar-dot active" onclick="scrollPillarTo(0)"></span>
+                        <span class="pillar-dot" onclick="scrollPillarTo(1)"></span>
+                        <span class="pillar-dot" onclick="scrollPillarTo(2)"></span>
+                        <span class="pillar-dot" onclick="scrollPillarTo(3)"></span>
+                    </div>
+                    <span class="pillars-swipe-hint"><i class="fa-solid fa-arrow-left-long"></i> Deslizá a la izquierda para ver los 4 pilares</span>
                 </div>
 
                 <!-- Program Details Box -->
@@ -702,6 +782,6 @@
     </a>
 
     <!-- Custom Script -->
-    <script src="script.js?v=3.0"></script>
+    <script src="script.js?v=3.1"></script>
 </body>
 </html>
