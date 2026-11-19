@@ -29,7 +29,7 @@
     <link rel="shortcut icon" href="favicon.ico?v=3">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css?v=3.2">
+    <link rel="stylesheet" href="styles.css?v=3.4">
 
     <style>
         /* 0. ENCASILLADO ESTRICTO ANTI-DESPLAZAMIENTO HORIZONTAL */
@@ -51,8 +51,7 @@
         .radiografia-banner-wrap,
         .oraculo-banner-wrap,
         .proa-featured-box,
-        .masterclass-hub-banner,
-        .stack-carousel-wrap {
+        .masterclass-hub-banner {
             max-width: 100% !important;
             overflow: hidden !important;
             box-sizing: border-box !important;
@@ -497,78 +496,82 @@
         }
 
         @media (max-width: 768px) {
-            .stack-carousel-wrap {
-                max-width: 440px !important;
-                margin: 0 auto 3rem !important;
-                overflow: hidden !important;
-                padding: 10px 0 25px !important;
-            }
-
             .stack-viewport {
-                position: relative !important;
-                height: 560px !important;
-                overflow: hidden !important;
-                border-radius: 24px !important;
-                perspective: none !important;
+                height: 560px;
             }
+        }
 
-            .stack-card {
-                position: absolute !important;
-                top: 0 !important;
-                left: 0 !important;
-                right: 0 !important;
-                bottom: 0 !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                height: 100% !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-                pointer-events: none !important;
-                transform: translateX(30px) !important;
-                transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
-                z-index: 1 !important;
-                filter: none !important;
-            }
+        .stack-card {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            max-width: 460px;
+            background: var(--marfil-surface);
+            border-radius: 24px;
+            border: 2px solid rgba(43,36,53,0.08);
+            box-shadow: 0 16px 40px rgba(43,36,53,0.12);
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transform-origin: center center;
+            cursor: pointer;
+            user-select: none;
+            box-sizing: border-box;
+        }
 
-            .stack-card.pos-center {
-                opacity: 1 !important;
-                visibility: visible !important;
-                pointer-events: auto !important;
-                transform: translateX(0) !important;
-                z-index: 5 !important;
-                border-color: var(--fuchsia);
-                box-shadow: 0 16px 40px rgba(212,0,106,0.16);
-            }
+        /* Card States for Stacked 3D Slider */
+        .stack-card.pos-center {
+            transform: translateX(-50%) translateZ(0) scale(1);
+            z-index: 10;
+            opacity: 1;
+            filter: blur(0);
+            border-color: var(--fuchsia);
+            box-shadow: 0 24px 50px rgba(212,0,106,0.16);
+            cursor: default;
+        }
 
-            .stack-card:not(.pos-center) {
-                opacity: 0 !important;
-                visibility: hidden !important;
-                pointer-events: none !important;
-                filter: none !important;
-            }
+        .stack-card.pos-left {
+            transform: translateX(-110%) translateZ(-80px) scale(0.88);
+            z-index: 5;
+            opacity: 0.65;
+            filter: blur(0.5px);
+        }
 
-            .stack-card.pos-left {
-                transform: translateX(-30px) !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-            }
-
-            .stack-card.pos-right {
-                transform: translateX(30px) !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-            }
-
-            .stack-prev-btn { left: -10px !important; width: 40px !important; height: 40px !important; }
-            .stack-next-btn { right: -10px !important; width: 40px !important; height: 40px !important; }
+        .stack-card.pos-right {
+            transform: translateX(10%) translateZ(-80px) scale(0.88);
+            z-index: 5;
+            opacity: 0.65;
+            filter: blur(0.5px);
         }
 
         @media (max-width: 650px) {
-            .stack-carousel-wrap {
-                max-width: calc(100% - 20px) !important;
+            .stack-viewport {
+                height: 580px;
             }
             .stack-card {
-                padding: 26px 20px !important;
+                max-width: 330px;
+                padding: 24px 20px;
+            }
+            .stack-card.pos-left {
+                transform: translateX(-90%) translateZ(-60px) scale(0.86);
+                opacity: 0.45;
+            }
+            .stack-card.pos-right {
+                transform: translateX(-10%) translateZ(-60px) scale(0.86);
+                opacity: 0.45;
+            }
+            .stack-prev-btn {
+                left: -6px;
+                width: 42px;
+                height: 42px;
+            }
+            .stack-next-btn {
+                right: -6px;
+                width: 42px;
+                height: 42px;
             }
         }
 
@@ -1214,7 +1217,7 @@
             <!-- ========================================================
                  3. SECCIÓN: CUADERNOS DE TRABAJO & GUÍAS EN PDF
                  ======================================================== -->
-            <section style="padding: 1rem 0 3rem;">
+            <section style="padding: 1rem 0 3rem; overflow: hidden;">
                 <div class="pdf-section-header">
                     <span class="card-tag">DESCARGAS OFICIALES EN PDF</span>
                     <h2 class="pdf-section-title">Workbooks & Guías Prácticas de Estudio</h2>
@@ -1881,6 +1884,6 @@
             }
         }
     </script>
-    <script src="script.js?v=3.2"></script>
+    <script src="script.js?v=3.4"></script>
 </body>
 </html>
